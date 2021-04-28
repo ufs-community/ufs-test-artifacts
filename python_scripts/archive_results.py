@@ -71,7 +71,7 @@ class ArchiveResults:
       print("cp command is {}".format(cp_cmd))
       self.runcmd(cp_cmd)
 
-    git_cmd = "git commit -a -m\'update for cpld_bmark run';git push origin main"
+    git_cmd = "git add *;git commit -a -m\'update for cpld_bmark run';git push origin main"
     self.runcmd(git_cmd)
     return
 
