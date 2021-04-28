@@ -15208,3 +15208,1310 @@ Start Epilog v20.08.28 on node h23c04 for job 18412095 :: Wed Apr 28 22:35:27 UT
 Job 18412095 (not serial) finished for user Mark.Potts in partition hera with exit code 0:0
 _______________________________________________________________
 End Epilogue v20.08.28 Wed Apr 28 22:35:27 UTC 2021
+
+Currently Loaded Modules:
+  1) sutils/default        10) png/1.6.35                   19) sigio/2.3.2
+  2) cmake/3.16.1          11) hdf5/1.10.6                  20) bacio/2.4.1
+  3) hpc/1.1.0             12) netcdf/4.7.4                 21) w3nco/2.4.1
+  4) intel/18.0.5.274      13) pio/2.5.2                    22) nemsio/2.5.2
+  5) hpc-intel/18.0.5.274  14) esmf/8_2_0_beta_snapshot_04  23) w3emc/2.7.3
+  6) impi/2018.0.4         15) g2/3.4.1                     24) crtm/2.3.0
+  7) hpc-impi/2018.0.4     16) g2tmpl/1.9.1                 25) upp/10.0.6
+  8) jasper/2.0.22         17) ip/3.3.3                     26) ufs_common
+  9) zlib/1.2.11           18) sp/2.3.3                     27) modules.fv3
+
+ 
+
+Model started:   Wed Apr 28 23:11:58 UTC 2021
+  0: 
+  0: 
+  0: * . * . * . * . * . * . * . * . * . * . * . * . * . * . * . * . * . * . * . * . 
+  0:      PROGRAM nems      HAS BEGUN. COMPILED       0.00     ORG: np23   
+  0:      STARTING DATE-TIME  APR 28,2021  23:12:03.351  118  WEN   2459333
+  0: 
+  0: 
+  0:  af nems config,num_restart_interval=           1
+  0:  af nems config,restart_interval=   12.0000000000000     
+  0:  af nems config,quilting= T calendar=julian iau_offset=           0
+  0:  af nems config,ideflate=           0 nbits=           0
+  0:  af nems config,quilting= T write_groups=           1          24 calendar=
+  0:  juliancalendar_type=         -99 isrcTermProcessing=           0
+  0:  af nems config,num_files=           2
+  0:  num_file=           1 filename_base= dyn output_file= netcdf
+  0:  num_file=           2 filename_base= phy output_file= netcdf
+  0:  af nems config,nfhout,nsout=           6          -1          -1          -1
+  0:  output_grid=cubed_sphere_grid
+  0:  af nems config,dt_atmos=         450 nfhmax=   24.0000000000000     
+  0: NOTE from PE     0: MPP_DOMAINS_SET_STACK_SIZE: stack size set to    32768.
+  0:  &MPP_IO_NML
+  0:  HEADER_BUFFER_VAL       =       16384,
+  0:  GLOBAL_FIELD_ON_ROOT_PE = T,
+  0:  IO_CLOCKS_ON    = F,
+  0:  SHUFFLE =           0,
+  0:  DEFLATE_LEVEL   =          -1,
+  0:  CF_COMPLIANCE   = F
+  0:  /
+  0: NOTE from PE     0: MPP_IO_SET_STACK_SIZE: stack size set to     131072.
+  0: NOTE from PE     0: MPP_DOMAINS_SET_STACK_SIZE: stack size set to  3000000.
+  0: StartTime= 2013    4    1    0    0    0
+  0: CurrTime = 2013    4    1    0    0    0
+  0: StopTime = 2013    4    2    0    0    0
+  0: NOTE from PE     0: diag_manager_mod::diag_manager_init: diag_manager is using fms2_io
+  0:  frestart=          12          24           0           0           0
+  0:            0           0           0           0           0 restart_endfcst= T 
+  0:  total_inttime=       86400
+  0: 
+  0: WARNING from PE     0: MPP_OPEN: File time_stamp.out opened WRONLY already exists!
+  0: 
+  0: atmosphere_init: current_time_seconds =       0.0
+  0: Using n_split from the namelist: 006
+  0:  Off center implicit scheme param=   1.00000000000000     
+  0:   p_fac=  0.100000000000000     
+  0: Using n_sponge : 010
+  0: Using non_ortho :       T
+  0:  Starting PEs :          288
+  0:  Starting Threads :            1
+  0:  Cubic: cubed-sphere domain decomposition
+  0: whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+  0:   X-AXIS =   64  64  64  64  64  64
+  0:   Y-AXIS =   48  48  48  48  48  48  48  48
+ 96:  Cubic: cubed-sphere domain decomposition
+ 96: whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+ 96:   X-AXIS =   64  64  64  64  64  64
+ 96:   Y-AXIS =   48  48  48  48  48  48  48  48
+ 48:  Cubic: cubed-sphere domain decomposition
+ 48: whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+ 48:   X-AXIS =   64  64  64  64  64  64
+ 48:   Y-AXIS =   48  48  48  48  48  48  48  48
+144:  Cubic: cubed-sphere domain decomposition
+144: whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+144:   X-AXIS =   64  64  64  64  64  64
+144:   Y-AXIS =   48  48  48  48  48  48  48  48
+192:  Cubic: cubed-sphere domain decomposition
+192: whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+192:   X-AXIS =   64  64  64  64  64  64
+192:   Y-AXIS =   48  48  48  48  48  48  48  48
+240:  Cubic: cubed-sphere domain decomposition
+240: whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+240:   X-AXIS =   64  64  64  64  64  64
+240:   Y-AXIS =   48  48  48  48  48  48  48  48
+  0:  Cubic: cubed-sphere domain decomposition
+  0: whalo =    1, ehalo =    1, shalo =    1, nhalo =    1
+  0:   X-AXIS =   64  64  64  64  64  64
+  0:   Y-AXIS =   48  48  48  48  48  48  48  48
+ 48:  Cubic: cubed-sphere domain decomposition
+ 48: whalo =    1, ehalo =    1, shalo =    1, nhalo =    1
+ 48:   X-AXIS =   64  64  64  64  64  64
+ 48:   Y-AXIS =   48  48  48  48  48  48  48  48
+ 96:  Cubic: cubed-sphere domain decomposition
+ 96: whalo =    1, ehalo =    1, shalo =    1, nhalo =    1
+ 96:   X-AXIS =   64  64  64  64  64  64
+ 96:   Y-AXIS =   48  48  48  48  48  48  48  48
+192:  Cubic: cubed-sphere domain decomposition
+192: whalo =    1, ehalo =    1, shalo =    1, nhalo =    1
+192:   X-AXIS =   64  64  64  64  64  64
+192:   Y-AXIS =   48  48  48  48  48  48  48  48
+144:  Cubic: cubed-sphere domain decomposition
+144: whalo =    1, ehalo =    1, shalo =    1, nhalo =    1
+144:   X-AXIS =   64  64  64  64  64  64
+144:   Y-AXIS =   48  48  48  48  48  48  48  48
+240:  Cubic: cubed-sphere domain decomposition
+240: whalo =    1, ehalo =    1, shalo =    1, nhalo =    1
+240:   X-AXIS =   64  64  64  64  64  64
+240:   Y-AXIS =   48  48  48  48  48  48  48  48
+  0:  ncnst=           8  num_prog=           8  pnats=           0  dnats=
+  0:            1  num_family=           0
+  0:  
+  0:  ==>Note from fv_grid_tools_mod(read_grid): read atmosphere grid from mosaic ver
+  0:  sion grid
+  0: MAX    AREA (m*m): 0.83424102615505E+09          MIN AREA (m*m): 0.36206275657188E+09
+  0: GLOBAL AREA (m*m): 0.51009649656012E+15 IDEAL GLOBAL AREA (m*m): 0.51009649655132E+15
+  0:  
+  0:   Radius is    6371200.00000000      , omega is   7.292100000000000E-005 
+  0:   small_fac =    1.00000000000000     
+  0:   Cubed-Sphere Grid Stats :          385 x         385 x           6
+  0:    20423.6683327020        28883.3298147668        144647.099517218     
+  0:    20423.6683327020        28883.3298147668     
+  0:       Grid Length               : min:  20423.67 max:  28883.33 avg: 144647.10 min/max:      0.71
+  0:       Deviation from Orthogonal : min:      0.00 max:     29.89 avg:     53.06
+  0:       Aspect Ratio              : min:      1.00 max:      1.06 avg:      6.10
+  0:  
+  0:  Corner interpolation coefficient=   1.49829998332004     
+ 48:  Corner interpolation coefficient=   1.49829998332020     
+240:  Corner interpolation coefficient=   1.49829998332023     
+192:  Corner interpolation coefficient=   1.49829998332011     
+ 96:  Corner interpolation coefficient=   1.49829998332012     
+144:  Corner interpolation coefficient=   1.49829998332014     
+  0:  da_max/da_min=   2.30413377518829     
+  0:  da_max_c/da_min_c=   2.30675628528661     
+  0:   
+  0:  Divergence damping Coefficients
+  0:  For small dt=   37.5000000000000     
+  0:  External mode del-2 (m**2/s)=  0.000000000000000E+000
+  0:  Internal mode del-2 SMAG dimensionless coeff=  0.100000000000000     
+  0:  Internal mode del-2 background diff=  0.000000000000000E+000
+  0:  Internal mode del-6 background diff=  0.120000000000000     
+  0:  tracer del-2 diff=  0.000000000000000E+000
+  0:  Vorticity del-4 (m**4/s)=   1398287.35676193     
+  0:  beta=  0.000000000000000E+000
+  0:   
+  0:  in fv_restart ncnst=           8
+  0:  FV_RESTART:            1 F F
+  0: Tracer sphum initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: Tracer liq_wat initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: Tracer rainwat initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: Tracer ice_wat initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: Tracer snowwat initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: Tracer graupel initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: Tracer o3mr initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+277:  enter get_nggps_ic is=  65 ie= 128 js= 289 je= 336 isd=  62 ied= 131 jsd= 286 jed= 339
+250:  enter get_nggps_ic is= 257 ie= 320 js=  49 je=  96 isd= 254 ied= 323 jsd=  46 jed=  99
+265:  enter get_nggps_ic is=  65 ie= 128 js= 193 je= 240 isd=  62 ied= 131 jsd= 190 jed= 243
+271:  enter get_nggps_ic is=  65 ie= 128 js= 241 je= 288 isd=  62 ied= 131 jsd= 238 jed= 291
+278:  enter get_nggps_ic is= 129 ie= 192 js= 289 je= 336 isd= 126 ied= 195 jsd= 286 jed= 339
+280:  enter get_nggps_ic is= 257 ie= 320 js= 289 je= 336 isd= 254 ied= 323 jsd= 286 jed= 339
+  0: Tracer cld_amt initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0:  Calling get_external_ic
+259:  enter get_nggps_ic is=  65 ie= 128 js= 145 je= 192 isd=  62 ied= 131 jsd= 142 jed= 195
+272:  enter get_nggps_ic is= 129 ie= 192 js= 241 je= 288 isd= 126 ied= 195 jsd= 238 jed= 291
+279:  enter get_nggps_ic is= 193 ie= 256 js= 289 je= 336 isd= 190 ied= 259 jsd= 286 jed= 339
+248:  enter get_nggps_ic is= 129 ie= 192 js=  49 je=  96 isd= 126 ied= 195 jsd=  46 jed=  99
+260:  enter get_nggps_ic is= 129 ie= 192 js= 145 je= 192 isd= 126 ied= 195 jsd= 142 jed= 195
+254:  enter get_nggps_ic is= 129 ie= 192 js=  97 je= 144 isd= 126 ied= 195 jsd=  94 jed= 147
+266:  enter get_nggps_ic is= 129 ie= 192 js= 193 je= 240 isd= 126 ied= 195 jsd= 190 jed= 243
+227:  enter get_nggps_ic is= 321 ie= 384 js= 241 je= 288 isd= 318 ied= 387 jsd= 238 jed= 291
+247:  enter get_nggps_ic is=  65 ie= 128 js=  49 je=  96 isd=  62 ied= 131 jsd=  46 jed=  99
+249:  enter get_nggps_ic is= 193 ie= 256 js=  49 je=  96 isd= 190 ied= 259 jsd=  46 jed=  99
+253:  enter get_nggps_ic is=  65 ie= 128 js=  97 je= 144 isd=  62 ied= 131 jsd=  94 jed= 147
+  0: NOTE from PE     0: Using external_IC::get_nggps_ic which is valid only for data which has been horizontally interpolated to the current cubed-sphere grid
+255:  enter get_nggps_ic is= 193 ie= 256 js=  97 je= 144 isd= 190 ied= 259 jsd=  94 jed= 147
+  2:  enter get_nggps_ic is= 129 ie= 192 js=   1 je=  48 isd= 126 ied= 195 jsd=  -2 jed=  51
+231:  enter get_nggps_ic is= 193 ie= 256 js= 289 je= 336 isd= 190 ied= 259 jsd= 286 jed= 339
+284:  enter get_nggps_ic is= 129 ie= 192 js= 337 je= 384 isd= 126 ied= 195 jsd= 334 jed= 387
+256:  enter get_nggps_ic is= 257 ie= 320 js=  97 je= 144 isd= 254 ied= 323 jsd=  94 jed= 147
+  8:  enter get_nggps_ic is= 129 ie= 192 js=  49 je=  96 isd= 126 ied= 195 jsd=  46 jed=  99
+233:  enter get_nggps_ic is= 321 ie= 384 js= 289 je= 336 isd= 318 ied= 387 jsd= 286 jed= 339
+267:  enter get_nggps_ic is= 193 ie= 256 js= 193 je= 240 isd= 190 ied= 259 jsd= 190 jed= 243
+ 12:  enter get_nggps_ic is=   1 ie=  64 js=  97 je= 144 isd=  -2 ied=  67 jsd=  94 jed= 147
+281:  enter get_nggps_ic is= 321 ie= 384 js= 289 je= 336 isd= 318 ied= 387 jsd= 286 jed= 339
+273:  enter get_nggps_ic is= 193 ie= 256 js= 241 je= 288 isd= 190 ied= 259 jsd= 238 jed= 291
+  9:  enter get_nggps_ic is= 193 ie= 256 js=  49 je=  96 isd= 190 ied= 259 jsd=  46 jed=  99
+230:  enter get_nggps_ic is= 129 ie= 192 js= 289 je= 336 isd= 126 ied= 195 jsd= 286 jed= 339
+261:  enter get_nggps_ic is= 193 ie= 256 js= 145 je= 192 isd= 190 ied= 259 jsd= 142 jed= 195
+  3:  enter get_nggps_ic is= 193 ie= 256 js=   1 je=  48 isd= 190 ied= 259 jsd=  -2 jed=  51
+238:  enter get_nggps_ic is= 257 ie= 320 js= 337 je= 384 isd= 254 ied= 323 jsd= 334 jed= 387
+285:  enter get_nggps_ic is= 193 ie= 256 js= 337 je= 384 isd= 190 ied= 259 jsd= 334 jed= 387
+262:  enter get_nggps_ic is= 257 ie= 320 js= 145 je= 192 isd= 254 ied= 323 jsd= 142 jed= 195
+204:  enter get_nggps_ic is=   1 ie=  64 js=  97 je= 144 isd=  -2 ied=  67 jsd=  94 jed= 147
+268:  enter get_nggps_ic is= 257 ie= 320 js= 193 je= 240 isd= 254 ied= 323 jsd= 190 jed= 243
+107:  enter get_nggps_ic is= 321 ie= 384 js=  49 je=  96 isd= 318 ied= 387 jsd=  46 jed=  99
+206:  enter get_nggps_ic is= 129 ie= 192 js=  97 je= 144 isd= 126 ied= 195 jsd=  94 jed= 147
+270:  enter get_nggps_ic is=   1 ie=  64 js= 241 je= 288 isd=  -2 ied=  67 jsd= 238 jed= 291
+223:  enter get_nggps_ic is=  65 ie= 128 js= 241 je= 288 isd=  62 ied= 131 jsd= 238 jed= 291
+282:  enter get_nggps_ic is=   1 ie=  64 js= 337 je= 384 isd=  -2 ied=  67 jsd= 334 jed= 387
+274:  enter get_nggps_ic is= 257 ie= 320 js= 241 je= 288 isd= 254 ied= 323 jsd= 238 jed= 291
+122:  enter get_nggps_ic is= 129 ie= 192 js= 193 je= 240 isd= 126 ied= 195 jsd= 190 jed= 243
+225:  enter get_nggps_ic is= 193 ie= 256 js= 241 je= 288 isd= 190 ied= 259 jsd= 238 jed= 291
+276:  enter get_nggps_ic is=   1 ie=  64 js= 289 je= 336 isd=  -2 ied=  67 jsd= 286 jed= 339
+109:  enter get_nggps_ic is=  65 ie= 128 js=  97 je= 144 isd=  62 ied= 131 jsd=  94 jed= 147
+283:  enter get_nggps_ic is=  65 ie= 128 js= 337 je= 384 isd=  62 ied= 131 jsd= 334 jed= 387
+275:  enter get_nggps_ic is= 321 ie= 384 js= 241 je= 288 isd= 318 ied= 387 jsd= 238 jed= 291
+263:  enter get_nggps_ic is= 321 ie= 384 js= 145 je= 192 isd= 318 ied= 387 jsd= 142 jed= 195
+111:  enter get_nggps_ic is= 193 ie= 256 js=  97 je= 144 isd= 190 ied= 259 jsd=  94 jed= 147
+128:  enter get_nggps_ic is= 129 ie= 192 js= 241 je= 288 isd= 126 ied= 195 jsd= 238 jed= 291
+212:  enter get_nggps_ic is= 129 ie= 192 js= 145 je= 192 isd= 126 ied= 195 jsd= 142 jed= 195
+191:  enter get_nggps_ic is= 321 ie= 384 js= 337 je= 384 isd= 318 ied= 387 jsd= 334 jed= 387
+269:  enter get_nggps_ic is= 321 ie= 384 js= 193 je= 240 isd= 318 ied= 387 jsd= 190 jed= 243
+  6:  enter get_nggps_ic is=   1 ie=  64 js=  49 je=  96 isd=  -2 ied=  67 jsd=  46 jed=  99
+115:  enter get_nggps_ic is=  65 ie= 128 js= 145 je= 192 isd=  62 ied= 131 jsd= 142 jed= 195
+130:  enter get_nggps_ic is= 257 ie= 320 js= 241 je= 288 isd= 254 ied= 323 jsd= 238 jed= 291
+ 52:  enter get_nggps_ic is= 257 ie= 320 js=   1 je=  48 isd= 254 ied= 323 jsd=  -2 jed=  51
+218:  enter get_nggps_ic is= 129 ie= 192 js= 193 je= 240 isd= 126 ied= 195 jsd= 190 jed= 243
+240:  enter get_nggps_ic is=   1 ie=  64 js=   1 je=  48 isd=  -2 ied=  67 jsd=  -2 jed=  51
+116:  enter get_nggps_ic is= 129 ie= 192 js= 145 je= 192 isd= 126 ied= 195 jsd= 142 jed= 195
+123:  enter get_nggps_ic is= 193 ie= 256 js= 193 je= 240 isd= 190 ied= 259 jsd= 190 jed= 243
+ 58:  enter get_nggps_ic is= 257 ie= 320 js=  49 je=  96 isd= 254 ied= 323 jsd=  46 jed=  99
+226:  enter get_nggps_ic is= 257 ie= 320 js= 241 je= 288 isd= 254 ied= 323 jsd= 238 jed= 291
+197:  enter get_nggps_ic is= 321 ie= 384 js=   1 je=  48 isd= 318 ied= 387 jsd=  -2 jed=  51
+246:  enter get_nggps_ic is=   1 ie=  64 js=  49 je=  96 isd=  -2 ied=  67 jsd=  46 jed=  99
+117:  enter get_nggps_ic is= 193 ie= 256 js= 145 je= 192 isd= 190 ied= 259 jsd= 142 jed= 195
+127:  enter get_nggps_ic is=  65 ie= 128 js= 241 je= 288 isd=  62 ied= 131 jsd= 238 jed= 291
+211:  enter get_nggps_ic is=  65 ie= 128 js= 145 je= 192 isd=  62 ied= 131 jsd= 142 jed= 195
+252:  enter get_nggps_ic is=   1 ie=  64 js=  97 je= 144 isd=  -2 ied=  67 jsd=  94 jed= 147
+ 16:  enter get_nggps_ic is= 257 ie= 320 js=  97 je= 144 isd= 254 ied= 323 jsd=  94 jed= 147
+105:  enter get_nggps_ic is= 193 ie= 256 js=  49 je=  96 isd= 190 ied= 259 jsd=  46 jed=  99
+129:  enter get_nggps_ic is= 193 ie= 256 js= 241 je= 288 isd= 190 ied= 259 jsd= 238 jed= 291
+217:  enter get_nggps_ic is=  65 ie= 128 js= 193 je= 240 isd=  62 ied= 131 jsd= 190 jed= 243
+286:  enter get_nggps_ic is= 257 ie= 320 js= 337 je= 384 isd= 254 ied= 323 jsd= 334 jed= 387
+245:  enter get_nggps_ic is= 321 ie= 384 js=   1 je=  48 isd= 318 ied= 387 jsd=  -2 jed=  51
+ 18:  enter get_nggps_ic is=   1 ie=  64 js= 145 je= 192 isd=  -2 ied=  67 jsd= 142 jed= 195
+106:  enter get_nggps_ic is= 257 ie= 320 js=  49 je=  96 isd= 254 ied= 323 jsd=  46 jed=  99
+142:  enter get_nggps_ic is= 257 ie= 320 js= 337 je= 384 isd= 254 ied= 323 jsd= 334 jed= 387
+ 40:  enter get_nggps_ic is= 257 ie= 320 js= 289 je= 336 isd= 254 ied= 323 jsd= 286 jed= 339
+224:  enter get_nggps_ic is= 129 ie= 192 js= 241 je= 288 isd= 126 ied= 195 jsd= 238 jed= 291
+187:  enter get_nggps_ic is=  65 ie= 128 js= 337 je= 384 isd=  62 ied= 131 jsd= 334 jed= 387
+264:  enter get_nggps_ic is=   1 ie=  64 js= 193 je= 240 isd=  -2 ied=  67 jsd= 190 jed= 243
+ 31:  enter get_nggps_ic is=  65 ie= 128 js= 241 je= 288 isd=  62 ied= 131 jsd= 238 jed= 291
+108:  enter get_nggps_ic is=   1 ie=  64 js=  97 je= 144 isd=  -2 ied=  67 jsd=  94 jed= 147
+144:  enter get_nggps_ic is=   1 ie=  64 js=   1 je=  48 isd=  -2 ied=  67 jsd=  -2 jed=  51
+ 42:  enter get_nggps_ic is=   1 ie=  64 js= 337 je= 384 isd=  -2 ied=  67 jsd= 334 jed= 387
+228:  enter get_nggps_ic is=   1 ie=  64 js= 289 je= 336 isd=  -2 ied=  67 jsd= 286 jed= 339
+287:  enter get_nggps_ic is= 321 ie= 384 js= 337 je= 384 isd= 318 ied= 387 jsd= 334 jed= 387
+189:  enter get_nggps_ic is= 193 ie= 256 js= 337 je= 384 isd= 190 ied= 259 jsd= 334 jed= 387
+258:  enter get_nggps_ic is=   1 ie=  64 js= 145 je= 192 isd=  -2 ied=  67 jsd= 142 jed= 195
+ 37:  enter get_nggps_ic is=  65 ie= 128 js= 289 je= 336 isd=  62 ied= 131 jsd= 286 jed= 339
+114:  enter get_nggps_ic is=   1 ie=  64 js= 145 je= 192 isd=  -2 ied=  67 jsd= 142 jed= 195
+145:  enter get_nggps_ic is=  65 ie= 128 js=   1 je=  48 isd=  62 ied= 131 jsd=  -2 jed=  51
+ 43:  enter get_nggps_ic is=  65 ie= 128 js= 337 je= 384 isd=  62 ied= 131 jsd= 334 jed= 387
+229:  enter get_nggps_ic is=  65 ie= 128 js= 289 je= 336 isd=  62 ied= 131 jsd= 286 jed= 339
+190:  enter get_nggps_ic is= 257 ie= 320 js= 337 je= 384 isd= 254 ied= 323 jsd= 334 jed= 387
+251:  enter get_nggps_ic is= 321 ie= 384 js=  49 je=  96 isd= 318 ied= 387 jsd=  46 jed=  99
+ 38:  enter get_nggps_ic is= 129 ie= 192 js= 289 je= 336 isd= 126 ied= 195 jsd= 286 jed= 339
+ 80:  enter get_nggps_ic is= 129 ie= 192 js= 241 je= 288 isd= 126 ied= 195 jsd= 238 jed= 291
+147:  enter get_nggps_ic is= 193 ie= 256 js=   1 je=  48 isd= 190 ied= 259 jsd=  -2 jed=  51
+ 44:  enter get_nggps_ic is= 129 ie= 192 js= 337 je= 384 isd= 126 ied= 195 jsd= 334 jed= 387
+203:  enter get_nggps_ic is= 321 ie= 384 js=  49 je=  96 isd= 318 ied= 387 jsd=  46 jed=  99
+193:  enter get_nggps_ic is=  65 ie= 128 js=   1 je=  48 isd=  62 ied= 131 jsd=  -2 jed=  51
+257:  enter get_nggps_ic is= 321 ie= 384 js=  97 je= 144 isd= 318 ied= 387 jsd=  94 jed= 147
+ 39:  enter get_nggps_ic is= 193 ie= 256 js= 289 je= 336 isd= 190 ied= 259 jsd= 286 jed= 339
+ 82:  enter get_nggps_ic is= 257 ie= 320 js= 241 je= 288 isd= 254 ied= 323 jsd= 238 jed= 291
+148:  enter get_nggps_ic is= 257 ie= 320 js=   1 je=  48 isd= 254 ied= 323 jsd=  -2 jed=  51
+ 45:  enter get_nggps_ic is= 193 ie= 256 js= 337 je= 384 isd= 190 ied= 259 jsd= 334 jed= 387
+205:  enter get_nggps_ic is=  65 ie= 128 js=  97 je= 144 isd=  62 ied= 131 jsd=  94 jed= 147
+195:  enter get_nggps_ic is= 193 ie= 256 js=   1 je=  48 isd= 190 ied= 259 jsd=  -2 jed=  51
+  0: NOTE from PE     0: External_IC::get_nggps_ic -  use externally-generated, filtered terrain and NCEP pressure levels (no vertical remapping)
+  0:  enter get_nggps_ic is=   1 ie=  64 js=   1 je=  48 isd=  -2 ied=  67 jsd=  -2 jed=  51
+ 84:  enter get_nggps_ic is=   1 ie=  64 js= 289 je= 336 isd=  -2 ied=  67 jsd= 286 jed= 339
+149:  enter get_nggps_ic is= 321 ie= 384 js=   1 je=  48 isd= 318 ied= 387 jsd=  -2 jed=  51
+ 46:  enter get_nggps_ic is= 257 ie= 320 js= 337 je= 384 isd= 254 ied= 323 jsd= 334 jed= 387
+208:  enter get_nggps_ic is= 257 ie= 320 js=  97 je= 144 isd= 254 ied= 323 jsd=  94 jed= 147
+196:  enter get_nggps_ic is= 257 ie= 320 js=   1 je=  48 isd= 254 ied= 323 jsd=  -2 jed=  51
+  1:  enter get_nggps_ic is=  65 ie= 128 js=   1 je=  48 isd=  62 ied= 131 jsd=  -2 jed=  51
+ 85:  enter get_nggps_ic is=  65 ie= 128 js= 289 je= 336 isd=  62 ied= 131 jsd= 286 jed= 339
+150:  enter get_nggps_ic is=   1 ie=  64 js=  49 je=  96 isd=  -2 ied=  67 jsd=  46 jed=  99
+ 47:  enter get_nggps_ic is= 321 ie= 384 js= 337 je= 384 isd= 318 ied= 387 jsd= 334 jed= 387
+221:  enter get_nggps_ic is= 321 ie= 384 js= 193 je= 240 isd= 318 ied= 387 jsd= 190 jed= 243
+199:  enter get_nggps_ic is=  65 ie= 128 js=  49 je=  96 isd=  62 ied= 131 jsd=  46 jed=  99
+  7:  enter get_nggps_ic is=  65 ie= 128 js=  49 je=  96 isd=  62 ied= 131 jsd=  46 jed=  99
+ 86:  enter get_nggps_ic is= 129 ie= 192 js= 289 je= 336 isd= 126 ied= 195 jsd= 286 jed= 339
+151:  enter get_nggps_ic is=  65 ie= 128 js=  49 je=  96 isd=  62 ied= 131 jsd=  46 jed=  99
+ 49:  enter get_nggps_ic is=  65 ie= 128 js=   1 je=  48 isd=  62 ied= 131 jsd=  -2 jed=  51
+210:  enter get_nggps_ic is=   1 ie=  64 js= 145 je= 192 isd=  -2 ied=  67 jsd= 142 jed= 195
+186:  enter get_nggps_ic is=   1 ie=  64 js= 337 je= 384 isd=  -2 ied=  67 jsd= 334 jed= 387
+ 13:  enter get_nggps_ic is=  65 ie= 128 js=  97 je= 144 isd=  62 ied= 131 jsd=  94 jed= 147
+ 88:  enter get_nggps_ic is= 257 ie= 320 js= 289 je= 336 isd= 254 ied= 323 jsd= 286 jed= 339
+152:  enter get_nggps_ic is= 129 ie= 192 js=  49 je=  96 isd= 126 ied= 195 jsd=  46 jed=  99
+ 50:  enter get_nggps_ic is= 129 ie= 192 js=   1 je=  48 isd= 126 ied= 195 jsd=  -2 jed=  51
+214:  enter get_nggps_ic is= 257 ie= 320 js= 145 je= 192 isd= 254 ied= 323 jsd= 142 jed= 195
+188:  enter get_nggps_ic is= 129 ie= 192 js= 337 je= 384 isd= 126 ied= 195 jsd= 334 jed= 387
+ 15:  enter get_nggps_ic is= 193 ie= 256 js=  97 je= 144 isd= 190 ied= 259 jsd=  94 jed= 147
+ 94:  enter get_nggps_ic is= 257 ie= 320 js= 337 je= 384 isd= 254 ied= 323 jsd= 334 jed= 387
+153:  enter get_nggps_ic is= 193 ie= 256 js=  49 je=  96 isd= 190 ied= 259 jsd=  46 jed=  99
+ 51:  enter get_nggps_ic is= 193 ie= 256 js=   1 je=  48 isd= 190 ied= 259 jsd=  -2 jed=  51
+216:  enter get_nggps_ic is=   1 ie=  64 js= 193 je= 240 isd=  -2 ied=  67 jsd= 190 jed= 243
+192:  enter get_nggps_ic is=   1 ie=  64 js=   1 je=  48 isd=  -2 ied=  67 jsd=  -2 jed=  51
+ 19:  enter get_nggps_ic is=  65 ie= 128 js= 145 je= 192 isd=  62 ied= 131 jsd= 142 jed= 195
+ 99:  enter get_nggps_ic is= 193 ie= 256 js=   1 je=  48 isd= 190 ied= 259 jsd=  -2 jed=  51
+120:  enter get_nggps_ic is=   1 ie=  64 js= 193 je= 240 isd=  -2 ied=  67 jsd= 190 jed= 243
+ 53:  enter get_nggps_ic is= 321 ie= 384 js=   1 je=  48 isd= 318 ied= 387 jsd=  -2 jed=  51
+200:  enter get_nggps_ic is= 129 ie= 192 js=  49 je=  96 isd= 126 ied= 195 jsd=  46 jed=  99
+194:  enter get_nggps_ic is= 129 ie= 192 js=   1 je=  48 isd= 126 ied= 195 jsd=  -2 jed=  51
+ 21:  enter get_nggps_ic is= 193 ie= 256 js= 145 je= 192 isd= 190 ied= 259 jsd= 142 jed= 195
+100:  enter get_nggps_ic is= 257 ie= 320 js=   1 je=  48 isd= 254 ied= 323 jsd=  -2 jed=  51
+121:  enter get_nggps_ic is=  65 ie= 128 js= 193 je= 240 isd=  62 ied= 131 jsd= 190 jed= 243
+ 55:  enter get_nggps_ic is=  65 ie= 128 js=  49 je=  96 isd=  62 ied= 131 jsd=  46 jed=  99
+202:  enter get_nggps_ic is= 257 ie= 320 js=  49 je=  96 isd= 254 ied= 323 jsd=  46 jed=  99
+198:  enter get_nggps_ic is=   1 ie=  64 js=  49 je=  96 isd=  -2 ied=  67 jsd=  46 jed=  99
+ 24:  enter get_nggps_ic is=   1 ie=  64 js= 193 je= 240 isd=  -2 ied=  67 jsd= 190 jed= 243
+101:  enter get_nggps_ic is= 321 ie= 384 js=   1 je=  48 isd= 318 ied= 387 jsd=  -2 jed=  51
+126:  enter get_nggps_ic is=   1 ie=  64 js= 241 je= 288 isd=  -2 ied=  67 jsd= 238 jed= 291
+ 56:  enter get_nggps_ic is= 129 ie= 192 js=  49 je=  96 isd= 126 ied= 195 jsd=  46 jed=  99
+207:  enter get_nggps_ic is= 193 ie= 256 js=  97 je= 144 isd= 190 ied= 259 jsd=  94 jed= 147
+ 25:  enter get_nggps_ic is=  65 ie= 128 js= 193 je= 240 isd=  62 ied= 131 jsd= 190 jed= 243
+ 81:  enter get_nggps_ic is= 193 ie= 256 js= 241 je= 288 isd= 190 ied= 259 jsd= 238 jed= 291
+132:  enter get_nggps_ic is=   1 ie=  64 js= 289 je= 336 isd=  -2 ied=  67 jsd= 286 jed= 339
+ 57:  enter get_nggps_ic is= 193 ie= 256 js=  49 je=  96 isd= 190 ied= 259 jsd=  46 jed=  99
+209:  enter get_nggps_ic is= 321 ie= 384 js=  97 je= 144 isd= 318 ied= 387 jsd=  94 jed= 147
+ 27:  enter get_nggps_ic is= 193 ie= 256 js= 193 je= 240 isd= 190 ied= 259 jsd= 190 jed= 243
+ 83:  enter get_nggps_ic is= 321 ie= 384 js= 241 je= 288 isd= 318 ied= 387 jsd= 238 jed= 291
+133:  enter get_nggps_ic is=  65 ie= 128 js= 289 je= 336 isd=  62 ied= 131 jsd= 286 jed= 339
+ 59:  enter get_nggps_ic is= 321 ie= 384 js=  49 je=  96 isd= 318 ied= 387 jsd=  46 jed=  99
+215:  enter get_nggps_ic is= 321 ie= 384 js= 145 je= 192 isd= 318 ied= 387 jsd= 142 jed= 195
+ 30:  enter get_nggps_ic is=   1 ie=  64 js= 241 je= 288 isd=  -2 ied=  67 jsd= 238 jed= 291
+ 87:  enter get_nggps_ic is= 193 ie= 256 js= 289 je= 336 isd= 190 ied= 259 jsd= 286 jed= 339
+134:  enter get_nggps_ic is= 129 ie= 192 js= 289 je= 336 isd= 126 ied= 195 jsd= 286 jed= 339
+ 63:  enter get_nggps_ic is= 193 ie= 256 js=  97 je= 144 isd= 190 ied= 259 jsd=  94 jed= 147
+219:  enter get_nggps_ic is= 193 ie= 256 js= 193 je= 240 isd= 190 ied= 259 jsd= 190 jed= 243
+ 32:  enter get_nggps_ic is= 129 ie= 192 js= 241 je= 288 isd= 126 ied= 195 jsd= 238 jed= 291
+ 89:  enter get_nggps_ic is= 321 ie= 384 js= 289 je= 336 isd= 318 ied= 387 jsd= 286 jed= 339
+135:  enter get_nggps_ic is= 193 ie= 256 js= 289 je= 336 isd= 190 ied= 259 jsd= 286 jed= 339
+ 65:  enter get_nggps_ic is= 321 ie= 384 js=  97 je= 144 isd= 318 ied= 387 jsd=  94 jed= 147
+234:  enter get_nggps_ic is=   1 ie=  64 js= 337 je= 384 isd=  -2 ied=  67 jsd= 334 jed= 387
+ 33:  enter get_nggps_ic is= 193 ie= 256 js= 241 je= 288 isd= 190 ied= 259 jsd= 238 jed= 291
+ 93:  enter get_nggps_ic is= 193 ie= 256 js= 337 je= 384 isd= 190 ied= 259 jsd= 334 jed= 387
+138:  enter get_nggps_ic is=   1 ie=  64 js= 337 je= 384 isd=  -2 ied=  67 jsd= 334 jed= 387
+ 70:  enter get_nggps_ic is= 257 ie= 320 js= 145 je= 192 isd= 254 ied= 323 jsd= 142 jed= 195
+235:  enter get_nggps_ic is=  65 ie= 128 js= 337 je= 384 isd=  62 ied= 131 jsd= 334 jed= 387
+ 36:  enter get_nggps_ic is=   1 ie=  64 js= 289 je= 336 isd=  -2 ied=  67 jsd= 286 jed= 339
+ 95:  enter get_nggps_ic is= 321 ie= 384 js= 337 je= 384 isd= 318 ied= 387 jsd= 334 jed= 387
+139:  enter get_nggps_ic is=  65 ie= 128 js= 337 je= 384 isd=  62 ied= 131 jsd= 334 jed= 387
+ 71:  enter get_nggps_ic is= 321 ie= 384 js= 145 je= 192 isd= 318 ied= 387 jsd= 142 jed= 195
+237:  enter get_nggps_ic is= 193 ie= 256 js= 337 je= 384 isd= 190 ied= 259 jsd= 334 jed= 387
+  0: NOTE from PE     0: ==> External_ic::get_nggps_ic: using control file gfs_ctrl.nc for NGGPS IC
+ 96:  enter get_nggps_ic is=   1 ie=  64 js=   1 je=  48 isd=  -2 ied=  67 jsd=  -2 jed=  51
+140:  enter get_nggps_ic is= 129 ie= 192 js= 337 je= 384 isd= 126 ied= 195 jsd= 334 jed= 387
+ 79:  enter get_nggps_ic is=  65 ie= 128 js= 241 je= 288 isd=  62 ied= 131 jsd= 238 jed= 291
+201:  enter get_nggps_ic is= 193 ie= 256 js=  49 je=  96 isd= 190 ied= 259 jsd=  46 jed=  99
+  4:  enter get_nggps_ic is= 257 ie= 320 js=   1 je=  48 isd= 254 ied= 323 jsd=  -2 jed=  51
+ 90:  enter get_nggps_ic is=   1 ie=  64 js= 337 je= 384 isd=  -2 ied=  67 jsd= 334 jed= 387
+141:  enter get_nggps_ic is= 193 ie= 256 js= 337 je= 384 isd= 190 ied= 259 jsd= 334 jed= 387
+ 41:  enter get_nggps_ic is= 321 ie= 384 js= 289 je= 336 isd= 318 ied= 387 jsd= 286 jed= 339
+213:  enter get_nggps_ic is= 193 ie= 256 js= 145 je= 192 isd= 190 ied= 259 jsd= 142 jed= 195
+ 10:  enter get_nggps_ic is= 257 ie= 320 js=  49 je=  96 isd= 254 ied= 323 jsd=  46 jed=  99
+ 92:  enter get_nggps_ic is= 129 ie= 192 js= 337 je= 384 isd= 126 ied= 195 jsd= 334 jed= 387
+146:  enter get_nggps_ic is= 129 ie= 192 js=   1 je=  48 isd= 126 ied= 195 jsd=  -2 jed=  51
+ 48:  enter get_nggps_ic is=   1 ie=  64 js=   1 je=  48 isd=  -2 ied=  67 jsd=  -2 jed=  51
+220:  enter get_nggps_ic is= 257 ie= 320 js= 193 je= 240 isd= 254 ied= 323 jsd= 190 jed= 243
+ 14:  enter get_nggps_ic is= 129 ie= 192 js=  97 je= 144 isd= 126 ied= 195 jsd=  94 jed= 147
+103:  enter get_nggps_ic is=  65 ie= 128 js=  49 je=  96 isd=  62 ied= 131 jsd=  46 jed=  99
+143:  enter get_nggps_ic is= 321 ie= 384 js= 337 je= 384 isd= 318 ied= 387 jsd= 334 jed= 387
+ 64:  enter get_nggps_ic is= 257 ie= 320 js=  97 je= 144 isd= 254 ied= 323 jsd=  94 jed= 147
+222:  enter get_nggps_ic is=   1 ie=  64 js= 241 je= 288 isd=  -2 ied=  67 jsd= 238 jed= 291
+ 17:  enter get_nggps_ic is= 321 ie= 384 js=  97 je= 144 isd= 318 ied= 387 jsd=  94 jed= 147
+ 98:  enter get_nggps_ic is= 129 ie= 192 js=   1 je=  48 isd= 126 ied= 195 jsd=  -2 jed=  51
+124:  enter get_nggps_ic is= 257 ie= 320 js= 193 je= 240 isd= 254 ied= 323 jsd= 190 jed= 243
+ 68:  enter get_nggps_ic is= 129 ie= 192 js= 145 je= 192 isd= 126 ied= 195 jsd= 142 jed= 195
+236:  enter get_nggps_ic is= 129 ie= 192 js= 337 je= 384 isd= 126 ied= 195 jsd= 334 jed= 387
+ 20:  enter get_nggps_ic is= 129 ie= 192 js= 145 je= 192 isd= 126 ied= 195 jsd= 142 jed= 195
+ 97:  enter get_nggps_ic is=  65 ie= 128 js=   1 je=  48 isd=  62 ied= 131 jsd=  -2 jed=  51
+136:  enter get_nggps_ic is= 257 ie= 320 js= 289 je= 336 isd= 254 ied= 323 jsd= 286 jed= 339
+ 69:  enter get_nggps_ic is= 193 ie= 256 js= 145 je= 192 isd= 190 ied= 259 jsd= 142 jed= 195
+239:  enter get_nggps_ic is= 321 ie= 384 js= 337 je= 384 isd= 318 ied= 387 jsd= 334 jed= 387
+ 22:  enter get_nggps_ic is= 257 ie= 320 js= 145 je= 192 isd= 254 ied= 323 jsd= 142 jed= 195
+104:  enter get_nggps_ic is= 129 ie= 192 js=  49 je=  96 isd= 126 ied= 195 jsd=  46 jed=  99
+ 75:  enter get_nggps_ic is= 193 ie= 256 js= 193 je= 240 isd= 190 ied= 259 jsd= 190 jed= 243
+232:  enter get_nggps_ic is= 257 ie= 320 js= 289 je= 336 isd= 254 ied= 323 jsd= 286 jed= 339
+ 23:  enter get_nggps_ic is= 321 ie= 384 js= 145 je= 192 isd= 318 ied= 387 jsd= 142 jed= 195
+ 91:  enter get_nggps_ic is=  65 ie= 128 js= 337 je= 384 isd=  62 ied= 131 jsd= 334 jed= 387
+ 76:  enter get_nggps_ic is= 257 ie= 320 js= 193 je= 240 isd= 254 ied= 323 jsd= 190 jed= 243
+ 26:  enter get_nggps_ic is= 129 ie= 192 js= 193 je= 240 isd= 126 ied= 195 jsd= 190 jed= 243
+102:  enter get_nggps_ic is=   1 ie=  64 js=  49 je=  96 isd=  -2 ied=  67 jsd=  46 jed=  99
+ 77:  enter get_nggps_ic is= 321 ie= 384 js= 193 je= 240 isd= 318 ied= 387 jsd= 190 jed= 243
+ 28:  enter get_nggps_ic is= 257 ie= 320 js= 193 je= 240 isd= 254 ied= 323 jsd= 190 jed= 243
+112:  enter get_nggps_ic is= 257 ie= 320 js=  97 je= 144 isd= 254 ied= 323 jsd=  94 jed= 147
+ 78:  enter get_nggps_ic is=   1 ie=  64 js= 241 je= 288 isd=  -2 ied=  67 jsd= 238 jed= 291
+ 29:  enter get_nggps_ic is= 321 ie= 384 js= 193 je= 240 isd= 318 ied= 387 jsd= 190 jed= 243
+118:  enter get_nggps_ic is= 257 ie= 320 js= 145 je= 192 isd= 254 ied= 323 jsd= 142 jed= 195
+ 54:  enter get_nggps_ic is=   1 ie=  64 js=  49 je=  96 isd=  -2 ied=  67 jsd=  46 jed=  99
+ 34:  enter get_nggps_ic is= 257 ie= 320 js= 241 je= 288 isd= 254 ied= 323 jsd= 238 jed= 291
+110:  enter get_nggps_ic is= 129 ie= 192 js=  97 je= 144 isd= 126 ied= 195 jsd=  94 jed= 147
+ 61:  enter get_nggps_ic is=  65 ie= 128 js=  97 je= 144 isd=  62 ied= 131 jsd=  94 jed= 147
+  5:  enter get_nggps_ic is= 321 ie= 384 js=   1 je=  48 isd= 318 ied= 387 jsd=  -2 jed=  51
+113:  enter get_nggps_ic is= 321 ie= 384 js=  97 je= 144 isd= 318 ied= 387 jsd=  94 jed= 147
+ 62:  enter get_nggps_ic is= 129 ie= 192 js=  97 je= 144 isd= 126 ied= 195 jsd=  94 jed= 147
+ 11:  enter get_nggps_ic is= 321 ie= 384 js=  49 je=  96 isd= 318 ied= 387 jsd=  46 jed=  99
+ 67:  enter get_nggps_ic is=  65 ie= 128 js= 145 je= 192 isd=  62 ied= 131 jsd= 142 jed= 195
+ 35:  enter get_nggps_ic is= 321 ie= 384 js= 241 je= 288 isd= 318 ied= 387 jsd= 238 jed= 291
+ 72:  enter get_nggps_ic is=   1 ie=  64 js= 193 je= 240 isd=  -2 ied=  67 jsd= 190 jed= 243
+ 73:  enter get_nggps_ic is=  65 ie= 128 js= 193 je= 240 isd=  62 ied= 131 jsd= 190 jed= 243
+ 74:  enter get_nggps_ic is= 129 ie= 192 js= 193 je= 240 isd= 126 ied= 195 jsd= 190 jed= 243
+ 60:  enter get_nggps_ic is=   1 ie=  64 js=  97 je= 144 isd=  -2 ied=  67 jsd=  94 jed= 147
+ 66:  enter get_nggps_ic is=   1 ie=  64 js= 145 je= 192 isd=  -2 ied=  67 jsd= 142 jed= 195
+156:  enter get_nggps_ic is=   1 ie=  64 js=  97 je= 144 isd=  -2 ied=  67 jsd=  94 jed= 147
+185:  enter get_nggps_ic is= 321 ie= 384 js= 289 je= 336 isd= 318 ied= 387 jsd= 286 jed= 339
+155:  enter get_nggps_ic is= 321 ie= 384 js=  49 je=  96 isd= 318 ied= 387 jsd=  46 jed=  99
+157:  enter get_nggps_ic is=  65 ie= 128 js=  97 je= 144 isd=  62 ied= 131 jsd=  94 jed= 147
+159:  enter get_nggps_ic is= 193 ie= 256 js=  97 je= 144 isd= 190 ied= 259 jsd=  94 jed= 147
+119:  enter get_nggps_ic is= 321 ie= 384 js= 145 je= 192 isd= 318 ied= 387 jsd= 142 jed= 195
+158:  enter get_nggps_ic is= 129 ie= 192 js=  97 je= 144 isd= 126 ied= 195 jsd=  94 jed= 147
+154:  enter get_nggps_ic is= 257 ie= 320 js=  49 je=  96 isd= 254 ied= 323 jsd=  46 jed=  99
+241:  enter get_nggps_ic is=  65 ie= 128 js=   1 je=  48 isd=  62 ied= 131 jsd=  -2 jed=  51
+160:  enter get_nggps_ic is= 257 ie= 320 js=  97 je= 144 isd= 254 ied= 323 jsd=  94 jed= 147
+242:  enter get_nggps_ic is= 129 ie= 192 js=   1 je=  48 isd= 126 ied= 195 jsd=  -2 jed=  51
+166:  enter get_nggps_ic is= 257 ie= 320 js= 145 je= 192 isd= 254 ied= 323 jsd= 142 jed= 195
+244:  enter get_nggps_ic is= 257 ie= 320 js=   1 je=  48 isd= 254 ied= 323 jsd=  -2 jed=  51
+161:  enter get_nggps_ic is= 321 ie= 384 js=  97 je= 144 isd= 318 ied= 387 jsd=  94 jed= 147
+243:  enter get_nggps_ic is= 193 ie= 256 js=   1 je=  48 isd= 190 ied= 259 jsd=  -2 jed=  51
+125:  enter get_nggps_ic is= 321 ie= 384 js= 193 je= 240 isd= 318 ied= 387 jsd= 190 jed= 243
+131:  enter get_nggps_ic is= 321 ie= 384 js= 241 je= 288 isd= 318 ied= 387 jsd= 238 jed= 291
+137:  enter get_nggps_ic is= 321 ie= 384 js= 289 je= 336 isd= 318 ied= 387 jsd= 286 jed= 339
+162:  enter get_nggps_ic is=   1 ie=  64 js= 145 je= 192 isd=  -2 ied=  67 jsd= 142 jed= 195
+163:  enter get_nggps_ic is=  65 ie= 128 js= 145 je= 192 isd=  62 ied= 131 jsd= 142 jed= 195
+164:  enter get_nggps_ic is= 129 ie= 192 js= 145 je= 192 isd= 126 ied= 195 jsd= 142 jed= 195
+165:  enter get_nggps_ic is= 193 ie= 256 js= 145 je= 192 isd= 190 ied= 259 jsd= 142 jed= 195
+167:  enter get_nggps_ic is= 321 ie= 384 js= 145 je= 192 isd= 318 ied= 387 jsd= 142 jed= 195
+179:  enter get_nggps_ic is= 321 ie= 384 js= 241 je= 288 isd= 318 ied= 387 jsd= 238 jed= 291
+170:  enter get_nggps_ic is= 129 ie= 192 js= 193 je= 240 isd= 126 ied= 195 jsd= 190 jed= 243
+172:  enter get_nggps_ic is= 257 ie= 320 js= 193 je= 240 isd= 254 ied= 323 jsd= 190 jed= 243
+176:  enter get_nggps_ic is= 129 ie= 192 js= 241 je= 288 isd= 126 ied= 195 jsd= 238 jed= 291
+178:  enter get_nggps_ic is= 257 ie= 320 js= 241 je= 288 isd= 254 ied= 323 jsd= 238 jed= 291
+183:  enter get_nggps_ic is= 193 ie= 256 js= 289 je= 336 isd= 190 ied= 259 jsd= 286 jed= 339
+171:  enter get_nggps_ic is= 193 ie= 256 js= 193 je= 240 isd= 190 ied= 259 jsd= 190 jed= 243
+177:  enter get_nggps_ic is= 193 ie= 256 js= 241 je= 288 isd= 190 ied= 259 jsd= 238 jed= 291
+182:  enter get_nggps_ic is= 129 ie= 192 js= 289 je= 336 isd= 126 ied= 195 jsd= 286 jed= 339
+184:  enter get_nggps_ic is= 257 ie= 320 js= 289 je= 336 isd= 254 ied= 323 jsd= 286 jed= 339
+168:  enter get_nggps_ic is=   1 ie=  64 js= 193 je= 240 isd=  -2 ied=  67 jsd= 190 jed= 243
+174:  enter get_nggps_ic is=   1 ie=  64 js= 241 je= 288 isd=  -2 ied=  67 jsd= 238 jed= 291
+175:  enter get_nggps_ic is=  65 ie= 128 js= 241 je= 288 isd=  62 ied= 131 jsd= 238 jed= 291
+181:  enter get_nggps_ic is=  65 ie= 128 js= 289 je= 336 isd=  62 ied= 131 jsd= 286 jed= 339
+169:  enter get_nggps_ic is=  65 ie= 128 js= 193 je= 240 isd=  62 ied= 131 jsd= 190 jed= 243
+180:  enter get_nggps_ic is=   1 ie=  64 js= 289 je= 336 isd=  -2 ied=  67 jsd= 286 jed= 339
+173:  enter get_nggps_ic is= 321 ie= 384 js= 193 je= 240 isd= 318 ied= 387 jsd= 190 jed= 243
+  0: NOTE from PE     0: ==> External_ic::get_nggps_ic: using tiled data file oro_data.nc for NGGPS IC
+  0: NOTE from PE     0: ==> External_ic::get_nggps_ic: using tiled data file sfc_data.nc for NGGPS IC
+  0: NOTE from PE     0: ==> External_ic::get_nggps_ic: using tiled data file gfs_data.nc for NGGPS IC
+  0: Tracer sphum initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: Tracer liq_wat initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: Tracer rainwat initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: Tracer ice_wat initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: Tracer snowwat initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: Tracer graupel initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: Tracer o3mr initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: Tracer cld_amt initialized with surface value of 0.100000E+31 and vertical multiplier of   1.000000
+  0: NOTE from PE     0: MPP_IO_SET_STACK_SIZE: stack size set to     202800.
+  0: NOTE from PE     0: MPP_IO_SET_STACK_SIZE: stack size set to     203840.
+  1:  In remap_scalar:
+  1:  ncnst =            8
+  1:  nwat =            6
+  1:  sphum    =            1
+  1:  clwmr    =            2
+  1:   o3mr    =            7
+  1:  liq_aero =  -2147483646
+  1:  ice_aero =  -2147483646
+  1:  rainwat =            3
+  1:  ice_wat =            4
+  1:  snowwat =            5
+  1:  graupel =            6
+  0:   ptop & ks    20.0000000000000               21
+  0:  GFS ak(1)=  0.000000000000000E+000  ak(2)=   20.0000000000000     
+  0:  delz_model  -33.4133300781347       -8907.23828124998     
+  0:  sphum_model  2.088272385299206E-002  0.000000000000000E+000
+  0:  liq_wat_model  1.936961059800116E-003 -1.156891239375803E-004
+  0:  ice_wat_model  2.000000000000000E-003 -1.520078689173272E-004
+  0:  PS_model (mb)   1039.00454012381        490.866359854248     
+  0:  PT_model   310.551448434247        181.799439312737     
+  0:  Global Area=   510096496560119.     
+  0:  ZS_model   5863.98291015625       -176.930679321289     
+  0:    232.022350569081     
+  0:  ZS_data   5861.81738281250       -247.319305419922        232.033710868500     
+  0:  ZS_diff (m)   1171.56860351563       -1293.82922363281     
+  0:  -1.136029941915076E-002
+  0:  DATA_IC Z500   5648.50767209268        5542.91336117708     
+  0:    5541.91956089375        5875.38571180403     
+  0:  fv3_IC Z500   5648.47719708684        5542.86857823085     
+  0:    5541.90391277143        5875.35465588599     
+  0:  PS_diff (mb)   134.724589958502       -107.485233889806     
+  0:   1.146628049242701E-003
+  0:  done remap_scalar
+  0:  done remap_dwinds
+  0:  PS max =    1039.00454012381       min =    490.866359854248     
+  0:  T max =    310.551448434247       min =    181.799439312737     
+  0:  W max =    2.22390252701238       min =  -0.602159672522752     
+  0:  SPHUM max =   2.088271615204249E-002  min =   0.000000000000000E+000
+  0:  TS max =    313.601226806641       min =    195.294311523438     
+  0:  liq_wat max =   1.933216494729662E-003  min =  -1.157025094595371E-004
+  0:  ice_wat max =   1.996006872965356E-003  min =  -1.520309788224273E-004
+  0:  rainwat max =   0.000000000000000E+000  min =   0.000000000000000E+000
+  0:  snowwat max =   3.486404012797934E-004  min =   0.000000000000000E+000
+  0:  graupel max =   0.000000000000000E+000  min =   0.000000000000000E+000
+  0:  O3MR max =   1.816936492105015E-005  min =   0.000000000000000E+000
+  0:  IC generated from the specified external source
+  0:  in fv_restart ncnst=           8
+  0:  
+  0:  fv_restart u    =   -8784780769663965592
+  0:  fv_restart v    =    4388481129588333787
+  0:  fv_restart w    =    8567538865928560053
+  0:  fv_restart delp =    -472603757441116451
+  0:  fv_restart phis =   -7567962973351175920
+  0:  fv_restart pt   =   -2998780992665153445
+  0:  fv_restart q(prog) nq   =           8  -5798512648084329941
+  0:  fv_restart sphum =   -7335315357739444160
+  0:  fv_restart liq_wat =   -7815816572589675941
+  0:  fv_restart rainwat =                      0
+  0:  fv_restart ice_wat =    4849521602925874065
+  0:  fv_restart snowwat =   -2760116088203539313
+  0:  fv_restart graupel =                      0
+  0:  fv_restart o3mr =    7263213767522455408
+  0:  fv_restart cld_amt =                      0
+  0:  ZS   5863.98291015625       -176.930679321289        232.022350569081     
+  0:  PS   1039.00512082832        490.870736805065        985.258485047923     
+  0:  T    310.551448434247        181.799439312737        286.897474265447     
+  0:  sphum  2.088271615204249E-002  0.000000000000000E+000  9.406505932781001E-003
+  0:  liq_wat  1.933216494729662E-003 -1.157025094595371E-004  1.496737044293484E-006
+  0:  rainwat  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:  ice_wat  1.996006872965356E-003 -1.520309788224273E-004  4.158141867883375E-007
+  0:  snowwat  3.486404012797934E-004  0.000000000000000E+000  0.000000000000000E+000
+  0:  graupel  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:  o3mr  1.816936492105015E-005  0.000000000000000E+000  5.285423106982543E-008
+  0:  cld_amt  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:  U  max =    88.8567402114921       min =   -78.7992541122737     
+  0:  V  max =    92.0469867262038       min =   -84.8474906280902     
+  0:  W    2.22390252701238      -0.602159672522752      -5.711561758935395E-004
+  0:  
+  0:  mp_top=           1 pfull=  0.379150775374218     
+  0:  Mean specific humidity (mg/kg) above 75 mb=   2.43584735338778     
+  0:  Total surface pressure (mb) =    985.258485047923     
+  0:  mean dry surface pressure =    982.840412427435     
+  0:  Total Water Vapor (kg/m**2) =   24.5660431358298     
+  0:  --- Micro Phys water substances (kg/m**2) ---
+  0:  Total cloud water=  4.399077561879870E-002
+  0:  Total rain  water=  0.000000000000000E+000
+  0:  Total cloud ice  =  4.744317423553941E-002
+  0:  Total snow       =  1.467019678505275E-006
+  0:  Total graupel    =  0.000000000000000E+000
+  0:  ---------------------------------------------
+  0: NOTE from PE     0: READING FROM SST_restart DISABLED
+  0:  Before adi: W max =    2.22390252701238       min =  -0.602159672522752     
+  0: NOTE from PE     0: Performing adiabatic init   1 times
+  0:  Rayleigh_Super tau=   10.0000000000000     
+  0:            1  0.379150775374218     
+  0:            2  0.963871677296582     
+  0:            3   1.76542623475949     
+  0:            4   2.67225797307616     
+  0:            5   3.70625064534251     
+  0:            6   4.88725381108638     
+  0:            7   6.23670999273840     
+  0:            8   7.77857086016401     
+  0:            9   9.53982867890537     
+  0:           10   11.5509321183380     
+  0:           11   13.8462199296658     
+  0:           12   16.4643340512127     
+  0:           13   19.4486890885347     
+  0:           14   22.8478827559944     
+  0:           15   26.7161399795044     
+  0:           16   31.1137441701637     
+  0:           17   36.1073636911943     
+  0:           18   41.7703432241075     
+  0:           19   48.1828593963412     
+  0:           20   55.4318974644045     
+  0:           21   63.6109885902168     
+  0:           22   72.8196327566246     
+  0:  Rayleigh friction E-folding time (days):
+  0:            1  0.379150775374218        10.8096140887264     
+  0:            2  0.963871677296582        16.5818681310322     
+  0:            3   1.76542623475949        29.0560344329854     
+  0:            4   2.67225797307616        53.4602794273955     
+  0:            5   3.70625064534251        110.544757762893     
+  0:            6   4.88725381108638        293.610300159162     
+  0:            7   6.23670999273840        1568.14167700556     
+  0:  After adi: W max =    1.20035645462629       min =  -0.673146704184137     
+  0:  na_ini Z500   5648.50929162771        5542.90798137026     
+  0:    5541.93655149079        5875.38061134892     
+  0:   model init,iaufhrs=  -1.00000000000000       -1.00000000000000     
+  0:   -1.00000000000000       -1.00000000000000       -1.00000000000000     
+  0:   -1.00000000000000       -1.00000000000000     
+  0:   dxmax=   18.1991080870045       dxmin=   24.5164135836650       dxinv=
+  0:  -0.158295336600173      max_lon=        5000  max_lat=        2000  min_lon=
+  0:          192  min_lat=          94  rhc_max=  0.999999900000000     
+  0:   NOAH Land Surface Model used
+  0:   nst_anl= F  use_ufo= T  frac_grid= F  ignore_lake= T
+  0:   min_lakeice=  0.150000000000000       min_seaice=  9.999999999999999E-012 
+  0:  min_lake_height=   250.000000000000     
+  0:  flake model parameters
+  0:  lkm                :            0
+  0:   scale & aerosol-aware mass-flux deep conv scheme
+  0:   scale-aware hybrid edmf PBL scheme used
+  0:   scale- & aerosol-aware mass-flux shallow conv scheme (2017)
+  0:   Original mountain blocking and oragraphic  gravity wave drag parameterization 
+  0:  used
+  0:   non-statioary gravity wave drag parameterization used
+  0:   do_gwd= T
+  0:   max-random cloud overlap for Radiation IOVR=           1
+  0:   sub-grid cloud for Shortwave ISUBC_SW=           2
+  0:   sub-grid cloud for Longwave ISUBC_LW=           2
+  0:   avg_max_length=   3600.00000000000     
+  0:   Using GFDL Cloud Microphysics
+  0:   
+  0:  basic control parameters
+  0:   me                :            0
+  0:   master            :            0
+  0:   communicator      :  -1006632783
+  0:   nlunit            :         9999
+  0:   fn_nml            : using internal file
+  0:   fhzero            :    6.00000000000000     
+  0:   ldiag3d           :  F
+  0:   qdiag3d           :  F
+  0:   lssav             :  F
+  0:   naux2d            :            0
+  0:   naux3d            :            0
+  0:   fhcyc             :    24.0000000000000     
+  0:   thermodyn_id      :            1
+  0:   sfcpress_id       :            1
+  0:   gen_coord_hybrid  :  F
+  0:   
+  0:  grid extent parameters
+  0:   isc               :            1
+  0:   jsc               :            1
+  0:   nx                :           64
+  0:   ny                :           48
+  0:   levs              :           64
+  0:   cnx               :          384
+  0:   cny               :          384
+  0:   lonr              :         1536
+  0:   latr              :          768
+  0:   blksz(1)          :           32
+  0:   blksz(nblks)      :           32
+  0:   Model%ncols       :         3072
+  0:   
+  0:  coupling parameters
+  0:   cplflx            :  T
+  0:   cplwav            :  F
+  0:   cplwav2atm        :  F
+  0:   cplchm            :  F
+  0:   
+  0:  integrated dynamics through earth atmosphere
+  0:   lsidea            :  F
+  0:   
+  0:  calendars and time parameters and activation triggers
+  0:   dtp               :    450.000000000000     
+  0:   dtf               :    450.000000000000     
+  0:   nscyc             :          192
+  0:   nszero            :           48
+  0:   idat              :         2013           4           1           0
+  0:            0           0           0           0
+  0:   idate             :            0           4           1        2013
+  0:   
+  0:  radiation control parameters
+  0:   fhswr             :    3600.00000000000     
+  0:   fhlwr             :    3600.00000000000     
+  0:   nsswr             :            8
+  0:   nslwr             :            8
+  0:   nhfrad            :            0
+  0:   levr              :           64
+  0:   nfxr              :           45
+  0:   ntrcaer           :            1
+  0:   lmfshal           :  T
+  0:   lmfdeep2          :  T
+  0:   nrcm              :            2
+  0:   iflip             :            1
+  0:   isol              :            2
+  0:   ico2              :            2
+  0:   ialb              :            1
+  0:   iems              :            1
+  0:   iaer              :          111
+  0:   icliq_sw          :            1
+  0:   icice_sw          :            3
+  0:   icliq_lw          :            1
+  0:   icice_lw          :            3
+  0:   iovr              :            1
+  0:   idcor             :            1
+  0:   dcorr_con         :    2.50000000000000     
+  0:   ictm              :            1
+  0:   isubc_sw          :            2
+  0:   isubc_lw          :            2
+  0:   crick_proof       :  F
+  0:   ccnorm            :  F
+  0:   norad_precip      :  F
+  0:   lwhtr             :  T
+  0:   swhtr             :  T
+  0:   
+  0:  microphysical switch
+  0:   ncld              :            5
+  0:   imp_physics       :           11
+  0:   
+  0:   GFDL microphysical parameters
+  0:   GFDL MP radiation inter:  T
+  0:   lrefres                :  F
+  0:   
+  0:  land/surface model parameters
+  0:   lsm               :            1
+  0:   lsoil             :            4
+  0:   rdlai             :  F
+  0:   lsoil_lsm         :            4
+  0:   zs  (may be unset):  -0.100000000000000      -0.400000000000000     
+  0:   -1.00000000000000       -2.00000000000000     
+  0:   dzs (may be unset):   0.100000000000000       0.300000000000000     
+  0:   0.600000000000000        1.00000000000000     
+  0:   iopt_thcnd        :            1
+  0:   ua_phys           :  F
+  0:   usemonalb         :  T
+  0:   aoasis            :    1.00000000000000     
+  0:   fasdas            :            0
+  0:   kice              :            2
+  0:   shape(pores)      :           30
+  0:   shape(resid)      :           30
+  0:   ivegsrc           :            1
+  0:   isot              :            1
+  0:   use_ufo           :  T
+  0:   lcurr_sf          :  F
+  0:   pert_cd           :  F
+  0:   ntsflg            :            0
+  0:   sfenth            :   0.000000000000000E+000
+  0:   
+  0:  flake model parameters
+  0:  lkm                :            0
+  0:   
+  0:  tuning parameters for physical parameterizations
+  0:   ras               :  F
+  0:   flipv             :  T
+  0:   trans_trac        :  T
+  0:   old_monin         :  F
+  0:   do_gwd            :  T
+  0:   cnvgwd            :  T
+  0:   do_cnvgwd         :  F
+  0:   mstrat            :  F
+  0:   moist_adj         :  F
+  0:   cscnv             :  F
+  0:   cal_pre           :  F
+  0:   do_aw             :  F
+  0:   flx_form          :  F
+  0:   do_shoc           :  F
+  0:   shoc_parm         :    7000.00000000000        1.00000000000000     
+  0:    4.28571430000000       0.700000000000000       -999.000000000000     
+  0:   shocaftcnv        :  F
+  0:   shoc_cld          :  F
+  0:   uni_cld           :  F
+  0:   oz_phys           :  F
+  0:   oz_phys_2015      :  T
+  0:   h2o_phys          :  T
+  0:   pdfcld            :  F
+  0:   shcnvcw           :  F
+  0:   redrag            :  T
+  0:   hybedmf           :  T
+  0:   satmedmf          :  F
+  0:   isatmedmf         :            0
+  0:   shinhong          :  F
+  0:   do_ysu            :  F
+  0:   dspheat           :  T
+  0:   lheatstrg         :  F
+  0:   cnvcld            :  T
+  0:   random_clds       :  F
+  0:   shal_cnv          :  T
+  0:   imfshalcnv        :            2
+  0:   imfdeepcnv        :            2
+  0:   do_deep           :  T
+  0:   nmtvr             :           14
+  0:   jcap              :            1
+  0:   cs_parm           :    8.00000000000000        4.00000000000000     
+  0:    1000.00000000000        3500.00000000000        20.0000000000000     
+  0:    1.00000000000000       -999.000000000000        1.00000000000000     
+  0:   0.600000000000000       0.000000000000000E+000
+  0:   flgmin            :   0.180000000000000       0.220000000000000     
+  0:   cgwf              :   0.500000000000000       5.000000000000000E-002
+  0:   ccwf              :    1.00000000000000        1.00000000000000     
+  0:   cdmbgwd           :    1.10000000000000       0.720000000000000     
+  0:    1.00000000000000        1.00000000000000     
+  0:   sup               :    1.00000000000000     
+  0:   ctei_rm           :    10.0000000000000        10.0000000000000     
+  0:   crtrh             :   0.900000000000000       0.900000000000000     
+  0:   0.900000000000000     
+  0:   dlqf              :   0.000000000000000E+000  0.000000000000000E+000
+  0:   seed0             :            0
+  0:   rbcr              :   0.250000000000000     
+  0:   do_mynnedmf       :  F
+  0:   do_mynnsfclay     :  F
+  0:   do_myjsfc         :  F
+  0:   do_myjpbl         :  F
+  0:   do_ugwp           :  F
+  0:   gwd_opt           :            1
+  0:   do_ugwp_v0           :  T
+  0:   do_ugwp_v0_orog_only :  F
+  0:   do_ugwp_v0_nst_only  :  F
+  0:   do_gsl_drag_ls_bl    :  F
+  0:   do_gsl_drag_ss       :  F
+  0:   do_gsl_drag_tofd     :  F
+  0:   do_ugwp_v1           :  F
+  0:   do_ugwp_v1_orog_only :  F
+  0:   do_ugwp_v1_w_gsldrag :  F
+  0:   hurr_pbl          :  F
+  0:   var_ric           :    1.00000000000000     
+  0:   coef_ric_l        :   0.160000000000000     
+  0:   coef_ric_s        :   0.250000000000000     
+  0:   
+  0:  Rayleigh friction
+  0:   prslrd0           :   0.000000000000000E+000
+  0:   ral_ts            :   0.000000000000000E+000
+  0:   
+  0:  mass flux deep convection
+  0:   clam_deep         :   0.100000000000000     
+  0:   c0s_deep          :   2.000000000000000E-003
+  0:   c1_deep           :   2.000000000000000E-003
+  0:   betal_deep        :   5.000000000000000E-002
+  0:   betas_deep        :   5.000000000000000E-002
+  0:   evfact_deep       :   0.300000000000000     
+  0:   evfactl_deep      :   0.300000000000000     
+  0:   pgcon_deep        :   0.550000000000000     
+  0:   asolfac_deep      :   0.958000000000000     
+  0:   
+  0:  mass flux shallow convection
+  0:   clam_shal         :   0.300000000000000     
+  0:   c0s_shal          :   2.000000000000000E-003
+  0:   c1_shal           :   5.000000000000000E-004
+  0:   pgcon_shal        :   0.550000000000000     
+  0:   asolfac_shal      :   0.958000000000000     
+  0:   
+  0:  near surface sea temperature model
+  0:   nst_anl           :  F
+  0:   nstf_name         :            0           0           0           0
+  0:            0
+  0:   lsea              :            0
+  0:   
+  0:  surface layer options
+  0:   sfc_z0_type       :            0
+  0:   
+  0:  vertical diffusion coefficients
+  0:   xkzm_m            :    1.00000000000000     
+  0:   xkzm_h            :    1.00000000000000     
+  0:   xkzm_s            :    1.00000000000000     
+  0:   xkzminv           :   0.300000000000000     
+  0:   moninq_fac        :    1.00000000000000     
+  0:   dspfac            :    1.00000000000000     
+  0:   bl_upfr           :   0.130000000000000     
+  0:   bl_dnfr           :   0.100000000000000     
+  0:   
+  0:  parameters for canopy heat storage parametrization
+  0:   z0fac             :   0.300000000000000     
+  0:   e0fac             :   0.500000000000000     
+  0:   
+  0:  stochastic physics
+  0:   do_sppt           :  F
+  0:   pert_mp         :  F
+  0:   pert_clds       :  F
+  0:   pert_radtend    :  T
+  0:   do_shum           :  F
+  0:   do_skeb           :  F
+  0:   lndp_type         :            0
+  0:   n_var_lndp        :            0
+  0:   lndp_each_step    :  F
+  0:   
+  0:  cellular automata
+  0:   nca               :            1
+  0:   ncells            :            5
+  0:   nlives            :           30
+  0:   nca_g             :            1
+  0:   ncells_g          :            1
+  0:   nlives_g          :          100
+  0:   nfracseed         :   0.500000000000000     
+  0:   nseed_g           :          100
+  0:   nseed             :       100000
+  0:   ca_global         :  F
+  0:   ca_sgs            :  F
+  0:   do_ca             :  F
+  0:   iseed_ca          :            0
+  0:   ca_smooth         :  F
+  0:   nspinup           :            1
+  0:   nthresh           :   0.000000000000000E+000
+  0:   ca_amplitude      :    500.000000000000     
+  0:   nsmooth           :          100
+  0:   ca_closure        :  F
+  0:   ca_entr           :  F
+  0:   ca_trigger        :  F
+  0:   
+  0:  tracers
+  0:   tracer_names      : sphum                           
+  0:  liq_wat                         rainwat                         
+  0:  ice_wat                         snowwat                         
+  0:  graupel                         o3mr                            
+  0:  cld_amt                         
+  0:   ntrac             :            8
+  0:   nqrimef           :          -99
+  0:   ntqv              :            1
+  0:   ntoz              :            7
+  0:   ntcw              :            2
+  0:   ntiw              :            4
+  0:   ntrw              :            3
+  0:   ntsw              :            5
+  0:   ntgl              :            6
+  0:   ntclamt           :            8
+  0:   ntlnc             :          -99
+  0:   ntinc             :          -99
+  0:   ntrnc             :          -99
+  0:   ntsnc             :          -99
+  0:   ntgnc             :          -99
+  0:   ntke              :          -99
+  0:   nto               :            0
+  0:   nto2              :            0
+  0:   ntwa              :          -99
+  0:   ntia              :          -99
+  0:   ntchm             :            0
+  0:   ntchs             :          -99
+  0:   fscav             :   -9999.00000000000       -9999.00000000000     
+  0:   -9999.00000000000       -9999.00000000000       -9999.00000000000     
+  0:   -9999.00000000000       -9999.00000000000       -9999.00000000000     
+  0:   
+  0:  derived totals for phy_f*d
+  0:   ntot2d            :            1
+  0:   ntot3d            :            6
+  0:   num_p2d           :            1
+  0:   num_p3d           :            5
+  0:   nshoc_2d          :            0
+  0:   nshoc_3d          :            0
+  0:   ncnvcld3d         :            1
+  0:   npdf3d            :            0
+  0:   nctp              :            0
+  0:   nkbfshoc          :         -999
+  0:   nahdshoc          :         -999
+  0:   nscfshoc          :         -999
+  0:   
+  0:  debug flags
+  0:   debug             :  F
+  0:   pre_rad           :  F
+  0:   
+  0:  variables modified at each time step
+  0:   ipt               :            1
+  0:   lprnt             :  F
+  0:   lsswr             :  F
+  0:   lslwr             :  F
+  0:   solhr             :   -9999.00000000000     
+  0:   solcon            :   -9999.00000000000     
+  0:   slag              :   -9999.00000000000     
+  0:   sdec              :   -9999.00000000000     
+  0:   cdec              :   -9999.00000000000     
+  0:   clstp             :   -9999.00000000000     
+  0:   phour             :   0.000000000000000E+000
+  0:   fhour             :   0.125000000000000     
+  0:   zhour             :   0.000000000000000E+000
+  0:   kdt               :            0
+  0:   jdat              :         2013           4           1           0
+  0:            0           0           0           0
+  0:   si                :    1.00000000000000       0.994670137967030     
+  0:   0.988630030551305       0.981795355947387       0.974074829179211     
+  0:   0.965370569372193       0.955579045414836       0.944592287197078     
+  0:   0.932299594647352       0.918589853166181       0.903354556653176     
+  0:   0.886491478900351       0.867909171686985       0.847532021746212     
+  0:   0.825305882291101       0.801203957859928       0.775232608753270     
+  0:   0.747436709629337       0.717903956645773       0.686767568199990     
+  0:   0.654206972126252       0.620446045471596       0.585748535469621     
+  0:   0.550410960071072       0.514753123680963       0.479106813575342     
+  0:   0.443803755579685       0.409163370230986       0.375481639620453     
+  0:   0.343021632871033       0.312006338485267       0.282614364066433     
+  0:   0.254978018417156       0.229183937796752       0.205273975252949     
+  0:   0.183250541893293       0.163082923261438       0.144713204521001     
+  0:   0.128062075677410       0.113034552990968       9.952492552934208E-002
+  0:   8.742129366270174E-002  7.660920966635407E-002  6.697471990523667E-002
+  0:   5.840827204975076E-002  5.080841024628596E-002  4.407969004491388E-002
+  0:   3.813288583979074E-002  3.288544494348749E-002  2.826156655643848E-002
+  0:   2.419217215339815E-002  2.061463896155175E-002  1.747249395390158E-002
+  0:   1.471507822911011E-002  1.229704358126450E-002  1.017797739499531E-002
+  0:   8.321978184689799E-003  6.697171906618627E-003  5.275396081141108E-003
+  0:   4.031725976013030E-003  2.944237698040571E-003  1.993563989931395E-003
+  0:   1.162726420216179E-003  4.367701495483935E-004  0.000000000000000E+000
+  0:   sec               :   0.000000000000000E+000
+  0:   first_time_step   :  T
+  0:   restart           :  F
+  0:   hydrostatic       :  F
+  0:  in iau_init  -1.00000000000000     
+  0:  nfiles =            0
+  0:  in fv3gfs_diag_register, nrgst_bl=          53  nrgst_nb=          79 
+  0:   nrgst_vctbl=           2 isco=           1          64 jsco=           1
+  0:           48  num_axes_phys=           2
+  0: NOTE from PE     0: reading topographic/orographic information from INPUT/oro_data.tile*.nc
+  0: NOTE from PE     0: reading surface properties data from INPUT/sfc_data.tile*.nc
+  0: NOTE from PE     0: gfs_driver:: - after put to container
+  0: NOTE from PE     0: gfs_driver::surface_props_input - computing zorli
+  0: NOTE from PE     0: gfs_driver::surface_props_input - computing zorlwav
+  0: NOTE from PE     0: gfs_driver::surface_props_input - computing tiice
+  0: NOTE from PE     0: No physics restarts - cold starting physical parameterizations
+  0:    In rad_initialize (GFS_rrtmg_setup_init), before calling radinit
+  0:   si =   1.00000000000000       0.994670137967030       0.988630030551305     
+  0:   0.981795355947387       0.974074829179211       0.965370569372193     
+  0:   0.955579045414836       0.944592287197078       0.932299594647352     
+  0:   0.918589853166181       0.903354556653176       0.886491478900351     
+  0:   0.867909171686985       0.847532021746212       0.825305882291101     
+  0:   0.801203957859928       0.775232608753270       0.747436709629337     
+  0:   0.717903956645773       0.686767568199990       0.654206972126252     
+  0:   0.620446045471596       0.585748535469621       0.550410960071072     
+  0:   0.514753123680963       0.479106813575342       0.443803755579685     
+  0:   0.409163370230986       0.375481639620453       0.343021632871033     
+  0:   0.312006338485267       0.282614364066433       0.254978018417156     
+  0:   0.229183937796752       0.205273975252949       0.183250541893293     
+  0:   0.163082923261438       0.144713204521001       0.128062075677410     
+  0:   0.113034552990968       9.952492552934208E-002  8.742129366270174E-002
+  0:   7.660920966635407E-002  6.697471990523667E-002  5.840827204975076E-002
+  0:   5.080841024628596E-002  4.407969004491388E-002  3.813288583979074E-002
+  0:   3.288544494348749E-002  2.826156655643848E-002  2.419217215339815E-002
+  0:   2.061463896155175E-002  1.747249395390158E-002  1.471507822911011E-002
+  0:   1.229704358126450E-002  1.017797739499531E-002  8.321978184689799E-003
+  0:   6.697171906618627E-003  5.275396081141108E-003  4.031725976013030E-003
+  0:   2.944237698040571E-003  1.993563989931395E-003  1.162726420216179E-003
+  0:   4.367701495483935E-004  0.000000000000000E+000
+  0:   levr=          64  ictm=           1  isol=           2  ico2=           2 
+  0:   iaer=         111  ialb=           1  iems=           1  ntcw=           2
+  0:   np3d=           5  ntoz=           7  iovr=           1  isubc_sw=           2
+  0:   isubc_lw=           2  icliq_sw=           1  iflip=           1   me=
+  0:            0
+  0:   crick_proof= F  ccnorm= F  norad_precip= F
+  0:   NEW RADIATION PROGRAM STRUCTURES BECAME OPER.   May 01 2007
+  0:  NCEP-Radiation_driver    v5.2  Jan 2013 
+  0:   - Selected Control Flag settings: ICTMflg=           1  ISOLar =           2 
+  0:   ICO2flg=           2  IAERflg=         111  IALBflg=           1  IEMSflg=
+  0:            1  ICLDflg=           1  IMP_PHYSICS=          11  IOZNflg=
+  0:            7
+  0:   IVFLIP=           1  IOVR=           1  ISUBCSW=           2  ISUBCLW=
+  0:            2
+  0:   LCRICK= F  LCNORM= F  LNOPREC= F
+  0:   LTP =           0 , add extra top layer = F
+  0:   - ISUBCLW=           2  Use McICA with random 
+  0:  permutation seeds for LW random number generator
+  0:   - ISUBCSW=           2  Use McICA with random 
+  0:  permutation seeds for SW random number generator
+  0:  NCEP-Radiation_astronomy v5.2  Jan 2013 
+  0:   - Using NOAA annual mean TSI table in TIM scale
+  0:   with cycle approximation (new values)!
+  0:  NCEP-Radiation_aerosols  v5.2  Jan 2013 
+  0:   - Using OPAC-seasonal climatology for tropospheric aerosol effect
+  0:     IAER=         111   LW-trop-aer= T   SW-trop-aer= T   Volc-aer= T
+  0:   - Include stratospheric volcanic aerosol effect
+  0:     - Compute multi-band aerosol optical properties for SW input parameters
+  0:     - Compute multi-band aerosol optical properties for LW input parameters
+  0:  NCEP-Radiation_gases     v5.1  Nov 2012 
+  0:   - Using interactive ozone distribution
+  0:   - Using observed co2 monthly 2-d data
+  0:  NCEP-Radiation_surface   v5.1  Nov 2012 
+  0:   - Using MODIS based land surface albedo for sw
+  0:   - Using Varying Surface Emissivity for lw
+  0:     Opened data file: sfc_emissivity_idx.txt    
+  0:  SURFACE EMISSIVITY INDEX, IDM,JDM: 360 180    NOTE: DATA FROM N TO S           
+  0:   
+  0:  NCEP-Radiation_clouds    v5.1  Nov 2012 
+  0:   - Using Prognostic Cloud Method
+  0:     --- GFDL Lin cloud microphysics
+  0:   - Using AER Longwave Radiation, Version: 
+  0:  NCEP LW v5.1  Nov 2012 -RRTMG-LW v4.82  
+  0:     --- Include rare gases N2O, CH4, O2, CFCs absorptions in LW
+  0:     --- Using MCICA sub-colum clouds approximation 
+  0:  with provided input array of permutation seeds
+  0:   - Using AER Shortwave Radiation, Version: 
+  0:  NCEP SW v5.1  Nov 2012 -RRTMG-SW v3.8   
+  0:     --- PIFM 2-stream transfer scheme
+  0:     --- Include rare gases N2O, CH4, O2, absorptions in SW
+  0:     --- Using MCICA sub-colum clouds approximation 
+  0:  with provided input array of permutation seeds
+  0:    Radiation sub-cloud initial seed =       46508  IC-idate =           0
+  0:            4           1        2013
+  0:   return from rad_initialize (GFS_rrtmg_setup_init) - after calling radinit
+  0:  Reading in o3data from global_o3prdlos.f77 
+  0:        oz_coeff =            6
+  0:         latsozp =           71
+  0:          levozp =           53
+  0:          timeoz =           12
+  0:  Reading in h2odata from global_h2oprdlos.f77 
+  0:       h2o_coeff =            3
+  0:         latsh2o =           73
+  0:          levh2o =           72
+  0:         timeh2o =           12
+  0:  ugwp_v0: init_gw_wmsdis_control 
+  0:  ugwp_v0: WMSDIS launch layer           27
+  0:  ugwp_v0: WMSDID tot_mflux in mpa   30.0000000000000     
+  0:  
+  0:  ugwp_v0: zcimin=  0.500000000000000     
+  0:  ugwp_v0: zcimax=   125.000000000000     
+  0:  ugwp_v0: cd_crit=  0.250000000000000     
+  0:  ugwp_v0: launch_level          27
+  0:   ugwp_v0 zms_l=   2000.00000000000     
+  0:   ugwp_vgw  nslope=   1.00000000000000     
+  0:  
+  0:  ---fdiag   6.00000000000000        12.0000000000000     
+  0:    18.0000000000000        24.0000000000000       0.000000000000000E+000
+  0:   0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:   0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:   0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:   0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:   0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:   0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:   0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:   0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:   0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:   0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:   0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0:   0.000000000000000E+000  0.000000000000000E+000
+  0:  COUPLING: CCPP layer
+  0:  enter setup_exportdata
+  0:  cpl, in get inst_temp_height_lowest
+  0:  cpl, in get inst_temp_height_lowest=   293.864206523395     
+  0:  zeroing coupling accumulated fields at kdt=            0
+  0:  in fv_phys bundle,nbdl=           2
+  0:  af fcstCom FBCount=            3
+  0:  af allco wrtComp,write_groups=           1
+288:  in wrt grid comp, dopost= F
+  0:  af wrtState reconcile, FBcount=           3
+  0:  af get wrtfb=mirror_dyn_bilinear rc=           0
+  0:  af get wrtfb=mirror_phy_bilinear rc=           0
+  0:  af get wrtfb=mirror_phy_nearest_stod rc=           0
+  0:  in fv3cap init, time wrtcrt/regrdst   4.92015099525452     
+  0:  af set up output_interval,rc=           0 nfhout=           6           0
+  0:            0
+  0:  in fv3_cap, aft import, export fields in atmos
+  0:  in fv3_cap, init time=   18.9555249214172     
+312: NOTE from PE     0: MPP_DOMAINS_SET_STACK_SIZE: stack size set to    32768.
+312:  &MPP_IO_NML
+312:  HEADER_BUFFER_VAL       =       16384,
+312:  GLOBAL_FIELD_ON_ROOT_PE = T,
+312:  IO_CLOCKS_ON    = F,
+312:  SHUFFLE =           0,
+312:  DEFLATE_LEVEL   =          -1,
+312:  CF_COMPLIANCE   = F
+312:  /
+312: NOTE from PE     0: MPP_IO_SET_STACK_SIZE: stack size set to     131072.
+312: NOTE from PE     0: MPP_DOMAINS_SET_STACK_SIZE: stack size set to  3000000.
+312: NOTE from PE     0: diag_manager_mod::diag_manager_init: diag_manager is using fms2_io
+312: NOTE from PE     0: callTree: ---> ocean_model_init(), ocean_model_MOM.F90
+312: NOTE from PE     0: open_param_file: INPUT/MOM_input has been opened successfully.
+312: NOTE from PE     0: open_param_file: INPUT/MOM_override has been opened successfully.
+312:  MOM_in domain decomposition
+312: whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+312:   X-AXIS =  120 120 120 120 120 120 120 120 120 120 120 120
+312:   Y-AXIS =  108 108 108 108 108 108 108 108 108 108
+312:  MOM_inc domain decomposition
+312: whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+312:   X-AXIS =   60  60  60  60  60  60  60  60  60  60  60  60
+312:   Y-AXIS =   54  54  54  54  54  54  54  54  54  54
+312:  MOM_in domain decomposition
+312: whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+312:   X-AXIS =  120 120 120 120 120 120 120 120 120 120 120 120
+312:   Y-AXIS =  108 108 108 108 108 108 108 108 108 108
+312:  MOM_in domain decomposition
+312: whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+312:   X-AXIS =   60  60  60  60  60  60  60  60  60  60  60  60
+312:   Y-AXIS =   54  54  54  54  54  54  54  54  54  54
+312:  MOM_MOSAIC domain decomposition
+312: whalo =    9, ehalo =    9, shalo =    9, nhalo =    9
+312:   X-AXIS =  240 240 240 240 240 240 240 240 240 240 240 240
+312:   Y-AXIS =  216 216 216 216 216 216 216 216 216 216
+312:  MOM_MOSAIC domain decomposition
+312: whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+312:   X-AXIS =  120 120 120 120 120 120 120 120 120 120 120 120
+312:   Y-AXIS =  108 108 108 108 108 108 108 108 108 108
+405: Ocean topography edit:     1 1166  818  664.73->  800.00  91  67
+405: Ocean topography edit:     2 1166  817  728.35->  800.00  91  66
+405: Ocean topography edit:     3 1166  816  557.18->  800.00  91  65
+405: Ocean topography edit:     4 1167  816  763.71->  800.00  92  65
+405: Ocean topography edit:     5 1168  816  584.82->  800.00  93  65
+405: Ocean topography edit:     6 1168  815  771.28->  800.00  93  64
+405: Ocean topography edit:     7 1168  814  623.90->  800.00  93  63
+405: Ocean topography edit:     8 1169  814  754.62->  800.00  94  63
+405: Ocean topography edit:    72 1166  808  599.70->  540.00  91  57
+405: Ocean topography edit:    73 1167  807  598.73->  510.00  92  56
+405: Ocean topography edit:    74 1168  807  647.22->  530.00  93  56
+405: Ocean topography edit:    75 1169  806  583.86->  610.00  94  55
+405: Ocean topography edit:    76 1170  805  544.52->  500.00  95  54
+405: Ocean topography edit:    77 1171  805  513.92->  460.00  96  54
+405: Ocean topography edit:    78 1172  805  553.43->  490.00  97  54
+379: Ocean topography edit:    12  953  550  685.97->  730.00 118  15
+379: Ocean topography edit:    13  952  550  679.21->  730.00 117  15
+379: Ocean topography edit:    14  952  551  188.74->   40.00 117  16
+379: Ocean topography edit:    15  953  552   98.68->   40.00 118  17
+379: Ocean topography edit:    16  954  553  230.73->   40.00 119  18
+379: Ocean topography edit:    17  954  554  134.81->   40.00 119  19
+379: Ocean topography edit:    18  955  555  257.78->   40.00 120  20
+379: Ocean topography edit:    19  956  558  495.10->   40.00 121  23
+379: Ocean topography edit:    20  956  559  148.92->   40.00 121  24
+379: Ocean topography edit:    21  956  560  343.66->   40.00 121  25
+379: Ocean topography edit:    22  955  557  705.76->  900.00 120  22
+379: Ocean topography edit:    23  956  561  831.60->  950.00 121  26
+379: Ocean topography edit:    24  956  564  609.99->  800.00 121  29
+379: Ocean topography edit:    25  955  565  897.07-> 1000.00 120  30
+379: Ocean topography edit:    26  944  578 1365.65-> 1850.00 109  43
+405: Ocean topography edit:    79 1173  805  528.28->  330.00  98  54
+405: Ocean topography edit:    80 1174  804  499.22->  450.00  99  53
+312: 
+312: WARNING from PE     0: reset_face_lengths_list unused v-face line: V_width,  28.8,  29.4, 41.1, 41.2,   2500.0
+312: 
+379: Ocean topography edit:    27  944  577 1234.00-> 1850.00 109  42
+379: Ocean topography edit:    28  942  575 1656.42-> 1400.00 107  40
+379: Ocean topography edit:    29  889  595  394.39->  500.00  54  60
+379: Ocean topography edit:    30  888  595  375.17->  500.00  53  60
+379: Ocean topography edit:    31  888  596  222.70->  500.00  53  61
+379: Ocean topography edit:    32  887  596  436.80->  500.00  52  61
+379: Ocean topography edit:    33  886  596  349.77->  500.00  51  61
+379: Ocean topography edit:    34  885  596  169.91->  500.00  50  61
+379: Ocean topography edit:    35  885  597  411.25->  500.00  50  62
+379: Ocean topography edit:    36  884  597  405.56->  500.00  49  62
+379: Ocean topography edit:    37  884  598  462.69->  500.00  49  63
+379: Ocean topography edit:    38  883  598  470.05->  500.00  48  63
+379: Ocean topography edit:    39  882  598  456.70->  500.00  47  63
+379: Ocean topography edit:    40  883  600  457.40->  500.00  48  65
+379: Ocean topography edit:    41  881  601  339.21->  500.00  46  66
+379: Ocean topography edit:    42  881  618  610.68->  700.00  46  83
+379: Ocean topography edit:    43  881  617  627.58->  730.00  46  82
+379: Ocean topography edit:    44  881  616  624.95->  730.00  46  81
+379: Ocean topography edit:    45  881  615  630.68->  730.00  46  80
+379: Ocean topography edit:    46  881  614  646.24->  730.00  46  79
+379: Ocean topography edit:    47  881  613  669.98->  730.00  46  78
+379: Ocean topography edit:    48  881  612  692.16->  730.00  46  77
+379: Ocean topography edit:    49  881  611  718.72->  730.00  46  76
+383: Ocean topography edit:    59 1424  612   51.14->   80.00 109  77
+383: Ocean topography edit:    60 1369  560  151.45->  180.00  54  25
+383: Ocean topography edit:    61 1369  559   97.29->  180.00  54  24
+383: Ocean topography edit:    62 1370  559   68.19->  180.00  55  24
+383: Ocean topography edit:    63 1370  558   93.68->  180.00  55  23
+383: Ocean topography edit:    64 1370  557   80.73->  180.00  55  22
+383: Ocean topography edit:    65 1371  557  127.90->  180.00  56  22
+383: Ocean topography edit:    66 1371  556   41.25->  180.00  56  21
+383: Ocean topography edit:    67 1372  556   96.19->  180.00  57  21
+383: Ocean topography edit:    68 1372  555   60.64->  180.00  57  20
+383: Ocean topography edit:    69 1373  555   32.38->  180.00  58  20
+383: Ocean topography edit:    70 1373  554  112.89->  180.00  58  19
+383: Ocean topography edit:    71 1373  553   31.54->  180.00  58  18
+393: Ocean topography edit:     9 1176  657  227.78->  280.00 101  14
+393: Ocean topography edit:    10 1177  657  201.30->  280.00 102  14
+393: Ocean topography edit:    11 1178  657  179.89->  280.00 103  14
+379: Ocean topography edit:    50  879  605  681.07->  730.00  44  70
+379: Ocean topography edit:    51  878  604  706.24->  730.00  43  69
+379: Ocean topography edit:    52  878  602  329.73->  730.00  43  67
+379: Ocean topography edit:    53  884  613  466.71->  600.00  49  78
+379: Ocean topography edit:    54  885  613  360.50->  600.00  50  78
+379: Ocean topography edit:    55  881  619  625.10->  710.00  46  84
+379: Ocean topography edit:    56  881  620  651.12->  710.00  46  85
+379: Ocean topography edit:    57  881  621  667.51->  710.00  46  86
+379: Ocean topography edit:    58  881  622  700.03->  710.00  46  87
+393: read_face_lengths_list : Modifying dy_Cu gridpoint at    35.89   -5.75 (   35.80   36.20   -5.90   -5.40) to  12000.00m
+393: read_face_lengths_list : Modifying dy_Cu gridpoint at    35.89   -5.50 (   35.80   36.20   -5.90   -5.40) to  12000.00m
+393: read_face_lengths_list : G%mask2dCu=0 at    36.09   -5.75 (   35.80   36.20   -5.90   -5.40) so grid metric is unmodified.
+393: read_face_lengths_list : G%mask2dCu=0 at    36.09   -5.50 (   35.80   36.20   -5.90   -5.40) so grid metric is unmodified.
+394: read_face_lengths_list : Modifying dy_Cu gridpoint at    40.41   26.50 (   40.40   40.60   26.40   26.80) to   5000.00m
+394: read_face_lengths_list : Modifying dy_Cu gridpoint at    40.41   26.75 (   40.40   40.60   26.40   26.80) to   5000.00m
+383: read_face_lengths_list : Modifying dx_Cv gridpoint at    12.77   43.38 (   12.60   12.80   43.25   43.50) to  10000.00m
+386: read_face_lengths_list : Modifying dx_Cv gridpoint at    52.02 -218.38 (   52.00   52.15  141.50  141.70) to   2500.00m
+312: NOTE from PE     0: MPP_IO_SET_STACK_SIZE: stack size set to    1555200.
+312: NOTE from PE     0: MOM_restart: MOM run restarted using : INPUT/MOM.res.nc
+312: NOTE from PE     0: MOM_restart: MOM run restarted using : INPUT/MOM.res_1.nc
+312: NOTE from PE     0: MOM_restart: MOM run restarted using : INPUT/MOM.res_2.nc
+312: NOTE from PE     0: MOM_restart: MOM run restarted using : INPUT/MOM.res_3.nc
+312: NOTE from PE     0: MOM_restart: MOM run restarted using : INPUT/MOM.res_4.nc
+312:  MOM_in domain decomposition
+312: whalo =    4, ehalo =    4, shalo =    4, nhalo =    4
+312:   X-AXIS =  120 120 120 120 120 120 120 120 120 120 120 120
+312:   Y-AXIS =  108 108 108 108 108 108 108 108 108 108
+312:  MOM_in domain decomposition
+312: whalo =    2, ehalo =    2, shalo =    2, nhalo =    2
+312:   X-AXIS =   60  60  60  60  60  60  60  60  60  60  60  60
+312:   Y-AXIS =   54  54  54  54  54  54  54  54  54  54
+312: 
+312: WARNING from PE     0: Use EPBL_LANGMUIR_SCHEME = ADDITIVE instead of the archaic LT_ENHANCE = 3.
+312: 
+312: 
+312: WARNING from PE     0: Unused line in INPUT/MOM_input : WAVE_METHOD = "SURFACE_BANDS"
+312: 
+312: 
+312: WARNING from PE     0: Unused line in INPUT/MOM_input : SURFBAND_SOURCE = "COUPLER"
+312: 
+312: 
+312: WARNING from PE     0: Unused line in INPUT/MOM_input : STK_BAND_COUPLER = 3
+312: 
+312: 
+312: WARNING from PE     0: Unused line in INPUT/MOM_input : SURFBAND_WAVENUMBERS = 0.04, 0.11, 0.3305
+312: 
+312: 
+312:             ======== COMPLETED MOM INITIALIZATION ========
+312: 
+432:  Reading setup_nml
+432:  Reading grid_nml
+432:  Reading tracer_nml
+432:  Reading thermo_nml
+432:  Reading dynamics_nml
+432:  Reading shortwave_nml
+432:  Reading ponds_nml
+432:  Reading forcing_nml
+432:  Diagnostic output will be in file 
+432:  ice_diag.d                                                                     
+432:   
+432:  Reading zbgc_nml
+432:   
+432:  (abort_ice)ABORTED: 
+432:  (abort_ice) error = (ice_open_nc)ERROR: Cannot open grid_cice_NEMS_mx025.nc
+_______________________________________________________________
+Start Epilog v20.08.28 on node h8c54 for job 18412886 :: Wed Apr 28 23:12:54 UTC 2021
+Job 18412886 (not serial) finished for user Mark.Potts in partition hera with exit code 137:0
+_______________________________________________________________
+End Epilogue v20.08.28 Wed Apr 28 23:12:54 UTC 2021

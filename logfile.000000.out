@@ -1233,20 +1233,20 @@ MOM_sum_output: unknown
   MOM_sum_output ENABLE_THERMODYNAMICS: True
   MOM_sum_output DT: 900.0
   MOM_sum_output MAXTRUNC: 100000
-  MOM_sum_outp
-                                     time
-Total runtime                       892.780179
-Initialization                        0.000000
-FV dy-core                          483.885254
-FV subgrid_z                          1.305265
-FV Diag                               0.318016
-GFS Step Setup                        9.631809
-GFS Radiation                        65.728570
-GFS Physics                          75.593947
-Dynamics get state                    6.383516
-Dynamics update state                31.228561
-FV3 Dycore                          489.400890
-: True
+  MOM_sum_output MAX_ENERGY: 0.0
+  MOM_sum_output MAXVEL: 6.0
+  MOM_sum_output MAX_ENERGY as used: 360.0
+  MOM_sum_output ENERGYFILE: ocean.stats
+  MOM_sum_output output_path/ENERGYFILE: MOM6_OUTPUT/ocean.stats
+  MOM_sum_output DATE_STAMPED_STDOUT: True
+  MOM_sum_output TIMEUNIT: 8.64E+04
+  MOM_sum_output READ_DEPTH_LIST: False
+  MOM_sum_output DEPTH_LIST_MIN_INC: 1.0E-10
+  MOM_sum_output TIMEUNIT: 8.64E+04
+  MOM_sum_output ENERGYSAVEDAYS (Time): 1:0
+  MOM_sum_output ENERGYSAVEDAYS_GEOMETRIC (Time): 0:0
+ocean_model_init: unknown
+  ocean_model_init SINGLE_STEPPING_CALL: True
   ocean_model_init DT: 900.0
   ocean_model_init DT_THERM: 1800.0
   MOM THERMO_SPANS_COUPLING: False
@@ -1351,77 +1351,3 @@ MOM_file_parser: unknown
   MOM_file_parser DOCUMENT_FILE: MOM_parameter_doc
   MOM_file_parser COMPLETE_DOCUMENTATION: True
   MOM_file_parser MINIMAL_DOCUMENTATION: True
-
-================================================================================
-DIAG_OUTPUT_MOD
-2020.03
-
-================================================================================
-FIELD_MANAGER_MOD
-unknown
-
-==>Note from field_manager_mod(field_manager_end):
-Exiting field_manager, have a nice day ...
-
-                                     time
-Total runtime                       865.800773
-Ocean Initialization                 12.078659
-Ocean                               463.376250
-Ocean dynamics                      279.576586
-Ocean thermodynamics and tracers    132.124357
-Ocean Other                          50.993100
-(Ocean tracer advection)              7.241745
-(Ocean diabatic driver)             124.882544
-(Ocean continuity equation *)         0.000000
-(Ocean set BBL viscosity)             0.439597
-(Ocean message passing *)            55.552680
-(Ocean MOM_initialize_state)          9.732000
-(Ocean init message passing *)        0.009243
-(Ocean thickness diffusion *)        11.213509
-(Ocean mixed layer restrat)           2.010957
-(Ocean collective diagnostics)       17.275361
-(Ocean Z-space diagnostics)           0.000000
-(Ocean ALE)                           0.889668
-(Initialize from Z)                   0.001312
-(Ocean diagnostics framework)        28.771695
-(Ocean diagnostics remapping)         0.113601
-(Ocean diagnostics grid updates)      1.895395
-(Ocean continuity halo updates)       8.403783
-(Ocean init message passing)          0.006751
-(Ocean continuity update)             4.237738
-(Ocean continuity correction)        12.299714
-(Ocean BT pre-calcs only)            13.197030
-(Ocean BT pre-step halo updates)     28.735107
-(Ocean BT stepping calcs only)        9.910429
-(Ocean BT stepping halo updates)     17.317685
-(Ocean BT post-calcs only)            2.605281
-(Ocean BT post-step halo updates      0.814341
-(Ocean BT global synch)               6.587317
-(Ocean Coriolis & mom advection)      7.383122
-(Ocean continuity equation)          18.297484
-(Ocean pressure force)               32.189556
-(Ocean vertical viscosity)            9.329602
-(Ocean horizontal viscosity)         12.965495
-(Ocean momentum increments)           1.348141
-(Ocean message passing)              60.346027
-(Ocean barotropic mode calc)          0.366307
-(Ocean barotropic mode stepping)     79.308873
-(Ocean barotropic forcing calc)       1.141179
-(Ocean kappa_shear)                   0.761013
-(Ocean diabatic entrain)              0.000000
-(Ocean vert remap)                   71.895074
-(Ocean geothermal)                    0.001486
-(Ocean set_diffusivity)               5.009591
-(Ocean KPP)                           0.000000
-(Ocean tracer_columns)                0.000063
-(Ocean diabatic tridiag)              0.411457
-(Ocean diabatic message passing)     19.772395
-(Ocean find_uv_at_h)                  0.510571
-(Ocean frazil)                        0.123374
-(Ocean advect tracer)                 6.365436
-(Ocean tracer halo updates)           0.954312
-(Ocean tracer global synch)           4.999924
-(Ocean diffuse tracer)                0.766702
-(Ocean epipycnal diffuse tracer)      0.000000
-Ocean surface forcing                 0.649894
-(Ocean forcing diagnostics)           0.461051

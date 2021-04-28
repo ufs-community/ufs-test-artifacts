@@ -827,3 +827,98 @@
 + echo 'Model ended:    ' Wed Apr 28 22:35:13 UTC 2021
 ++ date +%s
 + echo -n ' 1619649313,'
+++ date +%s
++ echo -n ' 1619651515,'
++ set +x
+++ date
++ echo 'Model started:  ' Wed Apr 28 23:11:58 UTC 2021
++ export MPI_TYPE_DEPTH=20
++ MPI_TYPE_DEPTH=20
++ export OMP_STACKSIZE=512M
++ OMP_STACKSIZE=512M
++ export OMP_NUM_THREADS=1
++ OMP_NUM_THREADS=1
++ export ESMF_RUNTIME_COMPLIANCECHECK=OFF:depth=4
++ ESMF_RUNTIME_COMPLIANCECHECK=OFF:depth=4
++ export PSM_RANKS_PER_CONTEXT=4
++ PSM_RANKS_PER_CONTEXT=4
++ export PSM_SHAREDCONTEXTS=1
++ PSM_SHAREDCONTEXTS=1
++ export ESMF_RUNTIME_PROFILE=ON
++ ESMF_RUNTIME_PROFILE=ON
++ export 'ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY TEXT'
++ ESMF_RUNTIME_PROFILE_OUTPUT='SUMMARY TEXT'
++ cp /scratch1/NCEPDEV/da/Mark.Potts/sandbox/ufs-weather-model/build-new/ufs_model .
++ sync
++ sleep 1
++ srun --label -n 480 ./ufs_model
+  0:  in fcst comp init, ntasks=         288
+  0:  num_atmos_calls=         192 time_init=        2013           4           1
+  0:            0           0           0 time_atmos=        2013           4
+  0:            1           0           0           0 time_end=        2013
+  0:            4           2           0           0           0 dt_atmos=
+  0:          450 Run_length=       86400
+  0: 
+  0: WARNING from PE     0: MPP_OPEN: File time_stamp.out opened WRONLY already exists!
+  0: 
+  0:  FLAG: gwd_opt==1 so gwd not generic
+  0:  FLAG: hybedmf so pbl not generic
+  0:  NO FLAG: scnv is generic
+  0:  NO FLAG: dcnv is generic
+  0:   num_p3d=           5  num_p2d=           1  crtrh=  0.900000000000000     
+  0:   0.900000000000000       0.900000000000000       npdf3d=           0  pdfcld= F
+  0:   shcnvcw= F  cnvcld= T  ncnvcld3d=           1  do_shoc= F  nshoc3d=
+  0:            0  nshoc_2d=           0  shoc_cld= F  nkbfshoc=        -999 
+  0:   nahdshoc=        -999  nscfshoc=        -999  uni_cld= F  ntot3d=           6 
+  0:   ntot2d=           1  shocaftcnv= F  indcld=          -1  shoc_parm=
+  0:    7000.00000000000        1.00000000000000        4.28571430000000     
+  0:   0.700000000000000       -999.000000000000       ncnvw=           6  ncnvc=
+  0:         -999
+  0: GFS_phys_time_vary_init: compute sncovr from weasd and soil vegetation parameters
+  0:  be create fcst grid
+  0:  dateS=hours since 2013-04-01 00:00:00date_init=        2013           4
+  0:            1           0           0           0
+  0:  af create fcst fieldbundle, name=dynrc=           0
+  0:  af create fcst fieldbundle, name=phy_nearest_stodrc=           0
+  0:  af create fcst fieldbundle, name=phy_bilinearrc=           0
+  0:  in fcst,init total time:    13.7898418903351     
+312:  (MOM_cap:InitializeAdvertise)current time: y,m,d-        2013           4
+312:            1 h,m,s=           0           0           0
+312:  (MOM_cap:InitializeAdvertise)start time: y,m,d-        2013           4
+312:            1 h,m,s=           0           0           0
+312: 
+312: WARNING from PE     0: reset_face_lengths_list unused v-face line: V_width,  28.8,  29.4, 41.1, 41.2,   2500.0
+312: 
+312: 
+312: WARNING from PE     0: Use EPBL_LANGMUIR_SCHEME = ADDITIVE instead of the archaic LT_ENHANCE = 3.
+312: 
+312: 
+312: WARNING from PE     0: Unused line in INPUT/MOM_input : WAVE_METHOD = "SURFACE_BANDS"
+312: 
+312: 
+312: WARNING from PE     0: Unused line in INPUT/MOM_input : SURFBAND_SOURCE = "COUPLER"
+312: 
+312: 
+312: WARNING from PE     0: Unused line in INPUT/MOM_input : STK_BAND_COUPLER = 3
+312: 
+312: 
+312: WARNING from PE     0: Unused line in INPUT/MOM_input : SURFBAND_WAVENUMBERS = 0.04, 0.11, 0.3305
+312: 
+432: application called MPI_Abort(MPI_COMM_WORLD, 128) - process 432
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+  0: slurmstepd: error: *** STEP 18412886.0 ON h8c54 CANCELLED AT 2021-04-28T23:12:47 ***
+srun: error: h35m02: task 160: Killed
+srun: launch/slurm: _step_signal: Terminating StepId=18412886.0
+srun: error: h35m05: task 268: Killed
+srun: error: h35m21: tasks 440-479: Killed
+srun: error: h35m03: tasks 200-239: Killed
+srun: error: h35m05: tasks 240-267,269-279: Killed
+srun: error: h9c53: tasks 120-159: Killed
+srun: error: h8c54: tasks 0-39: Killed
+srun: error: h35m02: tasks 161-199: Killed
+srun: error: h8c56: tasks 80-119: Killed
+srun: error: h8c55: tasks 40-79: Killed
+srun: error: h35m09: tasks 280-319: Killed
+srun: error: h35m18: tasks 400-439: Killed
+srun: error: h35m14: tasks 360-399: Killed
+srun: error: h35m13: tasks 320-359: Killed
