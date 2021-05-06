@@ -69,6 +69,7 @@ class ArchiveResults:
          break
 
   def runcmd(self,cmd):
+    print("in runcmd, dryrun is {}".format(self.dryrun))
     if(self.dryrun == True):
        print("would have executed {}".format(cmd))
     else:
