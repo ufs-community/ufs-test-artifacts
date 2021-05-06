@@ -43,8 +43,11 @@ class ArchiveResults:
     else:
       print("bad scheduler type")
       return
-    self.dryrun = args['dryrun']
-
+    if(args['dryrun'] == "True"):
+      self.dryrun = True
+    else:
+      self.dryrun = False
+    
     print("dryrun is -- {}".format(self.dryrun))
     start_time = time.time()
     seconds = 14400
@@ -69,7 +72,6 @@ class ArchiveResults:
          break
 
   def runcmd(self,cmd):
-    print("in runcmd, dryrun is {}".format(self.dryrun))
     if(self.dryrun == True):
        print("would have executed {}".format(cmd))
     else:
@@ -81,8 +83,10 @@ class ArchiveResults:
     os.chdir(self.artifacts_root)
     if(oe_filelist == []):
       return
+    mkdir_cmd = "mkdir -p {}".format(self.machine_name)
+    self.runcmd(mkdir_cmd)
     for cfile in oe_filelist:
-      cp_cmd = 'cp {} .'.format(cfile)
+      cp_cmd = 'cp {} ./{}'.format(cfile,self.machine_name)
       print("cp command is {}".format(cp_cmd))
       self.runcmd(cp_cmd)
 
