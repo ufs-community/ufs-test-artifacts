@@ -1,1 +1,0 @@
-# ufs-test-artifacts
