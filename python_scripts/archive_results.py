@@ -30,6 +30,10 @@ class ArchiveResults:
       scheduler = yaml_list['scheduler']
       print("HEY, scheduler is {}".format(scheduler))
       self.artifacts_root = yaml_list['artifactsdir']
+      if(yaml_list['artifactname']):
+        self.artifactname=yaml_list['artifactname'];
+      else:
+        self.artifactname="default"
 
 
     self.root_path = pathlib.Path(__file__).parent.absolute()
@@ -90,7 +94,7 @@ class ArchiveResults:
       print("cp command is {}".format(cp_cmd))
       self.runcmd(cp_cmd)
 
-    git_cmd = "git add *;git commit -a -m\'update for cpld_bmark run';git push origin main"
+    git_cmd = "git add *;git commit -a -m\'update for {} on {}';git push origin main".format(self.artifactname,self.machine_name)
     self.runcmd(git_cmd)
     return
 
