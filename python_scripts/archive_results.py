@@ -1,4 +1,5 @@
 import os
+import yaml
 import subprocess
 import argparse
 import datetime
@@ -16,34 +17,48 @@ from slurm import slurm
 
 
 class ArchiveResults:
-  def __init__(self,jobid,rundir,machine_name,scheduler,artifacts_root,dryrun):
+  def __init__(self,args):
+
+    self.jobid = args['jobid']
+
+    with open(args['yaml']) as file:
+      yaml_list = yaml.load(file, Loader=yaml.FullLoader)
+      if self.jobid == "None":
+        self.jobid = yaml_list['jobid']
+      self.rundir = yaml_list['collectiondir']
+      self.machine_name = yaml_list['hostname']
+      scheduler = yaml_list['scheduler']
+      print("HEY, scheduler is {}".format(scheduler))
+      self.artifacts_root = yaml_list['artifactsdir']
+      self.artifactname = yaml_list['artifactname']
 
     self.root_path = pathlib.Path(__file__).parent.absolute()
-    self.jobid = jobid
-    self.rundir = rundir
-    self.machine_name = machine_name
     if(scheduler == "pbs"):
       self.scheduler=pbs("pbs")
     elif(scheduler == "slurm"):
       self.scheduler=slurm("slurm")
-    elif(scheduler == "None"):
-      self.scheduler=NoScheduler("slurm")
-    self.artifacts_root = artifacts_root
-    self.dryrun = dryrun
-    print("dryrun is {} -- {}".format(dryrun,self.dryrun))
+    elif(scheduler == "None" ):
+      print("creating no scheduler")
+      self.scheduler=NoScheduler("None")
+    else:
+      print("bad scheduler type")
+      return
+    self.dryrun = args['dryrun']
+    
+    print("dryrun is -- {}".format(self.dryrun))
     start_time = time.time()
     seconds = 14400
     while True:
       current_time = time.time()
       elapsed_time = current_time - start_time
-      job_done = self.scheduler.checkqueue(jobid)
+      job_done = self.scheduler.checkqueue(self.jobid)
       if(job_done):
-        oe_filelist = glob.glob('{}/*log*'.format(rundir))
-        oe_filelist.extend(glob.glob('{}/PET*'.format(rundir)))
-        oe_filelist.extend(glob.glob('{}/out'.format(rundir)))
-        oe_filelist.extend(glob.glob('{}/err'.format(rundir)))
-        oe_filelist.extend(glob.glob('{}/nems*'.format(rundir)))
-        oe_filelist.extend(glob.glob('{}/ESMF_Profile.summary'.format(rundir)))
+        oe_filelist = glob.glob('{}/*log*'.format(self.rundir))
+        oe_filelist.extend(glob.glob('{}/PET*'.format(self.rundir)))
+        oe_filelist.extend(glob.glob('{}/out'.format(self.rundir)))
+        oe_filelist.extend(glob.glob('{}/err'.format(self.rundir)))
+        oe_filelist.extend(glob.glob('{}/nems*'.format(self.rundir)))
+        oe_filelist.extend(glob.glob('{}/ESMF_Profile.summary'.format(self.rundir)))
         print("filelist is {}".format(oe_filelist))
         print("oe list is {}\n".format(oe_filelist))
         self.copy_artifacts(oe_filelist)
@@ -71,20 +86,17 @@ class ArchiveResults:
       print("cp command is {}".format(cp_cmd))
       self.runcmd(cp_cmd)
 
-    git_cmd = "git add *;git commit -a -m\'update for cpld_bmark run';git push origin main"
+    git_cmd = "git add *;git commit -a -m\'update for {} on {}';git push origin main".format(self.artifactname,self.machine_name)
     self.runcmd(git_cmd)
     return
 
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='ESMF nightly build/test system')
-  parser.add_argument('-j','--self.jobid', help='directory where builds will be mad #', required=True)
-  parser.add_argument('-r','--rundir', help='directory where artifacts will be collected', required=True)
-  parser.add_argument('-m','--machinename', help='name of machine where tests were run', required=False,default=False)
-  parser.add_argument('-s','--scheduler', help='type of scheduler used', required=False,default=None)
-  parser.add_argument('-a','--artifactsrootdir', help='directory where artifacts will be placed', required=True)
-  parser.add_argument('-d','--dryrun', help='dryrun?', required=False,default=False)
+  parser.add_argument('-j','--jobid', help='directory where builds will be mad #', required=False,default="None")
+  parser.add_argument('-y','--yaml', help='Yaml file defining builds and testing parameters', required=True)
+  parser.add_argument('-d','--dryrun', help='directory where artifacts will be placed', required=False,default=False)
   args = vars(parser.parse_args())
-  
-  archiver = ArchiveResults(args['self.jobid'],args['rundir'],args['machinename'],args['scheduler'],args['artifactsrootdir'],args['dryrun'])
+   
+  archiver = ArchiveResults(args)
     
