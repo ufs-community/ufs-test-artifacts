@@ -61,7 +61,6 @@ class ArchiveResults:
         print("filelist is {}".format(oe_filelist))
         print("oe list is {}\n".format(oe_filelist))
         self.copy_artifacts(oe_filelist)
-        return
         break
       time.sleep(30)
 
