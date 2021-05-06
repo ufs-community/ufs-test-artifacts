@@ -53,15 +53,15 @@ class ArchiveResults:
       elapsed_time = current_time - start_time
       job_done = self.scheduler.checkqueue(self.jobid)
       if(job_done):
-        oe_filelist = glob.glob('{}/*log*'.format(self.rundir))
-        oe_filelist.extend(glob.glob('{}/PET*'.format(self.rundir)))
-        oe_filelist.extend(glob.glob('{}/out'.format(self.rundir)))
-        oe_filelist.extend(glob.glob('{}/err'.format(self.rundir)))
-        oe_filelist.extend(glob.glob('{}/nems*'.format(self.rundir)))
-        oe_filelist.extend(glob.glob('{}/ESMF_Profile.summary'.format(self.rundir)))
+        oe_filelist = [];
+        for key in yaml_list['collectedfiles']:
+          regex = yaml_list['collectedfiles'][key]
+          print("HEY, regex is {}/{}".format(self.rundir,regex))
+          oe_filelist.extend(glob.glob('{}/{}'.format(self.rundir,regex)))
         print("filelist is {}".format(oe_filelist))
         print("oe list is {}\n".format(oe_filelist))
         self.copy_artifacts(oe_filelist)
+        return
         break
       time.sleep(30)
 
