@@ -30,7 +30,11 @@ class ArchiveResults:
       scheduler = yaml_list['scheduler']
       print("HEY, scheduler is {}".format(scheduler))
       self.artifacts_root = yaml_list['artifactsdir']
-      self.artifactname = yaml_list['artifactname']
+      if(yaml_list['artifactname']):
+        self.artifactname=yaml_list['artifactname'];
+      else:
+        self.artifactname="default"
+
 
     self.root_path = pathlib.Path(__file__).parent.absolute()
     if(scheduler == "pbs"):
@@ -43,7 +47,10 @@ class ArchiveResults:
     else:
       print("bad scheduler type")
       return
-    self.dryrun = args['dryrun']
+    if(args['dryrun'] == "True"):
+      self.dryrun = True
+    else:
+      self.dryrun = False
     
     print("dryrun is -- {}".format(self.dryrun))
     start_time = time.time()
@@ -53,12 +60,11 @@ class ArchiveResults:
       elapsed_time = current_time - start_time
       job_done = self.scheduler.checkqueue(self.jobid)
       if(job_done):
-        oe_filelist = glob.glob('{}/*log*'.format(self.rundir))
-        oe_filelist.extend(glob.glob('{}/PET*'.format(self.rundir)))
-        oe_filelist.extend(glob.glob('{}/out'.format(self.rundir)))
-        oe_filelist.extend(glob.glob('{}/err'.format(self.rundir)))
-        oe_filelist.extend(glob.glob('{}/nems*'.format(self.rundir)))
-        oe_filelist.extend(glob.glob('{}/ESMF_Profile.summary'.format(self.rundir)))
+        oe_filelist = [];
+        for key in yaml_list['collectedfiles']:
+          regex = yaml_list['collectedfiles'][key]
+          print("HEY, regex is {}/{}".format(self.rundir,regex))
+          oe_filelist.extend(glob.glob('{}/{}'.format(self.rundir,regex)))
         print("filelist is {}".format(oe_filelist))
         print("oe list is {}\n".format(oe_filelist))
         self.copy_artifacts(oe_filelist)
@@ -81,8 +87,10 @@ class ArchiveResults:
     os.chdir(self.artifacts_root)
     if(oe_filelist == []):
       return
+    mkdir_cmd = "mkdir -p {}".format(self.machine_name)
+    self.runcmd(mkdir_cmd)
     for cfile in oe_filelist:
-      cp_cmd = 'cp {} .'.format(cfile)
+      cp_cmd = 'cp {} ./{}'.format(cfile,self.machine_name)
       print("cp command is {}".format(cp_cmd))
       self.runcmd(cp_cmd)
 
