@@ -94,7 +94,7 @@ class ArchiveResults:
       print("cp command is {}".format(cp_cmd))
       self.runcmd(cp_cmd)
 
-    git_cmd = "git add *;git commit -a -m\'update for {} on {}';git push origin main".format(self.artifactname,self.machine_name)
+    git_cmd = "git add *;git commit -a -m\'update for {} on {}';git pull origin main --no-edit;git push origin main".format(self.artifactname,self.machine_name)
     self.runcmd(git_cmd)
     return
 
