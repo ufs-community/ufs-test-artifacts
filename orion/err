@@ -1,10 +1,10 @@
 ++ date +%s
-+ echo -n ' 1622009463,'
++ echo -n ' 1622664940,'
 + set +x
 
 Currently Loaded Modules:
   1) contrib/0.1        9) impi/2018.4      17) esmf/8_1_1    25) nemsio/2.5.2
-  2) noaatools/1.0     10) hpc-impi/2018.4  18) g2/3.4.1      26) w3emc/2.7.3
+  2) noaatools/1.0     10) hpc-impi/2018.4  18) g2/3.4.2      26) w3emc/2.7.3
   3) cmake/3.17.3      11) jasper/2.0.22    19) g2tmpl/1.9.1  27) crtm/2.3.0
   4) python/3.7.5      12) zlib/1.2.11      20) ip/3.3.3      28) upp/10.0.6
   5) hpc/1.1.0         13) png/1.6.35       21) sp/2.3.3      29) ufs_common
@@ -16,13 +16,17 @@ Currently Loaded Modules:
 
 + ulimit -s unlimited
 ++ date
-+ echo 'Model started:  ' Wed May 26 01:11:08 CDT 2021
++ echo 'Model started:  ' Wed Jun 2 15:16:08 CDT 2021
 + export OMP_STACKSIZE=512M
 + OMP_STACKSIZE=512M
 + export KMP_AFFINITY=scatter
 + KMP_AFFINITY=scatter
 + export OMP_NUM_THREADS=1
 + OMP_NUM_THREADS=1
++ export ESMF_RUNTIME_PROFILE=ON
++ ESMF_RUNTIME_PROFILE=ON
++ export ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY
++ ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY
 + sync
 + sleep 1
 + srun --label -n 560 ./fv3.exe
@@ -55,7 +59,7 @@ Currently Loaded Modules:
   0:  af create fcst fieldbundle, name=dynrc=           0
   0:  af create fcst fieldbundle, name=phy_nearest_stodrc=           0
   0:  af create fcst fieldbundle, name=phy_bilinearrc=           0
-  0:  in fcst,init total time:    33.8548128604889     
+  0:  in fcst,init total time:    39.9834067821503     
 312:  (MOM_cap:InitializeAdvertise)current time: y,m,d-        2013           4
 312:            1 h,m,s=           0           0           0
 312:  (MOM_cap:InitializeAdvertise)start time: y,m,d-        2013           4
@@ -169,6 +173,6 @@ Currently Loaded Modules:
   0: WARNING from PE     0: MPP_OPEN: File RESTART/coupler.res opened WRONLY already exists!
   0: 
 ++ date
-+ echo 'Model ended:    ' Wed May 26 01:24:30 CDT 2021
++ echo 'Model ended:    ' Wed Jun 2 15:30:03 CDT 2021
 ++ date +%s
-+ echo -n ' 1622010270,'
++ echo -n ' 1622665803,'
