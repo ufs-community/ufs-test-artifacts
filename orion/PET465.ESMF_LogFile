@@ -1,617 +1,1155 @@
-20210603 104202.138 INFO             PET465 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-20210603 104202.139 INFO             PET465 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
-20210603 104202.139 INFO             PET465 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
-20210603 104202.139 INFO             PET465 !!! FOR PRODUCTION RUNS, USE:                      !!!
-20210603 104202.139 INFO             PET465 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
-20210603 104202.139 INFO             PET465 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-20210603 104202.139 INFO             PET465 Running with ESMF Version   : ESMF_8_2_0_beta_snapshot_07
-20210603 104202.148 INFO             PET465 ESMF library build date/time: "May 12 2021" "01:33:51"
-20210603 104202.148 INFO             PET465 ESMF library build location : /work/noaa/da/mpotts/sandbox/hpc-stack/pkg/ESMF_8_2_0_beta_snapshot_07
-20210603 104202.148 INFO             PET465 ESMF_COMM                   : intelmpi
-20210603 104202.155 INFO             PET465 ESMF_MOAB                   : enabled
-20210603 104202.155 INFO             PET465 ESMF_LAPACK                 : enabled
-20210603 104202.155 INFO             PET465 ESMF_NETCDF                 : enabled
-20210603 104202.155 INFO             PET465 ESMF_PNETCDF                : disabled
-20210603 104202.155 INFO             PET465 ESMF_PIO                    : enabled
-20210603 104202.155 INFO             PET465 ESMF_YAMLCPP                : enabled
-20210603 104202.177 INFO             PET465 ESMF Profiling Enabled
-20210603 104202.177 INFO             PET465 ESMF Trace/Profile clock: REALTIME
-20210603 104202.195 WARNING          PET465 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
-20210603 104202.310 TRACE            PET465  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-20210603 104202.310 TRACE            PET465  ESMF_LogSet() !!!       TRACING is disabled         !!!
-20210603 104202.310 TRACE            PET465  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-20210603 104204.456 INFO             PET465 ReadAttributes DRIVER_attributes:: start:
-20210603 104204.456 INFO             PET465  mediator_read_restart = false
-20210603 104204.456 INFO             PET465 ReadAttributes DRIVER_attributes:: end:
-20210603 104204.457 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
-20210603 104204.457 INFO             PET465  ScalarFieldCount = 2
-20210603 104204.457 INFO             PET465  ScalarFieldIdxGridNX = 1
-20210603 104204.457 INFO             PET465  ScalarFieldIdxGridNY = 2
-20210603 104204.457 INFO             PET465  ScalarFieldName = cpl_scalars
-20210603 104204.457 INFO             PET465  start_type = startup
-20210603 104204.457 INFO             PET465  restart_dir = RESTART/
-20210603 104204.457 INFO             PET465  case_name = ufs.cpld
-20210603 104204.457 INFO             PET465  restart_n = 6
-20210603 104204.457 INFO             PET465  restart_option = nhours
-20210603 104204.457 INFO             PET465  restart_ymd = -999
-20210603 104204.457 INFO             PET465  dbug_flag = 0
-20210603 104204.457 INFO             PET465  use_coldstart = false
-20210603 104204.457 INFO             PET465  use_mommesh = false
-20210603 104204.457 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
-20210603 104204.473 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210603 104204.475 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210603 104204.475 INFO             PET465 ReadAttributes MED_attributes:: start:
-20210603 104204.475 INFO             PET465  ATM_model = fv3
-20210603 104204.475 INFO             PET465  ICE_model = cice6
-20210603 104204.475 INFO             PET465  OCN_model = mom6
-20210603 104204.475 INFO             PET465  history_n = 1
-20210603 104204.475 INFO             PET465  history_option = nhours
-20210603 104204.475 INFO             PET465  history_ymd = -999
-20210603 104204.475 INFO             PET465  coupling_mode = nems_frac
-20210603 104204.475 INFO             PET465 ReadAttributes MED_attributes:: end:
-20210603 104204.476 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
-20210603 104204.476 INFO             PET465  ScalarFieldCount = 2
-20210603 104204.476 INFO             PET465  ScalarFieldIdxGridNX = 1
-20210603 104204.476 INFO             PET465  ScalarFieldIdxGridNY = 2
-20210603 104204.476 INFO             PET465  ScalarFieldName = cpl_scalars
-20210603 104204.476 INFO             PET465  start_type = startup
-20210603 104204.476 INFO             PET465  restart_dir = RESTART/
-20210603 104204.476 INFO             PET465  case_name = ufs.cpld
-20210603 104204.476 INFO             PET465  restart_n = 6
-20210603 104204.476 INFO             PET465  restart_option = nhours
-20210603 104204.476 INFO             PET465  restart_ymd = -999
-20210603 104204.476 INFO             PET465  dbug_flag = 0
-20210603 104204.476 INFO             PET465  use_coldstart = false
-20210603 104204.476 INFO             PET465  use_mommesh = false
-20210603 104204.476 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
-20210603 104204.589 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210603 104204.589 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210603 104204.589 INFO             PET465 ReadAttributes ATM_attributes:: start:
-20210603 104204.589 INFO             PET465  Verbosity = 0
-20210603 104204.589 INFO             PET465  DumpFields = false
-20210603 104204.589 INFO             PET465  ProfileMemory = false
-20210603 104204.589 INFO             PET465  OverwriteSlice = true
-20210603 104204.589 INFO             PET465 ReadAttributes ATM_attributes:: end:
-20210603 104204.589 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
-20210603 104204.589 INFO             PET465  ScalarFieldCount = 2
-20210603 104204.589 INFO             PET465  ScalarFieldIdxGridNX = 1
-20210603 104204.589 INFO             PET465  ScalarFieldIdxGridNY = 2
-20210603 104204.589 INFO             PET465  ScalarFieldName = cpl_scalars
-20210603 104204.589 INFO             PET465  start_type = startup
-20210603 104204.589 INFO             PET465  restart_dir = RESTART/
-20210603 104204.589 INFO             PET465  case_name = ufs.cpld
-20210603 104204.589 INFO             PET465  restart_n = 6
-20210603 104204.589 INFO             PET465  restart_option = nhours
-20210603 104204.589 INFO             PET465  restart_ymd = -999
-20210603 104204.589 INFO             PET465  dbug_flag = 0
-20210603 104204.590 INFO             PET465  use_coldstart = false
-20210603 104204.590 INFO             PET465  use_mommesh = false
-20210603 104204.590 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
-20210603 104204.648 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210603 104204.648 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210603 104204.648 INFO             PET465 ReadAttributes OCN_attributes:: start:
-20210603 104204.648 INFO             PET465  Verbosity = 0
-20210603 104204.648 INFO             PET465  DumpFields = false
-20210603 104204.648 INFO             PET465  ProfileMemory = false
-20210603 104204.648 INFO             PET465  OverwriteSlice = true
-20210603 104204.648 INFO             PET465  mesh_ocn = mesh.mx025.nc
-20210603 104204.648 INFO             PET465 ReadAttributes OCN_attributes:: end:
-20210603 104204.648 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
-20210603 104204.648 INFO             PET465  ScalarFieldCount = 2
-20210603 104204.648 INFO             PET465  ScalarFieldIdxGridNX = 1
-20210603 104204.648 INFO             PET465  ScalarFieldIdxGridNY = 2
-20210603 104204.648 INFO             PET465  ScalarFieldName = cpl_scalars
-20210603 104204.648 INFO             PET465  start_type = startup
-20210603 104204.648 INFO             PET465  restart_dir = RESTART/
-20210603 104204.648 INFO             PET465  case_name = ufs.cpld
-20210603 104204.648 INFO             PET465  restart_n = 6
-20210603 104204.648 INFO             PET465  restart_option = nhours
-20210603 104204.648 INFO             PET465  restart_ymd = -999
-20210603 104204.648 INFO             PET465  dbug_flag = 0
-20210603 104204.648 INFO             PET465  use_coldstart = false
-20210603 104204.648 INFO             PET465  use_mommesh = false
-20210603 104204.648 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
-20210603 104204.696 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210603 104204.696 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210603 104204.696 INFO             PET465 ReadAttributes ICE_attributes:: start:
-20210603 104204.696 INFO             PET465  Verbosity = 0
-20210603 104204.696 INFO             PET465  DumpFields = false
-20210603 104204.696 INFO             PET465  ProfileMemory = false
-20210603 104204.696 INFO             PET465  OverwriteSlice = true
-20210603 104204.696 INFO             PET465  mesh_ice = mesh.mx025.nc
-20210603 104204.696 INFO             PET465  stop_n = 6
-20210603 104204.696 INFO             PET465  stop_option = nhours
-20210603 104204.696 INFO             PET465  stop_ymd = -999
-20210603 104204.696 INFO             PET465 ReadAttributes ICE_attributes:: end:
-20210603 104204.696 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
-20210603 104204.696 INFO             PET465  ScalarFieldCount = 2
-20210603 104204.696 INFO             PET465  ScalarFieldIdxGridNX = 1
-20210603 104204.696 INFO             PET465  ScalarFieldIdxGridNY = 2
-20210603 104204.696 INFO             PET465  ScalarFieldName = cpl_scalars
-20210603 104204.696 INFO             PET465  start_type = startup
-20210603 104204.696 INFO             PET465  restart_dir = RESTART/
-20210603 104204.696 INFO             PET465  case_name = ufs.cpld
-20210603 104204.696 INFO             PET465  restart_n = 6
-20210603 104204.696 INFO             PET465  restart_option = nhours
-20210603 104204.696 INFO             PET465  restart_ymd = -999
-20210603 104204.696 INFO             PET465  dbug_flag = 0
-20210603 104204.696 INFO             PET465  use_coldstart = false
-20210603 104204.696 INFO             PET465  use_mommesh = false
-20210603 104204.696 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
-20210603 104204.697 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210603 104204.697 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210603 104204.697 INFO             PET465 ReadAttributes WAV_attributes:: start:
-20210603 104204.697 INFO             PET465  Verbosity = 0
-20210603 104204.697 INFO             PET465  OverwriteSlice = false
-20210603 104204.697 INFO             PET465 ReadAttributes WAV_attributes:: end:
-20210603 104204.697 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
-20210603 104204.697 INFO             PET465  ScalarFieldCount = 2
-20210603 104204.697 INFO             PET465  ScalarFieldIdxGridNX = 1
-20210603 104204.697 INFO             PET465  ScalarFieldIdxGridNY = 2
-20210603 104204.697 INFO             PET465  ScalarFieldName = cpl_scalars
-20210603 104204.697 INFO             PET465  start_type = startup
-20210603 104204.697 INFO             PET465  restart_dir = RESTART/
-20210603 104204.697 INFO             PET465  case_name = ufs.cpld
-20210603 104204.697 INFO             PET465  restart_n = 6
-20210603 104204.697 INFO             PET465  restart_option = nhours
-20210603 104204.697 INFO             PET465  restart_ymd = -999
-20210603 104204.697 INFO             PET465  dbug_flag = 0
-20210603 104204.697 INFO             PET465  use_coldstart = false
-20210603 104204.697 INFO             PET465  use_mommesh = false
-20210603 104204.697 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
-20210603 104252.907 INFO             PET465 (ice_comp_nuopc):(InitializeAdvertise) flds_scalar_name = cpl_scalars
-20210603 104252.907 INFO             PET465 (ice_comp_nuopc):(InitializeAdvertise) flds_scalar_num =            2
-20210603 104252.907 INFO             PET465 (ice_comp_nuopc):(InitializeAdvertise) : flds_scalar_index_nx =            1
-20210603 104252.907 INFO             PET465 (ice_comp_nuopc):(InitializeAdvertise) : flds_scalar_index_ny =            2
-20210603 104252.907 INFO             PET465 CICE_cap: dbug =      0
-20210603 104252.907 INFO             PET465 (ice_import_export:ice_advertise_fields) called
-20210603 104253.067 INFO             PET465 (ice_import_export:ice_advertise_fields) done
-20210603 104415.612 INFO             PET465 Driver is in ModifyCplLists()
-20210603 104415.614 INFO             PET465  Found           21  Connectors. Modifying CplList Attribute....
-20210603 104432.437 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = cpl_scalars is connected on root pe
-20210603 104432.585 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = ice_mask is connected using mesh
-20210603 104432.607 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = ice_fraction is connected using mesh
-20210603 104432.608 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = sea_ice_surface_temperature is connected using mesh
-20210603 104432.609 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_ice_volume is connected using mesh
-20210603 104432.609 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_snow_volume is connected using mesh
-20210603 104432.610 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Si_tref is not connected.
-20210603 104432.610 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Si_qref is not connected.
-20210603 104432.610 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Si_snowh is not connected.
-20210603 104432.610 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Si_u10 is not connected.
-20210603 104432.610 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = inst_ice_vis_dir_albedo is connected using mesh
-20210603 104432.611 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = inst_ice_ir_dir_albedo is connected using mesh
-20210603 104432.611 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = inst_ice_vis_dif_albedo is connected using mesh
-20210603 104432.612 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = inst_ice_ir_dif_albedo is connected using mesh
-20210603 104432.613 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = stress_on_air_ice_zonal is connected using mesh
-20210603 104432.614 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = stress_on_air_ice_merid is connected using mesh
-20210603 104432.615 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_laten_heat_flx_atm_into_ice is connected using mesh
-20210603 104432.615 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sensi_heat_flx_atm_into_ice is connected using mesh
-20210603 104432.616 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_up_lw_flx_ice is connected using mesh
-20210603 104432.617 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_evap_rate_atm_into_ice is connected using mesh
-20210603 104432.617 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Faii_swnet is not connected.
-20210603 104432.617 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = net_heat_flx_to_ocn is connected using mesh
-20210603 104432.618 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn is connected using mesh
-20210603 104432.619 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn_vis_dir_flx is connected using mesh
-20210603 104432.620 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn_vis_dif_flx is connected using mesh
-20210603 104432.621 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn_ir_dir_flx is connected using mesh
-20210603 104432.621 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn_ir_dif_flx is connected using mesh
-20210603 104432.622 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_fresh_water_to_ocean_rate is connected using mesh
-20210603 104432.623 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_salt_rate is connected using mesh
-20210603 104432.623 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = stress_on_ocn_ice_zonal is connected using mesh
-20210603 104432.624 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = stress_on_ocn_ice_merid is connected using mesh
-20210603 104432.625 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Fioi_bcpho is not connected.
-20210603 104432.625 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Fioi_bcphi is not connected.
-20210603 104432.625 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Fioi_flxdst is not connected.
-20210603 104432.625 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = cpl_scalars is connected on root pe
-20210603 104432.626 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = sea_surface_slope_zonal is connected using mesh
-20210603 104432.626 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = sea_surface_slope_merid is connected using mesh
-20210603 104432.627 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = sea_surface_temperature is connected using mesh
-20210603 104432.628 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = s_surf is connected using mesh
-20210603 104432.628 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = ocn_current_zonal is connected using mesh
-20210603 104432.629 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = ocn_current_merid is connected using mesh
-20210603 104432.630 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = freezing_melting_potential is connected using mesh
-20210603 104432.630 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_height_lowest is connected using mesh
-20210603 104432.632 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_zonal_wind_height_lowest is connected using mesh
-20210603 104432.632 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_merid_wind_height_lowest is connected using mesh
-20210603 104432.633 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_spec_humid_height_lowest is connected using mesh
-20210603 104432.634 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_temp_height_lowest is connected using mesh
-20210603 104432.634 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_pres_height_lowest is connected using mesh
-20210603 104432.635 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_sw_vis_dir_flx is connected using mesh
-20210603 104432.636 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_sw_ir_dir_flx is connected using mesh
-20210603 104432.636 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_sw_vis_dif_flx is connected using mesh
-20210603 104432.637 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_sw_ir_dif_flx is connected using mesh
-20210603 104432.638 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_lw_flx is connected using mesh
-20210603 104432.638 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_prec_rate is connected using mesh
-20210603 104432.639 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_fprec_rate is connected using mesh
-20210603 104432.640 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = Sa_ptem is not connected.
-20210603 104432.640 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = air_density_height_lowest is not connected.
-20210603 104432.640 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = Faxa_bcph is not connected.
-20210603 104432.640 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = Faxa_dstwet is not connected.
-20210603 104432.640 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = Faxa_dstdry is not connected.
-20210603 104432.643 INFO             PET465 ice_export called
-20210603 104522.986 INFO             PET465 (ice_comp_nuopc):(ModelSetRunClock) setting alarms for ICE
-20210603 104522.986 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0  0  0   0
-20210603 104522.986 INFO             PET465 --------------------------------> to: 2013  4  1  0  3 45   0
-20210603 104522.986 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104524.758 INFO             PET465 ice_export called
-20210603 104543.396 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0  3 45   0
-20210603 104543.396 INFO             PET465 --------------------------------> to: 2013  4  1  0  7 30   0
-20210603 104543.397 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104545.247 INFO             PET465 ice_export called
-20210603 104548.822 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0  7 30   0
-20210603 104548.822 INFO             PET465 --------------------------------> to: 2013  4  1  0 11 15   0
-20210603 104548.822 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104550.853 INFO             PET465 ice_export called
-20210603 104554.298 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 11 15   0
-20210603 104554.298 INFO             PET465 --------------------------------> to: 2013  4  1  0 15  0   0
-20210603 104554.298 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104556.140 INFO             PET465 ice_export called
-20210603 104559.605 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 15  0   0
-20210603 104559.605 INFO             PET465 --------------------------------> to: 2013  4  1  0 18 45   0
-20210603 104559.605 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104601.147 INFO             PET465 ice_export called
-20210603 104607.382 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 18 45   0
-20210603 104607.382 INFO             PET465 --------------------------------> to: 2013  4  1  0 22 30   0
-20210603 104607.382 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104608.942 INFO             PET465 ice_export called
-20210603 104615.482 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 22 30   0
-20210603 104615.482 INFO             PET465 --------------------------------> to: 2013  4  1  0 26 15   0
-20210603 104615.482 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104617.012 INFO             PET465 ice_export called
-20210603 104623.772 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 26 15   0
-20210603 104623.772 INFO             PET465 --------------------------------> to: 2013  4  1  0 30  0   0
-20210603 104623.772 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104625.304 INFO             PET465 ice_export called
-20210603 104631.882 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 30  0   0
-20210603 104631.882 INFO             PET465 --------------------------------> to: 2013  4  1  0 33 45   0
-20210603 104631.882 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104633.411 INFO             PET465 ice_export called
-20210603 104639.412 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 33 45   0
-20210603 104639.412 INFO             PET465 --------------------------------> to: 2013  4  1  0 37 30   0
-20210603 104639.412 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104640.952 INFO             PET465 ice_export called
-20210603 104646.416 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 37 30   0
-20210603 104646.416 INFO             PET465 --------------------------------> to: 2013  4  1  0 41 15   0
-20210603 104646.416 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104647.949 INFO             PET465 ice_export called
-20210603 104652.830 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 41 15   0
-20210603 104652.830 INFO             PET465 --------------------------------> to: 2013  4  1  0 45  0   0
-20210603 104652.830 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104654.386 INFO             PET465 ice_export called
-20210603 104658.861 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 45  0   0
-20210603 104658.861 INFO             PET465 --------------------------------> to: 2013  4  1  0 48 45   0
-20210603 104658.861 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104700.395 INFO             PET465 ice_export called
-20210603 104704.560 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 48 45   0
-20210603 104704.560 INFO             PET465 --------------------------------> to: 2013  4  1  0 52 30   0
-20210603 104704.560 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104706.104 INFO             PET465 ice_export called
-20210603 104710.119 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 52 30   0
-20210603 104710.119 INFO             PET465 --------------------------------> to: 2013  4  1  0 56 15   0
-20210603 104710.119 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104711.910 INFO             PET465 ice_export called
-20210603 104715.450 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 56 15   0
-20210603 104715.450 INFO             PET465 --------------------------------> to: 2013  4  1  1  0  0   0
-20210603 104715.450 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104716.982 INFO             PET465 ice_export called
-20210603 104721.024 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1  0  0   0
-20210603 104721.024 INFO             PET465 --------------------------------> to: 2013  4  1  1  3 45   0
-20210603 104721.024 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104722.634 INFO             PET465 ice_export called
-20210603 104736.887 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1  3 45   0
-20210603 104736.887 INFO             PET465 --------------------------------> to: 2013  4  1  1  7 30   0
-20210603 104736.887 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104739.099 INFO             PET465 ice_export called
-20210603 104742.248 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1  7 30   0
-20210603 104742.248 INFO             PET465 --------------------------------> to: 2013  4  1  1 11 15   0
-20210603 104742.248 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104743.903 INFO             PET465 ice_export called
-20210603 104747.777 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 11 15   0
-20210603 104747.777 INFO             PET465 --------------------------------> to: 2013  4  1  1 15  0   0
-20210603 104747.777 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104749.689 INFO             PET465 ice_export called
-20210603 104753.169 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 15  0   0
-20210603 104753.169 INFO             PET465 --------------------------------> to: 2013  4  1  1 18 45   0
-20210603 104753.169 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104755.246 INFO             PET465 ice_export called
-20210603 104758.587 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 18 45   0
-20210603 104758.587 INFO             PET465 --------------------------------> to: 2013  4  1  1 22 30   0
-20210603 104758.587 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104800.664 INFO             PET465 ice_export called
-20210603 104804.642 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 22 30   0
-20210603 104804.642 INFO             PET465 --------------------------------> to: 2013  4  1  1 26 15   0
-20210603 104804.642 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104806.625 INFO             PET465 ice_export called
-20210603 104810.061 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 26 15   0
-20210603 104810.061 INFO             PET465 --------------------------------> to: 2013  4  1  1 30  0   0
-20210603 104810.061 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104812.013 INFO             PET465 ice_export called
-20210603 104815.481 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 30  0   0
-20210603 104815.481 INFO             PET465 --------------------------------> to: 2013  4  1  1 33 45   0
-20210603 104815.481 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104817.649 INFO             PET465 ice_export called
-20210603 104820.897 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 33 45   0
-20210603 104820.897 INFO             PET465 --------------------------------> to: 2013  4  1  1 37 30   0
-20210603 104820.897 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104822.861 INFO             PET465 ice_export called
-20210603 104826.349 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 37 30   0
-20210603 104826.349 INFO             PET465 --------------------------------> to: 2013  4  1  1 41 15   0
-20210603 104826.349 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104828.593 INFO             PET465 ice_export called
-20210603 104831.823 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 41 15   0
-20210603 104831.823 INFO             PET465 --------------------------------> to: 2013  4  1  1 45  0   0
-20210603 104831.823 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104833.761 INFO             PET465 ice_export called
-20210603 104837.250 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 45  0   0
-20210603 104837.250 INFO             PET465 --------------------------------> to: 2013  4  1  1 48 45   0
-20210603 104837.250 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104839.236 INFO             PET465 ice_export called
-20210603 104842.638 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 48 45   0
-20210603 104842.638 INFO             PET465 --------------------------------> to: 2013  4  1  1 52 30   0
-20210603 104842.638 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104844.589 INFO             PET465 ice_export called
-20210603 104848.091 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 52 30   0
-20210603 104848.091 INFO             PET465 --------------------------------> to: 2013  4  1  1 56 15   0
-20210603 104848.092 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104850.182 INFO             PET465 ice_export called
-20210603 104853.536 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 56 15   0
-20210603 104853.536 INFO             PET465 --------------------------------> to: 2013  4  1  2  0  0   0
-20210603 104853.536 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104855.696 INFO             PET465 ice_export called
-20210603 104858.973 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2  0  0   0
-20210603 104858.973 INFO             PET465 --------------------------------> to: 2013  4  1  2  3 45   0
-20210603 104858.973 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104901.138 INFO             PET465 ice_export called
-20210603 104914.802 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2  3 45   0
-20210603 104914.802 INFO             PET465 --------------------------------> to: 2013  4  1  2  7 30   0
-20210603 104914.802 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104916.926 INFO             PET465 ice_export called
-20210603 104920.244 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2  7 30   0
-20210603 104920.244 INFO             PET465 --------------------------------> to: 2013  4  1  2 11 15   0
-20210603 104920.244 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104922.344 INFO             PET465 ice_export called
-20210603 104925.661 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 11 15   0
-20210603 104925.661 INFO             PET465 --------------------------------> to: 2013  4  1  2 15  0   0
-20210603 104925.661 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104927.785 INFO             PET465 ice_export called
-20210603 104931.059 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 15  0   0
-20210603 104931.059 INFO             PET465 --------------------------------> to: 2013  4  1  2 18 45   0
-20210603 104931.059 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104933.057 INFO             PET465 ice_export called
-20210603 104936.497 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 18 45   0
-20210603 104936.497 INFO             PET465 --------------------------------> to: 2013  4  1  2 22 30   0
-20210603 104936.497 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104938.587 INFO             PET465 ice_export called
-20210603 104942.043 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 22 30   0
-20210603 104942.043 INFO             PET465 --------------------------------> to: 2013  4  1  2 26 15   0
-20210603 104942.043 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104944.250 INFO             PET465 ice_export called
-20210603 104947.441 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 26 15   0
-20210603 104947.441 INFO             PET465 --------------------------------> to: 2013  4  1  2 30  0   0
-20210603 104947.441 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104949.117 INFO             PET465 ice_export called
-20210603 104953.240 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 30  0   0
-20210603 104953.240 INFO             PET465 --------------------------------> to: 2013  4  1  2 33 45   0
-20210603 104953.240 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 104955.220 INFO             PET465 ice_export called
-20210603 104958.649 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 33 45   0
-20210603 104958.649 INFO             PET465 --------------------------------> to: 2013  4  1  2 37 30   0
-20210603 104958.649 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105000.666 INFO             PET465 ice_export called
-20210603 105004.074 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 37 30   0
-20210603 105004.074 INFO             PET465 --------------------------------> to: 2013  4  1  2 41 15   0
-20210603 105004.074 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105006.008 INFO             PET465 ice_export called
-20210603 105009.478 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 41 15   0
-20210603 105009.478 INFO             PET465 --------------------------------> to: 2013  4  1  2 45  0   0
-20210603 105009.478 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105011.415 INFO             PET465 ice_export called
-20210603 105014.925 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 45  0   0
-20210603 105014.925 INFO             PET465 --------------------------------> to: 2013  4  1  2 48 45   0
-20210603 105014.925 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105017.041 INFO             PET465 ice_export called
-20210603 105020.480 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 48 45   0
-20210603 105020.480 INFO             PET465 --------------------------------> to: 2013  4  1  2 52 30   0
-20210603 105020.480 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105022.479 INFO             PET465 ice_export called
-20210603 105025.891 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 52 30   0
-20210603 105025.891 INFO             PET465 --------------------------------> to: 2013  4  1  2 56 15   0
-20210603 105025.891 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105028.081 INFO             PET465 ice_export called
-20210603 105031.303 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 56 15   0
-20210603 105031.303 INFO             PET465 --------------------------------> to: 2013  4  1  3  0  0   0
-20210603 105031.303 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105033.326 INFO             PET465 ice_export called
-20210603 105036.971 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3  0  0   0
-20210603 105036.971 INFO             PET465 --------------------------------> to: 2013  4  1  3  3 45   0
-20210603 105036.971 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105039.077 INFO             PET465 ice_export called
-20210603 105052.877 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3  3 45   0
-20210603 105052.877 INFO             PET465 --------------------------------> to: 2013  4  1  3  7 30   0
-20210603 105052.877 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105054.885 INFO             PET465 ice_export called
-20210603 105058.296 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3  7 30   0
-20210603 105058.296 INFO             PET465 --------------------------------> to: 2013  4  1  3 11 15   0
-20210603 105058.296 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105100.050 INFO             PET465 ice_export called
-20210603 105103.773 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 11 15   0
-20210603 105103.773 INFO             PET465 --------------------------------> to: 2013  4  1  3 15  0   0
-20210603 105103.773 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105105.763 INFO             PET465 ice_export called
-20210603 105109.146 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 15  0   0
-20210603 105109.146 INFO             PET465 --------------------------------> to: 2013  4  1  3 18 45   0
-20210603 105109.146 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105111.127 INFO             PET465 ice_export called
-20210603 105114.594 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 18 45   0
-20210603 105114.594 INFO             PET465 --------------------------------> to: 2013  4  1  3 22 30   0
-20210603 105114.594 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105116.639 INFO             PET465 ice_export called
-20210603 105119.987 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 22 30   0
-20210603 105119.987 INFO             PET465 --------------------------------> to: 2013  4  1  3 26 15   0
-20210603 105119.987 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105122.105 INFO             PET465 ice_export called
-20210603 105125.410 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 26 15   0
-20210603 105125.410 INFO             PET465 --------------------------------> to: 2013  4  1  3 30  0   0
-20210603 105125.410 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105127.357 INFO             PET465 ice_export called
-20210603 105130.827 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 30  0   0
-20210603 105130.827 INFO             PET465 --------------------------------> to: 2013  4  1  3 33 45   0
-20210603 105130.827 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105133.009 INFO             PET465 ice_export called
-20210603 105136.234 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 33 45   0
-20210603 105136.234 INFO             PET465 --------------------------------> to: 2013  4  1  3 37 30   0
-20210603 105136.234 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105138.341 INFO             PET465 ice_export called
-20210603 105141.647 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 37 30   0
-20210603 105141.647 INFO             PET465 --------------------------------> to: 2013  4  1  3 41 15   0
-20210603 105141.647 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105143.593 INFO             PET465 ice_export called
-20210603 105147.052 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 41 15   0
-20210603 105147.052 INFO             PET465 --------------------------------> to: 2013  4  1  3 45  0   0
-20210603 105147.052 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105149.037 INFO             PET465 ice_export called
-20210603 105152.468 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 45  0   0
-20210603 105152.468 INFO             PET465 --------------------------------> to: 2013  4  1  3 48 45   0
-20210603 105152.468 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105154.499 INFO             PET465 ice_export called
-20210603 105157.927 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 48 45   0
-20210603 105157.927 INFO             PET465 --------------------------------> to: 2013  4  1  3 52 30   0
-20210603 105157.927 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105159.937 INFO             PET465 ice_export called
-20210603 105203.352 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 52 30   0
-20210603 105203.352 INFO             PET465 --------------------------------> to: 2013  4  1  3 56 15   0
-20210603 105203.352 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105205.469 INFO             PET465 ice_export called
-20210603 105208.758 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 56 15   0
-20210603 105208.758 INFO             PET465 --------------------------------> to: 2013  4  1  4  0  0   0
-20210603 105208.758 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105210.874 INFO             PET465 ice_export called
-20210603 105214.195 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4  0  0   0
-20210603 105214.195 INFO             PET465 --------------------------------> to: 2013  4  1  4  3 45   0
-20210603 105214.195 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105216.206 INFO             PET465 ice_export called
-20210603 105229.896 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4  3 45   0
-20210603 105229.896 INFO             PET465 --------------------------------> to: 2013  4  1  4  7 30   0
-20210603 105229.896 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105232.156 INFO             PET465 ice_export called
-20210603 105235.300 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4  7 30   0
-20210603 105235.300 INFO             PET465 --------------------------------> to: 2013  4  1  4 11 15   0
-20210603 105235.300 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105237.573 INFO             PET465 ice_export called
-20210603 105240.684 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 11 15   0
-20210603 105240.684 INFO             PET465 --------------------------------> to: 2013  4  1  4 15  0   0
-20210603 105240.684 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105242.704 INFO             PET465 ice_export called
-20210603 105246.095 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 15  0   0
-20210603 105246.095 INFO             PET465 --------------------------------> to: 2013  4  1  4 18 45   0
-20210603 105246.095 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105248.037 INFO             PET465 ice_export called
-20210603 105251.513 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 18 45   0
-20210603 105251.513 INFO             PET465 --------------------------------> to: 2013  4  1  4 22 30   0
-20210603 105251.513 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105253.510 INFO             PET465 ice_export called
-20210603 105256.888 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 22 30   0
-20210603 105256.888 INFO             PET465 --------------------------------> to: 2013  4  1  4 26 15   0
-20210603 105256.888 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105258.852 INFO             PET465 ice_export called
-20210603 105302.325 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 26 15   0
-20210603 105302.325 INFO             PET465 --------------------------------> to: 2013  4  1  4 30  0   0
-20210603 105302.325 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105304.548 INFO             PET465 ice_export called
-20210603 105308.387 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 30  0   0
-20210603 105308.387 INFO             PET465 --------------------------------> to: 2013  4  1  4 33 45   0
-20210603 105308.387 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105310.492 INFO             PET465 ice_export called
-20210603 105313.803 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 33 45   0
-20210603 105313.803 INFO             PET465 --------------------------------> to: 2013  4  1  4 37 30   0
-20210603 105313.803 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105315.752 INFO             PET465 ice_export called
-20210603 105319.201 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 37 30   0
-20210603 105319.201 INFO             PET465 --------------------------------> to: 2013  4  1  4 41 15   0
-20210603 105319.201 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105321.138 INFO             PET465 ice_export called
-20210603 105324.591 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 41 15   0
-20210603 105324.591 INFO             PET465 --------------------------------> to: 2013  4  1  4 45  0   0
-20210603 105324.591 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105326.602 INFO             PET465 ice_export called
-20210603 105329.971 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 45  0   0
-20210603 105329.971 INFO             PET465 --------------------------------> to: 2013  4  1  4 48 45   0
-20210603 105329.971 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105332.004 INFO             PET465 ice_export called
-20210603 105335.468 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 48 45   0
-20210603 105335.468 INFO             PET465 --------------------------------> to: 2013  4  1  4 52 30   0
-20210603 105335.468 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105337.688 INFO             PET465 ice_export called
-20210603 105340.874 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 52 30   0
-20210603 105340.874 INFO             PET465 --------------------------------> to: 2013  4  1  4 56 15   0
-20210603 105340.874 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105342.872 INFO             PET465 ice_export called
-20210603 105346.325 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 56 15   0
-20210603 105346.325 INFO             PET465 --------------------------------> to: 2013  4  1  5  0  0   0
-20210603 105346.325 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105348.261 INFO             PET465 ice_export called
-20210603 105351.681 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5  0  0   0
-20210603 105351.681 INFO             PET465 --------------------------------> to: 2013  4  1  5  3 45   0
-20210603 105351.681 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105353.664 INFO             PET465 ice_export called
-20210603 105407.331 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5  3 45   0
-20210603 105407.331 INFO             PET465 --------------------------------> to: 2013  4  1  5  7 30   0
-20210603 105407.331 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105409.341 INFO             PET465 ice_export called
-20210603 105412.878 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5  7 30   0
-20210603 105412.878 INFO             PET465 --------------------------------> to: 2013  4  1  5 11 15   0
-20210603 105412.878 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105414.877 INFO             PET465 ice_export called
-20210603 105418.329 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 11 15   0
-20210603 105418.329 INFO             PET465 --------------------------------> to: 2013  4  1  5 15  0   0
-20210603 105418.329 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105420.461 INFO             PET465 ice_export called
-20210603 105423.777 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 15  0   0
-20210603 105423.777 INFO             PET465 --------------------------------> to: 2013  4  1  5 18 45   0
-20210603 105423.777 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105425.776 INFO             PET465 ice_export called
-20210603 105429.180 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 18 45   0
-20210603 105429.180 INFO             PET465 --------------------------------> to: 2013  4  1  5 22 30   0
-20210603 105429.180 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105431.376 INFO             PET465 ice_export called
-20210603 105434.572 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 22 30   0
-20210603 105434.572 INFO             PET465 --------------------------------> to: 2013  4  1  5 26 15   0
-20210603 105434.572 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105436.497 INFO             PET465 ice_export called
-20210603 105439.973 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 26 15   0
-20210603 105439.973 INFO             PET465 --------------------------------> to: 2013  4  1  5 30  0   0
-20210603 105439.973 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105441.958 INFO             PET465 ice_export called
-20210603 105445.380 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 30  0   0
-20210603 105445.380 INFO             PET465 --------------------------------> to: 2013  4  1  5 33 45   0
-20210603 105445.381 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105447.471 INFO             PET465 ice_export called
-20210603 105450.771 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 33 45   0
-20210603 105450.771 INFO             PET465 --------------------------------> to: 2013  4  1  5 37 30   0
-20210603 105450.771 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105452.778 INFO             PET465 ice_export called
-20210603 105456.265 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 37 30   0
-20210603 105456.265 INFO             PET465 --------------------------------> to: 2013  4  1  5 41 15   0
-20210603 105456.265 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105458.426 INFO             PET465 ice_export called
-20210603 105501.677 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 41 15   0
-20210603 105501.677 INFO             PET465 --------------------------------> to: 2013  4  1  5 45  0   0
-20210603 105501.677 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105503.697 INFO             PET465 ice_export called
-20210603 105507.181 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 45  0   0
-20210603 105507.181 INFO             PET465 --------------------------------> to: 2013  4  1  5 48 45   0
-20210603 105507.181 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105509.084 INFO             PET465 ice_export called
-20210603 105512.599 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 48 45   0
-20210603 105512.599 INFO             PET465 --------------------------------> to: 2013  4  1  5 52 30   0
-20210603 105512.600 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105514.507 INFO             PET465 ice_export called
-20210603 105518.006 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 52 30   0
-20210603 105518.006 INFO             PET465 --------------------------------> to: 2013  4  1  5 56 15   0
-20210603 105518.006 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105519.887 INFO             PET465 ice_export called
-20210603 105523.434 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 56 15   0
-20210603 105523.434 INFO             PET465 --------------------------------> to: 2013  4  1  6  0  0   0
-20210603 105523.435 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
-20210603 105533.681 INFO             PET465 ice_export called
-20210603 105552.399 INFO             PET465 Finalizing ESMF
+20210603 164410.634 INFO             PET465 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210603 164410.644 INFO             PET465 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210603 164410.644 INFO             PET465 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210603 164410.644 INFO             PET465 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210603 164410.644 INFO             PET465 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210603 164410.644 INFO             PET465 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210603 164410.645 INFO             PET465 Running with ESMF Version   : ESMF_8_2_0_beta_snapshot_09
+20210603 164410.646 INFO             PET465 ESMF library build date/time: "May 22 2021" "01:32:48"
+20210603 164410.646 INFO             PET465 ESMF library build location : /work/noaa/da/mpotts/sandbox/hpc-stack/pkg/ESMF_8_2_0_beta_snapshot_09
+20210603 164410.646 INFO             PET465 ESMF_COMM                   : intelmpi
+20210603 164410.719 INFO             PET465 ESMF_MOAB                   : enabled
+20210603 164410.719 INFO             PET465 ESMF_LAPACK                 : enabled
+20210603 164410.719 INFO             PET465 ESMF_NETCDF                 : enabled
+20210603 164410.738 INFO             PET465 ESMF_PNETCDF                : disabled
+20210603 164410.738 INFO             PET465 ESMF_PIO                    : enabled
+20210603 164410.738 INFO             PET465 ESMF_YAMLCPP                : enabled
+20210603 164410.754 INFO             PET465 ESMF Profiling Enabled
+20210603 164410.754 INFO             PET465 ESMF Trace/Profile clock: REALTIME
+20210603 164411.266 WARNING          PET465 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
+20210603 164411.548 TRACE            PET465  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210603 164411.548 TRACE            PET465  ESMF_LogSet() !!!       TRACING is disabled         !!!
+20210603 164411.548 TRACE            PET465  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210603 164413.256 INFO             PET465 ReadAttributes DRIVER_attributes:: start:
+20210603 164413.256 INFO             PET465  mediator_read_restart = false
+20210603 164413.256 INFO             PET465 ReadAttributes DRIVER_attributes:: end:
+20210603 164413.256 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
+20210603 164413.256 INFO             PET465  ScalarFieldCount = 2
+20210603 164413.256 INFO             PET465  ScalarFieldIdxGridNX = 1
+20210603 164413.256 INFO             PET465  ScalarFieldIdxGridNY = 2
+20210603 164413.256 INFO             PET465  ScalarFieldName = cpl_scalars
+20210603 164413.256 INFO             PET465  start_type = startup
+20210603 164413.256 INFO             PET465  restart_dir = RESTART/
+20210603 164413.256 INFO             PET465  case_name = ufs.cpld
+20210603 164413.256 INFO             PET465  restart_n = 6
+20210603 164413.256 INFO             PET465  restart_option = nhours
+20210603 164413.256 INFO             PET465  restart_ymd = -999
+20210603 164413.256 INFO             PET465  dbug_flag = 0
+20210603 164413.256 INFO             PET465  use_coldstart = false
+20210603 164413.256 INFO             PET465  use_mommesh = false
+20210603 164413.256 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
+20210603 164413.293 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210603 164413.295 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210603 164413.296 INFO             PET465 ReadAttributes MED_attributes:: start:
+20210603 164413.296 INFO             PET465  ATM_model = fv3
+20210603 164413.296 INFO             PET465  ICE_model = cice6
+20210603 164413.296 INFO             PET465  OCN_model = mom6
+20210603 164413.296 INFO             PET465  history_n = 1
+20210603 164413.296 INFO             PET465  history_option = nhours
+20210603 164413.296 INFO             PET465  history_ymd = -999
+20210603 164413.296 INFO             PET465  coupling_mode = nems_frac
+20210603 164413.296 INFO             PET465 ReadAttributes MED_attributes:: end:
+20210603 164413.296 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
+20210603 164413.296 INFO             PET465  ScalarFieldCount = 2
+20210603 164413.296 INFO             PET465  ScalarFieldIdxGridNX = 1
+20210603 164413.296 INFO             PET465  ScalarFieldIdxGridNY = 2
+20210603 164413.296 INFO             PET465  ScalarFieldName = cpl_scalars
+20210603 164413.296 INFO             PET465  start_type = startup
+20210603 164413.296 INFO             PET465  restart_dir = RESTART/
+20210603 164413.296 INFO             PET465  case_name = ufs.cpld
+20210603 164413.296 INFO             PET465  restart_n = 6
+20210603 164413.296 INFO             PET465  restart_option = nhours
+20210603 164413.296 INFO             PET465  restart_ymd = -999
+20210603 164413.296 INFO             PET465  dbug_flag = 0
+20210603 164413.296 INFO             PET465  use_coldstart = false
+20210603 164413.296 INFO             PET465  use_mommesh = false
+20210603 164413.296 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
+20210603 164413.405 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210603 164413.405 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210603 164413.405 INFO             PET465 ReadAttributes ATM_attributes:: start:
+20210603 164413.405 INFO             PET465  Verbosity = 0
+20210603 164413.405 INFO             PET465  DumpFields = false
+20210603 164413.405 INFO             PET465  ProfileMemory = false
+20210603 164413.405 INFO             PET465  OverwriteSlice = true
+20210603 164413.405 INFO             PET465 ReadAttributes ATM_attributes:: end:
+20210603 164413.405 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
+20210603 164413.405 INFO             PET465  ScalarFieldCount = 2
+20210603 164413.405 INFO             PET465  ScalarFieldIdxGridNX = 1
+20210603 164413.405 INFO             PET465  ScalarFieldIdxGridNY = 2
+20210603 164413.405 INFO             PET465  ScalarFieldName = cpl_scalars
+20210603 164413.405 INFO             PET465  start_type = startup
+20210603 164413.405 INFO             PET465  restart_dir = RESTART/
+20210603 164413.405 INFO             PET465  case_name = ufs.cpld
+20210603 164413.405 INFO             PET465  restart_n = 6
+20210603 164413.405 INFO             PET465  restart_option = nhours
+20210603 164413.405 INFO             PET465  restart_ymd = -999
+20210603 164413.405 INFO             PET465  dbug_flag = 0
+20210603 164413.405 INFO             PET465  use_coldstart = false
+20210603 164413.405 INFO             PET465  use_mommesh = false
+20210603 164413.405 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
+20210603 164413.447 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210603 164413.447 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210603 164413.447 INFO             PET465 ReadAttributes OCN_attributes:: start:
+20210603 164413.447 INFO             PET465  Verbosity = 0
+20210603 164413.447 INFO             PET465  DumpFields = false
+20210603 164413.447 INFO             PET465  ProfileMemory = false
+20210603 164413.447 INFO             PET465  OverwriteSlice = true
+20210603 164413.447 INFO             PET465  mesh_ocn = mesh.mx025.nc
+20210603 164413.447 INFO             PET465 ReadAttributes OCN_attributes:: end:
+20210603 164413.448 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
+20210603 164413.448 INFO             PET465  ScalarFieldCount = 2
+20210603 164413.448 INFO             PET465  ScalarFieldIdxGridNX = 1
+20210603 164413.448 INFO             PET465  ScalarFieldIdxGridNY = 2
+20210603 164413.448 INFO             PET465  ScalarFieldName = cpl_scalars
+20210603 164413.448 INFO             PET465  start_type = startup
+20210603 164413.448 INFO             PET465  restart_dir = RESTART/
+20210603 164413.448 INFO             PET465  case_name = ufs.cpld
+20210603 164413.448 INFO             PET465  restart_n = 6
+20210603 164413.448 INFO             PET465  restart_option = nhours
+20210603 164413.448 INFO             PET465  restart_ymd = -999
+20210603 164413.448 INFO             PET465  dbug_flag = 0
+20210603 164413.448 INFO             PET465  use_coldstart = false
+20210603 164413.448 INFO             PET465  use_mommesh = false
+20210603 164413.448 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
+20210603 164413.561 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210603 164413.561 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210603 164413.561 INFO             PET465 ReadAttributes ICE_attributes:: start:
+20210603 164413.561 INFO             PET465  Verbosity = 0
+20210603 164413.561 INFO             PET465  DumpFields = false
+20210603 164413.561 INFO             PET465  ProfileMemory = false
+20210603 164413.561 INFO             PET465  OverwriteSlice = true
+20210603 164413.561 INFO             PET465  mesh_ice = mesh.mx025.nc
+20210603 164413.561 INFO             PET465  stop_n = 6
+20210603 164413.561 INFO             PET465  stop_option = nhours
+20210603 164413.561 INFO             PET465  stop_ymd = -999
+20210603 164413.561 INFO             PET465 ReadAttributes ICE_attributes:: end:
+20210603 164413.561 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
+20210603 164413.561 INFO             PET465  ScalarFieldCount = 2
+20210603 164413.561 INFO             PET465  ScalarFieldIdxGridNX = 1
+20210603 164413.561 INFO             PET465  ScalarFieldIdxGridNY = 2
+20210603 164413.561 INFO             PET465  ScalarFieldName = cpl_scalars
+20210603 164413.561 INFO             PET465  start_type = startup
+20210603 164413.561 INFO             PET465  restart_dir = RESTART/
+20210603 164413.561 INFO             PET465  case_name = ufs.cpld
+20210603 164413.561 INFO             PET465  restart_n = 6
+20210603 164413.561 INFO             PET465  restart_option = nhours
+20210603 164413.561 INFO             PET465  restart_ymd = -999
+20210603 164413.561 INFO             PET465  dbug_flag = 0
+20210603 164413.561 INFO             PET465  use_coldstart = false
+20210603 164413.561 INFO             PET465  use_mommesh = false
+20210603 164413.561 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
+20210603 164413.562 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210603 164413.562 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210603 164413.562 INFO             PET465 ReadAttributes WAV_attributes:: start:
+20210603 164413.562 INFO             PET465  Verbosity = 0
+20210603 164413.562 INFO             PET465  OverwriteSlice = false
+20210603 164413.562 INFO             PET465 ReadAttributes WAV_attributes:: end:
+20210603 164413.562 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
+20210603 164413.562 INFO             PET465  ScalarFieldCount = 2
+20210603 164413.562 INFO             PET465  ScalarFieldIdxGridNX = 1
+20210603 164413.562 INFO             PET465  ScalarFieldIdxGridNY = 2
+20210603 164413.562 INFO             PET465  ScalarFieldName = cpl_scalars
+20210603 164413.562 INFO             PET465  start_type = startup
+20210603 164413.562 INFO             PET465  restart_dir = RESTART/
+20210603 164413.562 INFO             PET465  case_name = ufs.cpld
+20210603 164413.562 INFO             PET465  restart_n = 6
+20210603 164413.562 INFO             PET465  restart_option = nhours
+20210603 164413.562 INFO             PET465  restart_ymd = -999
+20210603 164413.562 INFO             PET465  dbug_flag = 0
+20210603 164413.562 INFO             PET465  use_coldstart = false
+20210603 164413.562 INFO             PET465  use_mommesh = false
+20210603 164413.562 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
+20210603 164513.257 INFO             PET465 (ice_comp_nuopc):(InitializeAdvertise) flds_scalar_name = cpl_scalars
+20210603 164513.257 INFO             PET465 (ice_comp_nuopc):(InitializeAdvertise) flds_scalar_num =            2
+20210603 164513.257 INFO             PET465 (ice_comp_nuopc):(InitializeAdvertise) : flds_scalar_index_nx =            1
+20210603 164513.257 INFO             PET465 (ice_comp_nuopc):(InitializeAdvertise) : flds_scalar_index_ny =            2
+20210603 164513.269 INFO             PET465 CICE_cap: dbug =      0
+20210603 164513.269 INFO             PET465 (ice_import_export:ice_advertise_fields) called
+20210603 164513.447 INFO             PET465 (ice_import_export:ice_advertise_fields) done
+20210603 164630.953 INFO             PET465 Driver is in ModifyCplLists()
+20210603 164630.970 INFO             PET465  Found           21  Connectors. Modifying CplList Attribute....
+20210603 164646.951 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = cpl_scalars is connected on root pe
+20210603 164646.968 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = ice_mask is connected using mesh
+20210603 164646.975 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = ice_fraction is connected using mesh
+20210603 164646.975 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = sea_ice_surface_temperature is connected using mesh
+20210603 164646.976 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_ice_volume is connected using mesh
+20210603 164646.977 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_snow_volume is connected using mesh
+20210603 164646.977 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Si_tref is not connected.
+20210603 164646.978 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Si_qref is not connected.
+20210603 164646.978 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Si_snowh is not connected.
+20210603 164646.978 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Si_u10 is not connected.
+20210603 164646.978 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = inst_ice_vis_dir_albedo is connected using mesh
+20210603 164646.978 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = inst_ice_ir_dir_albedo is connected using mesh
+20210603 164646.979 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = inst_ice_vis_dif_albedo is connected using mesh
+20210603 164646.980 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = inst_ice_ir_dif_albedo is connected using mesh
+20210603 164646.980 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = stress_on_air_ice_zonal is connected using mesh
+20210603 164646.981 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = stress_on_air_ice_merid is connected using mesh
+20210603 164646.982 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_laten_heat_flx_atm_into_ice is connected using mesh
+20210603 164646.983 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sensi_heat_flx_atm_into_ice is connected using mesh
+20210603 164646.983 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_up_lw_flx_ice is connected using mesh
+20210603 164646.984 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_evap_rate_atm_into_ice is connected using mesh
+20210603 164646.985 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Faii_swnet is not connected.
+20210603 164646.985 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = net_heat_flx_to_ocn is connected using mesh
+20210603 164646.985 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn is connected using mesh
+20210603 164646.986 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn_vis_dir_flx is connected using mesh
+20210603 164646.987 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn_vis_dif_flx is connected using mesh
+20210603 164646.988 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn_ir_dir_flx is connected using mesh
+20210603 164646.989 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn_ir_dif_flx is connected using mesh
+20210603 164646.989 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_fresh_water_to_ocean_rate is connected using mesh
+20210603 164646.990 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_salt_rate is connected using mesh
+20210603 164646.991 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = stress_on_ocn_ice_zonal is connected using mesh
+20210603 164646.992 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = stress_on_ocn_ice_merid is connected using mesh
+20210603 164646.992 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Fioi_bcpho is not connected.
+20210603 164646.992 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Fioi_bcphi is not connected.
+20210603 164646.992 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Fioi_flxdst is not connected.
+20210603 164646.992 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = cpl_scalars is connected on root pe
+20210603 164646.993 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = sea_surface_slope_zonal is connected using mesh
+20210603 164646.994 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = sea_surface_slope_merid is connected using mesh
+20210603 164646.995 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = sea_surface_temperature is connected using mesh
+20210603 164646.995 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = s_surf is connected using mesh
+20210603 164646.996 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = ocn_current_zonal is connected using mesh
+20210603 164646.997 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = ocn_current_merid is connected using mesh
+20210603 164646.997 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = freezing_melting_potential is connected using mesh
+20210603 164646.998 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_height_lowest is connected using mesh
+20210603 164646.999 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_zonal_wind_height_lowest is connected using mesh
+20210603 164646.999 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_merid_wind_height_lowest is connected using mesh
+20210603 164647.001 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_spec_humid_height_lowest is connected using mesh
+20210603 164647.001 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_temp_height_lowest is connected using mesh
+20210603 164647.002 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_pres_height_lowest is connected using mesh
+20210603 164647.003 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_sw_vis_dir_flx is connected using mesh
+20210603 164647.003 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_sw_ir_dir_flx is connected using mesh
+20210603 164647.004 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_sw_vis_dif_flx is connected using mesh
+20210603 164647.005 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_sw_ir_dif_flx is connected using mesh
+20210603 164647.005 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_lw_flx is connected using mesh
+20210603 164647.006 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_prec_rate is connected using mesh
+20210603 164647.007 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_fprec_rate is connected using mesh
+20210603 164647.008 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = Sa_ptem is not connected.
+20210603 164647.008 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = air_density_height_lowest is not connected.
+20210603 164647.008 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = Faxa_bcph is not connected.
+20210603 164647.008 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = Faxa_dstwet is not connected.
+20210603 164647.008 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = Faxa_dstdry is not connected.
+20210603 164647.008 INFO             PET465 ice_export called
+20210603 164655.287 DEBUG            PET465 about to destroy Mesh: 0x1d4bfd60
+20210603 164658.509 DEBUG            PET465 about to destroy Mesh: 0x1bc27600
+20210603 164736.646 INFO             PET465 (ice_comp_nuopc):(ModelSetRunClock) setting alarms for ICE
+20210603 164736.655 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0  0  0   0
+20210603 164736.655 INFO             PET465 --------------------------------> to: 2013  4  1  0  3 45   0
+20210603 164736.655 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164738.423 INFO             PET465 ice_export called
+20210603 164757.608 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0  3 45   0
+20210603 164757.608 INFO             PET465 --------------------------------> to: 2013  4  1  0  7 30   0
+20210603 164757.608 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164759.425 INFO             PET465 ice_export called
+20210603 164802.938 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0  7 30   0
+20210603 164802.938 INFO             PET465 --------------------------------> to: 2013  4  1  0 11 15   0
+20210603 164802.938 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164804.740 INFO             PET465 ice_export called
+20210603 164808.444 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 11 15   0
+20210603 164808.444 INFO             PET465 --------------------------------> to: 2013  4  1  0 15  0   0
+20210603 164808.444 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164810.226 INFO             PET465 ice_export called
+20210603 164813.709 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 15  0   0
+20210603 164813.709 INFO             PET465 --------------------------------> to: 2013  4  1  0 18 45   0
+20210603 164813.709 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164815.245 INFO             PET465 ice_export called
+20210603 164821.703 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 18 45   0
+20210603 164821.703 INFO             PET465 --------------------------------> to: 2013  4  1  0 22 30   0
+20210603 164821.703 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164823.263 INFO             PET465 ice_export called
+20210603 164830.195 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 22 30   0
+20210603 164830.195 INFO             PET465 --------------------------------> to: 2013  4  1  0 26 15   0
+20210603 164830.195 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164831.730 INFO             PET465 ice_export called
+20210603 164838.887 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 26 15   0
+20210603 164838.887 INFO             PET465 --------------------------------> to: 2013  4  1  0 30  0   0
+20210603 164838.887 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164840.421 INFO             PET465 ice_export called
+20210603 164847.138 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 30  0   0
+20210603 164847.138 INFO             PET465 --------------------------------> to: 2013  4  1  0 33 45   0
+20210603 164847.138 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164848.671 INFO             PET465 ice_export called
+20210603 164855.001 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 33 45   0
+20210603 164855.001 INFO             PET465 --------------------------------> to: 2013  4  1  0 37 30   0
+20210603 164855.001 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164856.548 INFO             PET465 ice_export called
+20210603 164902.364 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 37 30   0
+20210603 164902.364 INFO             PET465 --------------------------------> to: 2013  4  1  0 41 15   0
+20210603 164902.364 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164903.898 INFO             PET465 ice_export called
+20210603 164909.019 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 41 15   0
+20210603 164909.019 INFO             PET465 --------------------------------> to: 2013  4  1  0 45  0   0
+20210603 164909.019 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164910.587 INFO             PET465 ice_export called
+20210603 164915.444 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 45  0   0
+20210603 164915.444 INFO             PET465 --------------------------------> to: 2013  4  1  0 48 45   0
+20210603 164915.444 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164916.980 INFO             PET465 ice_export called
+20210603 164921.488 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 48 45   0
+20210603 164921.488 INFO             PET465 --------------------------------> to: 2013  4  1  0 52 30   0
+20210603 164921.488 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164923.022 INFO             PET465 ice_export called
+20210603 164927.180 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 52 30   0
+20210603 164927.180 INFO             PET465 --------------------------------> to: 2013  4  1  0 56 15   0
+20210603 164927.180 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164929.214 INFO             PET465 ice_export called
+20210603 164934.029 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 56 15   0
+20210603 164934.029 INFO             PET465 --------------------------------> to: 2013  4  1  1  0  0   0
+20210603 164934.029 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164936.056 INFO             PET465 ice_export called
+20210603 164939.315 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1  0  0   0
+20210603 164939.315 INFO             PET465 --------------------------------> to: 2013  4  1  1  3 45   0
+20210603 164939.315 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164940.906 INFO             PET465 ice_export called
+20210603 164955.843 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1  3 45   0
+20210603 164955.843 INFO             PET465 --------------------------------> to: 2013  4  1  1  7 30   0
+20210603 164955.843 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 164957.943 INFO             PET465 ice_export called
+20210603 165001.139 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1  7 30   0
+20210603 165001.139 INFO             PET465 --------------------------------> to: 2013  4  1  1 11 15   0
+20210603 165001.139 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165002.801 INFO             PET465 ice_export called
+20210603 165006.650 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 11 15   0
+20210603 165006.650 INFO             PET465 --------------------------------> to: 2013  4  1  1 15  0   0
+20210603 165006.650 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165008.315 INFO             PET465 ice_export called
+20210603 165012.194 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 15  0   0
+20210603 165012.194 INFO             PET465 --------------------------------> to: 2013  4  1  1 18 45   0
+20210603 165012.194 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165014.119 INFO             PET465 ice_export called
+20210603 165017.557 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 18 45   0
+20210603 165017.557 INFO             PET465 --------------------------------> to: 2013  4  1  1 22 30   0
+20210603 165017.557 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165019.530 INFO             PET465 ice_export called
+20210603 165022.916 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 22 30   0
+20210603 165022.916 INFO             PET465 --------------------------------> to: 2013  4  1  1 26 15   0
+20210603 165022.916 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165024.889 INFO             PET465 ice_export called
+20210603 165028.263 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 26 15   0
+20210603 165028.263 INFO             PET465 --------------------------------> to: 2013  4  1  1 30  0   0
+20210603 165028.263 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165030.194 INFO             PET465 ice_export called
+20210603 165033.602 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 30  0   0
+20210603 165033.602 INFO             PET465 --------------------------------> to: 2013  4  1  1 33 45   0
+20210603 165033.602 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165035.574 INFO             PET465 ice_export called
+20210603 165038.977 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 33 45   0
+20210603 165038.977 INFO             PET465 --------------------------------> to: 2013  4  1  1 37 30   0
+20210603 165038.978 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165040.887 INFO             PET465 ice_export called
+20210603 165044.476 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 37 30   0
+20210603 165044.476 INFO             PET465 --------------------------------> to: 2013  4  1  1 41 15   0
+20210603 165044.476 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165046.388 INFO             PET465 ice_export called
+20210603 165049.828 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 41 15   0
+20210603 165049.828 INFO             PET465 --------------------------------> to: 2013  4  1  1 45  0   0
+20210603 165049.828 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165051.745 INFO             PET465 ice_export called
+20210603 165055.184 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 45  0   0
+20210603 165055.184 INFO             PET465 --------------------------------> to: 2013  4  1  1 48 45   0
+20210603 165055.184 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165057.259 INFO             PET465 ice_export called
+20210603 165100.515 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 48 45   0
+20210603 165100.515 INFO             PET465 --------------------------------> to: 2013  4  1  1 52 30   0
+20210603 165100.515 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165102.538 INFO             PET465 ice_export called
+20210603 165105.869 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 52 30   0
+20210603 165105.869 INFO             PET465 --------------------------------> to: 2013  4  1  1 56 15   0
+20210603 165105.869 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165108.017 INFO             PET465 ice_export called
+20210603 165111.230 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 56 15   0
+20210603 165111.230 INFO             PET465 --------------------------------> to: 2013  4  1  2  0  0   0
+20210603 165111.230 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165113.301 INFO             PET465 ice_export called
+20210603 165116.570 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2  0  0   0
+20210603 165116.570 INFO             PET465 --------------------------------> to: 2013  4  1  2  3 45   0
+20210603 165116.571 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165118.515 INFO             PET465 ice_export called
+20210603 165132.264 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2  3 45   0
+20210603 165132.264 INFO             PET465 --------------------------------> to: 2013  4  1  2  7 30   0
+20210603 165132.264 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165134.187 INFO             PET465 ice_export called
+20210603 165137.610 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2  7 30   0
+20210603 165137.610 INFO             PET465 --------------------------------> to: 2013  4  1  2 11 15   0
+20210603 165137.610 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165139.795 INFO             PET465 ice_export called
+20210603 165142.956 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 11 15   0
+20210603 165142.956 INFO             PET465 --------------------------------> to: 2013  4  1  2 15  0   0
+20210603 165142.956 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165145.157 INFO             PET465 ice_export called
+20210603 165148.285 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 15  0   0
+20210603 165148.285 INFO             PET465 --------------------------------> to: 2013  4  1  2 18 45   0
+20210603 165148.285 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165150.288 INFO             PET465 ice_export called
+20210603 165153.736 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 18 45   0
+20210603 165153.736 INFO             PET465 --------------------------------> to: 2013  4  1  2 22 30   0
+20210603 165153.736 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165155.723 INFO             PET465 ice_export called
+20210603 165159.052 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 22 30   0
+20210603 165159.052 INFO             PET465 --------------------------------> to: 2013  4  1  2 26 15   0
+20210603 165159.052 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165201.008 INFO             PET465 ice_export called
+20210603 165204.492 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 26 15   0
+20210603 165204.492 INFO             PET465 --------------------------------> to: 2013  4  1  2 30  0   0
+20210603 165204.492 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165206.589 INFO             PET465 ice_export called
+20210603 165209.805 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 30  0   0
+20210603 165209.805 INFO             PET465 --------------------------------> to: 2013  4  1  2 33 45   0
+20210603 165209.805 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165211.890 INFO             PET465 ice_export called
+20210603 165215.249 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 33 45   0
+20210603 165215.249 INFO             PET465 --------------------------------> to: 2013  4  1  2 37 30   0
+20210603 165215.250 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165217.195 INFO             PET465 ice_export called
+20210603 165220.582 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 37 30   0
+20210603 165220.583 INFO             PET465 --------------------------------> to: 2013  4  1  2 41 15   0
+20210603 165220.583 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165222.518 INFO             PET465 ice_export called
+20210603 165226.005 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 41 15   0
+20210603 165226.005 INFO             PET465 --------------------------------> to: 2013  4  1  2 45  0   0
+20210603 165226.005 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165228.015 INFO             PET465 ice_export called
+20210603 165232.278 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 45  0   0
+20210603 165232.278 INFO             PET465 --------------------------------> to: 2013  4  1  2 48 45   0
+20210603 165232.278 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165234.237 INFO             PET465 ice_export called
+20210603 165237.977 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 48 45   0
+20210603 165237.977 INFO             PET465 --------------------------------> to: 2013  4  1  2 52 30   0
+20210603 165237.977 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165239.970 INFO             PET465 ice_export called
+20210603 165243.292 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 52 30   0
+20210603 165243.292 INFO             PET465 --------------------------------> to: 2013  4  1  2 56 15   0
+20210603 165243.292 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165245.312 INFO             PET465 ice_export called
+20210603 165248.638 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 56 15   0
+20210603 165248.638 INFO             PET465 --------------------------------> to: 2013  4  1  3  0  0   0
+20210603 165248.638 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165250.672 INFO             PET465 ice_export called
+20210603 165254.240 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3  0  0   0
+20210603 165254.240 INFO             PET465 --------------------------------> to: 2013  4  1  3  3 45   0
+20210603 165254.240 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165256.407 INFO             PET465 ice_export called
+20210603 165309.904 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3  3 45   0
+20210603 165309.904 INFO             PET465 --------------------------------> to: 2013  4  1  3  7 30   0
+20210603 165309.904 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165311.839 INFO             PET465 ice_export called
+20210603 165315.263 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3  7 30   0
+20210603 165315.263 INFO             PET465 --------------------------------> to: 2013  4  1  3 11 15   0
+20210603 165315.263 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165317.203 INFO             PET465 ice_export called
+20210603 165320.598 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 11 15   0
+20210603 165320.598 INFO             PET465 --------------------------------> to: 2013  4  1  3 15  0   0
+20210603 165320.598 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165322.698 INFO             PET465 ice_export called
+20210603 165325.985 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 15  0   0
+20210603 165325.985 INFO             PET465 --------------------------------> to: 2013  4  1  3 18 45   0
+20210603 165325.985 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165327.980 INFO             PET465 ice_export called
+20210603 165331.308 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 18 45   0
+20210603 165331.308 INFO             PET465 --------------------------------> to: 2013  4  1  3 22 30   0
+20210603 165331.308 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165333.333 INFO             PET465 ice_export called
+20210603 165336.647 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 22 30   0
+20210603 165336.647 INFO             PET465 --------------------------------> to: 2013  4  1  3 26 15   0
+20210603 165336.647 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165339.242 INFO             PET465 ice_export called
+20210603 165341.988 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 26 15   0
+20210603 165341.988 INFO             PET465 --------------------------------> to: 2013  4  1  3 30  0   0
+20210603 165341.988 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165343.925 INFO             PET465 ice_export called
+20210603 165347.344 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 30  0   0
+20210603 165347.344 INFO             PET465 --------------------------------> to: 2013  4  1  3 33 45   0
+20210603 165347.344 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165349.286 INFO             PET465 ice_export called
+20210603 165352.678 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 33 45   0
+20210603 165352.678 INFO             PET465 --------------------------------> to: 2013  4  1  3 37 30   0
+20210603 165352.678 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165354.849 INFO             PET465 ice_export called
+20210603 165358.029 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 37 30   0
+20210603 165358.029 INFO             PET465 --------------------------------> to: 2013  4  1  3 41 15   0
+20210603 165358.029 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165400.122 INFO             PET465 ice_export called
+20210603 165403.340 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 41 15   0
+20210603 165403.340 INFO             PET465 --------------------------------> to: 2013  4  1  3 45  0   0
+20210603 165403.340 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165405.322 INFO             PET465 ice_export called
+20210603 165408.718 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 45  0   0
+20210603 165408.718 INFO             PET465 --------------------------------> to: 2013  4  1  3 48 45   0
+20210603 165408.719 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165410.654 INFO             PET465 ice_export called
+20210603 165414.073 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 48 45   0
+20210603 165414.074 INFO             PET465 --------------------------------> to: 2013  4  1  3 52 30   0
+20210603 165414.074 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165416.189 INFO             PET465 ice_export called
+20210603 165419.429 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 52 30   0
+20210603 165419.429 INFO             PET465 --------------------------------> to: 2013  4  1  3 56 15   0
+20210603 165419.429 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165421.432 INFO             PET465 ice_export called
+20210603 165424.766 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 56 15   0
+20210603 165424.766 INFO             PET465 --------------------------------> to: 2013  4  1  4  0  0   0
+20210603 165424.766 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165426.789 INFO             PET465 ice_export called
+20210603 165430.161 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4  0  0   0
+20210603 165430.161 INFO             PET465 --------------------------------> to: 2013  4  1  4  3 45   0
+20210603 165430.161 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165432.163 INFO             PET465 ice_export called
+20210603 165445.652 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4  3 45   0
+20210603 165445.652 INFO             PET465 --------------------------------> to: 2013  4  1  4  7 30   0
+20210603 165445.652 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165447.656 INFO             PET465 ice_export called
+20210603 165451.025 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4  7 30   0
+20210603 165451.025 INFO             PET465 --------------------------------> to: 2013  4  1  4 11 15   0
+20210603 165451.025 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165453.019 INFO             PET465 ice_export called
+20210603 165456.370 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 11 15   0
+20210603 165456.370 INFO             PET465 --------------------------------> to: 2013  4  1  4 15  0   0
+20210603 165456.370 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165458.541 INFO             PET465 ice_export called
+20210603 165501.781 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 15  0   0
+20210603 165501.781 INFO             PET465 --------------------------------> to: 2013  4  1  4 18 45   0
+20210603 165501.781 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165503.710 INFO             PET465 ice_export called
+20210603 165507.407 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 18 45   0
+20210603 165507.407 INFO             PET465 --------------------------------> to: 2013  4  1  4 22 30   0
+20210603 165507.407 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165509.330 INFO             PET465 ice_export called
+20210603 165512.752 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 22 30   0
+20210603 165512.752 INFO             PET465 --------------------------------> to: 2013  4  1  4 26 15   0
+20210603 165512.752 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165514.749 INFO             PET465 ice_export called
+20210603 165518.117 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 26 15   0
+20210603 165518.117 INFO             PET465 --------------------------------> to: 2013  4  1  4 30  0   0
+20210603 165518.117 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165520.141 INFO             PET465 ice_export called
+20210603 165523.445 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 30  0   0
+20210603 165523.445 INFO             PET465 --------------------------------> to: 2013  4  1  4 33 45   0
+20210603 165523.446 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165525.414 INFO             PET465 ice_export called
+20210603 165528.812 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 33 45   0
+20210603 165528.812 INFO             PET465 --------------------------------> to: 2013  4  1  4 37 30   0
+20210603 165528.812 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165530.820 INFO             PET465 ice_export called
+20210603 165534.144 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 37 30   0
+20210603 165534.144 INFO             PET465 --------------------------------> to: 2013  4  1  4 41 15   0
+20210603 165534.144 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165536.144 INFO             PET465 ice_export called
+20210603 165539.493 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 41 15   0
+20210603 165539.493 INFO             PET465 --------------------------------> to: 2013  4  1  4 45  0   0
+20210603 165539.493 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165541.773 INFO             PET465 ice_export called
+20210603 165545.041 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 45  0   0
+20210603 165545.041 INFO             PET465 --------------------------------> to: 2013  4  1  4 48 45   0
+20210603 165545.042 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165546.999 INFO             PET465 ice_export called
+20210603 165550.406 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 48 45   0
+20210603 165550.406 INFO             PET465 --------------------------------> to: 2013  4  1  4 52 30   0
+20210603 165550.406 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165552.518 INFO             PET465 ice_export called
+20210603 165555.754 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 52 30   0
+20210603 165555.754 INFO             PET465 --------------------------------> to: 2013  4  1  4 56 15   0
+20210603 165555.754 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165557.838 INFO             PET465 ice_export called
+20210603 165601.105 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 56 15   0
+20210603 165601.105 INFO             PET465 --------------------------------> to: 2013  4  1  5  0  0   0
+20210603 165601.105 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165603.101 INFO             PET465 ice_export called
+20210603 165606.453 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5  0  0   0
+20210603 165606.453 INFO             PET465 --------------------------------> to: 2013  4  1  5  3 45   0
+20210603 165606.453 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165608.562 INFO             PET465 ice_export called
+20210603 165621.913 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5  3 45   0
+20210603 165621.913 INFO             PET465 --------------------------------> to: 2013  4  1  5  7 30   0
+20210603 165621.913 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165624.025 INFO             PET465 ice_export called
+20210603 165627.309 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5  7 30   0
+20210603 165627.309 INFO             PET465 --------------------------------> to: 2013  4  1  5 11 15   0
+20210603 165627.309 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165629.290 INFO             PET465 ice_export called
+20210603 165632.647 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 11 15   0
+20210603 165632.647 INFO             PET465 --------------------------------> to: 2013  4  1  5 15  0   0
+20210603 165632.647 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165634.662 INFO             PET465 ice_export called
+20210603 165638.000 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 15  0   0
+20210603 165638.000 INFO             PET465 --------------------------------> to: 2013  4  1  5 18 45   0
+20210603 165638.000 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165640.150 INFO             PET465 ice_export called
+20210603 165643.345 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 18 45   0
+20210603 165643.345 INFO             PET465 --------------------------------> to: 2013  4  1  5 22 30   0
+20210603 165643.345 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165645.249 INFO             PET465 ice_export called
+20210603 165648.892 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 22 30   0
+20210603 165648.892 INFO             PET465 --------------------------------> to: 2013  4  1  5 26 15   0
+20210603 165648.892 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165650.869 INFO             PET465 ice_export called
+20210603 165654.209 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 26 15   0
+20210603 165654.209 INFO             PET465 --------------------------------> to: 2013  4  1  5 30  0   0
+20210603 165654.209 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165656.307 INFO             PET465 ice_export called
+20210603 165659.596 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 30  0   0
+20210603 165659.596 INFO             PET465 --------------------------------> to: 2013  4  1  5 33 45   0
+20210603 165659.596 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165701.511 INFO             PET465 ice_export called
+20210603 165705.057 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 33 45   0
+20210603 165705.057 INFO             PET465 --------------------------------> to: 2013  4  1  5 37 30   0
+20210603 165705.057 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165706.934 INFO             PET465 ice_export called
+20210603 165710.366 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 37 30   0
+20210603 165710.366 INFO             PET465 --------------------------------> to: 2013  4  1  5 41 15   0
+20210603 165710.366 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165712.431 INFO             PET465 ice_export called
+20210603 165715.718 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 41 15   0
+20210603 165715.718 INFO             PET465 --------------------------------> to: 2013  4  1  5 45  0   0
+20210603 165715.718 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165717.701 INFO             PET465 ice_export called
+20210603 165721.090 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 45  0   0
+20210603 165721.090 INFO             PET465 --------------------------------> to: 2013  4  1  5 48 45   0
+20210603 165721.090 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165722.989 INFO             PET465 ice_export called
+20210603 165726.458 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 48 45   0
+20210603 165726.458 INFO             PET465 --------------------------------> to: 2013  4  1  5 52 30   0
+20210603 165726.458 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165728.405 INFO             PET465 ice_export called
+20210603 165731.809 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 52 30   0
+20210603 165731.809 INFO             PET465 --------------------------------> to: 2013  4  1  5 56 15   0
+20210603 165731.809 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165733.754 INFO             PET465 ice_export called
+20210603 165737.331 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  5 56 15   0
+20210603 165737.331 INFO             PET465 --------------------------------> to: 2013  4  1  6  0  0   0
+20210603 165737.331 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 165747.593 INFO             PET465 ice_export called
+20210603 165837.995 INFO             PET465 Finalizing ESMF
+20210603 171028.575 INFO             PET465 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210603 171028.575 INFO             PET465 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210603 171028.575 INFO             PET465 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210603 171028.575 INFO             PET465 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210603 171028.575 INFO             PET465 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210603 171028.575 INFO             PET465 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210603 171028.575 INFO             PET465 Running with ESMF Version   : ESMF_8_2_0_beta_snapshot_09
+20210603 171028.575 INFO             PET465 ESMF library build date/time: "May 22 2021" "01:32:48"
+20210603 171028.575 INFO             PET465 ESMF library build location : /work/noaa/da/mpotts/sandbox/hpc-stack/pkg/ESMF_8_2_0_beta_snapshot_09
+20210603 171028.575 INFO             PET465 ESMF_COMM                   : intelmpi
+20210603 171028.659 INFO             PET465 ESMF_MOAB                   : enabled
+20210603 171028.659 INFO             PET465 ESMF_LAPACK                 : enabled
+20210603 171028.659 INFO             PET465 ESMF_NETCDF                 : enabled
+20210603 171028.659 INFO             PET465 ESMF_PNETCDF                : disabled
+20210603 171028.659 INFO             PET465 ESMF_PIO                    : enabled
+20210603 171028.659 INFO             PET465 ESMF_YAMLCPP                : enabled
+20210603 171028.719 INFO             PET465 ESMF Profiling Enabled
+20210603 171028.734 INFO             PET465 ESMF Trace/Profile clock: REALTIME
+20210603 171028.759 WARNING          PET465 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
+20210603 171028.854 TRACE            PET465  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210603 171028.854 TRACE            PET465  ESMF_LogSet() !!!       TRACING is disabled         !!!
+20210603 171028.854 TRACE            PET465  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210603 171029.928 INFO             PET465 ReadAttributes DRIVER_attributes:: start:
+20210603 171029.928 INFO             PET465  mediator_read_restart = false
+20210603 171029.928 INFO             PET465 ReadAttributes DRIVER_attributes:: end:
+20210603 171029.929 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
+20210603 171029.929 INFO             PET465  ScalarFieldCount = 2
+20210603 171029.929 INFO             PET465  ScalarFieldIdxGridNX = 1
+20210603 171029.929 INFO             PET465  ScalarFieldIdxGridNY = 2
+20210603 171029.929 INFO             PET465  ScalarFieldName = cpl_scalars
+20210603 171029.929 INFO             PET465  start_type = startup
+20210603 171029.929 INFO             PET465  restart_dir = RESTART/
+20210603 171029.929 INFO             PET465  case_name = ufs.cpld
+20210603 171029.929 INFO             PET465  restart_n = 6
+20210603 171029.929 INFO             PET465  restart_option = nhours
+20210603 171029.929 INFO             PET465  restart_ymd = -999
+20210603 171029.929 INFO             PET465  dbug_flag = 0
+20210603 171029.929 INFO             PET465  use_coldstart = false
+20210603 171029.929 INFO             PET465  use_mommesh = false
+20210603 171029.929 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
+20210603 171029.934 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210603 171029.937 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210603 171029.937 INFO             PET465 ReadAttributes MED_attributes:: start:
+20210603 171029.937 INFO             PET465  ATM_model = fv3
+20210603 171029.937 INFO             PET465  ICE_model = cice6
+20210603 171029.937 INFO             PET465  OCN_model = mom6
+20210603 171029.937 INFO             PET465  history_n = 1
+20210603 171029.937 INFO             PET465  history_option = nhours
+20210603 171029.937 INFO             PET465  history_ymd = -999
+20210603 171029.937 INFO             PET465  coupling_mode = nems_frac
+20210603 171029.937 INFO             PET465 ReadAttributes MED_attributes:: end:
+20210603 171029.938 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
+20210603 171029.938 INFO             PET465  ScalarFieldCount = 2
+20210603 171029.938 INFO             PET465  ScalarFieldIdxGridNX = 1
+20210603 171029.938 INFO             PET465  ScalarFieldIdxGridNY = 2
+20210603 171029.938 INFO             PET465  ScalarFieldName = cpl_scalars
+20210603 171029.938 INFO             PET465  start_type = startup
+20210603 171029.938 INFO             PET465  restart_dir = RESTART/
+20210603 171029.938 INFO             PET465  case_name = ufs.cpld
+20210603 171029.938 INFO             PET465  restart_n = 6
+20210603 171029.938 INFO             PET465  restart_option = nhours
+20210603 171029.938 INFO             PET465  restart_ymd = -999
+20210603 171029.938 INFO             PET465  dbug_flag = 0
+20210603 171029.938 INFO             PET465  use_coldstart = false
+20210603 171029.938 INFO             PET465  use_mommesh = false
+20210603 171029.938 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
+20210603 171030.068 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210603 171030.068 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210603 171030.068 INFO             PET465 ReadAttributes ATM_attributes:: start:
+20210603 171030.068 INFO             PET465  Verbosity = 0
+20210603 171030.068 INFO             PET465  DumpFields = false
+20210603 171030.068 INFO             PET465  ProfileMemory = false
+20210603 171030.068 INFO             PET465  OverwriteSlice = true
+20210603 171030.068 INFO             PET465 ReadAttributes ATM_attributes:: end:
+20210603 171030.069 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
+20210603 171030.069 INFO             PET465  ScalarFieldCount = 2
+20210603 171030.069 INFO             PET465  ScalarFieldIdxGridNX = 1
+20210603 171030.069 INFO             PET465  ScalarFieldIdxGridNY = 2
+20210603 171030.069 INFO             PET465  ScalarFieldName = cpl_scalars
+20210603 171030.069 INFO             PET465  start_type = startup
+20210603 171030.069 INFO             PET465  restart_dir = RESTART/
+20210603 171030.069 INFO             PET465  case_name = ufs.cpld
+20210603 171030.069 INFO             PET465  restart_n = 6
+20210603 171030.069 INFO             PET465  restart_option = nhours
+20210603 171030.069 INFO             PET465  restart_ymd = -999
+20210603 171030.069 INFO             PET465  dbug_flag = 0
+20210603 171030.069 INFO             PET465  use_coldstart = false
+20210603 171030.069 INFO             PET465  use_mommesh = false
+20210603 171030.069 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
+20210603 171030.122 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210603 171030.122 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210603 171030.122 INFO             PET465 ReadAttributes OCN_attributes:: start:
+20210603 171030.122 INFO             PET465  Verbosity = 0
+20210603 171030.122 INFO             PET465  DumpFields = false
+20210603 171030.122 INFO             PET465  ProfileMemory = false
+20210603 171030.122 INFO             PET465  OverwriteSlice = true
+20210603 171030.122 INFO             PET465  mesh_ocn = mesh.mx025.nc
+20210603 171030.122 INFO             PET465 ReadAttributes OCN_attributes:: end:
+20210603 171030.122 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
+20210603 171030.122 INFO             PET465  ScalarFieldCount = 2
+20210603 171030.122 INFO             PET465  ScalarFieldIdxGridNX = 1
+20210603 171030.122 INFO             PET465  ScalarFieldIdxGridNY = 2
+20210603 171030.122 INFO             PET465  ScalarFieldName = cpl_scalars
+20210603 171030.122 INFO             PET465  start_type = startup
+20210603 171030.122 INFO             PET465  restart_dir = RESTART/
+20210603 171030.122 INFO             PET465  case_name = ufs.cpld
+20210603 171030.123 INFO             PET465  restart_n = 6
+20210603 171030.123 INFO             PET465  restart_option = nhours
+20210603 171030.123 INFO             PET465  restart_ymd = -999
+20210603 171030.123 INFO             PET465  dbug_flag = 0
+20210603 171030.123 INFO             PET465  use_coldstart = false
+20210603 171030.123 INFO             PET465  use_mommesh = false
+20210603 171030.123 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
+20210603 171030.236 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210603 171030.236 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210603 171030.236 INFO             PET465 ReadAttributes ICE_attributes:: start:
+20210603 171030.236 INFO             PET465  Verbosity = 0
+20210603 171030.236 INFO             PET465  DumpFields = false
+20210603 171030.236 INFO             PET465  ProfileMemory = false
+20210603 171030.236 INFO             PET465  OverwriteSlice = true
+20210603 171030.236 INFO             PET465  mesh_ice = mesh.mx025.nc
+20210603 171030.236 INFO             PET465  stop_n = 6
+20210603 171030.236 INFO             PET465  stop_option = nhours
+20210603 171030.236 INFO             PET465  stop_ymd = -999
+20210603 171030.236 INFO             PET465 ReadAttributes ICE_attributes:: end:
+20210603 171030.237 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
+20210603 171030.237 INFO             PET465  ScalarFieldCount = 2
+20210603 171030.237 INFO             PET465  ScalarFieldIdxGridNX = 1
+20210603 171030.237 INFO             PET465  ScalarFieldIdxGridNY = 2
+20210603 171030.237 INFO             PET465  ScalarFieldName = cpl_scalars
+20210603 171030.237 INFO             PET465  start_type = startup
+20210603 171030.237 INFO             PET465  restart_dir = RESTART/
+20210603 171030.237 INFO             PET465  case_name = ufs.cpld
+20210603 171030.237 INFO             PET465  restart_n = 6
+20210603 171030.237 INFO             PET465  restart_option = nhours
+20210603 171030.237 INFO             PET465  restart_ymd = -999
+20210603 171030.237 INFO             PET465  dbug_flag = 0
+20210603 171030.237 INFO             PET465  use_coldstart = false
+20210603 171030.237 INFO             PET465  use_mommesh = false
+20210603 171030.237 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
+20210603 171030.238 INFO             PET465 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210603 171030.238 INFO             PET465 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210603 171030.238 INFO             PET465 ReadAttributes WAV_attributes:: start:
+20210603 171030.238 INFO             PET465  Verbosity = 0
+20210603 171030.238 INFO             PET465  OverwriteSlice = false
+20210603 171030.238 INFO             PET465 ReadAttributes WAV_attributes:: end:
+20210603 171030.238 INFO             PET465 ReadAttributes ALLCOMP_attributes:: start:
+20210603 171030.238 INFO             PET465  ScalarFieldCount = 2
+20210603 171030.238 INFO             PET465  ScalarFieldIdxGridNX = 1
+20210603 171030.238 INFO             PET465  ScalarFieldIdxGridNY = 2
+20210603 171030.238 INFO             PET465  ScalarFieldName = cpl_scalars
+20210603 171030.238 INFO             PET465  start_type = startup
+20210603 171030.238 INFO             PET465  restart_dir = RESTART/
+20210603 171030.238 INFO             PET465  case_name = ufs.cpld
+20210603 171030.238 INFO             PET465  restart_n = 6
+20210603 171030.238 INFO             PET465  restart_option = nhours
+20210603 171030.238 INFO             PET465  restart_ymd = -999
+20210603 171030.238 INFO             PET465  dbug_flag = 0
+20210603 171030.238 INFO             PET465  use_coldstart = false
+20210603 171030.238 INFO             PET465  use_mommesh = false
+20210603 171030.238 INFO             PET465 ReadAttributes ALLCOMP_attributes:: end:
+20210603 171118.456 INFO             PET465 (ice_comp_nuopc):(InitializeAdvertise) flds_scalar_name = cpl_scalars
+20210603 171118.456 INFO             PET465 (ice_comp_nuopc):(InitializeAdvertise) flds_scalar_num =            2
+20210603 171118.456 INFO             PET465 (ice_comp_nuopc):(InitializeAdvertise) : flds_scalar_index_nx =            1
+20210603 171118.456 INFO             PET465 (ice_comp_nuopc):(InitializeAdvertise) : flds_scalar_index_ny =            2
+20210603 171118.472 INFO             PET465 CICE_cap: dbug =      0
+20210603 171118.472 INFO             PET465 (ice_import_export:ice_advertise_fields) called
+20210603 171118.550 INFO             PET465 (ice_import_export:ice_advertise_fields) done
+20210603 173037.880 INFO             PET465 Driver is in ModifyCplLists()
+20210603 173037.888 INFO             PET465  Found           21  Connectors. Modifying CplList Attribute....
+20210603 173055.301 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = cpl_scalars is connected on root pe
+20210603 173055.547 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = ice_mask is connected using mesh
+20210603 173055.548 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = ice_fraction is connected using mesh
+20210603 173055.549 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = sea_ice_surface_temperature is connected using mesh
+20210603 173055.550 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_ice_volume is connected using mesh
+20210603 173055.550 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_snow_volume is connected using mesh
+20210603 173055.551 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Si_tref is not connected.
+20210603 173055.551 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Si_qref is not connected.
+20210603 173055.551 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Si_snowh is not connected.
+20210603 173055.551 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Si_u10 is not connected.
+20210603 173055.551 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = inst_ice_vis_dir_albedo is connected using mesh
+20210603 173055.552 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = inst_ice_ir_dir_albedo is connected using mesh
+20210603 173055.553 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = inst_ice_vis_dif_albedo is connected using mesh
+20210603 173055.553 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = inst_ice_ir_dif_albedo is connected using mesh
+20210603 173055.554 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = stress_on_air_ice_zonal is connected using mesh
+20210603 173055.555 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = stress_on_air_ice_merid is connected using mesh
+20210603 173055.556 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_laten_heat_flx_atm_into_ice is connected using mesh
+20210603 173055.556 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sensi_heat_flx_atm_into_ice is connected using mesh
+20210603 173055.557 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_up_lw_flx_ice is connected using mesh
+20210603 173055.558 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_evap_rate_atm_into_ice is connected using mesh
+20210603 173055.558 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Faii_swnet is not connected.
+20210603 173055.558 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = net_heat_flx_to_ocn is connected using mesh
+20210603 173055.559 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn is connected using mesh
+20210603 173055.560 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn_vis_dir_flx is connected using mesh
+20210603 173055.560 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn_vis_dif_flx is connected using mesh
+20210603 173055.562 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn_ir_dir_flx is connected using mesh
+20210603 173055.562 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_sw_pen_to_ocn_ir_dif_flx is connected using mesh
+20210603 173055.563 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_fresh_water_to_ocean_rate is connected using mesh
+20210603 173055.564 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = mean_salt_rate is connected using mesh
+20210603 173055.564 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = stress_on_ocn_ice_zonal is connected using mesh
+20210603 173055.565 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = stress_on_ocn_ice_merid is connected using mesh
+20210603 173055.566 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Fioi_bcpho is not connected.
+20210603 173055.566 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Fioi_bcphi is not connected.
+20210603 173055.566 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Export Field = Fioi_flxdst is not connected.
+20210603 173055.566 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = cpl_scalars is connected on root pe
+20210603 173055.567 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = sea_surface_slope_zonal is connected using mesh
+20210603 173055.567 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = sea_surface_slope_merid is connected using mesh
+20210603 173055.568 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = sea_surface_temperature is connected using mesh
+20210603 173055.569 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = s_surf is connected using mesh
+20210603 173055.570 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = ocn_current_zonal is connected using mesh
+20210603 173055.570 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = ocn_current_merid is connected using mesh
+20210603 173055.571 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = freezing_melting_potential is connected using mesh
+20210603 173055.572 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_height_lowest is connected using mesh
+20210603 173055.572 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_zonal_wind_height_lowest is connected using mesh
+20210603 173055.573 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_merid_wind_height_lowest is connected using mesh
+20210603 173055.574 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_spec_humid_height_lowest is connected using mesh
+20210603 173055.575 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_temp_height_lowest is connected using mesh
+20210603 173055.576 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = inst_pres_height_lowest is connected using mesh
+20210603 173055.576 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_sw_vis_dir_flx is connected using mesh
+20210603 173055.577 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_sw_ir_dir_flx is connected using mesh
+20210603 173055.578 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_sw_vis_dif_flx is connected using mesh
+20210603 173055.578 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_sw_ir_dif_flx is connected using mesh
+20210603 173055.579 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_down_lw_flx is connected using mesh
+20210603 173055.580 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_prec_rate is connected using mesh
+20210603 173055.580 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = mean_fprec_rate is connected using mesh
+20210603 173055.581 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = Sa_ptem is not connected.
+20210603 173055.581 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = air_density_height_lowest is not connected.
+20210603 173055.581 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = Faxa_bcph is not connected.
+20210603 173055.581 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = Faxa_dstwet is not connected.
+20210603 173055.581 INFO             PET465 (ice_import_export:fld_list_realize)(ice_import_export:realize_fields):CICE_Import Field = Faxa_dstdry is not connected.
+20210603 173055.582 INFO             PET465 ice_export called
+20210603 173103.156 DEBUG            PET465 about to destroy Mesh: 0x1dd193b0
+20210603 173106.576 DEBUG            PET465 about to destroy Mesh: 0x1c4cdd90
+20210603 173150.389 INFO             PET465 (ice_comp_nuopc):(ModelSetRunClock) setting alarms for ICE
+20210603 173150.389 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0  0  0   0
+20210603 173150.389 INFO             PET465 --------------------------------> to: 2013  4  1  0  3 45   0
+20210603 173150.389 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173152.436 INFO             PET465 ice_export called
+20210603 173211.910 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0  3 45   0
+20210603 173211.910 INFO             PET465 --------------------------------> to: 2013  4  1  0  7 30   0
+20210603 173211.911 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173213.733 INFO             PET465 ice_export called
+20210603 173217.306 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0  7 30   0
+20210603 173217.306 INFO             PET465 --------------------------------> to: 2013  4  1  0 11 15   0
+20210603 173217.306 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173219.124 INFO             PET465 ice_export called
+20210603 173222.656 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 11 15   0
+20210603 173222.656 INFO             PET465 --------------------------------> to: 2013  4  1  0 15  0   0
+20210603 173222.656 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173224.722 INFO             PET465 ice_export called
+20210603 173227.967 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 15  0   0
+20210603 173227.967 INFO             PET465 --------------------------------> to: 2013  4  1  0 18 45   0
+20210603 173227.967 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173229.553 INFO             PET465 ice_export called
+20210603 173237.390 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 18 45   0
+20210603 173237.390 INFO             PET465 --------------------------------> to: 2013  4  1  0 22 30   0
+20210603 173237.390 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173238.953 INFO             PET465 ice_export called
+20210603 173245.795 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 22 30   0
+20210603 173245.795 INFO             PET465 --------------------------------> to: 2013  4  1  0 26 15   0
+20210603 173245.795 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173247.330 INFO             PET465 ice_export called
+20210603 173254.465 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 26 15   0
+20210603 173254.465 INFO             PET465 --------------------------------> to: 2013  4  1  0 30  0   0
+20210603 173254.465 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173255.998 INFO             PET465 ice_export called
+20210603 173302.820 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 30  0   0
+20210603 173302.820 INFO             PET465 --------------------------------> to: 2013  4  1  0 33 45   0
+20210603 173302.820 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173304.355 INFO             PET465 ice_export called
+20210603 173310.643 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 33 45   0
+20210603 173310.643 INFO             PET465 --------------------------------> to: 2013  4  1  0 37 30   0
+20210603 173310.643 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173312.181 INFO             PET465 ice_export called
+20210603 173317.965 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 37 30   0
+20210603 173317.965 INFO             PET465 --------------------------------> to: 2013  4  1  0 41 15   0
+20210603 173317.966 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173319.503 INFO             PET465 ice_export called
+20210603 173324.641 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 41 15   0
+20210603 173324.641 INFO             PET465 --------------------------------> to: 2013  4  1  0 45  0   0
+20210603 173324.641 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173326.223 INFO             PET465 ice_export called
+20210603 173330.881 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 45  0   0
+20210603 173330.881 INFO             PET465 --------------------------------> to: 2013  4  1  0 48 45   0
+20210603 173330.881 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173332.416 INFO             PET465 ice_export called
+20210603 173336.805 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 48 45   0
+20210603 173336.805 INFO             PET465 --------------------------------> to: 2013  4  1  0 52 30   0
+20210603 173336.806 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173338.342 INFO             PET465 ice_export called
+20210603 173342.450 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 52 30   0
+20210603 173342.450 INFO             PET465 --------------------------------> to: 2013  4  1  0 56 15   0
+20210603 173342.450 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173343.985 INFO             PET465 ice_export called
+20210603 173347.973 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  0 56 15   0
+20210603 173347.973 INFO             PET465 --------------------------------> to: 2013  4  1  1  0  0   0
+20210603 173347.973 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173349.508 INFO             PET465 ice_export called
+20210603 173353.378 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1  0  0   0
+20210603 173353.378 INFO             PET465 --------------------------------> to: 2013  4  1  1  3 45   0
+20210603 173353.378 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173354.964 INFO             PET465 ice_export called
+20210603 173409.321 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1  3 45   0
+20210603 173409.321 INFO             PET465 --------------------------------> to: 2013  4  1  1  7 30   0
+20210603 173409.321 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173411.243 INFO             PET465 ice_export called
+20210603 173414.710 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1  7 30   0
+20210603 173414.710 INFO             PET465 --------------------------------> to: 2013  4  1  1 11 15   0
+20210603 173414.710 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173416.614 INFO             PET465 ice_export called
+20210603 173420.080 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 11 15   0
+20210603 173420.080 INFO             PET465 --------------------------------> to: 2013  4  1  1 15  0   0
+20210603 173420.080 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173421.986 INFO             PET465 ice_export called
+20210603 173425.440 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 15  0   0
+20210603 173425.440 INFO             PET465 --------------------------------> to: 2013  4  1  1 18 45   0
+20210603 173425.440 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173428.140 INFO             PET465 ice_export called
+20210603 173430.780 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 18 45   0
+20210603 173430.780 INFO             PET465 --------------------------------> to: 2013  4  1  1 22 30   0
+20210603 173430.780 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173432.443 INFO             PET465 ice_export called
+20210603 173436.465 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 22 30   0
+20210603 173436.465 INFO             PET465 --------------------------------> to: 2013  4  1  1 26 15   0
+20210603 173436.465 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173438.406 INFO             PET465 ice_export called
+20210603 173441.880 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 26 15   0
+20210603 173441.880 INFO             PET465 --------------------------------> to: 2013  4  1  1 30  0   0
+20210603 173441.880 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173443.876 INFO             PET465 ice_export called
+20210603 173447.293 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 30  0   0
+20210603 173447.293 INFO             PET465 --------------------------------> to: 2013  4  1  1 33 45   0
+20210603 173447.293 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173449.627 INFO             PET465 ice_export called
+20210603 173452.668 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 33 45   0
+20210603 173452.668 INFO             PET465 --------------------------------> to: 2013  4  1  1 37 30   0
+20210603 173452.668 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173454.851 INFO             PET465 ice_export called
+20210603 173458.048 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 37 30   0
+20210603 173458.048 INFO             PET465 --------------------------------> to: 2013  4  1  1 41 15   0
+20210603 173458.048 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173500.228 INFO             PET465 ice_export called
+20210603 173503.431 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 41 15   0
+20210603 173503.431 INFO             PET465 --------------------------------> to: 2013  4  1  1 45  0   0
+20210603 173503.431 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173505.640 INFO             PET465 ice_export called
+20210603 173508.826 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 45  0   0
+20210603 173508.826 INFO             PET465 --------------------------------> to: 2013  4  1  1 48 45   0
+20210603 173508.826 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173511.019 INFO             PET465 ice_export called
+20210603 173514.242 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 48 45   0
+20210603 173514.242 INFO             PET465 --------------------------------> to: 2013  4  1  1 52 30   0
+20210603 173514.242 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173516.267 INFO             PET465 ice_export called
+20210603 173519.647 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 52 30   0
+20210603 173519.647 INFO             PET465 --------------------------------> to: 2013  4  1  1 56 15   0
+20210603 173519.647 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173521.560 INFO             PET465 ice_export called
+20210603 173525.050 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  1 56 15   0
+20210603 173525.050 INFO             PET465 --------------------------------> to: 2013  4  1  2  0  0   0
+20210603 173525.050 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173527.042 INFO             PET465 ice_export called
+20210603 173530.449 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2  0  0   0
+20210603 173530.450 INFO             PET465 --------------------------------> to: 2013  4  1  2  3 45   0
+20210603 173530.450 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173532.545 INFO             PET465 ice_export called
+20210603 173546.084 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2  3 45   0
+20210603 173546.084 INFO             PET465 --------------------------------> to: 2013  4  1  2  7 30   0
+20210603 173546.084 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173548.094 INFO             PET465 ice_export called
+20210603 173551.478 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2  7 30   0
+20210603 173551.478 INFO             PET465 --------------------------------> to: 2013  4  1  2 11 15   0
+20210603 173551.478 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173553.410 INFO             PET465 ice_export called
+20210603 173556.868 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 11 15   0
+20210603 173556.868 INFO             PET465 --------------------------------> to: 2013  4  1  2 15  0   0
+20210603 173556.869 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173559.105 INFO             PET465 ice_export called
+20210603 173602.333 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 15  0   0
+20210603 173602.333 INFO             PET465 --------------------------------> to: 2013  4  1  2 18 45   0
+20210603 173602.333 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173604.763 INFO             PET465 ice_export called
+20210603 173607.681 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 18 45   0
+20210603 173607.681 INFO             PET465 --------------------------------> to: 2013  4  1  2 22 30   0
+20210603 173607.681 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173609.878 INFO             PET465 ice_export called
+20210603 173613.066 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 22 30   0
+20210603 173613.066 INFO             PET465 --------------------------------> to: 2013  4  1  2 26 15   0
+20210603 173613.066 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173615.175 INFO             PET465 ice_export called
+20210603 173618.458 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 26 15   0
+20210603 173618.458 INFO             PET465 --------------------------------> to: 2013  4  1  2 30  0   0
+20210603 173618.458 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173620.445 INFO             PET465 ice_export called
+20210603 173623.874 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 30  0   0
+20210603 173623.874 INFO             PET465 --------------------------------> to: 2013  4  1  2 33 45   0
+20210603 173623.874 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173626.133 INFO             PET465 ice_export called
+20210603 173629.259 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 33 45   0
+20210603 173629.259 INFO             PET465 --------------------------------> to: 2013  4  1  2 37 30   0
+20210603 173629.259 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173631.489 INFO             PET465 ice_export called
+20210603 173634.617 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 37 30   0
+20210603 173634.617 INFO             PET465 --------------------------------> to: 2013  4  1  2 41 15   0
+20210603 173634.617 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173636.600 INFO             PET465 ice_export called
+20210603 173640.030 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 41 15   0
+20210603 173640.030 INFO             PET465 --------------------------------> to: 2013  4  1  2 45  0   0
+20210603 173640.030 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173641.964 INFO             PET465 ice_export called
+20210603 173645.447 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 45  0   0
+20210603 173645.447 INFO             PET465 --------------------------------> to: 2013  4  1  2 48 45   0
+20210603 173645.447 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173647.542 INFO             PET465 ice_export called
+20210603 173650.827 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 48 45   0
+20210603 173650.827 INFO             PET465 --------------------------------> to: 2013  4  1  2 52 30   0
+20210603 173650.827 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173653.024 INFO             PET465 ice_export called
+20210603 173656.207 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 52 30   0
+20210603 173656.207 INFO             PET465 --------------------------------> to: 2013  4  1  2 56 15   0
+20210603 173656.207 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173658.313 INFO             PET465 ice_export called
+20210603 173701.588 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  2 56 15   0
+20210603 173701.588 INFO             PET465 --------------------------------> to: 2013  4  1  3  0  0   0
+20210603 173701.588 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173703.569 INFO             PET465 ice_export called
+20210603 173706.991 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3  0  0   0
+20210603 173706.991 INFO             PET465 --------------------------------> to: 2013  4  1  3  3 45   0
+20210603 173706.991 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173709.207 INFO             PET465 ice_export called
+20210603 173722.630 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3  3 45   0
+20210603 173722.630 INFO             PET465 --------------------------------> to: 2013  4  1  3  7 30   0
+20210603 173722.630 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173724.589 INFO             PET465 ice_export called
+20210603 173728.380 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3  7 30   0
+20210603 173728.380 INFO             PET465 --------------------------------> to: 2013  4  1  3 11 15   0
+20210603 173728.380 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173730.776 INFO             PET465 ice_export called
+20210603 173733.777 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 11 15   0
+20210603 173733.777 INFO             PET465 --------------------------------> to: 2013  4  1  3 15  0   0
+20210603 173733.777 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173736.247 INFO             PET465 ice_export called
+20210603 173739.221 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 15  0   0
+20210603 173739.221 INFO             PET465 --------------------------------> to: 2013  4  1  3 18 45   0
+20210603 173739.221 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173741.328 INFO             PET465 ice_export called
+20210603 173744.603 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 18 45   0
+20210603 173744.603 INFO             PET465 --------------------------------> to: 2013  4  1  3 22 30   0
+20210603 173744.604 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173746.567 INFO             PET465 ice_export called
+20210603 173749.982 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 22 30   0
+20210603 173749.982 INFO             PET465 --------------------------------> to: 2013  4  1  3 26 15   0
+20210603 173749.982 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173752.463 INFO             PET465 ice_export called
+20210603 173755.371 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 26 15   0
+20210603 173755.371 INFO             PET465 --------------------------------> to: 2013  4  1  3 30  0   0
+20210603 173755.372 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173757.537 INFO             PET465 ice_export called
+20210603 173800.775 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 30  0   0
+20210603 173800.775 INFO             PET465 --------------------------------> to: 2013  4  1  3 33 45   0
+20210603 173800.775 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173802.880 INFO             PET465 ice_export called
+20210603 173806.184 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 33 45   0
+20210603 173806.184 INFO             PET465 --------------------------------> to: 2013  4  1  3 37 30   0
+20210603 173806.184 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173808.120 INFO             PET465 ice_export called
+20210603 173811.527 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 37 30   0
+20210603 173811.527 INFO             PET465 --------------------------------> to: 2013  4  1  3 41 15   0
+20210603 173811.527 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173813.732 INFO             PET465 ice_export called
+20210603 173816.911 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 41 15   0
+20210603 173816.911 INFO             PET465 --------------------------------> to: 2013  4  1  3 45  0   0
+20210603 173816.911 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173819.133 INFO             PET465 ice_export called
+20210603 173822.309 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 45  0   0
+20210603 173822.309 INFO             PET465 --------------------------------> to: 2013  4  1  3 48 45   0
+20210603 173822.309 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173824.433 INFO             PET465 ice_export called
+20210603 173827.686 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 48 45   0
+20210603 173827.686 INFO             PET465 --------------------------------> to: 2013  4  1  3 52 30   0
+20210603 173827.686 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173830.410 INFO             PET465 ice_export called
+20210603 173833.082 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 52 30   0
+20210603 173833.082 INFO             PET465 --------------------------------> to: 2013  4  1  3 56 15   0
+20210603 173833.082 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173835.535 INFO             PET465 ice_export called
+20210603 173838.460 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  3 56 15   0
+20210603 173838.460 INFO             PET465 --------------------------------> to: 2013  4  1  4  0  0   0
+20210603 173838.460 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173840.703 INFO             PET465 ice_export called
+20210603 173843.936 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4  0  0   0
+20210603 173843.936 INFO             PET465 --------------------------------> to: 2013  4  1  4  3 45   0
+20210603 173843.937 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173845.868 INFO             PET465 ice_export called
+20210603 173859.443 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4  3 45   0
+20210603 173859.443 INFO             PET465 --------------------------------> to: 2013  4  1  4  7 30   0
+20210603 173859.444 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173901.442 INFO             PET465 ice_export called
+20210603 173905.019 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4  7 30   0
+20210603 173905.020 INFO             PET465 --------------------------------> to: 2013  4  1  4 11 15   0
+20210603 173905.020 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173907.017 INFO             PET465 ice_export called
+20210603 173910.501 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 11 15   0
+20210603 173910.501 INFO             PET465 --------------------------------> to: 2013  4  1  4 15  0   0
+20210603 173910.501 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173912.455 INFO             PET465 ice_export called
+20210603 173916.126 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 15  0   0
+20210603 173916.126 INFO             PET465 --------------------------------> to: 2013  4  1  4 18 45   0
+20210603 173916.126 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173918.230 INFO             PET465 ice_export called
+20210603 173921.506 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 18 45   0
+20210603 173921.506 INFO             PET465 --------------------------------> to: 2013  4  1  4 22 30   0
+20210603 173921.506 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173923.505 INFO             PET465 ice_export called
+20210603 173926.895 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 22 30   0
+20210603 173926.895 INFO             PET465 --------------------------------> to: 2013  4  1  4 26 15   0
+20210603 173926.895 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173929.601 INFO             PET465 ice_export called
+20210603 173932.280 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 26 15   0
+20210603 173932.280 INFO             PET465 --------------------------------> to: 2013  4  1  4 30  0   0
+20210603 173932.280 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173934.503 INFO             PET465 ice_export called
+20210603 173937.672 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 30  0   0
+20210603 173937.672 INFO             PET465 --------------------------------> to: 2013  4  1  4 33 45   0
+20210603 173937.672 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173939.651 INFO             PET465 ice_export called
+20210603 173943.082 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 33 45   0
+20210603 173943.082 INFO             PET465 --------------------------------> to: 2013  4  1  4 37 30   0
+20210603 173943.082 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173945.085 INFO             PET465 ice_export called
+20210603 173948.481 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 37 30   0
+20210603 173948.481 INFO             PET465 --------------------------------> to: 2013  4  1  4 41 15   0
+20210603 173948.481 INFO             PET465 ice_import tfrz_option = linear_salt, ktherm =        1
+20210603 173950.690 INFO             PET465 ice_export called
+20210603 173953.858 INFO             PET465 (ice_comp_nuopc):(ModelAdvance) ------>Advancing ICE from: 2013  4  1  4 41 15   0
+20210603 173953.858 INFO             PET465 --------------------------------> to: 2013  4  1  4 45  0   0
