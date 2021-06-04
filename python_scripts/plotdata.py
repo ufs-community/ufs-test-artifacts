@@ -51,7 +51,10 @@ class PlotData:
         if(output != None ):
           runtime = output[0].split()[3]
           comptiming['runtime']=runtime
-        timing[ESMFversion] = comptiming
+        if ESMFversion in timing.keys():
+          pass
+        else:
+          timing[ESMFversion] = comptiming
     labels = sorted(timing.keys())
     print(labels)
     labels = [w.replace('ESMF_', '') for w in labels]
@@ -90,6 +93,7 @@ class PlotData:
 
     fig.tight_layout()
 
+    plt.savefig('{}-comp-timing.png'.format(self.machinename))
     plt.show()
     print(atm)
     print(labels)
