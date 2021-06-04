@@ -43,6 +43,8 @@ class PlotData:
           words = output[0].split()
 #         print("{} {}".format(ESMFversion,words[4]))
           comptiming[comp] = words[4]
+        else:
+          comptiming[comp] = 0.0
       if(comptiming != {}):
         cmd = "git show {}:{}/out | grep \"Total runtime\"".format(githash,self.machinename)
         output = self.runcmd(cmd)
@@ -55,9 +57,6 @@ class PlotData:
     labels = [w.replace('ESMF_', '') for w in labels]
     labels = [w.replace('beta_snapshot_', '') for w in labels]
 
-#   men_means = [20, 34, 30, 35, 27]
-#   women_means = [25, 32, 34, 20, 25]
-
     x = np.arange(len(labels))  # the label locations
     width = 0.175  # the width of the bars
     atm = np.zeros(len(timing))
@@ -66,14 +65,13 @@ class PlotData:
     wav = np.zeros(len(timing))
     i = 0
     for key in sorted (timing.keys()):
-      print(key)
       atm[i] = timing[key]['ATM']
       ocn[i] = timing[key]['OCN']
       ice[i] = timing[key]['ICE']
       wav[i] = timing[key]['WAV']
       i = i +1
 
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(12,4))
     rects1 = ax.bar(x - width*1.5, atm, width, label='ATM')
     rects2 = ax.bar(x - width*0.5, ocn, width, label='OCN')
     rects3 = ax.bar(x + width*0.5, ice, width, label='ICE')
@@ -85,10 +83,10 @@ class PlotData:
     ax.set_xticklabels(labels)
     ax.legend()
 
-#   ax.bar_label(rects1, padding=3)
-#   ax.bar_label(rects2, padding=3)
-#   ax.bar_label(rects3, padding=3)
-#   ax.bar_label(rects4, padding=3)
+    ax.bar_label(rects1, padding=3)
+    ax.bar_label(rects2, padding=3)
+    ax.bar_label(rects3, padding=3)
+    ax.bar_label(rects4, padding=3)
 
     fig.tight_layout()
 
