@@ -50,23 +50,50 @@ class PlotData:
           runtime = output[0].split()[3]
           comptiming['runtime']=runtime
         timing[ESMFversion] = comptiming
-    labels = timing.keys()
-#   for key in timing:
-#     if('runtime' in timing[key]):
-#       print(key,timing[key]['runtime'])
-    print(timing['ESMF_8_2_0_beta_snapshot_04']['ATM'])
+    labels = sorted(timing.keys())
+    print(labels)
+    labels = [w.replace('ESMF_', '') for w in labels]
+    labels = [w.replace('beta_snapshot_', '') for w in labels]
+
 #   men_means = [20, 34, 30, 35, 27]
 #   women_means = [25, 32, 34, 20, 25]
 
-#   x = np.arange(len(labels))  # the label locations
-#   width = 0.35  # the width of the bars
+    x = np.arange(len(labels))  # the label locations
+    width = 0.175  # the width of the bars
+    atm = np.zeros(len(timing))
+    ocn = np.zeros(len(timing))
+    ice = np.zeros(len(timing))
+    wav = np.zeros(len(timing))
+    i = 0
+    for key in sorted (timing.keys()):
+      print(key)
+      atm[i] = timing[key]['ATM']
+      ocn[i] = timing[key]['OCN']
+      ice[i] = timing[key]['ICE']
+      wav[i] = timing[key]['WAV']
+      i = i +1
 
-#   fig, ax = plt.subplots()
-#   rects1 = ax.bar(x - width/2, men_means, width, label='Men')
-#   rects2 = ax.bar(x + width/2, women_means, width, label='Women')
-    data = list(timing.items())
-    an_array = np.array(data)
-    print(an_array[0,1]['ATM'])
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(x - width*1.5, atm, width, label='ATM')
+    rects2 = ax.bar(x - width*0.5, ocn, width, label='OCN')
+    rects3 = ax.bar(x + width*0.5, ice, width, label='ICE')
+    rects4 = ax.bar(x + width*1.5, wav, width, label='WAV')
+
+    ax.set_ylabel('Time (seconds)')
+    ax.set_title('Component Timing by ESMF snapshot on {}'.format(self.machinename))
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    ax.legend()
+
+#   ax.bar_label(rects1, padding=3)
+#   ax.bar_label(rects2, padding=3)
+#   ax.bar_label(rects3, padding=3)
+#   ax.bar_label(rects4, padding=3)
+
+    fig.tight_layout()
+
+    plt.show()
+    print(atm)
     print(labels)
     return
 
