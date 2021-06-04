@@ -54,7 +54,7 @@ class ArchiveResults:
     
     print("dryrun is -- {}".format(self.dryrun))
     start_time = time.time()
-    seconds = 14400
+    seconds = 144000
     while True:
       current_time = time.time()
       elapsed_time = current_time - start_time
