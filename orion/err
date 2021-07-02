@@ -1,178 +1,39 @@
 ++ date +%s
-+ echo -n ' 1622810353,'
++ echo -n ' 1625211529,'
 + set +x
 
 Currently Loaded Modules:
-  1) contrib/0.1        9) impi/2018.4      17) esmf/8_1_1    25) nemsio/2.5.2
-  2) noaatools/1.0     10) hpc-impi/2018.4  18) g2/3.4.2      26) w3emc/2.7.3
-  3) cmake/3.17.3      11) jasper/2.0.22    19) g2tmpl/1.9.1  27) crtm/2.3.0
-  4) python/3.7.5      12) zlib/1.2.11      20) ip/3.3.3      28) upp/10.0.6
-  5) hpc/1.1.0         13) png/1.6.35       21) sp/2.3.3      29) ufs_common
-  6) intel/2018.4      14) hdf5/1.10.6      22) sigio/2.3.2   30) modules.fv3
-  7) mkl/2020.2        15) netcdf/4.7.4     23) bacio/2.4.1
-  8) hpc-intel/2018.4  16) pio/2.5.2        24) w3nco/2.4.1
+  1) contrib/0.1       12) zlib/1.2.11     23) sigio/2.3.2
+  2) noaatools/1.0     13) png/1.6.35      24) bacio/2.4.1
+  3) cmake/3.18.1      14) hdf5/1.10.6     25) w3nco/2.4.1
+  4) python/3.7.5      15) netcdf/4.7.4    26) nemsio/2.5.2
+  5) hpc/1.1.0         16) pio/2.5.2       27) w3emc/2.7.3
+  6) intel/2018.4      17) esmf/8_1_1      28) crtm/2.3.0
+  7) mkl/2020.2        18) fms/2020.04.03  29) upp/10.0.8
+  8) hpc-intel/2018.4  19) g2/3.4.3        30) ufs_common
+  9) impi/2018.4       20) g2tmpl/1.10.0   31) ufs_orion.intel
+ 10) hpc-impi/2018.4   21) ip/3.3.3
+ 11) jasper/2.0.22     22) sp/2.3.3
 
  
 
-+ ulimit -s unlimited
 ++ date
-+ echo 'Model started:  ' Fri Jun 4 07:39:20 CDT 2021
++ echo 'Model started:  ' Fri Jul 2 02:38:52 CDT 2021
++ export MPI_TYPE_DEPTH=20
++ MPI_TYPE_DEPTH=20
 + export OMP_STACKSIZE=512M
 + OMP_STACKSIZE=512M
-+ export KMP_AFFINITY=scatter
-+ KMP_AFFINITY=scatter
 + export OMP_NUM_THREADS=1
 + OMP_NUM_THREADS=1
++ export ESMF_RUNTIME_COMPLIANCECHECK=OFF:depth=4
++ ESMF_RUNTIME_COMPLIANCECHECK=OFF:depth=4
++ export PSM_RANKS_PER_CONTEXT=4
++ PSM_RANKS_PER_CONTEXT=4
++ export PSM_SHAREDCONTEXTS=1
++ PSM_SHAREDCONTEXTS=1
 + export ESMF_RUNTIME_PROFILE=ON
 + ESMF_RUNTIME_PROFILE=ON
-+ export ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY
-+ ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY
-+ sync
-+ sleep 1
-+ srun --label -n 560 /work/noaa/da/mpotts/sandbox/ufs-weather-model/build-new/ufs_model
-  0:  in fcst comp init, ntasks=         288
-  0:  num_atmos_calls=          96 time_init=        2013           4           1
-  0:            0           0           0 time_atmos=        2013           4
-  0:            1           0           0           0 time_end=        2013
-  0:            4           1           6           0           0 dt_atmos=
-  0:          225 Run_length=       21600
-  0: 
-  0: WARNING from PE     0: MPP_OPEN: File time_stamp.out opened WRONLY already exists!
-  0: 
-  0:  FLAG: gwd_opt==1 so gwd not generic
-  0:  FLAG: satmedmf and isatedmf=1 so pbl not generic
-  0:  NO FLAG: scnv is generic
-  0:  NO FLAG: dcnv is generic
-  0:   num_p3d=           5  num_p2d=           1  crtrh=  0.900000000000000     
-  0:   0.900000000000000       0.900000000000000       npdf3d=           0  pdfcld= F
-  0:   shcnvcw= F  cnvcld= T  ncnvcld3d=           1  do_shoc= F  nshoc3d=
-  0:            0  nshoc_2d=           0  shoc_cld= F  nkbfshoc=        -999 
-  0:   nahdshoc=        -999  nscfshoc=        -999  uni_cld= F  ntot3d=           6 
-  0:   ntot2d=           1  shocaftcnv= F  indcld=          -1  shoc_parm=
-  0:    7000.00000000000        1.00000000000000        4.28571430000000     
-  0:   0.700000000000000       -999.000000000000       ncnvw=           6  ncnvc=
-  0:         -999
-  0: GFS_phys_time_vary_init: compute sncovr from weasd and soil vegetation parameters
-  0:  be create fcst grid
-  0:  dateS=hours since 2013-04-01 00:00:00date_init=        2013           4
-  0:            1           0           0           0
-  0:  af create fcst fieldbundle, name=dynrc=           0
-  0:  af create fcst fieldbundle, name=phy_nearest_stodrc=           0
-  0:  af create fcst fieldbundle, name=phy_bilinearrc=           0
-  0:  in fcst,init total time:    40.0675621032715     
-312:  (MOM_cap:InitializeAdvertise)current time: y,m,d-        2013           4
-312:            1 h,m,s=           0           0           0
-312:  (MOM_cap:InitializeAdvertise)start time: y,m,d-        2013           4
-312:            1 h,m,s=           0           0           0
-312: 
-312: WARNING from PE     0: reset_face_lengths_list unused v-face line: V_width,  28.8,  29.4, 41.1, 41.2,   2500.0
-312: 
-312: 
-312: WARNING from PE     0: Use EPBL_LANGMUIR_SCHEME = ADDITIVE instead of the archaic LT_ENHANCE = 3.
-312: 
-  0:  in fcst run phase 2, na=           0
-  0:  in fcst run phase 2, na=           1
-  0:  in fcst run phase 2, na=           2
-  0:  in fcst run phase 2, na=           3
-  0:  in fcst run phase 2, na=           4
-  0:  in fcst run phase 2, na=           5
-  0:  in fcst run phase 2, na=           6
-  0:  in fcst run phase 2, na=           7
-  0:  in fcst run phase 2, na=           8
-  0:  in fcst run phase 2, na=           9
-  0:  in fcst run phase 2, na=          10
-312: 
-312: WARNING from PE     0: MPP_OPEN: File MOM6_OUTPUT/ocean.stats opened WRONLY already exists!
-312: 
-  0:  in fcst run phase 2, na=          11
-  0:  in fcst run phase 2, na=          12
-  0:  in fcst run phase 2, na=          13
-  0:  in fcst run phase 2, na=          14
-  0:  in fcst run phase 2, na=          15
-  0:  in fcst run phase 2, na=          16
-  0:  in fcst run phase 2, na=          17
-  0:  in fcst run phase 2, na=          18
-  0:  in fcst run phase 2, na=          19
-  0:  in fcst run phase 2, na=          20
-  0:  in fcst run phase 2, na=          21
-  0:  in fcst run phase 2, na=          22
-  0:  in fcst run phase 2, na=          23
-  0:  in fcst run phase 2, na=          24
-  0:  in fcst run phase 2, na=          25
-  0:  in fcst run phase 2, na=          26
-  0:  in fcst run phase 2, na=          27
-  0:  in fcst run phase 2, na=          28
-  0:  in fcst run phase 2, na=          29
-  0:  in fcst run phase 2, na=          30
-  0:  in fcst run phase 2, na=          31
-  0:  in fcst run phase 2, na=          32
-  0:  in fcst run phase 2, na=          33
-  0:  in fcst run phase 2, na=          34
-  0:  in fcst run phase 2, na=          35
-  0:  in fcst run phase 2, na=          36
-  0:  in fcst run phase 2, na=          37
-  0:  in fcst run phase 2, na=          38
-  0:  in fcst run phase 2, na=          39
-  0:  in fcst run phase 2, na=          40
-  0:  in fcst run phase 2, na=          41
-  0:  in fcst run phase 2, na=          42
-  0:  in fcst run phase 2, na=          43
-  0:  in fcst run phase 2, na=          44
-  0:  in fcst run phase 2, na=          45
-  0:  in fcst run phase 2, na=          46
-  0:  in fcst run phase 2, na=          47
-  0:  in fcst run phase 2, na=          48
-  0:  in fcst run phase 2, na=          49
-  0:  in fcst run phase 2, na=          50
-  0:  in fcst run phase 2, na=          51
-  0:  in fcst run phase 2, na=          52
-  0:  in fcst run phase 2, na=          53
-  0:  in fcst run phase 2, na=          54
-  0:  in fcst run phase 2, na=          55
-  0:  in fcst run phase 2, na=          56
-  0:  in fcst run phase 2, na=          57
-  0:  in fcst run phase 2, na=          58
-  0:  in fcst run phase 2, na=          59
-  0:  in fcst run phase 2, na=          60
-  0:  in fcst run phase 2, na=          61
-  0:  in fcst run phase 2, na=          62
-  0:  in fcst run phase 2, na=          63
-  0:  in fcst run phase 2, na=          64
-  0:  in fcst run phase 2, na=          65
-  0:  in fcst run phase 2, na=          66
-  0:  in fcst run phase 2, na=          67
-  0:  in fcst run phase 2, na=          68
-  0:  in fcst run phase 2, na=          69
-  0:  in fcst run phase 2, na=          70
-  0:  in fcst run phase 2, na=          71
-  0:  in fcst run phase 2, na=          72
-  0:  in fcst run phase 2, na=          73
-  0:  in fcst run phase 2, na=          74
-  0:  in fcst run phase 2, na=          75
-  0:  in fcst run phase 2, na=          76
-  0:  in fcst run phase 2, na=          77
-  0:  in fcst run phase 2, na=          78
-  0:  in fcst run phase 2, na=          79
-  0:  in fcst run phase 2, na=          80
-  0:  in fcst run phase 2, na=          81
-  0:  in fcst run phase 2, na=          82
-  0:  in fcst run phase 2, na=          83
-  0:  in fcst run phase 2, na=          84
-  0:  in fcst run phase 2, na=          85
-  0:  in fcst run phase 2, na=          86
-  0:  in fcst run phase 2, na=          87
-  0:  in fcst run phase 2, na=          88
-  0:  in fcst run phase 2, na=          89
-  0:  in fcst run phase 2, na=          90
-  0:  in fcst run phase 2, na=          91
-  0:  in fcst run phase 2, na=          92
-  0:  in fcst run phase 2, na=          93
-  0:  in fcst run phase 2, na=          94
-  0:  in fcst run phase 2, na=          95
-  0: 
-  0: WARNING from PE     0: MPP_OPEN: File RESTART/coupler.res opened WRONLY already exists!
-  0: 
-++ date
-+ echo 'Model ended:    ' Fri Jun 4 08:04:42 CDT 2021
-++ date +%s
-+ echo -n ' 1622811883,'
++ export 'ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY TEXT'
++ ESMF_RUNTIME_PROFILE_OUTPUT='SUMMARY TEXT'
++ cp /work/noaa/da/mpotts/sandbox/ufs-weather-model/build-new/ufs_model .
+cp: cannot stat ‘/work/noaa/da/mpotts/sandbox/ufs-weather-model/build-new/ufs_model’: No such file or directory
