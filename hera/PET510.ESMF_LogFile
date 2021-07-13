@@ -1,33 +1,415 @@
-20210702 042519.276 INFO             PET510 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-20210702 042519.276 INFO             PET510 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
-20210702 042519.276 INFO             PET510 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
-20210702 042519.276 INFO             PET510 !!! FOR PRODUCTION RUNS, USE:                      !!!
-20210702 042519.276 INFO             PET510 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
-20210702 042519.276 INFO             PET510 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-20210702 042519.276 INFO             PET510 Running with ESMF Version   : ESMF_8_2_0_beta_snapshot_12
-20210702 042519.276 INFO             PET510 ESMF library build date/time: "Jul  2 2021" "04:08:44"
-20210702 042519.276 INFO             PET510 ESMF library build location : /scratch1/NCEPDEV/da/Mark.Potts/sandbox/hpc-stack/pkg/ESMF_8_2_0_beta_snapshot_12
-20210702 042519.276 INFO             PET510 ESMF_COMM                   : intelmpi
-20210702 042519.277 INFO             PET510 ESMF_MOAB                   : enabled
-20210702 042519.277 INFO             PET510 ESMF_LAPACK                 : enabled
-20210702 042519.277 INFO             PET510 ESMF_NETCDF                 : enabled
-20210702 042519.277 INFO             PET510 ESMF_PNETCDF                : disabled
-20210702 042519.277 INFO             PET510 ESMF_PIO                    : enabled
-20210702 042519.277 INFO             PET510 ESMF_YAMLCPP                : enabled
-20210702 042519.277 INFO             PET510 ESMF Profiling Enabled
-20210702 042519.277 INFO             PET510 ESMF Trace/Profile clock: REALTIME
-20210702 042519.354 WARNING          PET510 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
-20210702 042519.380 TRACE            PET510  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-20210702 042519.380 TRACE            PET510  ESMF_LogSet() !!!       TRACING is disabled         !!!
-20210702 042519.380 TRACE            PET510  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-20210702 042519.453 INFO             PET510 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210702 042519.454 INFO             PET510 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210702 042519.531 INFO             PET510 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210702 042519.531 INFO             PET510 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210702 042519.603 INFO             PET510 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210702 042519.603 INFO             PET510 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210702 042519.627 INFO             PET510 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210702 042519.627 INFO             PET510 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210702 042519.639 INFO             PET510 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210702 042519.639 INFO             PET510 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210702 042608.554 ERROR            PET510 wmesmfmd.ftn:672 InitializeP1 Unknown error  - Passing error in return code
+20210713 134742.300 INFO             PET510 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210713 134742.300 INFO             PET510 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210713 134742.300 INFO             PET510 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210713 134742.300 INFO             PET510 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210713 134742.300 INFO             PET510 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210713 134742.300 INFO             PET510 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210713 134742.300 INFO             PET510 Running with ESMF Version   : ESMF_8_2_0_beta_snapshot_11
+20210713 134742.300 INFO             PET510 ESMF library build date/time: "Jun 17 2021" "04:37:11"
+20210713 134742.300 INFO             PET510 ESMF library build location : /scratch1/NCEPDEV/da/Mark.Potts/sandbox/hpc-stack/pkg/ESMF_8_2_0_beta_snapshot_11
+20210713 134742.300 INFO             PET510 ESMF_COMM                   : intelmpi
+20210713 134742.301 INFO             PET510 ESMF_MOAB                   : enabled
+20210713 134742.301 INFO             PET510 ESMF_LAPACK                 : enabled
+20210713 134742.301 INFO             PET510 ESMF_NETCDF                 : enabled
+20210713 134742.301 INFO             PET510 ESMF_PNETCDF                : disabled
+20210713 134742.301 INFO             PET510 ESMF_PIO                    : enabled
+20210713 134742.301 INFO             PET510 ESMF_YAMLCPP                : enabled
+20210713 134742.301 INFO             PET510 ESMF Profiling Enabled
+20210713 134742.301 INFO             PET510 ESMF Trace/Profile clock: REALTIME
+20210713 134742.306 WARNING          PET510 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
+20210713 134742.312 TRACE            PET510  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210713 134742.312 TRACE            PET510  ESMF_LogSet() !!!       TRACING is disabled         !!!
+20210713 134742.312 TRACE            PET510  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210713 134742.393 INFO             PET510 ReadAttributes DRIVER_attributes:: start:
+20210713 134742.393 INFO             PET510  mediator_read_restart = false
+20210713 134742.393 INFO             PET510 ReadAttributes DRIVER_attributes:: end:
+20210713 134742.393 INFO             PET510 ReadAttributes ALLCOMP_attributes:: start:
+20210713 134742.393 INFO             PET510  ScalarFieldCount = 2
+20210713 134742.393 INFO             PET510  ScalarFieldIdxGridNX = 1
+20210713 134742.393 INFO             PET510  ScalarFieldIdxGridNY = 2
+20210713 134742.393 INFO             PET510  ScalarFieldName = cpl_scalars
+20210713 134742.393 INFO             PET510  start_type = startup
+20210713 134742.393 INFO             PET510  restart_dir = RESTART/
+20210713 134742.393 INFO             PET510  case_name = ufs.cpld
+20210713 134742.393 INFO             PET510  restart_n = 6
+20210713 134742.393 INFO             PET510  restart_option = nhours
+20210713 134742.393 INFO             PET510  restart_ymd = -999
+20210713 134742.393 INFO             PET510  dbug_flag = 0
+20210713 134742.393 INFO             PET510  use_coldstart = false
+20210713 134742.393 INFO             PET510  use_mommesh = true
+20210713 134742.393 INFO             PET510 ReadAttributes ALLCOMP_attributes:: end:
+20210713 134742.397 INFO             PET510 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210713 134742.397 INFO             PET510 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210713 134742.397 INFO             PET510 ReadAttributes MED_attributes:: start:
+20210713 134742.397 INFO             PET510  ATM_model = fv3
+20210713 134742.397 INFO             PET510  ICE_model = cice6
+20210713 134742.397 INFO             PET510  OCN_model = mom6
+20210713 134742.397 INFO             PET510  history_n = 1
+20210713 134742.397 INFO             PET510  history_option = nhours
+20210713 134742.397 INFO             PET510  history_ymd = -999
+20210713 134742.397 INFO             PET510  coupling_mode = nems_frac
+20210713 134742.397 INFO             PET510 ReadAttributes MED_attributes:: end:
+20210713 134742.397 INFO             PET510 ReadAttributes ALLCOMP_attributes:: start:
+20210713 134742.397 INFO             PET510  ScalarFieldCount = 2
+20210713 134742.397 INFO             PET510  ScalarFieldIdxGridNX = 1
+20210713 134742.397 INFO             PET510  ScalarFieldIdxGridNY = 2
+20210713 134742.397 INFO             PET510  ScalarFieldName = cpl_scalars
+20210713 134742.397 INFO             PET510  start_type = startup
+20210713 134742.397 INFO             PET510  restart_dir = RESTART/
+20210713 134742.397 INFO             PET510  case_name = ufs.cpld
+20210713 134742.397 INFO             PET510  restart_n = 6
+20210713 134742.397 INFO             PET510  restart_option = nhours
+20210713 134742.397 INFO             PET510  restart_ymd = -999
+20210713 134742.397 INFO             PET510  dbug_flag = 0
+20210713 134742.397 INFO             PET510  use_coldstart = false
+20210713 134742.397 INFO             PET510  use_mommesh = true
+20210713 134742.397 INFO             PET510 ReadAttributes ALLCOMP_attributes:: end:
+20210713 134742.420 INFO             PET510 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210713 134742.420 INFO             PET510 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210713 134742.420 INFO             PET510 ReadAttributes ATM_attributes:: start:
+20210713 134742.420 INFO             PET510  Verbosity = 0
+20210713 134742.420 INFO             PET510  DumpFields = false
+20210713 134742.420 INFO             PET510  ProfileMemory = false
+20210713 134742.420 INFO             PET510  OverwriteSlice = true
+20210713 134742.420 INFO             PET510 ReadAttributes ATM_attributes:: end:
+20210713 134742.421 INFO             PET510 ReadAttributes ALLCOMP_attributes:: start:
+20210713 134742.421 INFO             PET510  ScalarFieldCount = 2
+20210713 134742.421 INFO             PET510  ScalarFieldIdxGridNX = 1
+20210713 134742.421 INFO             PET510  ScalarFieldIdxGridNY = 2
+20210713 134742.421 INFO             PET510  ScalarFieldName = cpl_scalars
+20210713 134742.421 INFO             PET510  start_type = startup
+20210713 134742.421 INFO             PET510  restart_dir = RESTART/
+20210713 134742.421 INFO             PET510  case_name = ufs.cpld
+20210713 134742.421 INFO             PET510  restart_n = 6
+20210713 134742.421 INFO             PET510  restart_option = nhours
+20210713 134742.421 INFO             PET510  restart_ymd = -999
+20210713 134742.421 INFO             PET510  dbug_flag = 0
+20210713 134742.421 INFO             PET510  use_coldstart = false
+20210713 134742.421 INFO             PET510  use_mommesh = true
+20210713 134742.421 INFO             PET510 ReadAttributes ALLCOMP_attributes:: end:
+20210713 134742.430 INFO             PET510 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210713 134742.430 INFO             PET510 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210713 134742.430 INFO             PET510 ReadAttributes OCN_attributes:: start:
+20210713 134742.430 INFO             PET510  Verbosity = 0
+20210713 134742.430 INFO             PET510  DumpFields = false
+20210713 134742.430 INFO             PET510  ProfileMemory = false
+20210713 134742.430 INFO             PET510  OverwriteSlice = true
+20210713 134742.430 INFO             PET510  mesh_ocn = mesh.mx025.nc
+20210713 134742.430 INFO             PET510 ReadAttributes OCN_attributes:: end:
+20210713 134742.431 INFO             PET510 ReadAttributes ALLCOMP_attributes:: start:
+20210713 134742.431 INFO             PET510  ScalarFieldCount = 2
+20210713 134742.431 INFO             PET510  ScalarFieldIdxGridNX = 1
+20210713 134742.431 INFO             PET510  ScalarFieldIdxGridNY = 2
+20210713 134742.431 INFO             PET510  ScalarFieldName = cpl_scalars
+20210713 134742.431 INFO             PET510  start_type = startup
+20210713 134742.431 INFO             PET510  restart_dir = RESTART/
+20210713 134742.431 INFO             PET510  case_name = ufs.cpld
+20210713 134742.431 INFO             PET510  restart_n = 6
+20210713 134742.431 INFO             PET510  restart_option = nhours
+20210713 134742.431 INFO             PET510  restart_ymd = -999
+20210713 134742.431 INFO             PET510  dbug_flag = 0
+20210713 134742.431 INFO             PET510  use_coldstart = false
+20210713 134742.431 INFO             PET510  use_mommesh = true
+20210713 134742.431 INFO             PET510 ReadAttributes ALLCOMP_attributes:: end:
+20210713 134742.434 INFO             PET510 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210713 134742.434 INFO             PET510 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210713 134742.434 INFO             PET510 ReadAttributes ICE_attributes:: start:
+20210713 134742.434 INFO             PET510  Verbosity = 0
+20210713 134742.434 INFO             PET510  DumpFields = false
+20210713 134742.434 INFO             PET510  ProfileMemory = false
+20210713 134742.434 INFO             PET510  OverwriteSlice = true
+20210713 134742.434 INFO             PET510  mesh_ice = mesh.mx025.nc
+20210713 134742.434 INFO             PET510  stop_n = 6
+20210713 134742.434 INFO             PET510  stop_option = nhours
+20210713 134742.434 INFO             PET510  stop_ymd = -999
+20210713 134742.434 INFO             PET510 ReadAttributes ICE_attributes:: end:
+20210713 134742.435 INFO             PET510 ReadAttributes ALLCOMP_attributes:: start:
+20210713 134742.435 INFO             PET510  ScalarFieldCount = 2
+20210713 134742.435 INFO             PET510  ScalarFieldIdxGridNX = 1
+20210713 134742.435 INFO             PET510  ScalarFieldIdxGridNY = 2
+20210713 134742.435 INFO             PET510  ScalarFieldName = cpl_scalars
+20210713 134742.435 INFO             PET510  start_type = startup
+20210713 134742.435 INFO             PET510  restart_dir = RESTART/
+20210713 134742.435 INFO             PET510  case_name = ufs.cpld
+20210713 134742.435 INFO             PET510  restart_n = 6
+20210713 134742.435 INFO             PET510  restart_option = nhours
+20210713 134742.435 INFO             PET510  restart_ymd = -999
+20210713 134742.435 INFO             PET510  dbug_flag = 0
+20210713 134742.435 INFO             PET510  use_coldstart = false
+20210713 134742.435 INFO             PET510  use_mommesh = true
+20210713 134742.435 INFO             PET510 ReadAttributes ALLCOMP_attributes:: end:
+20210713 134742.441 INFO             PET510 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210713 134742.441 INFO             PET510 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210713 134742.441 INFO             PET510 ReadAttributes WAV_attributes:: start:
+20210713 134742.441 INFO             PET510  Verbosity = 0
+20210713 134742.441 INFO             PET510  OverwriteSlice = false
+20210713 134742.441 INFO             PET510 ReadAttributes WAV_attributes:: end:
+20210713 134742.442 INFO             PET510 ReadAttributes ALLCOMP_attributes:: start:
+20210713 134742.442 INFO             PET510  ScalarFieldCount = 2
+20210713 134742.442 INFO             PET510  ScalarFieldIdxGridNX = 1
+20210713 134742.442 INFO             PET510  ScalarFieldIdxGridNY = 2
+20210713 134742.442 INFO             PET510  ScalarFieldName = cpl_scalars
+20210713 134742.442 INFO             PET510  start_type = startup
+20210713 134742.442 INFO             PET510  restart_dir = RESTART/
+20210713 134742.442 INFO             PET510  case_name = ufs.cpld
+20210713 134742.442 INFO             PET510  restart_n = 6
+20210713 134742.442 INFO             PET510  restart_option = nhours
+20210713 134742.442 INFO             PET510  restart_ymd = -999
+20210713 134742.442 INFO             PET510  dbug_flag = 0
+20210713 134742.442 INFO             PET510  use_coldstart = false
+20210713 134742.442 INFO             PET510  use_mommesh = true
+20210713 134742.442 INFO             PET510 ReadAttributes ALLCOMP_attributes:: end:
+20210713 134829.818 INFO             PET510 WAV: List of advertised import fields(5):
+20210713 134829.818 INFO             PET510 WAV: index       name   standardName
+20210713 134829.818 INFO             PET510 WAV:     1     uucurr   surface_eastward_sea_water_velocity
+20210713 134829.818 INFO             PET510 WAV:     2     vvcurr   surface_northward_sea_water_velocity
+20210713 134829.818 INFO             PET510 WAV:     3     uutrue   eastward_wind_at_10m_height
+20210713 134829.819 INFO             PET510 WAV:     4     vvtrue   northward_wind_at_10m_height
+20210713 134829.819 INFO             PET510 WAV:     5     seaice   sea_ice_concentration
+20210713 134829.829 INFO             PET510 WAV: List of advertised export fields(16):
+20210713 134829.829 INFO             PET510 WAV: index       name   standardName
+20210713 134829.829 INFO             PET510 WAV:     1     charno   wave_induced_charnock_parameter
+20210713 134829.829 INFO             PET510 WAV:     2     z0rlen   wave_z0_roughness_length
+20210713 134829.829 INFO             PET510 WAV:     3     uscurr   eastward_stokes_drift_current
+20210713 134829.829 INFO             PET510 WAV:     4     vscurr   northward_stokes_drift_current
+20210713 134829.829 INFO             PET510 WAV:     5     x1pstk   eastward_partitioned_stokes_drift_1
+20210713 134829.829 INFO             PET510 WAV:     6     y1pstk   northward_partitioned_stokes_drift_1
+20210713 134829.829 INFO             PET510 WAV:     7     x2pstk   eastward_partitioned_stokes_drift_2
+20210713 134829.829 INFO             PET510 WAV:     8     y2pstk   northward_partitioned_stokes_drift_2
+20210713 134829.829 INFO             PET510 WAV:     9     x3pstk   eastward_partitioned_stokes_drift_3
+20210713 134829.829 INFO             PET510 WAV:    10     y3pstk   northward_partitioned_stokes_drift_3
+20210713 134829.829 INFO             PET510 WAV:    11     wbcuru   eastward_wave_bottom_current
+20210713 134829.829 INFO             PET510 WAV:    12     wbcurv   northward_wave_bottom_current
+20210713 134829.829 INFO             PET510 WAV:    13     wbcurp   wave_bottom_current_period
+20210713 134829.829 INFO             PET510 WAV:    14     wavsuu   eastward_wave_radiation_stress
+20210713 134829.829 INFO             PET510 WAV:    15     wavsuv   eastward_northward_wave_radiation_stress
+20210713 134829.829 INFO             PET510 WAV:    16     wavsvv   northward_wave_radiation_stress
+20210713 134834.203 INFO             PET510 Driver is in ModifyCplLists()
+20210713 134834.203 INFO             PET510  Found           21  Connectors. Modifying CplList Attribute....
+20210713 134846.792 INFO             PET510 WAV: Creating import grid for Reg/Curvilinear Mode
+20210713 134846.813 INFO             PET510 WAV: List of realized import fields(5):
+20210713 134846.813 INFO             PET510 WAV: index       name   standardName
+20210713 134846.813 INFO             PET510 WAV:     1     uucurr   surface_eastward_sea_water_velocity
+20210713 134846.813 INFO             PET510 WAV:     2     vvcurr   surface_northward_sea_water_velocity
+20210713 134846.813 INFO             PET510 WAV:     3     uutrue   eastward_wind_at_10m_height
+20210713 134846.813 INFO             PET510 WAV:     4     vvtrue   northward_wind_at_10m_height
+20210713 134846.813 INFO             PET510 WAV:     5     seaice   sea_ice_concentration
+20210713 134846.813 INFO             PET510 WAV: input z-level file: none
+20210713 134846.813 INFO             PET510 WAV: table of z-levels
+20210713 134846.813 INFO             PET510 WAV:    index         z
+20210713 134846.813 INFO             PET510 WAV:        1      0.00
+20210713 134846.825 INFO             PET510 ESMF_FieldRedistStoreNF(): Just entered routine.
+20210713 134847.011 INFO             PET510 ESMF_FieldRedistStoreNF(): Leaving routine.
+20210713 134847.021 INFO             PET510 WAV: List of realized export fields(7):
+20210713 134847.021 INFO             PET510 WAV: index       name   standardName
+20210713 134847.021 INFO             PET510 WAV:     1     z0rlen   wave_z0_roughness_length
+20210713 134847.021 INFO             PET510 WAV:     2     x1pstk   eastward_partitioned_stokes_drift_1
+20210713 134847.021 INFO             PET510 WAV:     3     y1pstk   northward_partitioned_stokes_drift_1
+20210713 134847.021 INFO             PET510 WAV:     4     x2pstk   eastward_partitioned_stokes_drift_2
+20210713 134847.021 INFO             PET510 WAV:     5     y2pstk   northward_partitioned_stokes_drift_2
+20210713 134847.021 INFO             PET510 WAV:     6     x3pstk   eastward_partitioned_stokes_drift_3
+20210713 134847.021 INFO             PET510 WAV:     7     y3pstk   northward_partitioned_stokes_drift_3
+20210713 140105.536 INFO             PET510 WAV: wtime:                timer     count          time
+20210713 140105.537 INFO             PET510 WAV: wtime:         InitializeP0         1  0.162840E-03
+20210713 140105.537 INFO             PET510 WAV: wtime:         InitializeP1         1  0.431457E+00
+20210713 140105.537 INFO             PET510 WAV: wtime:         InitializeP3         1  0.229175E+00
+20210713 140105.537 INFO             PET510 WAV: wtime:       DataInitialize         2  0.576050E-01
+20210713 140105.538 INFO             PET510 WAV: wtime:         ModelAdvance        96  0.458486E+03
+20210713 140105.538 INFO             PET510 WAV: wtime:             Finalize         1  0.719500E-02
+20210713 140105.538 INFO             PET510 WAV: wtime:            GetImport        97  0.858473E+02
+20210713 140105.538 INFO             PET510 WAV: wtime:            SetExport        97  0.609423E+01
+20210713 140105.538 INFO             PET510 WAV: wtime:          FieldGather       485  0.856559E+02
+20210713 140105.538 INFO             PET510 WAV: wtime:            FieldFill       691  0.625854E-01
+20210713 140503.866 INFO             PET510 Finalizing ESMF
+20210713 140503.867 INFO             PET510 **************** Region Timings *******************
+20210713 140503.867 INFO             PET510 Region                                              Count  Total (s)   Self (s)    Mean (s)    Min (s)     Max (s)
+20210713 140503.867 INFO             PET510   [NEMS Grid Comp] Run 1                            1      703.5207    0.0000      703.5207    703.5207    703.5207
+20210713 140503.867 INFO             PET510     [EARTH grid component] RunPhase1                1      703.5207    0.0838      703.5207    703.5207    703.5207
+20210713 140503.867 INFO             PET510       [WAV] RunPhase1                               96     458.4960    458.4960    4.7760      1.9512      26.6778
+20210713 140503.867 INFO             PET510       [ATM-TO-WAV] RunPhase1                        96     196.9825    196.9825    2.0519      0.0006      12.9139
+20210713 140503.867 INFO             PET510       [ICE-TO-WAV] RunPhase1                        96     31.8095     31.8095     0.3313      0.0001      5.3288
+20210713 140503.867 INFO             PET510       [OCN-TO-WAV] RunPhase1                        12     16.0739     16.0739     1.3395      0.0003      2.4381
+20210713 140503.867 INFO             PET510       [WAV-TO-ATM] RunPhase1                        96     0.0410      0.0410      0.0004      0.0004      0.0008
+20210713 140503.868 INFO             PET510       [WAV-TO-OCN] RunPhase1                        12     0.0338      0.0338      0.0028      0.0018      0.0040
+20210713 140503.868 INFO             PET510       [MED-TO-EARTH grid component] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-MED] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET510       [ICE-TO-EARTH grid component] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-OCN] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET510       [WAV-TO-EARTH grid component] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET510       [OCN-TO-EARTH grid component] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-ATM] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET510       [ATM-TO-EARTH grid component] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-ICE] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-WAV] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET510   [NEMS Grid Comp] Init 1                           1      99.6772     0.0642      99.6772     99.6772     99.6772
+20210713 140503.868 INFO             PET510     [EARTH grid component] Init 1                   1      99.6129     63.5941     99.6129     99.6129     99.6129
+20210713 140503.868 INFO             PET510       [WAV-TO-OCN] IPDv05p6b                        1      9.1163      9.1163      9.1163      9.1163      9.1163
+20210713 140503.868 INFO             PET510       [ICE-TO-WAV] IPDv05p6b                        1      4.0853      4.0853      4.0853      4.0853      4.0853
+20210713 140503.868 INFO             PET510       [OCN-TO-WAV] IPDv05p6b                        1      2.7532      2.7532      2.7532      2.7532      2.7532
+20210713 140503.868 INFO             PET510       [ATM-TO-EARTH grid component] IPDv05p6b       1      2.5212      2.5212      2.5212      2.5212      2.5212
+20210713 140503.868 INFO             PET510       [WAV-TO-ATM] IPDv05p6b                        1      2.3413      2.3413      2.3413      2.3413      2.3413
+20210713 140503.868 INFO             PET510       [ATM-TO-WAV] IPDv05p6b                        1      1.5226      1.5226      1.5226      1.5226      1.5226
+20210713 140503.868 INFO             PET510       [ATM-TO-EARTH grid component] IPDv05p5        1      1.1959      1.1959      1.1959      1.1959      1.1959
+20210713 140503.868 INFO             PET510       [ATM-TO-WAV] IPDv05p5                         1      0.6631      0.6631      0.6631      0.6631      0.6631
+20210713 140503.868 INFO             PET510       [ATM-TO-WAV] IPDv05p3                         1      0.4456      0.4456      0.4456      0.4456      0.4456
+20210713 140503.868 INFO             PET510       [WAV] IPDv03p1                                1      0.4315      0.4315      0.4315      0.4315      0.4315
+20210713 140503.868 INFO             PET510       [ATM-TO-EARTH grid component] IPDv05p6a       1      0.3967      0.3967      0.3967      0.3967      0.3967
+20210713 140503.868 INFO             PET510       [ATM-TO-EARTH grid component] IPDv05p4        1      0.3900      0.3900      0.3900      0.3900      0.3900
+20210713 140503.868 INFO             PET510       [ICE-TO-WAV] IPDv05p5                         1      0.3866      0.3866      0.3866      0.3866      0.3866
+20210713 140503.868 INFO             PET510       [ATM-TO-EARTH grid component] IPDv05p3        1      0.3750      0.3750      0.3750      0.3750      0.3750
+20210713 140503.868 INFO             PET510       [ATM-TO-EARTH grid component] IPDv05p1        1      0.3650      0.3650      0.3650      0.3650      0.3650
+20210713 140503.868 INFO             PET510       [ATM-TO-EARTH grid component] IPDv05p2b       1      0.3532      0.3532      0.3532      0.3532      0.3532
+20210713 140503.868 INFO             PET510       [ATM-TO-EARTH grid component] IPDv05p2a       1      0.3176      0.3176      0.3176      0.3176      0.3176
+20210713 140503.868 INFO             PET510       [OCN-TO-WAV] IPDv05p5                         1      0.2536      0.2536      0.2536      0.2536      0.2536
+20210713 140503.868 INFO             PET510       [ATM-TO-WAV] IPDv05p2b                        1      0.2365      0.2365      0.2365      0.2365      0.2365
+20210713 140503.868 INFO             PET510       [WAV] IPDv03p3                                1      0.2292      0.2292      0.2292      0.2292      0.2292
+20210713 140503.868 INFO             PET510       [ATM-TO-WAV] IPDv05p2a                        1      0.2254      0.2254      0.2254      0.2254      0.2254
+20210713 140503.868 INFO             PET510       [ATM-TO-WAV] IPDv05p1                         1      0.1959      0.1959      0.1959      0.1959      0.1959
+20210713 140503.868 INFO             PET510       [ATM-TO-WAV] IPDv05p6a                        1      0.1841      0.1841      0.1841      0.1841      0.1841
+20210713 140503.868 INFO             PET510       [ATM-TO-WAV] IPDv05p4                         1      0.1826      0.1826      0.1826      0.1826      0.1826
+20210713 140503.868 INFO             PET510       [ICE-TO-WAV] IPDv05p4                         1      0.1816      0.1816      0.1816      0.1816      0.1816
+20210713 140503.868 INFO             PET510       [ICE-TO-WAV] IPDv05p6a                        1      0.1632      0.1632      0.1632      0.1632      0.1632
+20210713 140503.868 INFO             PET510       [OCN-TO-WAV] IPDv05p6a                        1      0.1459      0.1459      0.1459      0.1459      0.1459
+20210713 140503.868 INFO             PET510       [ICE-TO-WAV] IPDv05p3                         1      0.1456      0.1456      0.1456      0.1456      0.1456
+20210713 140503.868 INFO             PET510       [OCN-TO-WAV] IPDv05p4                         1      0.1263      0.1263      0.1263      0.1263      0.1263
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-MED] IPDv05p6a       1      0.1163      0.1163      0.1163      0.1163      0.1163
+20210713 140503.868 INFO             PET510       [OCN-TO-WAV] IPDv05p1                         1      0.1120      0.1120      0.1120      0.1120      0.1120
+20210713 140503.868 INFO             PET510       [ICE-TO-WAV] IPDv05p1                         1      0.1112      0.1112      0.1112      0.1112      0.1112
+20210713 140503.868 INFO             PET510       [MED-TO-EARTH grid component] IPDv05p6a       1      0.1090      0.1090      0.1090      0.1090      0.1090
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-MED] IPDv05p5        1      0.1068      0.1068      0.1068      0.1068      0.1068
+20210713 140503.868 INFO             PET510       [OCN-TO-WAV] IPDv05p3                         1      0.1038      0.1038      0.1038      0.1038      0.1038
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-MED] IPDv05p4        1      0.1018      0.1018      0.1018      0.1018      0.1018
+20210713 140503.868 INFO             PET510       [ICE-TO-WAV] IPDv05p2b                        1      0.0997      0.0997      0.0997      0.0997      0.0997
+20210713 140503.868 INFO             PET510       [ICE-TO-WAV] IPDv05p2a                        1      0.0990      0.0990      0.0990      0.0990      0.0990
+20210713 140503.868 INFO             PET510       [MED-TO-EARTH grid component] IPDv05p5        1      0.0942      0.0942      0.0942      0.0942      0.0942
+20210713 140503.868 INFO             PET510       [ICE-TO-EARTH grid component] IPDv05p5        1      0.0923      0.0923      0.0923      0.0923      0.0923
+20210713 140503.868 INFO             PET510       [OCN-TO-WAV] IPDv05p2b                        1      0.0919      0.0919      0.0919      0.0919      0.0919
+20210713 140503.868 INFO             PET510       [OCN-TO-WAV] IPDv05p2a                        1      0.0916      0.0916      0.0916      0.0916      0.0916
+20210713 140503.868 INFO             PET510       [ICE-TO-EARTH grid component] IPDv05p4        1      0.0907      0.0907      0.0907      0.0907      0.0907
+20210713 140503.868 INFO             PET510       [ICE-TO-EARTH grid component] IPDv05p6a       1      0.0904      0.0904      0.0904      0.0904      0.0904
+20210713 140503.868 INFO             PET510       [MED-TO-EARTH grid component] IPDv05p1        1      0.0849      0.0849      0.0849      0.0849      0.0849
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-ICE] IPDv05p5        1      0.0845      0.0845      0.0845      0.0845      0.0845
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-ICE] IPDv05p6a       1      0.0841      0.0841      0.0841      0.0841      0.0841
+20210713 140503.868 INFO             PET510       [MED-TO-EARTH grid component] IPDv05p3        1      0.0833      0.0833      0.0833      0.0833      0.0833
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-ICE] IPDv05p4        1      0.0832      0.0832      0.0832      0.0832      0.0832
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-OCN] IPDv05p5        1      0.0809      0.0809      0.0809      0.0809      0.0809
+20210713 140503.868 INFO             PET510       [MED-TO-EARTH grid component] IPDv05p4        1      0.0807      0.0807      0.0807      0.0807      0.0807
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-OCN] IPDv05p6a       1      0.0803      0.0803      0.0803      0.0803      0.0803
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-OCN] IPDv05p4        1      0.0801      0.0801      0.0801      0.0801      0.0801
+20210713 140503.868 INFO             PET510       [MED-TO-EARTH grid component] IPDv05p2a       1      0.0785      0.0785      0.0785      0.0785      0.0785
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-MED] IPDv05p2a       1      0.0773      0.0773      0.0773      0.0773      0.0773
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-MED] IPDv05p1        1      0.0766      0.0766      0.0766      0.0766      0.0766
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-ATM] IPDv05p6a       1      0.0748      0.0748      0.0748      0.0748      0.0748
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-MED] IPDv05p3        1      0.0746      0.0746      0.0746      0.0746      0.0746
+20210713 140503.868 INFO             PET510       [MED-TO-EARTH grid component] IPDv05p2b       1      0.0742      0.0742      0.0742      0.0742      0.0742
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-MED] IPDv05p2b       1      0.0737      0.0737      0.0737      0.0737      0.0737
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-ATM] IPDv05p4        1      0.0737      0.0737      0.0737      0.0737      0.0737
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-ATM] IPDv05p2a       1      0.0733      0.0733      0.0733      0.0733      0.0733
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-ATM] IPDv05p3        1      0.0720      0.0720      0.0720      0.0720      0.0720
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-ATM] IPDv05p1        1      0.0711      0.0711      0.0711      0.0711      0.0711
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-ATM] IPDv05p5        1      0.0702      0.0702      0.0702      0.0702      0.0702
+20210713 140503.868 INFO             PET510       [ICE-TO-EARTH grid component] IPDv05p2a       1      0.0701      0.0701      0.0701      0.0701      0.0701
+20210713 140503.868 INFO             PET510       [OCN-TO-EARTH grid component] IPDv05p5        1      0.0696      0.0696      0.0696      0.0696      0.0696
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-ATM] IPDv05p2b       1      0.0695      0.0695      0.0695      0.0695      0.0695
+20210713 140503.868 INFO             PET510       [ICE-TO-EARTH grid component] IPDv05p3        1      0.0682      0.0682      0.0682      0.0682      0.0682
+20210713 140503.868 INFO             PET510       [OCN-TO-EARTH grid component] IPDv05p4        1      0.0675      0.0675      0.0675      0.0675      0.0675
+20210713 140503.868 INFO             PET510       [WAV-TO-EARTH grid component] IPDv05p4        1      0.0674      0.0674      0.0674      0.0674      0.0674
+20210713 140503.868 INFO             PET510       [ICE-TO-EARTH grid component] IPDv05p1        1      0.0671      0.0671      0.0671      0.0671      0.0671
+20210713 140503.868 INFO             PET510       [ICE-TO-EARTH grid component] IPDv05p2b       1      0.0670      0.0670      0.0670      0.0670      0.0670
+20210713 140503.868 INFO             PET510       [EARTH grid component-TO-ICE] IPDv05p2b       1      0.0666      0.0666      0.0666      0.0666      0.0666
+20210713 140503.868 INFO             PET510       [WAV-TO-ATM] IPDv05p4                         1      0.0664      0.0664      0.0664      0.0664      0.0664
+20210713 140503.869 INFO             PET510       [WAV-TO-EARTH grid component] IPDv05p6a       1      0.0663      0.0663      0.0663      0.0663      0.0663
+20210713 140503.869 INFO             PET510       [OCN-TO-EARTH grid component] IPDv05p6a       1      0.0663      0.0663      0.0663      0.0663      0.0663
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-ICE] IPDv05p2a       1      0.0662      0.0662      0.0662      0.0662      0.0662
+20210713 140503.869 INFO             PET510       [WAV-TO-EARTH grid component] IPDv05p5        1      0.0660      0.0660      0.0660      0.0660      0.0660
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-ICE] IPDv05p3        1      0.0659      0.0659      0.0659      0.0659      0.0659
+20210713 140503.869 INFO             PET510       [WAV-TO-ATM] IPDv05p6a                        1      0.0651      0.0651      0.0651      0.0651      0.0651
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-OCN] IPDv05p2a       1      0.0650      0.0650      0.0650      0.0650      0.0650
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-WAV] IPDv05p4        1      0.0649      0.0649      0.0649      0.0649      0.0649
+20210713 140503.869 INFO             PET510       [WAV-TO-ATM] IPDv05p5                         1      0.0647      0.0647      0.0647      0.0647      0.0647
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-WAV] IPDv05p5        1      0.0643      0.0643      0.0643      0.0643      0.0643
+20210713 140503.869 INFO             PET510       [WAV-TO-ATM] IPDv05p3                         1      0.0637      0.0637      0.0637      0.0637      0.0637
+20210713 140503.869 INFO             PET510       [WAV-TO-ATM] IPDv05p1                         1      0.0631      0.0631      0.0631      0.0631      0.0631
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-ICE] IPDv05p1        1      0.0629      0.0629      0.0629      0.0629      0.0629
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-OCN] IPDv05p3        1      0.0628      0.0628      0.0628      0.0628      0.0628
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-OCN] IPDv05p2b       1      0.0628      0.0628      0.0628      0.0628      0.0628
+20210713 140503.869 INFO             PET510       [WAV-TO-ATM] IPDv05p2a                        1      0.0628      0.0628      0.0628      0.0628      0.0628
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-OCN] IPDv05p1        1      0.0627      0.0627      0.0627      0.0627      0.0627
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-WAV] IPDv05p6a       1      0.0623      0.0623      0.0623      0.0623      0.0623
+20210713 140503.869 INFO             PET510       [WAV-TO-ATM] IPDv05p2b                        1      0.0621      0.0621      0.0621      0.0621      0.0621
+20210713 140503.869 INFO             PET510       [WAV-TO-EARTH grid component] IPDv05p3        1      0.0594      0.0594      0.0594      0.0594      0.0594
+20210713 140503.869 INFO             PET510       [WAV] IPDv03p7                                2      0.0586      0.0586      0.0293      0.0008      0.0578
+20210713 140503.869 INFO             PET510       [WAV-TO-EARTH grid component] IPDv05p2a       1      0.0585      0.0585      0.0585      0.0585      0.0585
+20210713 140503.869 INFO             PET510       [OCN-TO-EARTH grid component] IPDv05p3        1      0.0578      0.0578      0.0578      0.0578      0.0578
+20210713 140503.869 INFO             PET510       [WAV-TO-EARTH grid component] IPDv05p1        1      0.0578      0.0578      0.0578      0.0578      0.0578
+20210713 140503.869 INFO             PET510       [WAV-TO-EARTH grid component] IPDv05p2b       1      0.0573      0.0573      0.0573      0.0573      0.0573
+20210713 140503.869 INFO             PET510       [OCN-TO-EARTH grid component] IPDv05p2a       1      0.0571      0.0571      0.0571      0.0571      0.0571
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-WAV] IPDv05p3        1      0.0566      0.0566      0.0566      0.0566      0.0566
+20210713 140503.869 INFO             PET510       [OCN-TO-EARTH grid component] IPDv05p1        1      0.0561      0.0561      0.0561      0.0561      0.0561
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-WAV] IPDv05p1        1      0.0558      0.0558      0.0558      0.0558      0.0558
+20210713 140503.869 INFO             PET510       [OCN-TO-EARTH grid component] IPDv05p2b       1      0.0558      0.0558      0.0558      0.0558      0.0558
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-WAV] IPDv05p2a       1      0.0551      0.0551      0.0551      0.0551      0.0551
+20210713 140503.869 INFO             PET510       [WAV-TO-OCN] IPDv05p4                         1      0.0547      0.0547      0.0547      0.0547      0.0547
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-WAV] IPDv05p2b       1      0.0529      0.0529      0.0529      0.0529      0.0529
+20210713 140503.869 INFO             PET510       [WAV-TO-OCN] IPDv05p5                         1      0.0484      0.0484      0.0484      0.0484      0.0484
+20210713 140503.869 INFO             PET510       [WAV-TO-OCN] IPDv05p6a                        1      0.0462      0.0462      0.0462      0.0462      0.0462
+20210713 140503.869 INFO             PET510       [WAV-TO-OCN] IPDv05p2a                        1      0.0358      0.0358      0.0358      0.0358      0.0358
+20210713 140503.869 INFO             PET510       [WAV-TO-OCN] IPDv05p3                         1      0.0356      0.0356      0.0356      0.0356      0.0356
+20210713 140503.869 INFO             PET510       [WAV-TO-OCN] IPDv05p2b                        1      0.0353      0.0353      0.0353      0.0353      0.0353
+20210713 140503.869 INFO             PET510       [WAV-TO-OCN] IPDv05p1                         1      0.0348      0.0348      0.0348      0.0348      0.0348
+20210713 140503.869 INFO             PET510       [MED-TO-EARTH grid component] IPDv05p6b       1      0.0027      0.0027      0.0027      0.0027      0.0027
+20210713 140503.869 INFO             PET510       [EARTH grid component] IPDv04p2               1      0.0017      0.0017      0.0017      0.0017      0.0017
+20210713 140503.869 INFO             PET510       [WAV] IPDv03p6                                1      0.0016      0.0016      0.0016      0.0016      0.0016
+20210713 140503.869 INFO             PET510       [ATM-TO-WAV] RunPhase1                        1      0.0012      0.0012      0.0012      0.0012      0.0012
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-MED] IPDv05p6b       1      0.0010      0.0010      0.0010      0.0010      0.0010
+20210713 140503.869 INFO             PET510       [EARTH grid component] IPDv05p3               1      0.0008      0.0008      0.0008      0.0008      0.0008
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-ATM] IPDv05p6b       1      0.0007      0.0007      0.0007      0.0007      0.0007
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-OCN] IPDv05p6b       1      0.0006      0.0006      0.0006      0.0006      0.0006
+20210713 140503.869 INFO             PET510       [EARTH grid component] IPDv05p4               1      0.0005      0.0005      0.0005      0.0005      0.0005
+20210713 140503.869 INFO             PET510       [OCN-TO-WAV] RunPhase1                        1      0.0005      0.0005      0.0005      0.0005      0.0005
+20210713 140503.869 INFO             PET510       [OCN-TO-EARTH grid component] IPDv05p6b       1      0.0005      0.0005      0.0005      0.0005      0.0005
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-ICE] IPDv05p6b       1      0.0004      0.0004      0.0004      0.0004      0.0004
+20210713 140503.869 INFO             PET510       [ICE-TO-EARTH grid component] IPDv05p6b       1      0.0004      0.0004      0.0004      0.0004      0.0004
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-MED] Init 0          1      0.0003      0.0003      0.0003      0.0003      0.0003
+20210713 140503.869 INFO             PET510       [OCN-TO-WAV] Init 0                           1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [WAV-TO-ATM] Init 0                           1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-WAV] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [ICE-TO-WAV] Init 0                           1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-ATM] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [ATM-TO-EARTH grid component] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-OCN] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [WAV-TO-EARTH grid component] IPDv05p6b       1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-ICE] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [WAV-TO-OCN] Init 0                           1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [MED-TO-EARTH grid component] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [ATM-TO-WAV] Init 0                           1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [ICE-TO-EARTH grid component] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-WAV] IPDv05p6b       1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [OCN-TO-EARTH grid component] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [WAV-TO-EARTH grid component] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [ICE-TO-WAV] RunPhase1                        1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [WAV] Init 0                                  1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-MED] RunPhase1       1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [EARTH grid component] IPDv05p2               1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-WAV] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.869 INFO             PET510       [EARTH grid component] IPDv05p8               1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.869 INFO             PET510       [EARTH grid component] IPDv05p1               1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.869 INFO             PET510       [EARTH grid component] IPDv05p6               1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.869 INFO             PET510   [NEMS Grid Comp] Final 1                          1      0.0192      0.0000      0.0192      0.0192      0.0192
+20210713 140503.869 INFO             PET510     [EARTH grid component] FinalizePhase1           1      0.0191      0.0080      0.0191      0.0191      0.0191
+20210713 140503.869 INFO             PET510       [WAV] FinalizePhase1                          1      0.0085      0.0085      0.0085      0.0085      0.0085
+20210713 140503.869 INFO             PET510       [WAV-TO-OCN] FinalizePhase1                   1      0.0006      0.0006      0.0006      0.0006      0.0006
+20210713 140503.869 INFO             PET510       [ATM-TO-WAV] FinalizePhase1                   1      0.0004      0.0004      0.0004      0.0004      0.0004
+20210713 140503.869 INFO             PET510       [OCN-TO-WAV] FinalizePhase1                   1      0.0004      0.0004      0.0004      0.0004      0.0004
+20210713 140503.869 INFO             PET510       [WAV-TO-ATM] FinalizePhase1                   1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-MED] FinalizePhase1  1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [ICE-TO-WAV] FinalizePhase1                   1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-ATM] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET510       [ATM-TO-EARTH grid component] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-WAV] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET510       [MED-TO-EARTH grid component] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET510       [OCN-TO-EARTH grid component] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET510       [ICE-TO-EARTH grid component] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-OCN] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET510       [EARTH grid component-TO-ICE] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET510       [WAV-TO-EARTH grid component] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001

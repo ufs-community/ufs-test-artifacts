@@ -1,33 +1,415 @@
-20210702 042519.275 INFO             PET496 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-20210702 042519.275 INFO             PET496 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
-20210702 042519.275 INFO             PET496 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
-20210702 042519.275 INFO             PET496 !!! FOR PRODUCTION RUNS, USE:                      !!!
-20210702 042519.275 INFO             PET496 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
-20210702 042519.275 INFO             PET496 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-20210702 042519.275 INFO             PET496 Running with ESMF Version   : ESMF_8_2_0_beta_snapshot_12
-20210702 042519.275 INFO             PET496 ESMF library build date/time: "Jul  2 2021" "04:08:44"
-20210702 042519.275 INFO             PET496 ESMF library build location : /scratch1/NCEPDEV/da/Mark.Potts/sandbox/hpc-stack/pkg/ESMF_8_2_0_beta_snapshot_12
-20210702 042519.275 INFO             PET496 ESMF_COMM                   : intelmpi
-20210702 042519.275 INFO             PET496 ESMF_MOAB                   : enabled
-20210702 042519.275 INFO             PET496 ESMF_LAPACK                 : enabled
-20210702 042519.275 INFO             PET496 ESMF_NETCDF                 : enabled
-20210702 042519.275 INFO             PET496 ESMF_PNETCDF                : disabled
-20210702 042519.275 INFO             PET496 ESMF_PIO                    : enabled
-20210702 042519.275 INFO             PET496 ESMF_YAMLCPP                : enabled
-20210702 042519.275 INFO             PET496 ESMF Profiling Enabled
-20210702 042519.275 INFO             PET496 ESMF Trace/Profile clock: REALTIME
-20210702 042519.354 WARNING          PET496 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
-20210702 042519.380 TRACE            PET496  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-20210702 042519.380 TRACE            PET496  ESMF_LogSet() !!!       TRACING is disabled         !!!
-20210702 042519.380 TRACE            PET496  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-20210702 042519.454 INFO             PET496 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210702 042519.454 INFO             PET496 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210702 042519.531 INFO             PET496 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210702 042519.531 INFO             PET496 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210702 042519.603 INFO             PET496 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210702 042519.603 INFO             PET496 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210702 042519.627 INFO             PET496 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210702 042519.627 INFO             PET496 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210702 042519.639 INFO             PET496 (module_EARTH_GRID_COMP.F90:InitRestart): called
-20210702 042519.639 INFO             PET496 (module_EARTH_GRID_COMP.F90:AddAttributes): called
-20210702 042608.553 ERROR            PET496 wmesmfmd.ftn:672 InitializeP1 Unknown error  - Passing error in return code
+20210713 134742.298 INFO             PET496 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210713 134742.298 INFO             PET496 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210713 134742.298 INFO             PET496 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210713 134742.298 INFO             PET496 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210713 134742.298 INFO             PET496 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210713 134742.298 INFO             PET496 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210713 134742.298 INFO             PET496 Running with ESMF Version   : ESMF_8_2_0_beta_snapshot_11
+20210713 134742.298 INFO             PET496 ESMF library build date/time: "Jun 17 2021" "04:37:11"
+20210713 134742.298 INFO             PET496 ESMF library build location : /scratch1/NCEPDEV/da/Mark.Potts/sandbox/hpc-stack/pkg/ESMF_8_2_0_beta_snapshot_11
+20210713 134742.298 INFO             PET496 ESMF_COMM                   : intelmpi
+20210713 134742.299 INFO             PET496 ESMF_MOAB                   : enabled
+20210713 134742.299 INFO             PET496 ESMF_LAPACK                 : enabled
+20210713 134742.299 INFO             PET496 ESMF_NETCDF                 : enabled
+20210713 134742.299 INFO             PET496 ESMF_PNETCDF                : disabled
+20210713 134742.299 INFO             PET496 ESMF_PIO                    : enabled
+20210713 134742.299 INFO             PET496 ESMF_YAMLCPP                : enabled
+20210713 134742.299 INFO             PET496 ESMF Profiling Enabled
+20210713 134742.299 INFO             PET496 ESMF Trace/Profile clock: REALTIME
+20210713 134742.306 WARNING          PET496 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
+20210713 134742.312 TRACE            PET496  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210713 134742.312 TRACE            PET496  ESMF_LogSet() !!!       TRACING is disabled         !!!
+20210713 134742.312 TRACE            PET496  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210713 134742.395 INFO             PET496 ReadAttributes DRIVER_attributes:: start:
+20210713 134742.395 INFO             PET496  mediator_read_restart = false
+20210713 134742.395 INFO             PET496 ReadAttributes DRIVER_attributes:: end:
+20210713 134742.395 INFO             PET496 ReadAttributes ALLCOMP_attributes:: start:
+20210713 134742.395 INFO             PET496  ScalarFieldCount = 2
+20210713 134742.395 INFO             PET496  ScalarFieldIdxGridNX = 1
+20210713 134742.395 INFO             PET496  ScalarFieldIdxGridNY = 2
+20210713 134742.395 INFO             PET496  ScalarFieldName = cpl_scalars
+20210713 134742.395 INFO             PET496  start_type = startup
+20210713 134742.395 INFO             PET496  restart_dir = RESTART/
+20210713 134742.395 INFO             PET496  case_name = ufs.cpld
+20210713 134742.395 INFO             PET496  restart_n = 6
+20210713 134742.395 INFO             PET496  restart_option = nhours
+20210713 134742.395 INFO             PET496  restart_ymd = -999
+20210713 134742.395 INFO             PET496  dbug_flag = 0
+20210713 134742.395 INFO             PET496  use_coldstart = false
+20210713 134742.395 INFO             PET496  use_mommesh = true
+20210713 134742.395 INFO             PET496 ReadAttributes ALLCOMP_attributes:: end:
+20210713 134742.397 INFO             PET496 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210713 134742.397 INFO             PET496 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210713 134742.397 INFO             PET496 ReadAttributes MED_attributes:: start:
+20210713 134742.397 INFO             PET496  ATM_model = fv3
+20210713 134742.397 INFO             PET496  ICE_model = cice6
+20210713 134742.397 INFO             PET496  OCN_model = mom6
+20210713 134742.397 INFO             PET496  history_n = 1
+20210713 134742.397 INFO             PET496  history_option = nhours
+20210713 134742.397 INFO             PET496  history_ymd = -999
+20210713 134742.397 INFO             PET496  coupling_mode = nems_frac
+20210713 134742.397 INFO             PET496 ReadAttributes MED_attributes:: end:
+20210713 134742.397 INFO             PET496 ReadAttributes ALLCOMP_attributes:: start:
+20210713 134742.397 INFO             PET496  ScalarFieldCount = 2
+20210713 134742.397 INFO             PET496  ScalarFieldIdxGridNX = 1
+20210713 134742.397 INFO             PET496  ScalarFieldIdxGridNY = 2
+20210713 134742.397 INFO             PET496  ScalarFieldName = cpl_scalars
+20210713 134742.398 INFO             PET496  start_type = startup
+20210713 134742.398 INFO             PET496  restart_dir = RESTART/
+20210713 134742.398 INFO             PET496  case_name = ufs.cpld
+20210713 134742.398 INFO             PET496  restart_n = 6
+20210713 134742.398 INFO             PET496  restart_option = nhours
+20210713 134742.398 INFO             PET496  restart_ymd = -999
+20210713 134742.398 INFO             PET496  dbug_flag = 0
+20210713 134742.398 INFO             PET496  use_coldstart = false
+20210713 134742.398 INFO             PET496  use_mommesh = true
+20210713 134742.398 INFO             PET496 ReadAttributes ALLCOMP_attributes:: end:
+20210713 134742.420 INFO             PET496 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210713 134742.420 INFO             PET496 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210713 134742.420 INFO             PET496 ReadAttributes ATM_attributes:: start:
+20210713 134742.420 INFO             PET496  Verbosity = 0
+20210713 134742.420 INFO             PET496  DumpFields = false
+20210713 134742.420 INFO             PET496  ProfileMemory = false
+20210713 134742.420 INFO             PET496  OverwriteSlice = true
+20210713 134742.420 INFO             PET496 ReadAttributes ATM_attributes:: end:
+20210713 134742.421 INFO             PET496 ReadAttributes ALLCOMP_attributes:: start:
+20210713 134742.421 INFO             PET496  ScalarFieldCount = 2
+20210713 134742.421 INFO             PET496  ScalarFieldIdxGridNX = 1
+20210713 134742.421 INFO             PET496  ScalarFieldIdxGridNY = 2
+20210713 134742.421 INFO             PET496  ScalarFieldName = cpl_scalars
+20210713 134742.421 INFO             PET496  start_type = startup
+20210713 134742.421 INFO             PET496  restart_dir = RESTART/
+20210713 134742.421 INFO             PET496  case_name = ufs.cpld
+20210713 134742.421 INFO             PET496  restart_n = 6
+20210713 134742.421 INFO             PET496  restart_option = nhours
+20210713 134742.421 INFO             PET496  restart_ymd = -999
+20210713 134742.421 INFO             PET496  dbug_flag = 0
+20210713 134742.421 INFO             PET496  use_coldstart = false
+20210713 134742.421 INFO             PET496  use_mommesh = true
+20210713 134742.421 INFO             PET496 ReadAttributes ALLCOMP_attributes:: end:
+20210713 134742.430 INFO             PET496 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210713 134742.430 INFO             PET496 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210713 134742.430 INFO             PET496 ReadAttributes OCN_attributes:: start:
+20210713 134742.430 INFO             PET496  Verbosity = 0
+20210713 134742.430 INFO             PET496  DumpFields = false
+20210713 134742.430 INFO             PET496  ProfileMemory = false
+20210713 134742.430 INFO             PET496  OverwriteSlice = true
+20210713 134742.430 INFO             PET496  mesh_ocn = mesh.mx025.nc
+20210713 134742.430 INFO             PET496 ReadAttributes OCN_attributes:: end:
+20210713 134742.431 INFO             PET496 ReadAttributes ALLCOMP_attributes:: start:
+20210713 134742.431 INFO             PET496  ScalarFieldCount = 2
+20210713 134742.431 INFO             PET496  ScalarFieldIdxGridNX = 1
+20210713 134742.431 INFO             PET496  ScalarFieldIdxGridNY = 2
+20210713 134742.431 INFO             PET496  ScalarFieldName = cpl_scalars
+20210713 134742.431 INFO             PET496  start_type = startup
+20210713 134742.431 INFO             PET496  restart_dir = RESTART/
+20210713 134742.431 INFO             PET496  case_name = ufs.cpld
+20210713 134742.431 INFO             PET496  restart_n = 6
+20210713 134742.431 INFO             PET496  restart_option = nhours
+20210713 134742.431 INFO             PET496  restart_ymd = -999
+20210713 134742.431 INFO             PET496  dbug_flag = 0
+20210713 134742.431 INFO             PET496  use_coldstart = false
+20210713 134742.431 INFO             PET496  use_mommesh = true
+20210713 134742.431 INFO             PET496 ReadAttributes ALLCOMP_attributes:: end:
+20210713 134742.434 INFO             PET496 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210713 134742.434 INFO             PET496 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210713 134742.434 INFO             PET496 ReadAttributes ICE_attributes:: start:
+20210713 134742.434 INFO             PET496  Verbosity = 0
+20210713 134742.434 INFO             PET496  DumpFields = false
+20210713 134742.434 INFO             PET496  ProfileMemory = false
+20210713 134742.434 INFO             PET496  OverwriteSlice = true
+20210713 134742.434 INFO             PET496  mesh_ice = mesh.mx025.nc
+20210713 134742.434 INFO             PET496  stop_n = 6
+20210713 134742.434 INFO             PET496  stop_option = nhours
+20210713 134742.434 INFO             PET496  stop_ymd = -999
+20210713 134742.434 INFO             PET496 ReadAttributes ICE_attributes:: end:
+20210713 134742.435 INFO             PET496 ReadAttributes ALLCOMP_attributes:: start:
+20210713 134742.435 INFO             PET496  ScalarFieldCount = 2
+20210713 134742.435 INFO             PET496  ScalarFieldIdxGridNX = 1
+20210713 134742.435 INFO             PET496  ScalarFieldIdxGridNY = 2
+20210713 134742.435 INFO             PET496  ScalarFieldName = cpl_scalars
+20210713 134742.435 INFO             PET496  start_type = startup
+20210713 134742.435 INFO             PET496  restart_dir = RESTART/
+20210713 134742.435 INFO             PET496  case_name = ufs.cpld
+20210713 134742.435 INFO             PET496  restart_n = 6
+20210713 134742.435 INFO             PET496  restart_option = nhours
+20210713 134742.435 INFO             PET496  restart_ymd = -999
+20210713 134742.435 INFO             PET496  dbug_flag = 0
+20210713 134742.435 INFO             PET496  use_coldstart = false
+20210713 134742.435 INFO             PET496  use_mommesh = true
+20210713 134742.435 INFO             PET496 ReadAttributes ALLCOMP_attributes:: end:
+20210713 134742.441 INFO             PET496 (module_EARTH_GRID_COMP.F90:InitRestart): called
+20210713 134742.441 INFO             PET496 (module_EARTH_GRID_COMP.F90:AddAttributes): called
+20210713 134742.441 INFO             PET496 ReadAttributes WAV_attributes:: start:
+20210713 134742.441 INFO             PET496  Verbosity = 0
+20210713 134742.441 INFO             PET496  OverwriteSlice = false
+20210713 134742.441 INFO             PET496 ReadAttributes WAV_attributes:: end:
+20210713 134742.442 INFO             PET496 ReadAttributes ALLCOMP_attributes:: start:
+20210713 134742.442 INFO             PET496  ScalarFieldCount = 2
+20210713 134742.442 INFO             PET496  ScalarFieldIdxGridNX = 1
+20210713 134742.442 INFO             PET496  ScalarFieldIdxGridNY = 2
+20210713 134742.442 INFO             PET496  ScalarFieldName = cpl_scalars
+20210713 134742.442 INFO             PET496  start_type = startup
+20210713 134742.442 INFO             PET496  restart_dir = RESTART/
+20210713 134742.442 INFO             PET496  case_name = ufs.cpld
+20210713 134742.442 INFO             PET496  restart_n = 6
+20210713 134742.442 INFO             PET496  restart_option = nhours
+20210713 134742.442 INFO             PET496  restart_ymd = -999
+20210713 134742.442 INFO             PET496  dbug_flag = 0
+20210713 134742.442 INFO             PET496  use_coldstart = false
+20210713 134742.442 INFO             PET496  use_mommesh = true
+20210713 134742.442 INFO             PET496 ReadAttributes ALLCOMP_attributes:: end:
+20210713 134829.818 INFO             PET496 WAV: List of advertised import fields(5):
+20210713 134829.818 INFO             PET496 WAV: index       name   standardName
+20210713 134829.818 INFO             PET496 WAV:     1     uucurr   surface_eastward_sea_water_velocity
+20210713 134829.818 INFO             PET496 WAV:     2     vvcurr   surface_northward_sea_water_velocity
+20210713 134829.818 INFO             PET496 WAV:     3     uutrue   eastward_wind_at_10m_height
+20210713 134829.819 INFO             PET496 WAV:     4     vvtrue   northward_wind_at_10m_height
+20210713 134829.819 INFO             PET496 WAV:     5     seaice   sea_ice_concentration
+20210713 134829.829 INFO             PET496 WAV: List of advertised export fields(16):
+20210713 134829.829 INFO             PET496 WAV: index       name   standardName
+20210713 134829.829 INFO             PET496 WAV:     1     charno   wave_induced_charnock_parameter
+20210713 134829.829 INFO             PET496 WAV:     2     z0rlen   wave_z0_roughness_length
+20210713 134829.829 INFO             PET496 WAV:     3     uscurr   eastward_stokes_drift_current
+20210713 134829.829 INFO             PET496 WAV:     4     vscurr   northward_stokes_drift_current
+20210713 134829.829 INFO             PET496 WAV:     5     x1pstk   eastward_partitioned_stokes_drift_1
+20210713 134829.829 INFO             PET496 WAV:     6     y1pstk   northward_partitioned_stokes_drift_1
+20210713 134829.829 INFO             PET496 WAV:     7     x2pstk   eastward_partitioned_stokes_drift_2
+20210713 134829.829 INFO             PET496 WAV:     8     y2pstk   northward_partitioned_stokes_drift_2
+20210713 134829.829 INFO             PET496 WAV:     9     x3pstk   eastward_partitioned_stokes_drift_3
+20210713 134829.829 INFO             PET496 WAV:    10     y3pstk   northward_partitioned_stokes_drift_3
+20210713 134829.829 INFO             PET496 WAV:    11     wbcuru   eastward_wave_bottom_current
+20210713 134829.829 INFO             PET496 WAV:    12     wbcurv   northward_wave_bottom_current
+20210713 134829.829 INFO             PET496 WAV:    13     wbcurp   wave_bottom_current_period
+20210713 134829.829 INFO             PET496 WAV:    14     wavsuu   eastward_wave_radiation_stress
+20210713 134829.829 INFO             PET496 WAV:    15     wavsuv   eastward_northward_wave_radiation_stress
+20210713 134829.829 INFO             PET496 WAV:    16     wavsvv   northward_wave_radiation_stress
+20210713 134834.203 INFO             PET496 Driver is in ModifyCplLists()
+20210713 134834.203 INFO             PET496  Found           21  Connectors. Modifying CplList Attribute....
+20210713 134846.792 INFO             PET496 WAV: Creating import grid for Reg/Curvilinear Mode
+20210713 134846.813 INFO             PET496 WAV: List of realized import fields(5):
+20210713 134846.813 INFO             PET496 WAV: index       name   standardName
+20210713 134846.813 INFO             PET496 WAV:     1     uucurr   surface_eastward_sea_water_velocity
+20210713 134846.813 INFO             PET496 WAV:     2     vvcurr   surface_northward_sea_water_velocity
+20210713 134846.813 INFO             PET496 WAV:     3     uutrue   eastward_wind_at_10m_height
+20210713 134846.813 INFO             PET496 WAV:     4     vvtrue   northward_wind_at_10m_height
+20210713 134846.813 INFO             PET496 WAV:     5     seaice   sea_ice_concentration
+20210713 134846.813 INFO             PET496 WAV: input z-level file: none
+20210713 134846.813 INFO             PET496 WAV: table of z-levels
+20210713 134846.813 INFO             PET496 WAV:    index         z
+20210713 134846.813 INFO             PET496 WAV:        1      0.00
+20210713 134846.825 INFO             PET496 ESMF_FieldRedistStoreNF(): Just entered routine.
+20210713 134847.011 INFO             PET496 ESMF_FieldRedistStoreNF(): Leaving routine.
+20210713 134847.021 INFO             PET496 WAV: List of realized export fields(7):
+20210713 134847.021 INFO             PET496 WAV: index       name   standardName
+20210713 134847.021 INFO             PET496 WAV:     1     z0rlen   wave_z0_roughness_length
+20210713 134847.021 INFO             PET496 WAV:     2     x1pstk   eastward_partitioned_stokes_drift_1
+20210713 134847.021 INFO             PET496 WAV:     3     y1pstk   northward_partitioned_stokes_drift_1
+20210713 134847.021 INFO             PET496 WAV:     4     x2pstk   eastward_partitioned_stokes_drift_2
+20210713 134847.021 INFO             PET496 WAV:     5     y2pstk   northward_partitioned_stokes_drift_2
+20210713 134847.021 INFO             PET496 WAV:     6     x3pstk   eastward_partitioned_stokes_drift_3
+20210713 134847.021 INFO             PET496 WAV:     7     y3pstk   northward_partitioned_stokes_drift_3
+20210713 140105.536 INFO             PET496 WAV: wtime:                timer     count          time
+20210713 140105.536 INFO             PET496 WAV: wtime:         InitializeP0         1  0.170946E-03
+20210713 140105.536 INFO             PET496 WAV: wtime:         InitializeP1         1  0.431647E+00
+20210713 140105.536 INFO             PET496 WAV: wtime:         InitializeP3         1  0.229046E+00
+20210713 140105.537 INFO             PET496 WAV: wtime:       DataInitialize         2  0.573730E-01
+20210713 140105.537 INFO             PET496 WAV: wtime:         ModelAdvance        96  0.462201E+03
+20210713 140105.537 INFO             PET496 WAV: wtime:             Finalize         1  0.740409E-02
+20210713 140105.537 INFO             PET496 WAV: wtime:            GetImport        97  0.895524E+02
+20210713 140105.537 INFO             PET496 WAV: wtime:            SetExport        97  0.143657E+02
+20210713 140105.537 INFO             PET496 WAV: wtime:          FieldGather       485  0.893496E+02
+20210713 140105.537 INFO             PET496 WAV: wtime:            FieldFill       691  0.628991E-01
+20210713 140503.866 INFO             PET496 Finalizing ESMF
+20210713 140503.867 INFO             PET496 **************** Region Timings *******************
+20210713 140503.867 INFO             PET496 Region                                              Count  Total (s)   Self (s)    Mean (s)    Min (s)     Max (s)
+20210713 140503.867 INFO             PET496   [NEMS Grid Comp] Run 1                            1      703.5206    0.0000      703.5206    703.5206    703.5206
+20210713 140503.867 INFO             PET496     [EARTH grid component] RunPhase1                1      703.5206    0.0860      703.5206    703.5206    703.5206
+20210713 140503.867 INFO             PET496       [WAV] RunPhase1                               96     462.2125    462.2125    4.8147      1.9512      26.6778
+20210713 140503.868 INFO             PET496       [ATM-TO-WAV] RunPhase1                        96     196.9907    196.9907    2.0520      0.0007      12.9139
+20210713 140503.868 INFO             PET496       [ICE-TO-WAV] RunPhase1                        96     28.0907     28.0907     0.2926      0.0001      5.3286
+20210713 140503.868 INFO             PET496       [OCN-TO-WAV] RunPhase1                        12     16.0725     16.0725     1.3394      0.0003      2.4375
+20210713 140503.868 INFO             PET496       [WAV-TO-ATM] RunPhase1                        96     0.0379      0.0379      0.0004      0.0003      0.0008
+20210713 140503.868 INFO             PET496       [WAV-TO-OCN] RunPhase1                        12     0.0300      0.0300      0.0025      0.0014      0.0037
+20210713 140503.868 INFO             PET496       [MED-TO-EARTH grid component] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-MED] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-ATM] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET496       [ATM-TO-EARTH grid component] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET496       [OCN-TO-EARTH grid component] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-OCN] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET496       [WAV-TO-EARTH grid component] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-ICE] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-WAV] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET496       [ICE-TO-EARTH grid component] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.868 INFO             PET496   [NEMS Grid Comp] Init 1                           1      99.6772     0.0659      99.6772     99.6772     99.6772
+20210713 140503.868 INFO             PET496     [EARTH grid component] Init 1                   1      99.6112     63.5917     99.6112     99.6112     99.6112
+20210713 140503.868 INFO             PET496       [WAV-TO-OCN] IPDv05p6b                        1      9.1163      9.1163      9.1163      9.1163      9.1163
+20210713 140503.868 INFO             PET496       [ICE-TO-WAV] IPDv05p6b                        1      4.0853      4.0853      4.0853      4.0853      4.0853
+20210713 140503.868 INFO             PET496       [OCN-TO-WAV] IPDv05p6b                        1      2.7532      2.7532      2.7532      2.7532      2.7532
+20210713 140503.868 INFO             PET496       [ATM-TO-EARTH grid component] IPDv05p6b       1      2.5213      2.5213      2.5213      2.5213      2.5213
+20210713 140503.868 INFO             PET496       [WAV-TO-ATM] IPDv05p6b                        1      2.3413      2.3413      2.3413      2.3413      2.3413
+20210713 140503.868 INFO             PET496       [ATM-TO-WAV] IPDv05p6b                        1      1.5226      1.5226      1.5226      1.5226      1.5226
+20210713 140503.868 INFO             PET496       [ATM-TO-EARTH grid component] IPDv05p5        1      1.1958      1.1958      1.1958      1.1958      1.1958
+20210713 140503.868 INFO             PET496       [ATM-TO-WAV] IPDv05p5                         1      0.6633      0.6633      0.6633      0.6633      0.6633
+20210713 140503.868 INFO             PET496       [ATM-TO-WAV] IPDv05p3                         1      0.4458      0.4458      0.4458      0.4458      0.4458
+20210713 140503.868 INFO             PET496       [WAV] IPDv03p1                                1      0.4317      0.4317      0.4317      0.4317      0.4317
+20210713 140503.868 INFO             PET496       [ATM-TO-EARTH grid component] IPDv05p6a       1      0.3968      0.3968      0.3968      0.3968      0.3968
+20210713 140503.868 INFO             PET496       [ATM-TO-EARTH grid component] IPDv05p4        1      0.3901      0.3901      0.3901      0.3901      0.3901
+20210713 140503.868 INFO             PET496       [ICE-TO-WAV] IPDv05p5                         1      0.3866      0.3866      0.3866      0.3866      0.3866
+20210713 140503.868 INFO             PET496       [ATM-TO-EARTH grid component] IPDv05p3        1      0.3749      0.3749      0.3749      0.3749      0.3749
+20210713 140503.868 INFO             PET496       [ATM-TO-EARTH grid component] IPDv05p1        1      0.3651      0.3651      0.3651      0.3651      0.3651
+20210713 140503.868 INFO             PET496       [ATM-TO-EARTH grid component] IPDv05p2b       1      0.3534      0.3534      0.3534      0.3534      0.3534
+20210713 140503.868 INFO             PET496       [ATM-TO-EARTH grid component] IPDv05p2a       1      0.3175      0.3175      0.3175      0.3175      0.3175
+20210713 140503.868 INFO             PET496       [OCN-TO-WAV] IPDv05p5                         1      0.2543      0.2543      0.2543      0.2543      0.2543
+20210713 140503.868 INFO             PET496       [ATM-TO-WAV] IPDv05p2b                        1      0.2366      0.2366      0.2366      0.2366      0.2366
+20210713 140503.868 INFO             PET496       [WAV] IPDv03p3                                1      0.2291      0.2291      0.2291      0.2291      0.2291
+20210713 140503.868 INFO             PET496       [ATM-TO-WAV] IPDv05p2a                        1      0.2248      0.2248      0.2248      0.2248      0.2248
+20210713 140503.868 INFO             PET496       [ATM-TO-WAV] IPDv05p1                         1      0.1956      0.1956      0.1956      0.1956      0.1956
+20210713 140503.868 INFO             PET496       [ATM-TO-WAV] IPDv05p6a                        1      0.1840      0.1840      0.1840      0.1840      0.1840
+20210713 140503.868 INFO             PET496       [ATM-TO-WAV] IPDv05p4                         1      0.1829      0.1829      0.1829      0.1829      0.1829
+20210713 140503.868 INFO             PET496       [ICE-TO-WAV] IPDv05p4                         1      0.1816      0.1816      0.1816      0.1816      0.1816
+20210713 140503.868 INFO             PET496       [ICE-TO-WAV] IPDv05p6a                        1      0.1632      0.1632      0.1632      0.1632      0.1632
+20210713 140503.868 INFO             PET496       [OCN-TO-WAV] IPDv05p6a                        1      0.1463      0.1463      0.1463      0.1463      0.1463
+20210713 140503.868 INFO             PET496       [ICE-TO-WAV] IPDv05p3                         1      0.1456      0.1456      0.1456      0.1456      0.1456
+20210713 140503.868 INFO             PET496       [OCN-TO-WAV] IPDv05p4                         1      0.1270      0.1270      0.1270      0.1270      0.1270
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-MED] IPDv05p6a       1      0.1160      0.1160      0.1160      0.1160      0.1160
+20210713 140503.868 INFO             PET496       [OCN-TO-WAV] IPDv05p1                         1      0.1131      0.1131      0.1131      0.1131      0.1131
+20210713 140503.868 INFO             PET496       [ICE-TO-WAV] IPDv05p1                         1      0.1113      0.1113      0.1113      0.1113      0.1113
+20210713 140503.868 INFO             PET496       [MED-TO-EARTH grid component] IPDv05p6a       1      0.1088      0.1088      0.1088      0.1088      0.1088
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-MED] IPDv05p5        1      0.1055      0.1055      0.1055      0.1055      0.1055
+20210713 140503.868 INFO             PET496       [OCN-TO-WAV] IPDv05p3                         1      0.1041      0.1041      0.1041      0.1041      0.1041
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-MED] IPDv05p4        1      0.1018      0.1018      0.1018      0.1018      0.1018
+20210713 140503.868 INFO             PET496       [ICE-TO-WAV] IPDv05p2b                        1      0.0995      0.0995      0.0995      0.0995      0.0995
+20210713 140503.868 INFO             PET496       [ICE-TO-WAV] IPDv05p2a                        1      0.0988      0.0988      0.0988      0.0988      0.0988
+20210713 140503.868 INFO             PET496       [MED-TO-EARTH grid component] IPDv05p5        1      0.0941      0.0941      0.0941      0.0941      0.0941
+20210713 140503.868 INFO             PET496       [OCN-TO-WAV] IPDv05p2b                        1      0.0922      0.0922      0.0922      0.0922      0.0922
+20210713 140503.868 INFO             PET496       [OCN-TO-WAV] IPDv05p2a                        1      0.0919      0.0919      0.0919      0.0919      0.0919
+20210713 140503.868 INFO             PET496       [ICE-TO-EARTH grid component] IPDv05p5        1      0.0917      0.0917      0.0917      0.0917      0.0917
+20210713 140503.868 INFO             PET496       [ICE-TO-EARTH grid component] IPDv05p6a       1      0.0900      0.0900      0.0900      0.0900      0.0900
+20210713 140503.868 INFO             PET496       [ICE-TO-EARTH grid component] IPDv05p4        1      0.0900      0.0900      0.0900      0.0900      0.0900
+20210713 140503.868 INFO             PET496       [MED-TO-EARTH grid component] IPDv05p1        1      0.0848      0.0848      0.0848      0.0848      0.0848
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-ICE] IPDv05p5        1      0.0844      0.0844      0.0844      0.0844      0.0844
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-ICE] IPDv05p6a       1      0.0843      0.0843      0.0843      0.0843      0.0843
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-ICE] IPDv05p4        1      0.0837      0.0837      0.0837      0.0837      0.0837
+20210713 140503.868 INFO             PET496       [MED-TO-EARTH grid component] IPDv05p3        1      0.0834      0.0834      0.0834      0.0834      0.0834
+20210713 140503.868 INFO             PET496       [MED-TO-EARTH grid component] IPDv05p4        1      0.0810      0.0810      0.0810      0.0810      0.0810
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-OCN] IPDv05p5        1      0.0809      0.0809      0.0809      0.0809      0.0809
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-OCN] IPDv05p6a       1      0.0802      0.0802      0.0802      0.0802      0.0802
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-OCN] IPDv05p4        1      0.0798      0.0798      0.0798      0.0798      0.0798
+20210713 140503.868 INFO             PET496       [MED-TO-EARTH grid component] IPDv05p2a       1      0.0784      0.0784      0.0784      0.0784      0.0784
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-MED] IPDv05p2a       1      0.0771      0.0771      0.0771      0.0771      0.0771
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-MED] IPDv05p1        1      0.0765      0.0765      0.0765      0.0765      0.0765
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-ATM] IPDv05p6a       1      0.0747      0.0747      0.0747      0.0747      0.0747
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-MED] IPDv05p3        1      0.0744      0.0744      0.0744      0.0744      0.0744
+20210713 140503.868 INFO             PET496       [MED-TO-EARTH grid component] IPDv05p2b       1      0.0740      0.0740      0.0740      0.0740      0.0740
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-ATM] IPDv05p4        1      0.0737      0.0737      0.0737      0.0737      0.0737
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-MED] IPDv05p2b       1      0.0735      0.0735      0.0735      0.0735      0.0735
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-ATM] IPDv05p2a       1      0.0733      0.0733      0.0733      0.0733      0.0733
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-ATM] IPDv05p3        1      0.0722      0.0722      0.0722      0.0722      0.0722
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-ATM] IPDv05p1        1      0.0708      0.0708      0.0708      0.0708      0.0708
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-ATM] IPDv05p5        1      0.0703      0.0703      0.0703      0.0703      0.0703
+20210713 140503.868 INFO             PET496       [ICE-TO-EARTH grid component] IPDv05p2a       1      0.0697      0.0697      0.0697      0.0697      0.0697
+20210713 140503.868 INFO             PET496       [EARTH grid component-TO-ATM] IPDv05p2b       1      0.0696      0.0696      0.0696      0.0696      0.0696
+20210713 140503.868 INFO             PET496       [OCN-TO-EARTH grid component] IPDv05p5        1      0.0693      0.0693      0.0693      0.0693      0.0693
+20210713 140503.868 INFO             PET496       [ICE-TO-EARTH grid component] IPDv05p3        1      0.0678      0.0678      0.0678      0.0678      0.0678
+20210713 140503.868 INFO             PET496       [WAV-TO-EARTH grid component] IPDv05p4        1      0.0673      0.0673      0.0673      0.0673      0.0673
+20210713 140503.868 INFO             PET496       [OCN-TO-EARTH grid component] IPDv05p4        1      0.0671      0.0671      0.0671      0.0671      0.0671
+20210713 140503.869 INFO             PET496       [ICE-TO-EARTH grid component] IPDv05p2b       1      0.0669      0.0669      0.0669      0.0669      0.0669
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-ICE] IPDv05p2b       1      0.0664      0.0664      0.0664      0.0664      0.0664
+20210713 140503.869 INFO             PET496       [OCN-TO-EARTH grid component] IPDv05p6a       1      0.0664      0.0664      0.0664      0.0664      0.0664
+20210713 140503.869 INFO             PET496       [WAV-TO-EARTH grid component] IPDv05p6a       1      0.0662      0.0662      0.0662      0.0662      0.0662
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-ICE] IPDv05p2a       1      0.0662      0.0662      0.0662      0.0662      0.0662
+20210713 140503.869 INFO             PET496       [WAV-TO-EARTH grid component] IPDv05p5        1      0.0661      0.0661      0.0661      0.0661      0.0661
+20210713 140503.869 INFO             PET496       [WAV-TO-ATM] IPDv05p4                         1      0.0660      0.0660      0.0660      0.0660      0.0660
+20210713 140503.869 INFO             PET496       [ICE-TO-EARTH grid component] IPDv05p1        1      0.0658      0.0658      0.0658      0.0658      0.0658
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-OCN] IPDv05p2a       1      0.0652      0.0652      0.0652      0.0652      0.0652
+20210713 140503.869 INFO             PET496       [WAV-TO-ATM] IPDv05p6a                        1      0.0652      0.0652      0.0652      0.0652      0.0652
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-WAV] IPDv05p4        1      0.0650      0.0650      0.0650      0.0650      0.0650
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-OCN] IPDv05p3        1      0.0649      0.0649      0.0649      0.0649      0.0649
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-WAV] IPDv05p5        1      0.0643      0.0643      0.0643      0.0643      0.0643
+20210713 140503.869 INFO             PET496       [WAV-TO-ATM] IPDv05p5                         1      0.0641      0.0641      0.0641      0.0641      0.0641
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-ICE] IPDv05p3        1      0.0637      0.0637      0.0637      0.0637      0.0637
+20210713 140503.869 INFO             PET496       [WAV-TO-ATM] IPDv05p3                         1      0.0637      0.0637      0.0637      0.0637      0.0637
+20210713 140503.869 INFO             PET496       [WAV-TO-ATM] IPDv05p1                         1      0.0631      0.0631      0.0631      0.0631      0.0631
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-OCN] IPDv05p2b       1      0.0629      0.0629      0.0629      0.0629      0.0629
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-OCN] IPDv05p1        1      0.0629      0.0629      0.0629      0.0629      0.0629
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-ICE] IPDv05p1        1      0.0627      0.0627      0.0627      0.0627      0.0627
+20210713 140503.869 INFO             PET496       [WAV-TO-ATM] IPDv05p2a                        1      0.0626      0.0626      0.0626      0.0626      0.0626
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-WAV] IPDv05p6a       1      0.0624      0.0624      0.0624      0.0624      0.0624
+20210713 140503.869 INFO             PET496       [WAV-TO-ATM] IPDv05p2b                        1      0.0618      0.0618      0.0618      0.0618      0.0618
+20210713 140503.869 INFO             PET496       [WAV-TO-EARTH grid component] IPDv05p3        1      0.0594      0.0594      0.0594      0.0594      0.0594
+20210713 140503.869 INFO             PET496       [WAV-TO-EARTH grid component] IPDv05p2a       1      0.0586      0.0586      0.0586      0.0586      0.0586
+20210713 140503.869 INFO             PET496       [WAV] IPDv03p7                                2      0.0585      0.0585      0.0293      0.0009      0.0576
+20210713 140503.869 INFO             PET496       [WAV-TO-EARTH grid component] IPDv05p1        1      0.0579      0.0579      0.0579      0.0579      0.0579
+20210713 140503.869 INFO             PET496       [OCN-TO-EARTH grid component] IPDv05p2a       1      0.0578      0.0578      0.0578      0.0578      0.0578
+20210713 140503.869 INFO             PET496       [OCN-TO-EARTH grid component] IPDv05p3        1      0.0576      0.0576      0.0576      0.0576      0.0576
+20210713 140503.869 INFO             PET496       [WAV-TO-EARTH grid component] IPDv05p2b       1      0.0573      0.0573      0.0573      0.0573      0.0573
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-WAV] IPDv05p3        1      0.0567      0.0567      0.0567      0.0567      0.0567
+20210713 140503.869 INFO             PET496       [OCN-TO-EARTH grid component] IPDv05p1        1      0.0563      0.0563      0.0563      0.0563      0.0563
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-WAV] IPDv05p1        1      0.0562      0.0562      0.0562      0.0562      0.0562
+20210713 140503.869 INFO             PET496       [OCN-TO-EARTH grid component] IPDv05p2b       1      0.0557      0.0557      0.0557      0.0557      0.0557
+20210713 140503.869 INFO             PET496       [WAV-TO-OCN] IPDv05p4                         1      0.0552      0.0552      0.0552      0.0552      0.0552
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-WAV] IPDv05p2a       1      0.0551      0.0551      0.0551      0.0551      0.0551
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-WAV] IPDv05p2b       1      0.0531      0.0531      0.0531      0.0531      0.0531
+20210713 140503.869 INFO             PET496       [WAV-TO-OCN] IPDv05p5                         1      0.0502      0.0502      0.0502      0.0502      0.0502
+20210713 140503.869 INFO             PET496       [WAV-TO-OCN] IPDv05p6a                        1      0.0464      0.0464      0.0464      0.0464      0.0464
+20210713 140503.869 INFO             PET496       [WAV-TO-OCN] IPDv05p2a                        1      0.0361      0.0361      0.0361      0.0361      0.0361
+20210713 140503.869 INFO             PET496       [WAV-TO-OCN] IPDv05p3                         1      0.0358      0.0358      0.0358      0.0358      0.0358
+20210713 140503.869 INFO             PET496       [WAV-TO-OCN] IPDv05p2b                        1      0.0356      0.0356      0.0356      0.0356      0.0356
+20210713 140503.869 INFO             PET496       [WAV-TO-OCN] IPDv05p1                         1      0.0348      0.0348      0.0348      0.0348      0.0348
+20210713 140503.869 INFO             PET496       [MED-TO-EARTH grid component] IPDv05p6b       1      0.0027      0.0027      0.0027      0.0027      0.0027
+20210713 140503.869 INFO             PET496       [EARTH grid component] IPDv04p2               1      0.0017      0.0017      0.0017      0.0017      0.0017
+20210713 140503.869 INFO             PET496       [WAV] IPDv03p6                                1      0.0017      0.0017      0.0017      0.0017      0.0017
+20210713 140503.869 INFO             PET496       [ATM-TO-WAV] RunPhase1                        1      0.0010      0.0010      0.0010      0.0010      0.0010
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-MED] IPDv05p6b       1      0.0010      0.0010      0.0010      0.0010      0.0010
+20210713 140503.869 INFO             PET496       [OCN-TO-WAV] RunPhase1                        1      0.0009      0.0009      0.0009      0.0009      0.0009
+20210713 140503.869 INFO             PET496       [EARTH grid component] IPDv05p3               1      0.0008      0.0008      0.0008      0.0008      0.0008
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-ATM] IPDv05p6b       1      0.0007      0.0007      0.0007      0.0007      0.0007
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-OCN] IPDv05p6b       1      0.0006      0.0006      0.0006      0.0006      0.0006
+20210713 140503.869 INFO             PET496       [EARTH grid component] IPDv05p4               1      0.0005      0.0005      0.0005      0.0005      0.0005
+20210713 140503.869 INFO             PET496       [OCN-TO-EARTH grid component] IPDv05p6b       1      0.0005      0.0005      0.0005      0.0005      0.0005
+20210713 140503.869 INFO             PET496       [ICE-TO-EARTH grid component] IPDv05p6b       1      0.0004      0.0004      0.0004      0.0004      0.0004
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-ICE] IPDv05p6b       1      0.0004      0.0004      0.0004      0.0004      0.0004
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-MED] Init 0          1      0.0003      0.0003      0.0003      0.0003      0.0003
+20210713 140503.869 INFO             PET496       [OCN-TO-WAV] Init 0                           1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [ICE-TO-EARTH grid component] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [WAV-TO-ATM] Init 0                           1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [ICE-TO-WAV] Init 0                           1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [WAV-TO-EARTH grid component] IPDv05p6b       1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [ATM-TO-EARTH grid component] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-ATM] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-WAV] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-OCN] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-ICE] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [ATM-TO-WAV] Init 0                           1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [WAV-TO-OCN] Init 0                           1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [MED-TO-EARTH grid component] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [OCN-TO-EARTH grid component] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-WAV] IPDv05p6b       1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [WAV-TO-EARTH grid component] Init 0          1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [WAV] Init 0                                  1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [ICE-TO-WAV] RunPhase1                        1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-MED] RunPhase1       1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-WAV] RunPhase1       1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.869 INFO             PET496       [EARTH grid component] IPDv05p2               1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.869 INFO             PET496       [EARTH grid component] IPDv05p8               1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.869 INFO             PET496       [EARTH grid component] IPDv05p1               1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.869 INFO             PET496       [EARTH grid component] IPDv05p6               1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210713 140503.869 INFO             PET496   [NEMS Grid Comp] Final 1                          1      0.0192      0.0000      0.0192      0.0192      0.0192
+20210713 140503.869 INFO             PET496     [EARTH grid component] FinalizePhase1           1      0.0192      0.0085      0.0192      0.0192      0.0192
+20210713 140503.869 INFO             PET496       [WAV] FinalizePhase1                          1      0.0082      0.0082      0.0082      0.0082      0.0082
+20210713 140503.869 INFO             PET496       [WAV-TO-OCN] FinalizePhase1                   1      0.0004      0.0004      0.0004      0.0004      0.0004
+20210713 140503.869 INFO             PET496       [ATM-TO-WAV] FinalizePhase1                   1      0.0004      0.0004      0.0004      0.0004      0.0004
+20210713 140503.869 INFO             PET496       [OCN-TO-WAV] FinalizePhase1                   1      0.0004      0.0004      0.0004      0.0004      0.0004
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-MED] FinalizePhase1  1      0.0003      0.0003      0.0003      0.0003      0.0003
+20210713 140503.869 INFO             PET496       [WAV-TO-ATM] FinalizePhase1                   1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [ICE-TO-WAV] FinalizePhase1                   1      0.0002      0.0002      0.0002      0.0002      0.0002
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-ATM] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-WAV] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET496       [ICE-TO-EARTH grid component] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-ICE] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET496       [EARTH grid component-TO-OCN] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET496       [MED-TO-EARTH grid component] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET496       [OCN-TO-EARTH grid component] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET496       [ATM-TO-EARTH grid component] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
+20210713 140503.869 INFO             PET496       [WAV-TO-EARTH grid component] FinalizePhase1  1      0.0001      0.0001      0.0001      0.0001      0.0001
