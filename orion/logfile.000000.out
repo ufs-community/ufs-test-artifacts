@@ -4,16 +4,6 @@ READ_ASCII_FILE: File: input.nml
 ========================================================================
 READ_INPUT_NML: unknown
 READ_INPUT_NML: input.nml 
- &amip_interp_nml
-   interp_oi_sst = .true.
-   use_ncep_sst = .true.
-   use_ncep_ice = .false.
-   no_anom_sst = .false.
-   data_set = 'reynolds_oi'
-   date_out_of_range = 'climo'
- 
- /
- 
  &atmos_model_nml
    blocksize = 32
    chksum_debug = .false.
@@ -23,7 +13,7 @@ READ_INPUT_NML: input.nml
    fhout = 6
    fhmaxhf = -1
    fhouthf = -1
-   ccpp_suite = FV3_GFS_v16_coupled
+   ccpp_suite = 'FV3_GFS_v16_coupled'
  
  /
  
@@ -189,7 +179,7 @@ READ_INPUT_NML: input.nml
    debug        = .false.
    frac_grid    = .T.
    nstf_name    = 0,0,0,0,0
-   nst_anl      = .false.
+   nst_anl      = .true.
    psautco      = 0.0008,0.0005
    prautco      = 0.00015,0.00015
    lgfdlmprad   = .true.
@@ -267,10 +257,10 @@ READ_INPUT_NML: input.nml
         FNSNOC   = "global_snoclim.1.875.grb",
         FNZORC   = "igbp",
         FNALBC   = 'global_snowfree_albedo.bosu.t766.1536.768.rg.grb',
-        FNALBC2  = "global_albedo4.1x1.grb",
+        FNALBC2  = 'global_albedo4.1x1.grb',
         FNAISC   = "CFSR.SEAICE.1982.2012.monthly.clim.grb",
-        FNTG3C   = "global_tg3clim.2.6x1.5.grb",
-        FNVEGC   = "global_vegfrac.0.144.decpercent.grb",
+        FNTG3C   = 'global_tg3clim.2.6x1.5.grb',
+        FNVEGC   = 'global_vegfrac.0.144.decpercent.grb',
         FNVETC   = 'global_vegtype.igbp.t766.1536.768.rg.grb',
         FNSOTC   = 'global_soiltype.statsgo.t766.1536.768.rg.grb',
         FNSMCC   = 'global_soilmgldas.statsgo.t766.1536.768.grb',
@@ -278,9 +268,9 @@ READ_INPUT_NML: input.nml
         FNTSFA   = "",
         FNACNA   = "",
         FNSNOA   = "",
-        FNVMNC   = "global_shdmin.0.144x0.144.grb",
-        FNVMXC   = "global_shdmax.0.144x0.144.grb",
-        FNSLPC   = "global_slope.1x1.grb",
+        FNVMNC   = 'global_shdmin.0.144x0.144.grb',
+        FNVMXC   = 'global_shdmax.0.144x0.144.grb',
+        FNSLPC   = 'global_slope.1x1.grb',
         FNABSC   = 'global_mxsnoalb.uariz.t766.1536.768.rg.grb',
         LDEBUG   =.false.,
    FSMCL(2) = 99999
@@ -342,8 +332,8 @@ READ_INPUT_NML: input.nml
 MPP module unknown
 MPP started with NPES=   120
 Using MPI library for message passing...
-Realtime clock resolution=  1.0000E-06 sec (   1000000 ticks/sec)
-Clock rolls over after   9.2234E+12 sec ( 9223372036854775806 ticks)
+Realtime clock resolution=  4.1765E-10 sec (2394366037 ticks/sec)
+Clock rolls over after   3.8521E+09 sec ( 9223372036854775806 ticks)
 
 MPP Parameter module unknown
 
@@ -1245,20 +1235,21 @@ MOM_sum_output: unknown
   MOM_sum_output DATE_STAMPED_STDOUT: True
   MOM_sum_output TIMEUNIT: 8.64E+04
   MOM_sum_output READ_DEPTH_LIST: False
-  MOM_sum_output 
-                                     time
-Total runtime                      1502.322678
-Initialization                        0.000000
-FV dy-core                          500.361257
-FV subgrid_z                          2.077150
-FV Diag                               0.223562
-GFS Step Setup                        9.671985
-GFS Radiation                        19.183970
-GFS Physics                          81.272737
-Dynamics get state                    8.274458
-Dynamics update state                18.746950
-FV3 Dycore                          506.800877
-TORE_TEMPERATURE: False
+  MOM_sum_output DEPTH_LIST_MIN_INC: 1.0E-10
+  MOM_sum_output TIMEUNIT: 8.64E+04
+  MOM_sum_output ENERGYSAVEDAYS (Time): 1:0
+  MOM_sum_output ENERGYSAVEDAYS_GEOMETRIC (Time): 0:0
+ocean_model_init: unknown
+  ocean_model_init SINGLE_STEPPING_CALL: True
+  ocean_model_init DT: 900.0
+  ocean_model_init DT_THERM: 1800.0
+  MOM THERMO_SPANS_COUPLING: False
+  ocean_model_init DIABATIC_FIRST: False
+  ocean_model_init RESTART_CONTROL: 1
+  ocean_model_init OCEAN_SURFACE_STAGGER: A
+  ocean_model_init EPS_OMESH: 1.0E-04
+  ocean_model_init RESTORE_SALINITY: False
+  ocean_model_init RESTORE_TEMPERATURE: False
   ocean_model_init RHO_0: 1035.0
   ocean_model_init G_EARTH: 9.8
   ocean_model_init ICE_SHELF: False
@@ -1364,77 +1355,3 @@ MOM_file_parser: unknown
   MOM_file_parser DOCUMENT_FILE: MOM_parameter_doc
   MOM_file_parser COMPLETE_DOCUMENTATION: True
   MOM_file_parser MINIMAL_DOCUMENTATION: True
-
-================================================================================
-DIAG_OUTPUT_MOD
-2020.03
-
-================================================================================
-FIELD_MANAGER_MOD
-unknown
-
-==>Note from field_manager_mod(field_manager_end):
-Exiting field_manager, have a nice day ...
-
-                                     time
-Total runtime                      1237.823812
-Ocean Initialization                 61.470165
-Ocean                               110.799714
-Ocean dynamics                       68.597362
-Ocean thermodynamics and tracers     33.014763
-Ocean Other                           9.043457
-(Ocean tracer advection)              1.780783
-(Ocean diabatic driver)              31.233959
-(Ocean continuity equation *)         0.000000
-(Ocean set BBL viscosity)             0.104264
-(Ocean message passing *)            14.782821
-(Ocean MOM_initialize_state)         53.166854
-(Ocean init message passing *)        0.041560
-(Ocean thickness diffusion *)         2.500840
-(Ocean mixed layer restrat)           0.449855
-(Ocean collective diagnostics)        0.403477
-(Ocean Z-space diagnostics)           0.000000
-(Ocean ALE)                           0.216956
-(Initialize from Z)                   0.001455
-(Ocean diagnostics framework)         0.263507
-(Ocean diagnostics remapping)         0.035350
-(Ocean diagnostics grid updates)      0.456878
-(Ocean continuity halo updates)       2.041388
-(Ocean init message passing)          0.028882
-(Ocean continuity update)             0.999437
-(Ocean continuity correction)         2.965412
-(Ocean BT pre-calcs only)             2.954861
-(Ocean BT pre-step halo updates)      7.247217
-(Ocean BT stepping calcs only)        2.330480
-(Ocean BT stepping halo updates)      4.126515
-(Ocean BT post-calcs only)            0.651792
-(Ocean BT post-step halo updates      0.141905
-(Ocean BT global synch)               1.813208
-(Ocean Coriolis & mom advection)      1.740822
-(Ocean continuity equation)           4.386033
-(Ocean pressure force)                7.981791
-(Ocean vertical viscosity)            2.458931
-(Ocean horizontal viscosity)          3.001022
-(Ocean momentum increments)           0.250263
-(Ocean message passing)              14.398425
-(Ocean barotropic mode calc)          0.086674
-(Ocean barotropic mode stepping)     19.300733
-(Ocean barotropic forcing calc)       0.273956
-(Ocean kappa_shear)                   0.204401
-(Ocean diabatic entrain)              0.000000
-(Ocean vert remap)                   17.240464
-(Ocean geothermal)                    0.000658
-(Ocean set_diffusivity)               1.190368
-(Ocean KPP)                           0.000000
-(Ocean tracer_columns)                0.000019
-(Ocean diabatic tridiag)              0.097564
-(Ocean diabatic message passing)      5.813925
-(Ocean find_uv_at_h)                  0.113957
-(Ocean frazil)                        0.039476
-(Ocean advect tracer)                 1.565929
-(Ocean tracer halo updates)           0.244087
-(Ocean tracer global synch)           1.230632
-(Ocean diffuse tracer)                0.188552
-(Ocean epipycnal diffuse tracer)      0.000000
-Ocean surface forcing                50.388327
-(Ocean forcing diagnostics)           0.010306
