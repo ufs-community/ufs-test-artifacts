@@ -20,6 +20,7 @@ class ArchiveResults:
   def __init__(self,args):
 
     self.jobid = args['jobid']
+    self.tag = args['tag']
 
     with open(args['yaml']) as file:
       yaml_list = yaml.load(file, Loader=yaml.FullLoader)
@@ -104,6 +105,7 @@ if __name__ == "__main__":
   parser.add_argument('-j','--jobid', help='directory where builds will be mad #', required=False,default="None")
   parser.add_argument('-y','--yaml', help='Yaml file defining builds and testing parameters', required=True)
   parser.add_argument('-d','--dryrun', help='directory where artifacts will be placed', required=False,default=False)
+  parser.add_argument('-t','--tag', help='tag used for build', required=False,default="Unknown")
   args = vars(parser.parse_args())
    
   archiver = ArchiveResults(args)
