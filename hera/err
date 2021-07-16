@@ -1,15 +1,8 @@
 ++ date +%s
-+ echo -n ' 1626447517,'
++ echo -n ' 1626468543,'
 + set +x
 ++ date
-+ echo 'Model started:  ' Fri Jul 16 14:58:40 UTC 2021
-+ rm 'PET*'
-rm: cannot remove ‘PET*’: No such file or directory
-++ date +%s
-+ echo -n ' 1626447756,'
-+ set +x
-++ date
-+ echo 'Model started:  ' Fri Jul 16 15:02:39 UTC 2021
++ echo 'Model started:  ' Fri Jul 16 20:49:07 UTC 2021
 + export MPI_TYPE_DEPTH=20
 + MPI_TYPE_DEPTH=20
 + export OMP_STACKSIZE=512M
@@ -58,148 +51,7 @@ rm: cannot remove ‘PET*’: No such file or directory
   0:  af create fcst fieldbundle, name=atmrc=           0
   0:  af create fcst fieldbundle, name=sfc_nearest_stodrc=           0
   0:  af create fcst fieldbundle, name=sfc_bilinearrc=           0
-  0:  in fcst,init total time:    26.1142587661743     
-312:  (MOM_cap:InitializeAdvertise)current time: y,m,d-        2013           4
-312:            1 h,m,s=           0           0           0
-312:  (MOM_cap:InitializeAdvertise)start time: y,m,d-        2013           4
-312:            1 h,m,s=           0           0           0
-312: 
-312: WARNING from PE     0: reset_face_lengths_list unused v-face line: V_width,  28.8,  29.4, 41.1, 41.2,   2500.0
-312: 
-312: 
-312: WARNING from PE     0: Use EPBL_LANGMUIR_SCHEME = ADDITIVE instead of the archaic LT_ENHANCE = 3.
-312: 
-  0:  in fcst run phase 2, na=           0
-  0:  in fcst run phase 2, na=           1
-  0:  in fcst run phase 2, na=           2
-  0:  in fcst run phase 2, na=           3
-  0:  in fcst run phase 2, na=           4
-  0:  in fcst run phase 2, na=           5
-  0:  in fcst run phase 2, na=           6
-  0:  in fcst run phase 2, na=           7
-312: 
-312: WARNING from PE     0: MPP_OPEN: File MOM6_OUTPUT/ocean.stats opened WRONLY already exists!
-312: 
-  0:  in fcst run phase 2, na=           8
-  0:  in fcst run phase 2, na=           9
-  0:  in fcst run phase 2, na=          10
-  0:  in fcst run phase 2, na=          11
-  0:  in fcst run phase 2, na=          12
-  0:  in fcst run phase 2, na=          13
-  0:  in fcst run phase 2, na=          14
-srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
-  0: slurmstepd: error: *** STEP 20810345.0 ON h14c05 CANCELLED AT 2021-07-16T15:06:51 ***
-slurmstepd: error: *** JOB 20810345 ON h14c05 CANCELLED AT 2021-07-16T15:06:51 ***
-203: forrtl: error (78): process killed (SIGTERM)
-203: Image              PC                Routine            Line        Source             
-203: ufs_model          0000000004C10E2F  Unknown               Unknown  Unknown
-203: libpthread-2.17.s  00002AC743466630  Unknown               Unknown  Unknown
-203: ufs_model          0000000002249C04  fv_mapz_mod_mp_mo        3493  fv_mapz.F90
-203: ufs_model          000000000223D453  fv_mapz_mod_mp_la         746  fv_mapz.F90
-203: libiomp5.so        00002AC741B76A43  __kmp_invoke_micr     Unknown  Unknown
-203: libiomp5.so        00002AC741B3A2C6  __kmp_fork_call       Unknown  Unknown
-203: libiomp5.so        00002AC741AF9BB0  __kmpc_fork_call      Unknown  Unknown
-203: ufs_model          00000000022397DC  fv_mapz_mod_mp_la         682  fv_mapz.F90
-203: ufs_model          00000000021E8E11  fv_dynamics_mod_m         737  fv_dynamics.F90
-203: ufs_model          0000000002167C80  atmosphere_mod_mp         683  atmosphere.F90
-203: ufs_model          000000000205E84E  atmos_model_mod_m         702  atmos_model.F90
-203: ufs_model          0000000001F36DCA  module_fcst_grid_         758  module_fcst_grid_comp.F90
-203: ufs_model          0000000000984E8E  _ZN5ESMCI6FTable1        2036  ESMCI_FTable.C
-203: ufs_model          0000000000988AD6  ESMCI_FTableCallE         765  ESMCI_FTable.C
-203: ufs_model          000000000107803A  _ZN5ESMCI2VM5ente        1216  ESMCI_VM.C
-203: ufs_model          0000000000986527  c_esmc_ftablecall         922  ESMCI_FTable.C
-203: ufs_model          00000000008A2191  esmf_compmod_mp_e        1223  ESMF_Comp.F90
-203: ufs_model          0000000000B87BA4  esmf_gridcompmod_        1889  ESMF_GridComp.F90
-203: ufs_model          0000000001F2ADAE  fv3gfs_cap_mod_mp         899  fv3_cap.F90
-203: ufs_model          0000000000EBF99F  _ZNK5ESMCI13Metho         333  ESMCI_MethodTable.C
-203: ufs_model          0000000000EBF922  _ZN5ESMCI11Method         519  ESMCI_MethodTable.C
-203: ufs_model          0000000000EBDE26  c_esmc_methodtabl         273  ESMCI_MethodTable.C
-203: ufs_model          00000000008CC980  esmf_attachmethod        1284  ESMF_AttachMethods.F90
-203: ufs_model          0000000004B6B3F2  nuopc_modelbase_m        2403  NUOPC_ModelBase.F90
-203: ufs_model          0000000000984E8E  _ZN5ESMCI6FTable1        2036  ESMCI_FTable.C
-203: ufs_model          0000000000988AD6  ESMCI_FTableCallE         765  ESMCI_FTable.C
-203: ufs_model          000000000107803A  _ZN5ESMCI2VM5ente        1216  ESMCI_VM.C
-203: ufs_model          0000000000986527  c_esmc_ftablecall         922  ESMCI_FTable.C
-203: ufs_model          00000000008A2191  esmf_compmod_mp_e        1223  ESMF_Comp.F90
-203: ufs_model          0000000000B87BA4  esmf_gridcompmod_        1889  ESMF_GridComp.F90
-203: ufs_model          000000000083A3B9  nuopc_driver_mp_r        3313  NUOPC_Driver.F90
-203: ufs_model          0000000000839C15  nuopc_driver_mp_e        3583  NUOPC_Driver.F90
-203: ufs_model          0000000000EBF99F  _ZNK5ESMCI13Metho         333  ESMCI_MethodTable.C
-203: ufs_model          0000000000EBF922  _ZN5ESMCI11Method         519  ESMCI_MethodTable.C
-203: ufs_model          0000000000EBDE26  c_esmc_methodtabl         273  ESMCI_MethodTable.C
-203: ufs_model          00000000008CC980  esmf_attachmethod        1284  ESMF_AttachMethods.F90
-203: ufs_model          0000000000836AFF  nuopc_driver_mp_r        3234  NUOPC_Driver.F90
-203: ufs_model          0000000000984E8E  _ZN5ESMCI6FTable1        2036  ESMCI_FTable.C
-203: ufs_model          0000000000988AD6  ESMCI_FTableCallE         765  ESMCI_FTable.C
-203: ufs_model          000000000107803A  _ZN5ESMCI2VM5ente        1216  ESMCI_VM.C
-203: ufs_model          0000000000986527  c_esmc_ftablecall         922  ESMCI_FTable.C
-203: ufs_model          00000000008A2191  esmf_compmod_mp_e        1223  ESMF_Comp.F90
-203: ufs_model          0000000000B87BA4  esmf_gridcompmod_        1889  ESMF_GridComp.F90
-203: ufs_model          0000000000421C7F  module_nems_grid_         460  module_NEMS_GRID_COMP.F90
-203: ufs_model          0000000000984E8E  _ZN5ESMCI6FTable1        2036  ESMCI_FTable.C
-203: ufs_model          0000000000988AD6  ESMCI_FTableCallE         765  ESMCI_FTable.C
-203: ufs_model          000000000107803A  _ZN5ESMCI2VM5ente        1216  ESMCI_VM.C
-203: ufs_model          0000000000986527  c_esmc_ftablecall         922  ESMCI_FTable.C
-203: ufs_model          00000000008A2191  esmf_compmod_mp_e        1223  ESMF_Comp.F90
-203: ufs_model          0000000000B87BA4  esmf_gridcompmod_        1889  ESMF_GridComp.F90
-203: ufs_model          000000000042090B  MAIN__                    488  MAIN_NEMS.F90
-203: ufs_model          000000000041F4DE  Unknown               Unknown  Unknown
-203: libc-2.17.so       00002AC743695555  __libc_start_main     Unknown  Unknown
-203: ufs_model          000000000041F3E9  Unknown               Unknown  Unknown
-++ date +%s
-+ echo -n ' 1626448763,'
-+ set +x
-++ date
-+ echo 'Model started:  ' Fri Jul 16 15:19:29 UTC 2021
-+ export MPI_TYPE_DEPTH=20
-+ MPI_TYPE_DEPTH=20
-+ export OMP_STACKSIZE=512M
-+ OMP_STACKSIZE=512M
-+ export OMP_NUM_THREADS=1
-+ OMP_NUM_THREADS=1
-+ export ESMF_RUNTIME_COMPLIANCECHECK=OFF:depth=4
-+ ESMF_RUNTIME_COMPLIANCECHECK=OFF:depth=4
-+ export PSM_RANKS_PER_CONTEXT=4
-+ PSM_RANKS_PER_CONTEXT=4
-+ export PSM_SHAREDCONTEXTS=1
-+ PSM_SHAREDCONTEXTS=1
-+ export ESMF_RUNTIME_PROFILE=ON
-+ ESMF_RUNTIME_PROFILE=ON
-+ export 'ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY TEXT'
-+ ESMF_RUNTIME_PROFILE_OUTPUT='SUMMARY TEXT'
-+ sync
-+ sleep 1
-+ srun --label -n 560 /scratch1/NCEPDEV/da/Mark.Potts/sandbox/ufs-weather-model/build-new/ufs_model
-  0:  in fcst comp init, ntasks=         288
-  0:  num_atmos_calls=          96 time_init=        2013           4           1
-  0:            0           0           0 time_atmos=        2013           4
-  0:            1           0           0           0 time_end=        2013
-  0:            4           1           6           0           0 dt_atmos=
-  0:          225 Run_length=       21600
-  0: 
-  0: WARNING from PE     0: MPP_OPEN: File time_stamp.out opened WRONLY already exists!
-  0: 
-  0:  FLAG: gwd_opt==1 so gwd not generic
-  0:  FLAG: satmedmf and isatedmf=1 so pbl not generic
-  0:  NO FLAG: scnv is generic
-  0:  NO FLAG: dcnv is generic
-  0:   num_p3d=           5  num_p2d=           1  crtrh=  0.900000000000000     
-  0:   0.900000000000000       0.900000000000000       npdf3d=           0  pdfcld= F
-  0:   shcnvcw= F  cnvcld= T  ncnvcld3d=           1  do_shoc= F  nshoc3d=
-  0:            0  nshoc_2d=           0  shoc_cld= F  nkbfshoc=        -999 
-  0:   nahdshoc=        -999  nscfshoc=        -999  uni_cld= F  ntot3d=           6 
-  0:   ntot2d=           1  shocaftcnv= F  indcld=          -1  shoc_parm=
-  0:    7000.00000000000        1.00000000000000        4.28571430000000     
-  0:   0.700000000000000       -999.000000000000       ncnvw=           6  ncnvc=
-  0:         -999
-  0: GFS_phys_time_vary_init: compute sncovr from weasd and soil vegetation parameters
-  0:  be create fcst grid
-  0:  dateS=hours since 2013-04-01 00:00:00date_init=        2013           4
-  0:            1           0           0           0
-  0:  af create fcst fieldbundle, name=atmrc=           0
-  0:  af create fcst fieldbundle, name=sfc_nearest_stodrc=           0
-  0:  af create fcst fieldbundle, name=sfc_bilinearrc=           0
-  0:  in fcst,init total time:    26.7922718524933     
+  0:  in fcst,init total time:    26.1508300304413     
 312:  (MOM_cap:InitializeAdvertise)current time: y,m,d-        2013           4
 312:            1 h,m,s=           0           0           0
 312:  (MOM_cap:InitializeAdvertise)start time: y,m,d-        2013           4
@@ -313,6 +165,6 @@ slurmstepd: error: *** JOB 20810345 ON h14c05 CANCELLED AT 2021-07-16T15:06:51 *
   0: WARNING from PE     0: MPP_OPEN: File RESTART/coupler.res opened WRONLY already exists!
   0: 
 ++ date
-+ echo 'Model ended:    ' Fri Jul 16 15:32:09 UTC 2021
++ echo 'Model ended:    ' Fri Jul 16 21:02:11 UTC 2021
 ++ date +%s
-+ echo -n ' 1626449529,'
++ echo -n ' 1626469331,'
