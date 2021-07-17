@@ -1868,3 +1868,203 @@
 + echo 'Model ended:    ' Sat Jul 17 22:40:21 UTC 2021
 ++ date +%s
 + echo -n ' 1626561621,'
+++ date +%s
++ echo -n ' 1626562402,'
++ set +x
+++ date
++ echo 'Model started:  ' Sat Jul 17 22:53:25 UTC 2021
++ export MPI_TYPE_DEPTH=20
++ MPI_TYPE_DEPTH=20
++ export OMP_STACKSIZE=512M
++ OMP_STACKSIZE=512M
++ export OMP_NUM_THREADS=1
++ OMP_NUM_THREADS=1
++ export ESMF_RUNTIME_COMPLIANCECHECK=OFF:depth=4
++ ESMF_RUNTIME_COMPLIANCECHECK=OFF:depth=4
++ export PSM_RANKS_PER_CONTEXT=4
++ PSM_RANKS_PER_CONTEXT=4
++ export PSM_SHAREDCONTEXTS=1
++ PSM_SHAREDCONTEXTS=1
++ export ESMF_RUNTIME_PROFILE=ON
++ ESMF_RUNTIME_PROFILE=ON
++ export 'ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY TEXT'
++ ESMF_RUNTIME_PROFILE_OUTPUT='SUMMARY TEXT'
++ sync
++ sleep 1
++ srun --label -n 560 /scratch1/NCEPDEV/da/Mark.Potts/sandbox/ufs-weather-model/build-new/ufs_model
+  0:  in fcst comp init, ntasks=         288
+  0:  num_atmos_calls=          96 time_init=        2013           4           1
+  0:            0           0           0 time_atmos=        2013           4
+  0:            1           0           0           0 time_end=        2013
+  0:            4           1           6           0           0 dt_atmos=
+  0:          225 Run_length=       21600
+  0: 
+  0: WARNING from PE     0: MPP_OPEN: File time_stamp.out opened WRONLY already exists!
+  0: 
+  0:  FLAG: gwd_opt==1 so gwd not generic
+  0:  FLAG: satmedmf and isatedmf=1 so pbl not generic
+  0:  NO FLAG: scnv is generic
+  0:  NO FLAG: dcnv is generic
+  0:   num_p3d=           5  num_p2d=           1  crtrh=  0.900000000000000     
+  0:   0.900000000000000       0.900000000000000       npdf3d=           0  pdfcld= F
+  0:   shcnvcw= F  cnvcld= T  ncnvcld3d=           1  do_shoc= F  nshoc3d=
+  0:            0  nshoc_2d=           0  shoc_cld= F  nkbfshoc=        -999 
+  0:   nahdshoc=        -999  nscfshoc=        -999  uni_cld= F  ntot3d=           6 
+  0:   ntot2d=           1  shocaftcnv= F  indcld=          -1  shoc_parm=
+  0:    7000.00000000000        1.00000000000000        4.28571430000000     
+  0:   0.700000000000000       -999.000000000000       ncnvw=           6  ncnvc=
+  0:         -999
+  0: GFS_phys_time_vary_init: compute sncovr from weasd and soil vegetation parameters
+  0:  be create fcst grid
+  0:  dateS=hours since 2013-04-01 00:00:00date_init=        2013           4
+  0:            1           0           0           0
+  0:  af create fcst fieldbundle, name=atmrc=           0
+  0:  af create fcst fieldbundle, name=sfc_nearest_stodrc=           0
+  0:  af create fcst fieldbundle, name=sfc_bilinearrc=           0
+  0:  in fcst,init total time:    26.4962840080261     
+312:  (MOM_cap:InitializeAdvertise)current time: y,m,d-        2013           4
+312:            1 h,m,s=           0           0           0
+312:  (MOM_cap:InitializeAdvertise)start time: y,m,d-        2013           4
+312:            1 h,m,s=           0           0           0
+312: 
+312: WARNING from PE     0: reset_face_lengths_list unused v-face line: V_width,  28.8,  29.4, 41.1, 41.2,   2500.0
+312: 
+312: 
+312: WARNING from PE     0: Use EPBL_LANGMUIR_SCHEME = ADDITIVE instead of the archaic LT_ENHANCE = 3.
+312: 
+  0:  in fcst run phase 2, na=           0
+  0:  in fcst run phase 2, na=           1
+  0:  in fcst run phase 2, na=           2
+  0:  in fcst run phase 2, na=           3
+  0:  in fcst run phase 2, na=           4
+  0:  in fcst run phase 2, na=           5
+  0:  in fcst run phase 2, na=           6
+  0:  in fcst run phase 2, na=           7
+312: 
+312: WARNING from PE     0: MPP_OPEN: File MOM6_OUTPUT/ocean.stats opened WRONLY already exists!
+312: 
+  0:  in fcst run phase 2, na=           8
+  0:  in fcst run phase 2, na=           9
+  0:  in fcst run phase 2, na=          10
+  0:  in fcst run phase 2, na=          11
+  0:  in fcst run phase 2, na=          12
+  0:  in fcst run phase 2, na=          13
+  0:  in fcst run phase 2, na=          14
+  0:  in fcst run phase 2, na=          15
+  0:  in fcst run phase 2, na=          16
+  0:  in fcst run phase 2, na=          17
+  0:  in fcst run phase 2, na=          18
+  0:  in fcst run phase 2, na=          19
+  0:  in fcst run phase 2, na=          20
+  0:  in fcst run phase 2, na=          21
+  0:  in fcst run phase 2, na=          22
+  0:  in fcst run phase 2, na=          23
+  0:  in fcst run phase 2, na=          24
+  0:  in fcst run phase 2, na=          25
+  0:  in fcst run phase 2, na=          26
+  0:  in fcst run phase 2, na=          27
+  0:  in fcst run phase 2, na=          28
+  0:  in fcst run phase 2, na=          29
+  0:  in fcst run phase 2, na=          30
+  0:  in fcst run phase 2, na=          31
+  0:  in fcst run phase 2, na=          32
+  0:  in fcst run phase 2, na=          33
+  0:  in fcst run phase 2, na=          34
+  0:  in fcst run phase 2, na=          35
+  0:  in fcst run phase 2, na=          36
+  0:  in fcst run phase 2, na=          37
+  0:  in fcst run phase 2, na=          38
+  0:  in fcst run phase 2, na=          39
+  0:  in fcst run phase 2, na=          40
+  0:  in fcst run phase 2, na=          41
+  0:  in fcst run phase 2, na=          42
+  0:  in fcst run phase 2, na=          43
+  0:  in fcst run phase 2, na=          44
+  0:  in fcst run phase 2, na=          45
+  0:  in fcst run phase 2, na=          46
+  0:  in fcst run phase 2, na=          47
+  0:  in fcst run phase 2, na=          48
+  0:  in fcst run phase 2, na=          49
+  0:  in fcst run phase 2, na=          50
+  0:  in fcst run phase 2, na=          51
+  0:  in fcst run phase 2, na=          52
+  0:  in fcst run phase 2, na=          53
+  0:  in fcst run phase 2, na=          54
+  0:  in fcst run phase 2, na=          55
+  0:  in fcst run phase 2, na=          56
+  0:  in fcst run phase 2, na=          57
+  0:  in fcst run phase 2, na=          58
+  0:  in fcst run phase 2, na=          59
+  0:  in fcst run phase 2, na=          60
+  0:  in fcst run phase 2, na=          61
+  0:  in fcst run phase 2, na=          62
+  0:  in fcst run phase 2, na=          63
+  0:  in fcst run phase 2, na=          64
+  0:  in fcst run phase 2, na=          65
+  0:  in fcst run phase 2, na=          66
+  0:  in fcst run phase 2, na=          67
+  0:  in fcst run phase 2, na=          68
+  0:  in fcst run phase 2, na=          69
+  0:  in fcst run phase 2, na=          70
+  0:  in fcst run phase 2, na=          71
+  0:  in fcst run phase 2, na=          72
+  0:  in fcst run phase 2, na=          73
+  0:  in fcst run phase 2, na=          74
+  0:  in fcst run phase 2, na=          75
+  0:  in fcst run phase 2, na=          76
+  0:  in fcst run phase 2, na=          77
+  0:  in fcst run phase 2, na=          78
+  0:  in fcst run phase 2, na=          79
+  0:  in fcst run phase 2, na=          80
+  0:  in fcst run phase 2, na=          81
+  0:  in fcst run phase 2, na=          82
+  0:  in fcst run phase 2, na=          83
+  0:  in fcst run phase 2, na=          84
+  0:  in fcst run phase 2, na=          85
+  0:  in fcst run phase 2, na=          86
+  0:  in fcst run phase 2, na=          87
+  0:  in fcst run phase 2, na=          88
+  0:  in fcst run phase 2, na=          89
+  0:  in fcst run phase 2, na=          90
+  0:  in fcst run phase 2, na=          91
+  0:  in fcst run phase 2, na=          92
+  0:  in fcst run phase 2, na=          93
+  0:  in fcst run phase 2, na=          94
+399: application called MPI_Abort(comm=0x84000002, 1) - process 399
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+  0: slurmstepd: error: *** STEP 20839838.0 ON h9c42 CANCELLED AT 2021-07-17T23:18:16 ***
+  0: slurmstepd: error: *** STEP 20839838.0 ON h9c42 CANCELLED AT 2021-07-17T23:18:16 ***
+srun: error: h9c42: task 9: Killed
+srun: launch/slurm: _step_signal: Terminating StepId=20839838.0
+srun: error: h9c46: task 132: Killed
+srun: error: h9c42: task 39: Killed
+srun: error: h9c47: tasks 187-188: Killed
+srun: error: h9c44: tasks 45,68: Killed
+srun: error: h9c49: tasks 249,272: Killed
+srun: error: h9c48: tasks 202,229: Killed
+srun: error: h9c45: tasks 92,118: Killed
+srun: error: h9c46: tasks 125,147: Killed
+srun: error: h9c42: task 38: Killed
+srun: error: h9c51: task 330: Killed
+srun: error: h9c52: tasks 382,398: Killed
+srun: error: h9c51: task 334: Killed
+srun: error: h9c50: task 301: Killed
+srun: error: h9c48: task 200: Killed
+srun: error: h22c11: tasks 440,456: Killed
+srun: error: h22c10: tasks 433,437: Killed
+srun: error: h22c13: tasks 534,559: Killed
+srun: error: h9c45: task 80: Killed
+srun: error: h22c11: tasks 441-455,457-479: Killed
+srun: error: h9c46: tasks 120-124,126-131,133-146,148-159: Killed
+srun: error: h22c13: tasks 520-533,535-558: Killed
+srun: error: h22c12: tasks 480-519: Killed
+srun: error: h9c48: tasks 201,203-228,230-239: Killed
+srun: error: h9c47: tasks 160-186,189-199: Killed
+srun: error: h9c45: tasks 81-91,93-117,119: Killed
+srun: error: h9c49: tasks 240-248,250-271,273-279: Killed
+srun: error: h9c44: tasks 40-44,46-67,69-79: Killed
+srun: error: h9c51: tasks 320-329,331-333,335-359: Killed
+srun: error: h9c52: tasks 360-381,383-397,399: Killed
+srun: error: h9c42: tasks 0-8,10-37: Killed
+srun: error: h22c10: tasks 400-432,434-436,438-439: Killed
+srun: error: h9c50: tasks 280-300,302-319: Killed
