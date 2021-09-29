@@ -20,12 +20,14 @@ class ArchiveResults:
   def __init__(self,args):
 
     self.jobid = args['jobid']
+    self.tag = args['tag']
+    self.rundir = args['directory']
 
     with open(args['yaml']) as file:
       yaml_list = yaml.load(file, Loader=yaml.FullLoader)
       if self.jobid == "None":
         self.jobid = yaml_list['jobid']
-      self.rundir = yaml_list['collectiondir']
+#     self.rundir = yaml_list['collectiondir']
       self.machine_name = yaml_list['hostname']
       scheduler = yaml_list['scheduler']
       print("HEY, scheduler is {}".format(scheduler))
@@ -94,16 +96,18 @@ class ArchiveResults:
       print("cp command is {}".format(cp_cmd))
       self.runcmd(cp_cmd)
 
-    git_cmd = "git add *;git commit -a -m\'update for {} on {}';git pull origin main --no-edit;git push origin main".format(self.artifactname,self.machine_name)
+    git_cmd = "git add *;git commit -a -m\'update for {} on {} with {}';git pull origin main --no-edit;git push origin main".format(self.artifactname,self.machine_name,self.tag)
     self.runcmd(git_cmd)
     return
 
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='ESMF nightly build/test system')
-  parser.add_argument('-j','--jobid', help='directory where builds will be mad #', required=False,default="None")
+  parser.add_argument('-j','--jobid', help='jobid for the run#', required=False,default="None")
   parser.add_argument('-y','--yaml', help='Yaml file defining builds and testing parameters', required=True)
+  parser.add_argument('-D','--directory', help='directory where artifacts will be collected', required=True)
   parser.add_argument('-d','--dryrun', help='directory where artifacts will be placed', required=False,default=False)
+  parser.add_argument('-t','--tag', help='tag used for build', required=False,default="Unknown")
   args = vars(parser.parse_args())
    
   archiver = ArchiveResults(args)

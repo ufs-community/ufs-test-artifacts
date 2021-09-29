@@ -1,0 +1,1582 @@
+========================================================================
+READ_ASCII_FILE: unknown
+READ_ASCII_FILE: File: input.nml
+========================================================================
+READ_INPUT_NML: unknown
+READ_INPUT_NML: input.nml 
+ &atmos_model_nml
+   blocksize = 32
+   chksum_debug = .false.
+   dycore_only = .false.
+   ccpp_suite = 'FV3_GFS_v16_coupled'
+ 
+ /
+ 
+ &diag_manager_nml
+   prepend_date = .false.
+ 
+ /
+ 
+ &fms_io_nml
+   checksum_required = .false.
+   max_files_r = 100
+   max_files_w = 100
+ 
+ /
+ 
+ &fms_nml
+   clock_grain = 'ROUTINE'
+   domains_stack_size = 3000000
+   print_memory_usage = .false.
+ 
+ /
+ 
+ &fv_core_nml
+   layout   = 6,8
+   io_layout = 1,1
+   npx      = 385
+   npy      = 385
+   ntiles   = 6,
+   npz    = 127
+   dz_min = 2
+   psm_bc = 1
+   grid_type = -1
+   make_nh = .true.
+   fv_debug = .false.
+   range_warn = .false.
+   reset_eta = .false.
+   n_sponge = 42
+   nudge_qv = .true.
+   nudge_dz = .false.
+   tau = 10.
+   rf_cutoff = 7.5e2
+   d2_bg_k1 = 0.20
+   d2_bg_k2 = 0.04
+   kord_tm = -9
+   kord_mt = 9
+   kord_wz = 9
+   kord_tr = 9
+   hydrostatic = .false.
+   phys_hydrostatic = .false.
+   use_hydro_pressure = .false.
+   beta = 0.
+   a_imp = 1.
+   p_fac = 0.1
+   k_split = 2
+   n_split = 6
+   nwat = 6
+   na_init = 1
+   d_ext = 0.
+   dnats = 1
+   fv_sg_adj = 450
+   d2_bg = 0.
+   nord = 2
+   dddmp = 0.2
+   d4_bg = 0.12
+   vtdm4 = 0.02
+   delt_max = 0.002
+   ke_bg = 0.
+   do_vort_damp = .true.
+   external_ic = .true.
+   external_eta = .true.
+   gfs_phil = .false.
+   nggps_ic = .true.
+   mountain = .false.
+   ncep_ic = .false.
+   d_con = 1.
+   hord_mt = 5
+   hord_vt = 5
+   hord_tm = 5
+   hord_dp = -5
+   hord_tr = 8
+   adjust_dry_mass = .false.
+   consv_te = 1.
+   do_sat_adj = .true.
+   consv_am = .false.
+   fill = .true.
+   dwind_2d = .false.
+   print_freq = 6
+   warm_start = .false.
+   no_dycore = .false.
+   z_tracer = .true.
+   agrid_vel_rst = .true.
+   read_increment = .false.
+   res_latlon_dynamics = ""
+ 
+ /
+ 
+ &external_ic_nml
+   filtered_terrain = .true.
+   levp = 128
+   gfs_dwinds = .true.
+   checker_tr = .false.
+   nt_checker = 0
+ 
+ /
+ 
+ &gfs_physics_nml
+   fhzero       = 6
+   oz_phys      = .false.
+   oz_phys_2015 = .true.
+   h2o_phys     = .true.
+   ldiag3d      = .false.
+   fhcyc        = 24
+   use_ufo      = .true.
+   pre_rad      = .false.
+   imp_physics  = 11
+   pdfcld       = .false.
+   fhswr        = 3600.
+   fhlwr        = 3600.
+   ialb         = 1
+   iems         = 1
+   iaer         = 5111
+   icliq_sw     = 2
+   iovr         = 3
+   ico2         = 2
+   isubc_sw     = 2
+   isubc_lw     = 2
+   isol         = 2
+   lwhtr        = .true.
+   swhtr        = .true.
+   cnvgwd       = .true.
+   shal_cnv     = .true.
+   cal_pre      = .false.
+   redrag       = .true.
+   dspheat      = .true.
+   hybedmf      = .false.
+   satmedmf     = .true.
+   isatmedmf    = 1
+   lheatstrg    = .false.
+   lseaspray    = .false.
+   random_clds  = .false.
+   trans_trac   = .true.
+   cnvcld       = .true.
+   imfshalcnv   = 2
+   imfdeepcnv   = 2
+   cdmbgwd      = 1.1,0.72,1.0,1.0
+   prslrd0      = 0.
+   ivegsrc      = 1
+   isot         = 1
+   lsoil        = 4
+   lsm          = 1
+   iopt_dveg    = 1
+   iopt_crs     = 1
+   iopt_btr     = 1
+   iopt_run     = 1
+   iopt_sfc     = 1
+   iopt_frz     = 1
+   iopt_inf     = 1
+   iopt_rad     = 1
+   iopt_alb     = 2
+   iopt_snf     = 4
+   iopt_tbot    = 2
+   iopt_stc     = 1
+   debug        = .false.
+   frac_grid    = .true.
+   nstf_name    = 0,0,0,0,0
+   nst_anl      = .true.
+   psautco      = 0.0008,0.0005
+   prautco      = 0.00015,0.00015
+   lgfdlmprad   = .true.
+   effr_in      = .true.
+   ldiag_ugwp   = .false.
+   do_ugwp      = .false.
+   do_tofd      = .true.
+   cplflx       = .true.
+   cplwav         = .true.
+   cplwav2atm     = .true.
+   min_seaice     = 1.0e-11
+ 
+ /
+ 
+ &gfdl_cloud_microphysics_nml
+   sedi_transport = .true.
+   do_sedi_heat = .false.
+   rad_snow = .true.
+   rad_graupel = .true.
+   rad_rain = .true.
+   const_vi = .false.
+   const_vs = .false.
+   const_vg = .false.
+   const_vr = .false.
+   vi_max = 1.
+   vs_max = 2.
+   vg_max = 12.
+   vr_max = 12.
+   qi_lim = 1.
+   prog_ccn = .false.
+   do_qa = .true.
+   fast_sat_adj = .true.
+   tau_l2v = 225.
+   tau_v2l = 150.
+   tau_g2v = 900.
+   rthresh = 10.e-6  ! This is a key parameter for cloud water
+   dw_land  = 0.16
+   dw_ocean = 0.10
+   ql_gen = 1.0e-3
+   ql_mlt = 1.0e-3
+   qi0_crt = 8.0E-5
+   qs0_crt = 1.0e-3
+   tau_i2s = 1000.
+   c_psaci = 0.05
+   c_pgacs = 0.01
+   rh_inc = 0.30
+   rh_inr = 0.30
+   rh_ins = 0.30
+   ccn_l = 300.
+   ccn_o = 100.
+   c_paut = 0.5
+   c_cracw = 0.8
+   use_ppm = .false.
+   use_ccn = .true.
+   mono_prof = .true.
+   z_slope_liq  = .true.
+   z_slope_ice  = .true.
+   de_ice = .false.
+   fix_negative = .true.
+   icloud_f = 1
+   mp_time = 150.
+   reiflag = 2
+ 
+ /
+ 
+ &interpolator_nml
+   interp_method = 'conserve_great_circle'
+ 
+ /
+ 
+ &namsfc
+        FNGLAC   = "global_glacier.2x2.grb",
+        FNMXIC   = "global_maxice.2x2.grb",
+        FNTSFC   = "RTGSST.1982.2012.monthly.clim.grb",
+        FNSNOC   = "global_snoclim.1.875.grb",
+        FNZORC   = "igbp",
+        FNALBC   = 'global_snowfree_albedo.bosu.t766.1536.768.rg.grb',
+        FNALBC2  = 'global_albedo4.1x1.grb',
+        FNAISC   = "CFSR.SEAICE.1982.2012.monthly.clim.grb",
+        FNTG3C   = 'global_tg3clim.2.6x1.5.grb',
+        FNVEGC   = 'global_vegfrac.0.144.decpercent.grb',
+        FNVETC   = 'global_vegtype.igbp.t766.1536.768.rg.grb',
+        FNSOTC   = 'global_soiltype.statsgo.t766.1536.768.rg.grb',
+        FNSMCC   = 'global_soilmgldas.statsgo.t766.1536.768.grb',
+        FNMSKH   = "global_slmask.t1534.3072.1536.grb",
+        FNTSFA   = "",
+        FNACNA   = "",
+        FNSNOA   = "",
+        FNVMNC   = 'global_shdmin.0.144x0.144.grb',
+        FNVMXC   = 'global_shdmax.0.144x0.144.grb',
+        FNSLPC   = 'global_slope.1x1.grb',
+        FNABSC   = 'global_mxsnoalb.uariz.t766.1536.768.rg.grb',
+        LDEBUG   =.false.,
+   FSMCL(2) = 99999
+   FSMCL(3) = 99999
+   FSMCL(4) = 99999
+   LANDICE = .true.
+   FTSFS = 90
+   FAISL = 99999
+   FAISS = 99999
+   FSNOL = 99999
+   FSNOS = 99999
+   FSICL = 99999
+   FSICS = 99999
+   FTSFL = 99999
+   FVETL = 99999
+   FSOTL = 99999
+   FvmnL = 99999
+   FvmxL = 99999
+   FSLPL = 99999
+   FABSL = 99999
+ 
+ /
+ 
+ &fv_grid_nml
+   grid_file = 'INPUT/grid_spec.nc'
+ 
+ /
+ 
+ &nam_stochy
+ /
+ &nam_sfcperts
+ /
+ 
+ &cires_ugwp_nml
+   knob_ugwp_solver  = 2
+   knob_ugwp_source  = 1,1,0,0
+   knob_ugwp_wvspec  = 1,25,25,25
+   knob_ugwp_azdir   = 2,4,4,4
+   knob_ugwp_stoch   = 0,0,0,0
+   knob_ugwp_effac   = 1,1,1,1
+   knob_ugwp_doaxyz  = 1
+   knob_ugwp_doheat  = 1
+   knob_ugwp_dokdis  = 1
+   knob_ugwp_ndx4lh  = 1
+   knob_ugwp_version = 0
+   launch_level      = 54
+ /
+ 
+  &MOM_input_nml
+          output_directory = 'MOM6_OUTPUT/',
+          input_filename = 'r'
+          restart_input_dir = 'INPUT/',
+          restart_output_dir = 'RESTART/',
+          parameter_filename = 'INPUT/MOM_input',
+                               'INPUT/MOM_override' /
+ 
+
+MPP module unknown
+MPP started with NPES=   288
+Using MPI library for message passing...
+Realtime clock resolution=  1.0000E-06 sec (   1000000 ticks/sec)
+Clock rolls over after   9.2234E+12 sec ( 9223372036854775806 ticks)
+
+MPP Parameter module unknown
+
+MPP Data module unknown
+
+MPP_DOMAINS module unknown
+ &MPP_IO_NML
+ HEADER_BUFFER_VAL       =       16384,
+ GLOBAL_FIELD_ON_ROOT_PE = T,
+ IO_CLOCKS_ON    = F,
+ SHUFFLE =           0,
+ DEFLATE_LEVEL   =          -1,
+ CF_COMPLIANCE   = F
+ /
+
+MPP_IO module unknown
+
+Using netCDF library version 4.7.4 of Aug 13 2021 14:58:50 $
+
+================================================================================
+FMS_IO_MOD
+unknown
+
+================================================================================
+FMS_MOD
+unknown
+ &FMS_NML
+ READ_ALL_PE     = T,
+ CLOCK_GRAIN     = ROUTINE         ,
+ CLOCK_FLAGS     = NONE            ,
+ WARNING_LEVEL   = warning ,
+ STACK_SIZE      =           0,
+ DOMAINS_STACK_SIZE      =     3000000,
+ PRINT_MEMORY_USAGE      = F
+ /
+ nml_error_codes=
+
+================================================================================
+CONSTANTS_MOD
+unknown
+
+================================================================================
+SAT_VAPOR_PRES_MOD
+unknown
+ &SAT_VAPOR_PRES_NML
+ SHOW_BAD_VALUE_COUNT_BY_SLICE   = T,
+ SHOW_ALL_BAD_VALUES     = F,
+ USE_EXACT_QS    = F,
+ DO_SIMPLE       = F,
+ CONSTRUCT_TABLE_WRT_LIQ = F,
+ CONSTRUCT_TABLE_WRT_LIQ_AND_ICE = F
+ /
+
+================================================================================
+TIME_MANAGER_MOD
+unknown
+
+================================================================================
+DIAG_UTIL_MOD
+unknown
+
+================================================================================
+DIAG_DATA_MOD
+unknown
+
+================================================================================
+DIAG_MANAGER_MOD
+unknown
+ &DIAG_MANAGER_NML
+ APPEND_PELIST_NAME      = F,
+ MIX_SNAPSHOT_AVERAGE_FIELDS     = F,
+ MAX_OUTPUT_FIELDS       =         300,
+ MAX_INPUT_FIELDS        =         600,
+ MAX_AXES        =          60,
+ DO_DIAG_FIELD_LOG       = F,
+ WRITE_BYTES_IN_FILE     = F,
+ DEBUG_DIAG_MANAGER      = F,
+ MAX_NUM_AXIS_SETS       =          25,
+ MAX_FILES       =          31,
+ USE_CMOR        = F,
+ ISSUE_OOR_WARNINGS      = T,
+ OOR_WARNINGS_FATAL      = F,
+ MAX_OUT_PER_IN_FIELD    =         150,
+ FLUSH_NC_FILES  = F,
+ REGION_OUT_USE_ALT_VALUE        = T,
+ MAX_FIELD_ATTRIBUTES    =           4,
+ MAX_FILE_ATTRIBUTES     =           2,
+ MAX_AXIS_ATTRIBUTES     =           4,
+ PREPEND_DATE    = F,
+ USE_MPP_IO      = F
+ /
+========================================================================
+READ_ASCII_FILE: unknown
+READ_ASCII_FILE: File: diag_table
+base date used = 2013 April  1  0:00:00 gmt
+
+================================================================================
+DIAG_AXIS_MOD
+unknown
+========================================================================
+READ_ASCII_FILE: unknown
+READ_ASCII_FILE: File: input.nml
+========================================================================
+READ_INPUT_NML: unknown
+READ_INPUT_NML: input.nml 
+ &atmos_model_nml
+   blocksize = 32
+   chksum_debug = .false.
+   dycore_only = .false.
+   ccpp_suite = 'FV3_GFS_v16_coupled'
+ 
+ /
+ 
+ &diag_manager_nml
+   prepend_date = .false.
+ 
+ /
+ 
+ &fms_io_nml
+   checksum_required = .false.
+   max_files_r = 100
+   max_files_w = 100
+ 
+ /
+ 
+ &fms_nml
+   clock_grain = 'ROUTINE'
+   domains_stack_size = 3000000
+   print_memory_usage = .false.
+ 
+ /
+ 
+ &fv_core_nml
+   layout   = 6,8
+   io_layout = 1,1
+   npx      = 385
+   npy      = 385
+   ntiles   = 6,
+   npz    = 127
+   dz_min = 2
+   psm_bc = 1
+   grid_type = -1
+   make_nh = .true.
+   fv_debug = .false.
+   range_warn = .false.
+   reset_eta = .false.
+   n_sponge = 42
+   nudge_qv = .true.
+   nudge_dz = .false.
+   tau = 10.
+   rf_cutoff = 7.5e2
+   d2_bg_k1 = 0.20
+   d2_bg_k2 = 0.04
+   kord_tm = -9
+   kord_mt = 9
+   kord_wz = 9
+   kord_tr = 9
+   hydrostatic = .false.
+   phys_hydrostatic = .false.
+   use_hydro_pressure = .false.
+   beta = 0.
+   a_imp = 1.
+   p_fac = 0.1
+   k_split = 2
+   n_split = 6
+   nwat = 6
+   na_init = 1
+   d_ext = 0.
+   dnats = 1
+   fv_sg_adj = 450
+   d2_bg = 0.
+   nord = 2
+   dddmp = 0.2
+   d4_bg = 0.12
+   vtdm4 = 0.02
+   delt_max = 0.002
+   ke_bg = 0.
+   do_vort_damp = .true.
+   external_ic = .true.
+   external_eta = .true.
+   gfs_phil = .false.
+   nggps_ic = .true.
+   mountain = .false.
+   ncep_ic = .false.
+   d_con = 1.
+   hord_mt = 5
+   hord_vt = 5
+   hord_tm = 5
+   hord_dp = -5
+   hord_tr = 8
+   adjust_dry_mass = .false.
+   consv_te = 1.
+   do_sat_adj = .true.
+   consv_am = .false.
+   fill = .true.
+   dwind_2d = .false.
+   print_freq = 6
+   warm_start = .false.
+   no_dycore = .false.
+   z_tracer = .true.
+   agrid_vel_rst = .true.
+   read_increment = .false.
+   res_latlon_dynamics = ""
+ 
+ /
+ 
+ &external_ic_nml
+   filtered_terrain = .true.
+   levp = 128
+   gfs_dwinds = .true.
+   checker_tr = .false.
+   nt_checker = 0
+ 
+ /
+ 
+ &gfs_physics_nml
+   fhzero       = 6
+   oz_phys      = .false.
+   oz_phys_2015 = .true.
+   h2o_phys     = .true.
+   ldiag3d      = .false.
+   fhcyc        = 24
+   use_ufo      = .true.
+   pre_rad      = .false.
+   imp_physics  = 11
+   pdfcld       = .false.
+   fhswr        = 3600.
+   fhlwr        = 3600.
+   ialb         = 1
+   iems         = 1
+   iaer         = 5111
+   icliq_sw     = 2
+   iovr         = 3
+   ico2         = 2
+   isubc_sw     = 2
+   isubc_lw     = 2
+   isol         = 2
+   lwhtr        = .true.
+   swhtr        = .true.
+   cnvgwd       = .true.
+   shal_cnv     = .true.
+   cal_pre      = .false.
+   redrag       = .true.
+   dspheat      = .true.
+   hybedmf      = .false.
+   satmedmf     = .true.
+   isatmedmf    = 1
+   lheatstrg    = .false.
+   lseaspray    = .false.
+   random_clds  = .false.
+   trans_trac   = .true.
+   cnvcld       = .true.
+   imfshalcnv   = 2
+   imfdeepcnv   = 2
+   cdmbgwd      = 1.1,0.72,1.0,1.0
+   prslrd0      = 0.
+   ivegsrc      = 1
+   isot         = 1
+   lsoil        = 4
+   lsm          = 1
+   iopt_dveg    = 1
+   iopt_crs     = 1
+   iopt_btr     = 1
+   iopt_run     = 1
+   iopt_sfc     = 1
+   iopt_frz     = 1
+   iopt_inf     = 1
+   iopt_rad     = 1
+   iopt_alb     = 2
+   iopt_snf     = 4
+   iopt_tbot    = 2
+   iopt_stc     = 1
+   debug        = .false.
+   frac_grid    = .true.
+   nstf_name    = 0,0,0,0,0
+   nst_anl      = .true.
+   psautco      = 0.0008,0.0005
+   prautco      = 0.00015,0.00015
+   lgfdlmprad   = .true.
+   effr_in      = .true.
+   ldiag_ugwp   = .false.
+   do_ugwp      = .false.
+   do_tofd      = .true.
+   cplflx       = .true.
+   cplwav         = .true.
+   cplwav2atm     = .true.
+   min_seaice     = 1.0e-11
+ 
+ /
+ 
+ &gfdl_cloud_microphysics_nml
+   sedi_transport = .true.
+   do_sedi_heat = .false.
+   rad_snow = .true.
+   rad_graupel = .true.
+   rad_rain = .true.
+   const_vi = .false.
+   const_vs = .false.
+   const_vg = .false.
+   const_vr = .false.
+   vi_max = 1.
+   vs_max = 2.
+   vg_max = 12.
+   vr_max = 12.
+   qi_lim = 1.
+   prog_ccn = .false.
+   do_qa = .true.
+   fast_sat_adj = .true.
+   tau_l2v = 225.
+   tau_v2l = 150.
+   tau_g2v = 900.
+   rthresh = 10.e-6  ! This is a key parameter for cloud water
+   dw_land  = 0.16
+   dw_ocean = 0.10
+   ql_gen = 1.0e-3
+   ql_mlt = 1.0e-3
+   qi0_crt = 8.0E-5
+   qs0_crt = 1.0e-3
+   tau_i2s = 1000.
+   c_psaci = 0.05
+   c_pgacs = 0.01
+   rh_inc = 0.30
+   rh_inr = 0.30
+   rh_ins = 0.30
+   ccn_l = 300.
+   ccn_o = 100.
+   c_paut = 0.5
+   c_cracw = 0.8
+   use_ppm = .false.
+   use_ccn = .true.
+   mono_prof = .true.
+   z_slope_liq  = .true.
+   z_slope_ice  = .true.
+   de_ice = .false.
+   fix_negative = .true.
+   icloud_f = 1
+   mp_time = 150.
+   reiflag = 2
+ 
+ /
+ 
+ &interpolator_nml
+   interp_method = 'conserve_great_circle'
+ 
+ /
+ 
+ &namsfc
+        FNGLAC   = "global_glacier.2x2.grb",
+        FNMXIC   = "global_maxice.2x2.grb",
+        FNTSFC   = "RTGSST.1982.2012.monthly.clim.grb",
+        FNSNOC   = "global_snoclim.1.875.grb",
+        FNZORC   = "igbp",
+        FNALBC   = 'global_snowfree_albedo.bosu.t766.1536.768.rg.grb',
+        FNALBC2  = 'global_albedo4.1x1.grb',
+        FNAISC   = "CFSR.SEAICE.1982.2012.monthly.clim.grb",
+        FNTG3C   = 'global_tg3clim.2.6x1.5.grb',
+        FNVEGC   = 'global_vegfrac.0.144.decpercent.grb',
+        FNVETC   = 'global_vegtype.igbp.t766.1536.768.rg.grb',
+        FNSOTC   = 'global_soiltype.statsgo.t766.1536.768.rg.grb',
+        FNSMCC   = 'global_soilmgldas.statsgo.t766.1536.768.grb',
+        FNMSKH   = "global_slmask.t1534.3072.1536.grb",
+        FNTSFA   = "",
+        FNACNA   = "",
+        FNSNOA   = "",
+        FNVMNC   = 'global_shdmin.0.144x0.144.grb',
+        FNVMXC   = 'global_shdmax.0.144x0.144.grb',
+        FNSLPC   = 'global_slope.1x1.grb',
+        FNABSC   = 'global_mxsnoalb.uariz.t766.1536.768.rg.grb',
+        LDEBUG   =.false.,
+   FSMCL(2) = 99999
+   FSMCL(3) = 99999
+   FSMCL(4) = 99999
+   LANDICE = .true.
+   FTSFS = 90
+   FAISL = 99999
+   FAISS = 99999
+   FSNOL = 99999
+   FSNOS = 99999
+   FSICL = 99999
+   FSICS = 99999
+   FTSFL = 99999
+   FVETL = 99999
+   FSOTL = 99999
+   FvmnL = 99999
+   FvmxL = 99999
+   FSLPL = 99999
+   FABSL = 99999
+ 
+ /
+ 
+ &fv_grid_nml
+   grid_file = 'INPUT/grid_spec.nc'
+ 
+ /
+ 
+ &nam_stochy
+ /
+ &nam_sfcperts
+ /
+ 
+ &cires_ugwp_nml
+   knob_ugwp_solver  = 2
+   knob_ugwp_source  = 1,1,0,0
+   knob_ugwp_wvspec  = 1,25,25,25
+   knob_ugwp_azdir   = 2,4,4,4
+   knob_ugwp_stoch   = 0,0,0,0
+   knob_ugwp_effac   = 1,1,1,1
+   knob_ugwp_doaxyz  = 1
+   knob_ugwp_doheat  = 1
+   knob_ugwp_dokdis  = 1
+   knob_ugwp_ndx4lh  = 1
+   knob_ugwp_version = 0
+   launch_level      = 54
+ /
+ 
+  &MOM_input_nml
+          output_directory = 'MOM6_OUTPUT/',
+          input_filename = 'r'
+          restart_input_dir = 'INPUT/',
+          restart_output_dir = 'RESTART/',
+          parameter_filename = 'INPUT/MOM_input',
+                               'INPUT/MOM_override' /
+ 
+
+================================================================================
+FV_CONTROL_MOD
+unknown
+ &FV_GRID_NML
+ GRID_NAME       =                                                                                 ,
+ GRID_FILE       = INPUT/grid_spec.nc                                                                                                
+       
+ /
+
+================================================================================
+FV_CONTROL_MOD
+unknown
+ &FV_CORE_NML
+ NPX     =         385,
+ NPY     =         385,
+ NTILES  =           6,
+ NPZ     =         127,
+ NPZ_TYPE        = gfs                     ,
+ FV_ETA_FILE     = global_hyblev_fcst.txt                                                                                            
+       ,
+ NPZ_RST =           0,
+ LAYOUT  =           6,           8,
+ IO_LAYOUT       = 2*1,
+ NCNST   =           0,
+ NWAT    =           6,
+ USE_LOGP        = F,
+ P_FAC   =  0.100000000000000     ,
+ A_IMP   =   1.00000000000000     ,
+ K_SPLIT =           2,
+ N_SPLIT =           6,
+ M_SPLIT =           0,
+ Q_SPLIT =           0,
+ PRINT_FREQ      =           6,
+ WRITE_3D_DIAGS  = T,
+ DO_SCHMIDT      = F,
+ DO_CUBE_TRANSFORM       = F,
+ HORD_MT =           5,
+ HORD_VT =           5,
+ HORD_TM =           5,
+ HORD_DP =          -5,
+ HORD_TR =           8,
+ SHIFT_FAC       =   18.0000000000000     ,
+ STRETCH_FAC     =   1.00000000000000     ,
+ TARGET_LAT      =  -90.0000000000000     ,
+ TARGET_LON      =  0.000000000000000E+000,
+ KORD_MT =           9,
+ KORD_WZ =           9,
+ KORD_TM =          -9,
+ KORD_TR =           9,
+ FV_DEBUG        = F,
+ FV_LAND = F,
+ NUDGE   = F,
+ DO_SAT_ADJ      = T,
+ DO_INLINE_MP    = F,
+ DO_F3D  = F,
+ EXTERNAL_IC     = T,
+ READ_INCREMENT  = F,
+ NCEP_IC = F,
+ NGGPS_IC        = T,
+ HRRRV3_IC       = F,
+ ECMWF_IC        = F,
+ USE_NEW_NCEP    = F,
+ USE_NCEP_PHY    = F,
+ FV_DIAG_IC      = F,
+ EXTERNAL_ETA    = T,
+ RES_LATLON_DYNAMICS     =                                                                                                           
+                       ,
+ RES_LATLON_TRACERS      =                                                                                                           
+                       ,
+ SCALE_Z =  0.000000000000000E+000,
+ W_MAX   =   75.0000000000000     ,
+ Z_MIN   =  5.000000000000000E-002,
+ LIM_FAC =   1.00000000000000     ,
+ DDDMP   =  0.200000000000000     ,
+ D2_BG   =  0.000000000000000E+000,
+ D4_BG   =  0.120000000000000     ,
+ VTDM4   =  2.000000000000000E-002,
+ TRDM2   =  0.000000000000000E+000,
+ D_EXT   =  0.000000000000000E+000,
+ DELT_MAX        =  2.000000000000000E-003,
+ BETA    =  0.000000000000000E+000,
+ NON_ORTHO       = T,
+ N_SPONGE        =          42,
+ WARM_START      = F,
+ ADJUST_DRY_MASS = F,
+ MOUNTAIN        = F,
+ D_CON   =   1.00000000000000     ,
+ KE_BG   =  0.000000000000000E+000,
+ NORD    =           2,
+ NORD_TR =           0,
+ CONVERT_KE      = F,
+ USE_OLD_OMEGA   = T,
+ DRY_MASS        =   98290.0000000000     ,
+ GRID_TYPE       =          -1,
+ DO_HELD_SUAREZ  = F,
+ DO_REED_PHYSICS = F,
+ REED_COND_ONLY  = F,
+ CONSV_TE        =   1.00000000000000     ,
+ FILL    = T,
+ FILTER_PHYS     = F,
+ FILL_DP = F,
+ FILL_WZ = F,
+ FILL_GFS        = T,
+ CONSV_AM        = F,
+ RF_FAST = F,
+ RANGE_WARN      = F,
+ DWIND_2D        = F,
+ INLINE_Q        = F,
+ Z_TRACER        = T,
+ REPRODUCE_SUM   = T,
+ ADIABATIC       = F,
+ DO_VORT_DAMP    = T,
+ NO_DYCORE       = F,
+ TAU     =   10.0000000000000     ,
+ TAU_H2O =  0.000000000000000E+000,
+ RF_CUTOFF       =   750.000000000000     ,
+ NF_OMEGA        =           1,
+ HYDROSTATIC     = F,
+ FV_SG_ADJ       =         450,
+ SG_CUTOFF       =  -1.00000000000000     ,
+ BREED_VORTEX_INLINE     = F,
+ NA_INIT =           1,
+ NUDGE_DZ        = F,
+ HYBRID_Z        = F,
+ MAKE_NH = T,
+ N_ZS_FILTER     =           0,
+ NORD_ZS_FILTER  =           4,
+ FULL_ZS_FILTER  = F,
+ RESET_ETA       = F,
+ PNATS   =           0,
+ DNATS   =           1,
+ DNRTS   =          -1,
+ A2B_ORD =           4,
+ REMAP_T = T,
+ P_REF   =   100000.000000000     ,
+ D2_BG_K1        =  0.200000000000000     ,
+ D2_BG_K2        =  4.000000000000000E-002,
+ C2L_ORD =           4,
+ DX_CONST        =   1000.00000000000     ,
+ DY_CONST        =   1000.00000000000     ,
+ UMAX    =   350.000000000000     ,
+ DEGLAT  =   15.0000000000000     ,
+ DEGLON_START    =  -30.0000000000000     ,
+ DEGLON_STOP     =   30.0000000000000     ,
+ DEGLAT_START    =  -30.0000000000000     ,
+ DEGLAT_STOP     =   30.0000000000000     ,
+ PHYS_HYDROSTATIC        = F,
+ USE_HYDRO_PRESSURE      = F,
+ MAKE_HYBRID_Z   = F,
+ OLD_DIVG_DAMP   = F,
+ ADD_NOISE       =  -1.00000000000000     ,
+ BUTTERFLY_EFFECT        = F,
+ DZ_MIN  =   2.00000000000000     ,
+ PSM_BC  =           1,
+ NESTED  = F,
+ TWOWAYNEST      = T,
+ NUDGE_QV        = T,
+ NESTBCTYPE      =           1,
+ NESTUPDATE      =           7,
+ NSPONGE =           0,
+ S_WEIGHT        =  1.000000000000000E-006,
+ CHECK_NEGATIVE  = F,
+ NUDGE_IC        = F,
+ HALO_UPDATE_TYPE        =           1,
+ GFS_PHIL        = F,
+ AGRID_VEL_RST   = T,
+ DO_UNI_ZFULL    = F,
+ ADJ_MASS_VMR    = F,
+ FAC_N_SPL       =   1.00000000000000     ,
+ FHOURI  =  0.000000000000000E+000,
+ UPDATE_BLEND    =   1.00000000000000     ,
+ REGIONAL        = F,
+ BC_UPDATE_INTERVAL      =           3,
+ REGIONAL_BCS_FROM_GSI   = F,
+ WRITE_RESTART_WITH_BCS  = F,
+ NROWS_BLEND     =           0,
+ WRITE_COARSE_RESTART_FILES      = F,
+ WRITE_COARSE_DIAGNOSTICS        = F,
+ WRITE_ONLY_COARSE_INTERMEDIATE_RESTARTS = F,
+ WRITE_COARSE_AGRID_VEL_RST      = F,
+ WRITE_COARSE_DGRID_VEL_RST      = T
+ /
+ &TEST_CASE_NML
+ TEST_CASE       =          11,
+ BUBBLE_DO       = F,
+ ALPHA   =  0.000000000000000E+000,
+ NSOLITONS       =           1,
+ SOLITON_UMAX    =   50.0000000000000     ,
+ SOLITON_SIZE    =   750000.000000000     
+ /
+
+Cubic: cubed-sphere domain decomposition:     6 X    8
+   pe,   is,  ie,  js,  je,    isd, ied, jsd, jed
+
+Cubic: cubed-sphere domain decomposition:     6 X    8
+   pe,   is,  ie,  js,  je,    isd, ied, jsd, jed
+
+================================================================================
+TRACER_MANAGER_MOD
+unknown
+
+================================================================================
+FIELD_MANAGER_MOD
+unknown
+# added by FRE: sphum must be present in atmos                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+# specific humidity for moist runs                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+ "TRACER", "atmos_mod", "sphum"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+# prognostic cloud water mixing ratio                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+ "TRACER", "atmos_mod", "liq_wat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+ "TRACER", "atmos_mod", "rainwat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+ "TRACER", "atmos_mod", "ice_wat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+ "TRACER", "atmos_mod", "snowwat"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+ "TRACER", "atmos_mod", "graupel"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# prognostic ozone mixing ratio tracer                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+ "TRACER", "atmos_mod", "o3mr"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+# prognostic subgrid scale turbulent kinetic energy                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+ "TRACER", "atmos_mod", "sgs_tke"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+# non-prognostic cloud amount                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+ "TRACER", "atmos_mod", "cld_amt"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+ ----------------------------------------------------
+ Contents of tracer entry            1
+ Model type and field name
+ Model                :            1
+ Field name           : sphum
+ Tracer units         : kg/kg
+ Tracer longname      : specific humidity
+ Tracer is_prognostic :  T
+ ----------------------------------------------------
+ ----------------------------------------------------
+ Contents of tracer entry            2
+ Model type and field name
+ Model                :            1
+ Field name           : liq_wat
+ Tracer units         : kg/kg
+ Tracer longname      : cloud water mixing ratio
+ Tracer is_prognostic :  T
+ ----------------------------------------------------
+ ----------------------------------------------------
+ Contents of tracer entry            3
+ Model type and field name
+ Model                :            1
+ Field name           : rainwat
+ Tracer units         : kg/kg
+ Tracer longname      : rain mixing ratio
+ Tracer is_prognostic :  T
+ ----------------------------------------------------
+ ----------------------------------------------------
+ Contents of tracer entry            4
+ Model type and field name
+ Model                :            1
+ Field name           : ice_wat
+ Tracer units         : kg/kg
+ Tracer longname      : cloud ice mixing ratio
+ Tracer is_prognostic :  T
+ ----------------------------------------------------
+ ----------------------------------------------------
+ Contents of tracer entry            5
+ Model type and field name
+ Model                :            1
+ Field name           : snowwat
+ Tracer units         : kg/kg
+ Tracer longname      : snow mixing ratio
+ Tracer is_prognostic :  T
+ ----------------------------------------------------
+ ----------------------------------------------------
+ Contents of tracer entry            6
+ Model type and field name
+ Model                :            1
+ Field name           : graupel
+ Tracer units         : kg/kg
+ Tracer longname      : graupel mixing ratio
+ Tracer is_prognostic :  T
+ ----------------------------------------------------
+ ----------------------------------------------------
+ Contents of tracer entry            7
+ Model type and field name
+ Model                :            1
+ Field name           : o3mr
+ Tracer units         : kg/kg
+ Tracer longname      : ozone mixing ratio
+ Tracer is_prognostic :  T
+ ----------------------------------------------------
+ ----------------------------------------------------
+ Contents of tracer entry            8
+ Model type and field name
+ Model                :            1
+ Field name           : sgs_tke
+ Tracer units         : m2/s2
+ Tracer longname      : subgrid scale turbulent kinetic energy
+ Tracer is_prognostic :  T
+ ----------------------------------------------------
+ ----------------------------------------------------
+ Contents of tracer entry            9
+ Model type and field name
+ Model                :            1
+ Field name           : cld_amt
+ Tracer units         : 1
+ Tracer longname      : cloud amount
+ Tracer is_prognostic :  T
+ ----------------------------------------------------
+Number of tracers in field table for atmospheric model =    9
+Number of tracers in field table for oceanic model =    0
+Number of tracers in field table for land model =    0
+Number of tracers in field table for ice model =    0
+Number of tracers in field table for coupler model =    0
+
+================================================================================
+fvGFS/atmosphere_mod
+unknown
+
+================================================================================
+EXTERNAL_IC_MOD::get_nggps_ic
+unknown
+ &EXTERNAL_IC_NML
+ FILTERED_TERRAIN        = T,
+ LEVP    =         128,
+ GFS_DWINDS      = T,
+ CHECKER_TR      = F,
+ NT_CHECKER      =           0
+ /
+
+================================================================================
+FV_DIAGNOSTICS_MOD
+unknown
+
+================================================================================
+DIAG_GRID_MOD
+unknown
+
+================================================================================
+FV_DIAG_COLUMN_MOD
+unknown
+================================================================================
+v2018 FV3GFS BETA VERSION PHYSICS                               
+ &GFS_PHYSICS_NML
+ FHZERO  =   6.00000000000000     ,
+ LDIAG3D = F,
+ QDIAG3D = F,
+ LSSAV   = F,
+ NAUX2D  =           0,
+ DTEND_SELECT    = *                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ,
+ NAUX3D  =           0,
+ AUX2D_TIME_AVG  = 20*F,
+ AUX3D_TIME_AVG  = 20*F,
+ FHCYC   =   24.0000000000000     ,
+ THERMODYN_ID    =           1,
+ SFCPRESS_ID     =           1,
+ CPLFLX  = T,
+ CPLICE  = T,
+ CPLOCN2ATM      = T,
+ CPLWAV  = T,
+ CPLWAV2ATM      = T,
+ CPLCHM  = F,
+ CPL_IMP_MRG     = F,
+ CPL_IMP_DBG     = F,
+ USE_CICE_ALB    = F,
+ LSIDEA  = F,
+ FHSWR   =   3600.00000000000     ,
+ FHLWR   =   3600.00000000000     ,
+ LEVR    =         -99,
+ NFXR    =          45,
+ IAERCLM = F,
+ IFLIP   =           1,
+ ISOL    =           2,
+ ICO2    =           2,
+ IALB    =           1,
+ ISOT    =           1,
+ IEMS    =           1,
+ IAER    =        5111,
+ ICLIQ_SW        =           2,
+ IOVR    =           3,
+ ICTM    =           1,
+ ISUBC_SW        =           2,
+ ISUBC_LW        =           2,
+ CRICK_PROOF     = F,
+ CCNORM  = F,
+ LWHTR   = T,
+ SWHTR   = T,
+ NHFRAD  =           0,
+ IDCOR   =           1,
+ DCORR_CON       =   2.50000000000000     ,
+ DO_RRTMGP       = F,
+ ACTIVE_GASES    =                                                                                                                                 ,
+ NGASES  =           0,
+ RRTMGP_ROOT     =                                                                                                                                 ,
+ LW_FILE_GAS     =                                                                                                                                 ,
+ LW_FILE_CLOUDS  =                                                                                                                                 ,
+ RRTMGP_NBANDSLW =        -999,
+ RRTMGP_NGPTSLW  =        -999,
+ SW_FILE_GAS     =                                                                                                                                 ,
+ SW_FILE_CLOUDS  =                                                                                                                                 ,
+ RRTMGP_NBANDSSW =        -999,
+ RRTMGP_NGPTSSW  =        -999,
+ DOG_CLDOPTICS   = F,
+ DOGP_CLDOPTICS_PADE     = F,
+ DOGP_CLDOPTICS_LUT      = F,
+ RRTMGP_NRGHICE  =           3,
+ RRTMGP_NGAUSS_ANG       =           1,
+ DO_GPSW_GLW     = F,
+ USE_LW_JACOBIAN = F,
+ DOGP_LWSCAT     = F,
+ DAMP_LW_FLUXADJ = F,
+ LFNC_K  =  -999.000000000000     ,
+ LFNC_P0 =  -999.000000000000     ,
+ ICCN    =           0,
+ IMP_PHYSICS     =          11,
+ PSAUTCO =  8.000000000000000E-004,  5.000000000000000E-004,
+ PRAUTCO = 2*1.500000000000000E-004  ,
+ EVPCO   =  2.000000000000000E-005,
+ WMINCO  = 2*1.000000000000000E-005  ,
+ FPRCP   =           2,
+ PDFFLAG =           4,
+ MG_DCS  =   200.000000000000     ,
+ MG_QCVAR        =   1.00000000000000     ,
+ MG_TS_AUTO_ICE  = 2*180.000000000000        ,
+ MG_RHMINI       =   1.01000000000000     ,
+ EFFR_IN = T,
+ TF      =   258.160000000000     ,
+ TCR     =   273.160000000000     ,
+ MICROP_UNIFORM  = T,
+ DO_CLDICE       = T,
+ HETFRZ_CLASSNUC = F,
+ MG_DO_GRAUPEL   = T,
+ MG_DO_HAIL      = F,
+ MG_NCCONS       = F,
+ MG_NICONS       = F,
+ MG_NGCONS       = F,
+ MG_NCNST        =   100000000.000000     ,
+ MG_NINST        =   150000.000000000     ,
+ MG_NGNST        =   100000.000000000     ,
+ SED_SUPERSAT    = T,
+ DO_SB_PHYSICS   = T,
+ MG_ALF  =   1.00000000000000     ,
+ MG_QCMIN        = 2*1.000000000000000E-009  ,
+ MG_DO_ICE_GMAO  = F,
+ MG_DO_LIQ_LIU   = T,
+ LTAEROSOL       = F,
+ LRADAR  = F,
+ NSRADAR_RESET   =  -999.000000000000     ,
+ LREFRES = F,
+ TTENDLIM        =  -999.000000000000     ,
+ EXT_DIAG_THOMPSON       = F,
+ DT_INNER        =  -999.000000000000     ,
+ LGFDLMPRAD      = T,
+ AVG_MAX_LENGTH  =   3600.00000000000     ,
+ LSM     =           1,
+ LSOIL   =           4,
+ LSOIL_LSM       =          -1,
+ LSNOW_LSM       =           3,
+ KICE    =           2,
+ RDLAI   = F,
+ NMTVR   =          14,
+ IVEGSRC =           1,
+ USE_UFO = T,
+ IOPT_THCND      =           1,
+ UA_PHYS = F,
+ USEMONALB       = T,
+ AOASIS  =   1.00000000000000     ,
+ FASDAS  =           0,
+ IOPT_DVEG       =           1,
+ IOPT_CRS        =           1,
+ IOPT_BTR        =           1,
+ IOPT_RUN        =           1,
+ IOPT_SFC        =           1,
+ IOPT_FRZ        =           1,
+ IOPT_INF        =           1,
+ IOPT_RAD        =           1,
+ IOPT_ALB        =           2,
+ IOPT_SNF        =           4,
+ IOPT_TBOT       =           2,
+ IOPT_STC        =           1,
+ LCURR_SF        = F,
+ PERT_CD = F,
+ NTSFLG  =           0,
+ SFENTH  =  0.000000000000000E+000,
+ LKM     =           0,
+ RAS     = F,
+ TRANS_TRAC      = T,
+ OLD_MONIN       = F,
+ CNVGWD  = T,
+ MSTRAT  = F,
+ MOIST_ADJ       = F,
+ CSCNV   = F,
+ CAL_PRE = F,
+ DO_AW   = F,
+ DO_SHOC = F,
+ SHOCAFTCNV      = F,
+ SHOC_CLD        = F,
+ OZ_PHYS = F,
+ OZ_PHYS_2015    = T,
+ DO_MYNNEDMF     = F,
+ DO_MYNNSFCLAY   = F,
+ BL_MYNN_CLOUDPDF        =           2,
+ BL_MYNN_EDMF    =           0,
+ BL_MYNN_EDMF_MOM        =           1,
+ BL_MYNN_EDMF_TKE        =           0,
+ BL_MYNN_EDMF_PART       =           0,
+ BL_MYNN_CLOUDMIX        =           1,
+ BL_MYNN_MIXQT   =           0,
+ BL_MYNN_OUTPUT  =           0,
+ ICLOUD_BL       =           1,
+ BL_MYNN_TKEADVECT       = F,
+ GWD_OPT =           1,
+ DO_UGWP_V0      = T,
+ DO_UGWP_V0_OROG_ONLY    = F,
+ DO_UGWP_V0_NST_ONLY     = F,
+ DO_GSL_DRAG_LS_BL       = F,
+ DO_GSL_DRAG_SS  = F,
+ DO_GSL_DRAG_TOFD        = F,
+ DO_UGWP_V1      = F,
+ DO_UGWP_V1_OROG_ONLY    = F,
+ DO_UGWP_V1_W_GSLDRAG    = F,
+ VAR_RIC =   1.00000000000000     ,
+ COEF_RIC_L      =  0.160000000000000     ,
+ COEF_RIC_S      =  0.250000000000000     ,
+ HURR_PBL        = F,
+ DO_MYJSFC       = F,
+ DO_MYJPBL       = F,
+ HWRF_SAMFDEEP   = F,
+ HWRF_SAMFSHAL   = F,
+ H2O_PHYS        = T,
+ PDFCLD  = F,
+ SHCNVCW = F,
+ REDRAG  = T,
+ HYBEDMF = F,
+ SATMEDMF        = T,
+ SHINHONG        = F,
+ DO_YSU  = F,
+ DSPHEAT = T,
+ LHEATSTRG       = F,
+ LSEASPRAY       = F,
+ CNVCLD  = T,
+ RANDOM_CLDS     = F,
+ SHAL_CNV        = T,
+ IMFSHALCNV      =           2,
+ IMFDEEPCNV      =           2,
+ ISATMEDMF       =           1,
+ DO_DEEP = T,
+ JCAP    =           1,
+ CS_PARM =   8.00000000000000     ,   4.00000000000000     ,   1000.00000000000     ,   3500.00000000000     ,   20.0000000000000     ,   1.00000000000000     ,  -999.000000000000     ,   1.00000000000000     ,  0.600000000000000     ,  0.000000000000000E+000,
+ FLGMIN  =  0.180000000000000     ,  0.220000000000000     ,
+ CGWF    =  0.500000000000000     ,  5.000000000000000E-002,
+ CCWF    = 2*1.00000000000000        ,
+ CDMBGWD =   1.10000000000000     ,  0.720000000000000     , 2*1.00000000000000        ,
+ SUP     =   1.00000000000000     ,
+ CTEI_RM = 2*10.0000000000000        ,
+ CRTRH   = 3*0.900000000000000       ,
+ DLQF    = 2*0.150000000000000       ,
+ RBCR    =  0.250000000000000     ,
+ SHOC_PARM       =   7000.00000000000     ,   1.00000000000000     ,   4.28571430000000     ,  0.700000000000000     ,  -999.000000000000     ,
+ PSAURAS = 2*1.000000000000000E-003  ,
+ PRAURAS = 2*2.000000000000000E-003  ,
+ WMINRAS = 2*1.000000000000000E-006  ,
+ DO_SPPT = F,
+ DO_SHUM = F,
+ DO_SKEB = F,
+ LNDP_TYPE       =           0,
+ N_VAR_LNDP      =           0,
+ LNDP_EACH_STEP  = F,
+ PERT_MP = F,
+ PERT_CLDS       = F,
+ PERT_RADTEND    = T,
+ PRSLRD0 =  0.000000000000000E+000,
+ RAL_TS  =  0.000000000000000E+000,
+ LDIAG_UGWP      = F,
+ DO_UGWP = F,
+ DO_TOFD = T,
+ SPEC_ADV        = T,
+ RHGRD   =   1.00000000000000     ,
+ ICLOUD  =           0,
+ CLAM_DEEP       =  7.000000000000001E-002,
+ C0S_DEEP        =  2.000000000000000E-003,
+ C1_DEEP =  2.000000000000000E-003,
+ BETAL_DEEP      =  1.000000000000000E-002,
+ BETAS_DEEP      =  1.000000000000000E-002,
+ EVEF    =  9.000000000000000E-002,
+ EVFACT_DEEP     =  0.300000000000000     ,
+ EVFACTL_DEEP    =  0.300000000000000     ,
+ PGCON_DEEP      =  0.550000000000000     ,
+ ASOLFAC_DEEP    =  0.958000000000000     ,
+ CLAM_SHAL       =  0.300000000000000     ,
+ C0S_SHAL        =  2.000000000000000E-003,
+ C1_SHAL =  5.000000000000000E-004,
+ PGCON_SHAL      =  0.550000000000000     ,
+ ASOLFAC_SHAL    =  0.958000000000000     ,
+ NST_ANL = T,
+ LSEA    =           0,
+ NSTF_NAME       = 5*0,
+ FRAC_GRID       = T,
+ MIN_LAKEICE     =  0.150000000000000     ,
+ MIN_SEAICE      =  9.999999999999999E-012,
+ MIN_LAKE_HEIGHT =   250.000000000000     ,
+ IGNORE_LAKE     = T,
+ SFC_Z0_TYPE     =           0,
+ THSFC_LOC       = T,
+ XKZM_M  =   1.00000000000000     ,
+ XKZM_H  =   1.00000000000000     ,
+ XKZM_S  =   1.00000000000000     ,
+ XKZMINV =  0.300000000000000     ,
+ MONINQ_FAC      =   1.00000000000000     ,
+ DSPFAC  =   1.00000000000000     ,
+ BL_UPFR =  0.130000000000000     ,
+ BL_DNFR =  0.100000000000000     ,
+ RLMX    =   300.000000000000     ,
+ ELMX    =   300.000000000000     ,
+ SFC_RLM =           0,
+ H0FACU  =  0.250000000000000     ,
+ H0FACS  =   1.00000000000000     ,
+ NCA     =           1,
+ SCELLS  =        2600,
+ TLIVES  =        1800,
+ NCA_G   =           1,
+ NCELLS_G        =           1,
+ NLIVES_G        =         100,
+ NFRACSEED       =  0.500000000000000     ,
+ NSEED   =           1,
+ NSEED_G =         100,
+ RCELL   =  0.720000000000000     ,
+ DO_CA   = F,
+ CA_SGS  = F,
+ CA_GLOBAL       = F,
+ ISEED_CA        =           1,
+ CA_SMOOTH       = F,
+ NSPINUP =           1,
+ CA_AMPLITUDE    =  0.350000000000000     ,
+ NSMOOTH =         100,
+ CA_CLOSURE      = F,
+ CA_ENTR = F,
+ CA_TRIGGER      = F,
+ IAU_DELTHRS     =  0.000000000000000E+000,
+ IAUFHRS = 7*-1.00000000000000       ,
+ IAU_INC_FILES   =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ,
+ IAU_FILTER_INCREMENTS   = F,
+ IAU_DRYMASSFIXER        = F,
+ DEBUG   = F,
+ PRE_RAD = F,
+ PRINT_DIFF_PGR  = F,
+ MAX_LON =        5000,
+ MAX_LAT =        2000,
+ MIN_LON =         192,
+ MIN_LAT =          94,
+ RHCMAX  =  0.999999900000000     ,
+ PHYS_VERSION    = v2018 FV3GFS BETA VERSION PHYSICS                               ,
+ FSCAV_AERO      = vœõ´ıﬁ∫AÛû”]´Ó∫A@‡¯6M˛∫A[€õ€ªA}ùC§TªA˚ú€π,ªAm,Ä
+<ªAÄ†cFKªAÅ•∞›≥∑AÖ∑YŸ&∑A,;6KÙ9∑AcbŸpM∑A_÷S`∑Aπ« s∑Aö\ﬁ™˙Ö∑A·Ú’ ·ò∑AHƒ	 æ´∑A8Z èæ∑An› U—∑AXµu‰∑A™Tæˆ∑A¿L—qa	∏Aπ∞¢¯∏A∏ªÉ.∏AVeèA∏AQ‰≤ÚtS∏AÊππ⁄e∏A&Sµ∑3x∏A†Ÿ'¿ä∏A~f¶æú∏A[∑É=Æ∏A7yX¡∏AOò *”∏Aiµ
+e3Â∏ApY’˚-˜∏A?’`	πA[≈Rf¯πA§Î_ﬁ«,πAjê˚öà>πA‰—ˇm:PπAc®)›aπAw—ËùpsπAëÓùÙÑπAœ¥ä˙hñπA4»˚ÑÕßπA˚Uu"ππA4˝gf πATˇèbö€πA‹œΩÏπA≤Ac~–˝πAÑπA“∫AR	ÙÁ¬∫A_zC¢0∫AôÈ$pA∫A{CjZ,R∫AfÕ∏∂÷b∫A-∆X	os∫Ajß†"ıÉ∫A÷ƒ∏“hî∫A{"ÂÈ…§∫ALŸD8µ∫A= éS≈∫A‹Hª{’∫Ai‰êêÂ∫A™©ò‹ëı∫AyîÀpªAé¯ŸYªA¥Ÿ∞%ªA∫ª¸œ4ªAô±–lDªA◊§„¸ÙSªAtªgQhcªA‚SÉÃL∑AÒQÊ§1∑ArX±FÛD∑A"F√7X∑A¶Œ1rk∑A˘-õg¢~∑Aıvƒ9»ë∑ApË+}„§∑AKt†Ù∑∑A°¿î™˘ ∑AÁD=Ù›∑Au≈ƒí„∑Am\„~«∏AÛ[l’ü∏AL¥il)∏A—¥-<∏A
+Hâò·N∏AÂVÙÿâa∏Aë2$£%t∏AËj}…¥Ü∏Aƒèd7ô∏AY–t¨´∏A£ÖGúæ∏AeCio–∏AüQ˙´º‚∏AâΩÉ6¸Ù∏A{n⁄-πAÍ%≥gQπAjÄ∞f+πA9fQÖm=πAó≈∑eOπA¨å	OaπAπïÁr)sπAëÓùÙÑπA	ijg∞ñπAˆüVü\®πAÇ¢»˘ππAN»pöÖÀπAj@˝›πA!˛ nÓπAk¨äõ…ˇπAì∂v∫A#xûlN"∫Aæ7àNw3∫AÎP	ÎéD∫AR˘+ïU∫AµQêâf∫A◊iø6lw∫A«˙”<à∫A›≥∂6˚ò∫A@œ-ß©∫ARê˚á@∫∫A¸« ∫A
+ /
+  ================================================================== 
+ cires_ugwp_cires
+ &CIRES_UGWP_NML
+ KNOB_UGWP_SOLVER        =           2,
+ KNOB_UGWP_SOURCE        = 2*1, 2*0,
+ KNOB_UGWP_WVSPEC        =           1, 3*25,
+ KNOB_UGWP_AZDIR =           2, 3*4,
+ KNOB_UGWP_STOCH = 4*0,
+ KNOB_UGWP_EFFAC = 4*1.00000000000000        ,
+ KNOB_UGWP_DOAXYZ        =           1,
+ KNOB_UGWP_DOHEAT        =           1,
+ KNOB_UGWP_DOKDIS        =           1,
+ KNOB_UGWP_NDX4LH        =           1,
+ KNOB_UGWP_VERSION       =           0,
+ LAUNCH_LEVEL    =          54
+ /
+  ================================================================== 
+ gfdl_cloud_microphys_mod
+ &GFDL_CLOUD_MICROPHYSICS_NML
+ MP_TIME =   150.000000000000     ,
+ T_MIN   =   178.000000000000     ,
+ T_SUB   =   184.000000000000     ,
+ TAU_R2G =   900.000000000000     ,
+ TAU_SMLT        =   900.000000000000     ,
+ TAU_G2R =   600.000000000000     ,
+ DW_LAND =  0.160000000000000     ,
+ DW_OCEAN        =  0.100000000000000     ,
+ VI_FAC  =   1.00000000000000     ,
+ VR_FAC  =   1.00000000000000     ,
+ VS_FAC  =   1.00000000000000     ,
+ VG_FAC  =   1.00000000000000     ,
+ QL_MLT  =  1.000000000000000E-003,
+ DO_QA   = T,
+ FIX_NEGATIVE    = T,
+ VI_MAX  =   1.00000000000000     ,
+ VS_MAX  =   2.00000000000000     ,
+ VG_MAX  =   12.0000000000000     ,
+ VR_MAX  =   12.0000000000000     ,
+ QS_MLT  =  1.000000000000000E-006,
+ QS0_CRT =  1.000000000000000E-003,
+ QI_GEN  =  1.820000000000000E-006,
+ QL0_MAX =  2.000000000000000E-003,
+ QI0_MAX =  1.000000000000000E-004,
+ QI0_CRT =  8.000000000000001E-005,
+ QR0_CRT =  1.000000000000000E-004,
+ FAST_SAT_ADJ    = T,
+ RH_INC  =  0.300000000000000     ,
+ RH_INS  =  0.300000000000000     ,
+ RH_INR  =  0.300000000000000     ,
+ CONST_VI        = F,
+ CONST_VS        = F,
+ CONST_VG        = F,
+ CONST_VR        = F,
+ USE_CCN = T,
+ RTHRESH =  1.000000000000000E-005,
+ CCN_L   =   300.000000000000     ,
+ CCN_O   =   100.000000000000     ,
+ QC_CRT  =  5.000000000000000E-008,
+ TAU_G2V =   900.000000000000     ,
+ TAU_V2G =   21600.0000000000     ,
+ SAT_ADJ0        =  0.900000000000000     ,
+ C_PIACR =   5.00000000000000     ,
+ TAU_IMLT        =   600.000000000000     ,
+ TAU_V2L =   150.000000000000     ,
+ TAU_L2V =   225.000000000000     ,
+ TAU_I2S =   1000.00000000000     ,
+ TAU_L2R =   900.000000000000     ,
+ QI_LIM  =   1.00000000000000     ,
+ QL_GEN  =  1.000000000000000E-003,
+ C_PAUT  =  0.500000000000000     ,
+ C_PSACI =  5.000000000000000E-002,
+ C_PGACS =  1.000000000000000E-002,
+ Z_SLOPE_LIQ     = T,
+ Z_SLOPE_ICE     = T,
+ PROG_CCN        = F,
+ C_CRACW =  0.800000000000000     ,
+ ALIN    =   842.000000000000     ,
+ CLIN    =   4.80000000000000     ,
+ TICE    =   273.160000000000     ,
+ RAD_SNOW        = T,
+ RAD_GRAUPEL     = T,
+ RAD_RAIN        = T,
+ CLD_MIN =  5.000000000000000E-002,
+ USE_PPM = F,
+ MONO_PROF       = T,
+ DO_SEDI_HEAT    = F,
+ SEDI_TRANSPORT  = T,
+ DO_SEDI_W       = F,
+ DE_ICE  = F,
+ ICLOUD_F        =           1,
+ IRAIN_F =           0,
+ MP_PRINT        = F,
+ REIFLAG =           2,
+ REWMIN  =   5.00000000000000     ,
+ REWMAX  =   10.0000000000000     ,
+ REIMIN  =   10.0000000000000     ,
+ REIMAX  =   150.000000000000     ,
+ RERMIN  =   10.0000000000000     ,
+ RERMAX  =   10000.0000000000     ,
+ RESM
+================================================================================
+DIAG_OUTPUT_MOD
+2020.03
+
+================================================================================
+FIELD_MANAGER_MOD
+unknown
+
+==>Note from field_manager_mod(field_manager_end):
+Exiting field_manager, have a nice day ...
+
+                                     time
+Total runtime                       602.517531
+Ocean Initialization                 11.711955
+Ocean                               112.129176
+Ocean dynamics                       71.214612
+Ocean thermodynamics and tracers     31.931002
+Ocean Other                           8.844636
+(Ocean tracer advection)              1.876854
+(Ocean diabatic driver)              30.054135
+(Ocean continuity equation *)         0.000000
+(Ocean set BBL viscosity)             0.121881
+(Ocean message passing *)            15.039724
+(Ocean MOM_initialize_state)          9.392562
+(Ocean init message passing *)        0.010790
+(Ocean thickness diffusion *)         2.877036
+(Ocean mixed layer restrat)           0.491941
+(Ocean collective diagnostics)        0.346411
+(Ocean Z-space diagnostics)           0.000000
+(Ocean ALE)                           0.228229
+(Initialize from Z)                   0.001415
+(Ocean diagnostics framework)         0.196779
+(Ocean diagnostics remapping)         0.029440
+(Ocean diagnostics grid updates)      0.469467
+(Ocean continuity halo updates)       2.016193
+(Ocean init message passing)          0.010623
+(Ocean continuity update)             1.093394
+(Ocean continuity correction)         3.110622
+(Ocean BT pre-calcs only)             3.244426
+(Ocean BT pre-step halo updates)      7.017986
+(Ocean BT stepping calcs only)        2.477700
+(Ocean BT stepping halo updates)      4.377534
+(Ocean BT post-calcs only)            0.675296
+(Ocean BT post-step halo updates      0.143362
+(Ocean BT global synch)               1.690973
+(Ocean Coriolis & mom advection)      1.220572
+(Ocean con
+                                     time
+Total runtime                       619.835905
+Initialization                        0.000000
+FV dy-core                          307.930946
+FV subgrid_z                          1.521641
+FV Diag                               0.215829
+GFS Step Setup                        5.764534
+GFS Radiation                        18.911533
+GFS Physics                          63.995775
+Dynamics get state                    5.182622
+Dynamics update state                13.890829
+FV3 Dycore                          312.935049
+ geothermal)                    0.000344
+(Ocean set_diffusivity)               1.280478
+(Ocean KPP)                           0.000000
+(Ocean tracer_columns)                0.000021
+(Ocean diabatic tridiag)              0.102034
+(Ocean diabatic message passing)      5.975844
+(Ocean find_uv_at_h)                  0.134062
+(Ocean frazil)                        0.031099
+(Ocean advect tracer)                 1.629793
+(Ocean tracer halo updates)           0.340652
+(Ocean tracer global synch)           1.218457
+(Ocean diffuse tracer)                0.218534
+(Ocean epipycnal diffuse tracer)      0.000000
+Ocean surface forcing                 0.619295
+(Ocean forcing diagnostics)           0.006459
