@@ -48,7 +48,7 @@ class RunTests:
     for testname in yaml_list['testnames']:
       jobid = subprocess.check_output("grep -Ri jobid log_{}.intel/run_{}.log | head -n 1 | awk -F ' ' '{{print $11}}'".format(self.machine_name,yaml_list['testnames'][testname]),shell=True).strip().decode('utf-8')
       print("jobid is {}".format(jobid))
-      os.system("python3 {}/archive_results.py -y {} -j {} -t {} -D {}/{}".format(self.root_path,self.yaml,jobid,self.tag,rundir_root,yaml_list['testnames'][testname])) 
+      os.system("python3 {}/archive_results.py -y {} -j {} -t {} -D {}/{} -T {}".format(self.root_path,self.yaml,jobid,self.tag,rundir_root,yaml_list['testnames'][testname],yaml_list['testnames'][testname])) 
 
   def genRTconf(self):
     rtconf = open('tests/rt.conf', 'r')
