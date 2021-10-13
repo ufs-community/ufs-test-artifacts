@@ -34,7 +34,7 @@ READ_INPUT_NML: input.nml
  /
  
  &fv_core_nml
-   layout = 6,4
+   layout = 3,8
    io_layout = 1,1
    npx = 97
    npy = 97
@@ -181,8 +181,8 @@ READ_INPUT_NML: input.nml
    prautco      = 0.00015,0.00015
    lgfdlmprad   = .true.
    cplchm       = .false.
-   cplwav       = .false.
-   cplwav2atm   = .false.
+   cplwav       = .true.
+   cplwav2atm   = .true.
    cplflx       = .true.
    min_seaice   = 1.0e-11
    use_cice_alb = .false.
@@ -525,7 +525,7 @@ READ_INPUT_NML: input.nml
  /
  
  &fv_core_nml
-   layout = 6,4
+   layout = 3,8
    io_layout = 1,1
    npx = 97
    npy = 97
@@ -672,8 +672,8 @@ READ_INPUT_NML: input.nml
    prautco      = 0.00015,0.00015
    lgfdlmprad   = .true.
    cplchm       = .false.
-   cplwav       = .false.
-   cplwav2atm   = .false.
+   cplwav       = .true.
+   cplwav2atm   = .true.
    cplflx       = .true.
    min_seaice   = 1.0e-11
    use_cice_alb = .false.
@@ -897,7 +897,7 @@ unknown
  FV_ETA_FILE     = global_hyblev_fcst.txt                                                                                            
        ,
  NPZ_RST =           0,
- LAYOUT  =           6,           4,
+ LAYOUT  =           3,           8,
  IO_LAYOUT       = 2*1,
  NCNST   =           0,
  NWAT    =           6,
@@ -1067,10 +1067,10 @@ unknown
  SOLITON_SIZE    =   750000.000000000     
  /
 
-Cubic: cubed-sphere domain decomposition:     6 X    4
+Cubic: cubed-sphere domain decomposition:     3 X    8
    pe,   is,  ie,  js,  je,    isd, ied, jsd, jed
 
-Cubic: cubed-sphere domain decomposition:     6 X    4
+Cubic: cubed-sphere domain decomposition:     3 X    8
    pe,   is,  ie,  js,  je,    isd, ied, jsd, jed
 
 ================================================================================
@@ -1231,8 +1231,8 @@ v2018 FV3GFS BETA VERSION PHYSICS
  CPLFLX  = T,
  CPLICE  = T,
  CPLOCN2ATM      = T,
- CPLWAV  = F,
- CPLWAV2ATM      = F,
+ CPLWAV  = T,
+ CPLWAV2ATM      = T,
  CPLCHM  = F,
  CPL_IMP_MRG     = F,
  CPL_IMP_DBG     = F,
@@ -1525,8 +1525,7 @@ v2018 FV3GFS BETA VERSION PHYSICS
  MIN_LAT =          94,
  RHCMAX  =  0.999999900000000     ,
  PHYS_VERSION    = v2018 FV3GFS BETA VERSION PHYSICS                               ,
- FSCAV_AERO      = *:0.0                                   xxšVê@0¶>4Ù'ë@Š±1[øë@Å•›<Çì@ÕÃİæ”í@«mï'^î@b°F&ï@ÎÀb8æêï@şbí"Vğ@éë27Ò´ğ@…ğkšñ@•ZOIlñ@ÒøãÜÃÄñ@ü%İ‚òò@Sè‰EÁnò@òÌ<’Àò@úÑ> ó@"{gY[ó@ì%C$¥ó@ç{:]ìó@‚ê:Ö1ô@÷cÏHsô@1S<z²ô@+ë²ïô@.¿×A *õ@1o8-bõ@WFÑ—õ@—hµËõ@Ä¦aYüõ@Ìú‘ÚĞ*ö@H,>_Wö@ã’…QĞö@B‘‰h5ªö@¥>Ñ, Ğö@ÃiM—"õö@5uµÎ÷@ÿ‰’¶8÷@ÇrÈ9ìW÷@äS‰u÷@»$2ˆ‘÷@EG‹¬÷@ìÜŸ†.Å÷@JBCËïÜ÷@`Wùeó÷@¨øÚ˜Ÿø@:Û­ø@1îœ/ø@(‰ÖF}Aø@y¨ïÈ[Rø@Äİ¾Ebø@        dynamics                                                        dynamics                                                         ,"3±*                                                            €       €                      @              V+±*                               €                     şÿÿÿÿÿÿÿ       °       şÿÿÿÿÿÿÿ ÅÃı                               	                                   €               
-ÅÃı                                                                  €              @êÄÃı         
+ FSCAV_AERO      = *:0.0                                   úÑ> ó@"{gY[ó@ì%C$¥ó@ç{:]ìó@‚ê:Ö1ô@÷cÏHsô@1S<z²ô@+ë²ïô@.¿×A *õ@1o8-bõ@WFÑ—õ@—hµËõ@Ä¦aYüõ@Ìú‘ÚĞ*ö@H,>_Wö@ã’…QĞö@B‘‰h5ªö@¥>Ñ, Ğö@ÃiM—"õö@5uµÎ÷@ÿ‰’¶8÷@ÇrÈ9ìW÷@äS‰u÷@»$2ˆ‘÷@EG‹¬÷@ìÜŸ†.Å÷@JBCËïÜ÷@`Wùeó÷@¨øÚ˜Ÿø@:Û­ø@1îœ/ø@(‰ÖF}Aø@y¨ïÈ[Rø@Äİ¾Ebø@        dynamics                                                        dynamics                                                        dynamics                                                        dynamics                                                        €wDt+                                                             €                             €             @`‘Ct+                                      &              şÿÿÿÿÿÿÿ       0      şÿÿÿÿÿÿÿ ×ÒÒü                               	                                                   ËÒÒü                                                                                 @«ÒÒü         
  /
   ================================================================== 
  CCPP cires_ugwp_namelist_extended_v1
@@ -1686,7 +1685,7 @@ unknown
 horiz_interp_spherical_mod
 unknown
 
-==================================================
+====================================================
 ================================================================================
 DIAG_OUTPUT_MOD
 2020.03
@@ -1699,64 +1698,64 @@ unknown
 Exiting field_manager, have a nice day ...
 
                                      time
-Total runtime                       292.443187
-Ocean Initialization                  2.796877
-Ocean                                58.183565
-Ocean dynamics                       34.175974
-Ocean thermodynamics and tracers     19.778991
-Ocean Other                           4.048490
-(Ocean tracer advection)              4.294530
-(Ocean dia
+Total runtime                       459.925691
+Ocean Initialization                  2.653348
+Ocean                                28.523428
+Ocean dynamics                       16.928627
+Ocean thermodynamics and tracers      9.630282
+Ocean Other                           1.875882
+(Ocean tracer advection)              2.222887
+(Ocean d
                                      time
-Total runtime                       289.239939
+Total runtime                       457.924800
 Initialization                        0.000000
-FV dy-core                           92.928779
-FV subgrid_z                          0.388291
-FV Diag                               0.841334
-GFS Step Setup                        8.348096
-GFS Radiation                        25.142224
-GFS Physics                          19.850349
-Dynamics get state                    1.121304
-Dynamics update state                 7.581790
-FV3 Dycore                           94.831528
- diagnostics framework)         3.020305
-(Ocean diagnostics remapping)         1.061845
-(Ocean diagnostics grid updates)      0.884432
-(Ocean continuity halo updates)       0.215114
-(Ocean init message passing)          0.012328
-(Ocean continuity update)             1.198200
-(Ocean continuity correction)         3.445655
-(Ocean BT pre-calcs only)             2.763406
-(Ocean BT pre-step halo updates)      1.199720
-(Ocean BT stepping calcs only)        0.710383
-(Ocean BT stepping halo updates)      0.158640
-(Ocean BT post-calcs only)            0.405664
-(Ocean BT post-step halo updates      0.026843
+FV dy-core                           43.358693
+FV subgrid_z                          0.171916
+FV Diag                               0.398805
+GFS Step Setup                        5.354447
+GFS Radiation                        14.920151
+GFS Physics                           9.728704
+Dynamics get state                    0.532446
+Dynamics update state                 4.064956
+FV3 Dycore                           44.252879
+an diagnostics framework)         1.118327
+(Ocean diagnostics remapping)         0.524991
+(Ocean diagnostics grid updates)      0.405924
+(Ocean continuity halo updates)       0.135833
+(Ocean init message passing)          0.007975
+(Ocean continuity update)             0.596578
+(Ocean continuity correction)         1.751942
+(Ocean BT pre-calcs only)             1.391523
+(Ocean BT pre-step halo updates)      0.427268
+(Ocean BT stepping calcs only)        0.358520
+(Ocean BT stepping halo updates)      0.069207
+(Ocean BT post-calcs only)            0.204437
+(Ocean BT post-step halo updates      0.013465
 (Ocean BT global synch)               0.000000
-(Ocean Coriolis & mom advection)      0.706224
-(Ocean continuity equation)           4.966607
-(Ocean pressure force)                4.807064
-(Ocean vertical viscosity)            3.039905
-(Ocean horizontal viscosity)          1.987814
-(Ocean momentum increments)           0.161059
-(Ocean message passing)               4.853219
-(Ocean barotropic mode calc)          0.076983
-(Ocean barotropic mode stepping)      5.265935
-(Ocean barotropic forcing calc)       0.183824
-(Ocean kappa_shear)                   2.349096
+(Ocean Coriolis & mom advection)      0.372392
+(Ocean continuity equation)           2.501168
+(Ocean pressure force)                2.398743
+(Ocean vertical viscosity)            1.526690
+(Ocean horizontal viscosity)          1.002438
+(Ocean momentum increments)           0.157876
+(Ocean message passing)               2.317222
+(Ocean barotropic mode calc)          0.042362
+(Ocean barotropic mode stepping)      2.465083
+(Ocean barotropic forcing calc)       0.116767
+(Ocean kappa_shear)                   1.035995
 (Ocean diabatic entrain)              0.000000
-(Ocean vert remap)                    6.696898
-(Ocean set_diffusivity)               3.061071
+(Ocean vert remap)                    3.220449
+(Ocean set_diffusivity)               1.399748
 (Ocean KPP)                           0.000000
-(Ocean tracer_columns)                0.000023
-(Ocean diabatic tridiag)              0.086970
-(Ocean diabatic message passing)      0.701880
-(Ocean find_uv_at_h)                  0.105326
-(Ocean frazil)                        0.083416
-(Ocean advect tracer)                 0.961358
-(Ocean tracer halo updates)           0.174736
-(Ocean tracer global synch)           0.375809
-(Ocean diffuse tracer)                3.315379
+(Ocean tracer_columns)                0.000010
+(Ocean diabatic tridiag)              0.045614
+(Ocean diabatic message passing)      0.467147
+(Ocean find_uv_at_h)                  0.053077
+(Ocean frazil)                        0.042378
+(Ocean advect tracer)                 0.487758
+(Ocean tracer halo updates)           0.074871
+(Ocean tracer global synch)           0.188606
+(Ocean diffuse tracer)                1.725231
 (Ocean epipycnal diffuse tracer)      0.000000
-Ocean surface forcing                 0.073647
-(Ocean forcing diagnostics)           0.042921
+Ocean surface forcing                 0.055987
+(Ocean forcing diagnostics)           0.012984

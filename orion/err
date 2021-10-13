@@ -1,5 +1,5 @@
 ++ date +%s
-+ echo -n ' 1634135753,'
++ echo -n ' 1634136834,'
 + set +x
 
 Currently Loaded Modules:
@@ -18,7 +18,7 @@ Currently Loaded Modules:
 
 + ulimit -s unlimited
 ++ date
-+ echo 'Model started:  ' Wed Oct 13 09:36:03 CDT 2021
++ echo 'Model started:  ' Wed Oct 13 09:54:03 CDT 2021
 + export OMP_STACKSIZE=512M
 + OMP_STACKSIZE=512M
 + export KMP_AFFINITY=scatter
@@ -31,8 +31,8 @@ Currently Loaded Modules:
 + ESMF_RUNTIME_PROFILE_OUTPUT='SUMMARY BINARY'
 + sync
 + sleep 1
-+ srun --label -n 192 ./fv3.exe
-srun: Warning: can't honor --ntasks-per-node set to 40 which doesn't match the requested tasks 192 with the number of requested nodes 5. Ignoring --ntasks-per-node.
++ srun --label -n 212 ./fv3.exe
+srun: Warning: can't honor --ntasks-per-node set to 40 which doesn't match the requested tasks 212 with the number of requested nodes 6. Ignoring --ntasks-per-node.
 150:  (MOM_cap:InitializeAdvertise)current time: y,m,d-        2021           3
 150:           22 h,m,s=           6           0           0
 150:  (MOM_cap:InitializeAdvertise)start time: y,m,d-        2021           3
@@ -74,11 +74,11 @@ srun: Warning: can't honor --ntasks-per-node set to 40 which doesn't match the r
 150: WARNING from PE     0: Unused line in INPUT/MOM_input : SURFBAND_WAVENUMBERS = 0.04, 0.11, 0.3305
 150: 
   0:  in fcst comp init, fcst_ntasks=         144
-  0:  num_atmos_calls=         120 time_init=        2021           3          22
+  0:  num_atmos_calls=          60 time_init=        2021           3          22
   0:            6           0           0 time_atmos=        2021           3
   0:           22           6           0           0 time_end=        2021
-  0:            3          23           6           0           0 dt_atmos=
-  0:          720 Run_length=       86400
+  0:            3          22          18           0           0 dt_atmos=
+  0:          720 Run_length=       43200
   0:  NO FLAG: gwd is generic
   0:  FLAG: satmedmf and isatedmf=1 so pbl not generic
   0:  NO FLAG: scnv is generic
@@ -100,7 +100,7 @@ srun: Warning: can't honor --ntasks-per-node set to 40 which doesn't match the r
   0:  af create fcst fieldbundle, name=atmrc=           0
   0:  af create fcst fieldbundle, name=sfc_nearest_stodrc=           0
   0:  af create fcst fieldbundle, name=sfc_bilinearrc=           0
-  0:  in fcst,init total time:    103.863546848297     
+  0:  in fcst,init total time:    73.8188848495483     
   0:  in fcst run phase 2, na=           0
   0:  in fcst run phase 2, na=           1
   0:  in fcst run phase 2, na=           2
@@ -185,67 +185,7 @@ srun: Warning: can't honor --ntasks-per-node set to 40 which doesn't match the r
   0:  in fcst run phase 2, na=          57
   0:  in fcst run phase 2, na=          58
   0:  in fcst run phase 2, na=          59
-  0:  in fcst run phase 2, na=          60
-  0:  in fcst run phase 2, na=          61
-  0:  in fcst run phase 2, na=          62
-  0:  in fcst run phase 2, na=          63
-  0:  in fcst run phase 2, na=          64
-  0:  in fcst run phase 2, na=          65
-  0:  in fcst run phase 2, na=          66
-  0:  in fcst run phase 2, na=          67
-  0:  in fcst run phase 2, na=          68
-  0:  in fcst run phase 2, na=          69
-  0:  in fcst run phase 2, na=          70
-  0:  in fcst run phase 2, na=          71
-  0:  in fcst run phase 2, na=          72
-  0:  in fcst run phase 2, na=          73
-  0:  in fcst run phase 2, na=          74
-  0:  in fcst run phase 2, na=          75
-  0:  in fcst run phase 2, na=          76
-  0:  in fcst run phase 2, na=          77
-  0:  in fcst run phase 2, na=          78
-  0:  in fcst run phase 2, na=          79
-  0:  in fcst run phase 2, na=          80
-  0:  in fcst run phase 2, na=          81
-  0:  in fcst run phase 2, na=          82
-  0:  in fcst run phase 2, na=          83
-  0:  in fcst run phase 2, na=          84
-  0:  in fcst run phase 2, na=          85
-  0:  in fcst run phase 2, na=          86
-  0:  in fcst run phase 2, na=          87
-  0:  in fcst run phase 2, na=          88
-  0:  in fcst run phase 2, na=          89
-  0:  in fcst run phase 2, na=          90
-  0:  in fcst run phase 2, na=          91
-  0:  in fcst run phase 2, na=          92
-  0:  in fcst run phase 2, na=          93
-  0:  in fcst run phase 2, na=          94
-  0:  in fcst run phase 2, na=          95
-  0:  in fcst run phase 2, na=          96
-  0:  in fcst run phase 2, na=          97
-  0:  in fcst run phase 2, na=          98
-  0:  in fcst run phase 2, na=          99
-  0:  in fcst run phase 2, na=         100
-  0:  in fcst run phase 2, na=         101
-  0:  in fcst run phase 2, na=         102
-  0:  in fcst run phase 2, na=         103
-  0:  in fcst run phase 2, na=         104
-  0:  in fcst run phase 2, na=         105
-  0:  in fcst run phase 2, na=         106
-  0:  in fcst run phase 2, na=         107
-  0:  in fcst run phase 2, na=         108
-  0:  in fcst run phase 2, na=         109
-  0:  in fcst run phase 2, na=         110
-  0:  in fcst run phase 2, na=         111
-  0:  in fcst run phase 2, na=         112
-  0:  in fcst run phase 2, na=         113
-  0:  in fcst run phase 2, na=         114
-  0:  in fcst run phase 2, na=         115
-  0:  in fcst run phase 2, na=         116
-  0:  in fcst run phase 2, na=         117
-  0:  in fcst run phase 2, na=         118
-  0:  in fcst run phase 2, na=         119
 ++ date
-+ echo 'Model ended:    ' Wed Oct 13 09:41:12 CDT 2021
++ echo 'Model ended:    ' Wed Oct 13 10:01:56 CDT 2021
 ++ date +%s
-+ echo -n ' 1634136072,'
++ echo -n ' 1634137316,'
