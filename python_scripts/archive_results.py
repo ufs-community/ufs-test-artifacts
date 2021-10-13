@@ -95,7 +95,7 @@ class ArchiveResults:
     rm_cmd = "rm -rf {}/{}/*".format(self.machine_name,self.testname)
     self.runcmd(mkdir_cmd)
     for cfile in oe_filelist:
-      cp_cmd = 'cp {} ./{}/{}'.format(cfile,self.machine_name,self.testname)
+      cp_cmd = 'cp {} ./{}/{}/'.format(cfile,self.machine_name,self.testname)
       print("cp command is {}".format(cp_cmd))
       self.runcmd(cp_cmd)
 
