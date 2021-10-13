@@ -90,9 +90,9 @@ class ArchiveResults:
     os.chdir(self.artifacts_root)
     if(oe_filelist == []):
       return
-    mkdir_cmd = "mkdir -p {}/testname".format(self.machine_name,self.testname)
+    mkdir_cmd = "mkdir -p {}/{}".format(self.machine_name,self.testname)
     self.runcmd(mkdir_cmd)
-    rm_cmd = "rm -rf {}/testname/*".format(self.machine_name,self.testname)
+    rm_cmd = "rm -rf {}/{}/*".format(self.machine_name,self.testname)
     self.runcmd(mkdir_cmd)
     for cfile in oe_filelist:
       cp_cmd = 'cp {} ./{}/{}'.format(cfile,self.machine_name,self.testname)
