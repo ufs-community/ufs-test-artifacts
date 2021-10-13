@@ -22,6 +22,7 @@ class ArchiveResults:
     self.jobid = args['jobid']
     self.tag = args['tag']
     self.rundir = args['directory']
+    self.testname = args['testname']
 
     with open(args['yaml']) as file:
       yaml_list = yaml.load(file, Loader=yaml.FullLoader)
@@ -89,14 +90,16 @@ class ArchiveResults:
     os.chdir(self.artifacts_root)
     if(oe_filelist == []):
       return
-    mkdir_cmd = "mkdir -p {}".format(self.machine_name)
+    mkdir_cmd = "mkdir -p {}/testname".format(self.machine_name,self.testname)
+    self.runcmd(mkdir_cmd)
+    rm_cmd = "rm -rf {}/testname/*".format(self.machine_name,self.testname)
     self.runcmd(mkdir_cmd)
     for cfile in oe_filelist:
-      cp_cmd = 'cp {} ./{}'.format(cfile,self.machine_name)
+      cp_cmd = 'cp {} ./{}/{}'.format(cfile,self.machine_name,self.testname)
       print("cp command is {}".format(cp_cmd))
       self.runcmd(cp_cmd)
 
-    git_cmd = "git add *;git commit -a -m\'update for {} on {} with {}';git pull origin main --no-edit;git push origin main".format(self.artifactname,self.machine_name,self.tag)
+    git_cmd = "git add *;git commit -a -m\'update for {} on {} with {}';git pull origin main --no-edit;git push origin main".format(self.testname,self.machine_name,self.tag)
     self.runcmd(git_cmd)
     return
 
@@ -107,6 +110,7 @@ if __name__ == "__main__":
   parser.add_argument('-y','--yaml', help='Yaml file defining builds and testing parameters', required=True)
   parser.add_argument('-D','--directory', help='directory where artifacts will be collected', required=True)
   parser.add_argument('-d','--dryrun', help='directory where artifacts will be placed', required=False,default=False)
+  parser.add_argument('-T','--testname', help='name of test that is being collected', required=False,default=False)
   parser.add_argument('-t','--tag', help='tag used for build', required=False,default="Unknown")
   args = vars(parser.parse_args())
    
