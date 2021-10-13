@@ -34,14 +34,11 @@ class RunTests:
     os.chdir(self.ufsdir)
 #   os.system("rm -rf ufs-weather-model")
 #   os.system("git clone --recurse-submodules https://github.com/ufs-community/ufs-weather-model.git")
-    os.chdir("ufs-weather-model")
     os.system("sed -i 's/module load esmf/#module load esmf/g' modulefiles/ufs_common")
-    copy2(os.path.join(self.scriptdir, "config", "fv3_slurm.IN_{}".format(self.machine_name)), "tests/fv3_conf" )
-    copy2(os.path.join(self.scriptdir, "config", "rt.prof".format(self.machine_name)), "tests" )
+    os.system("sed -i '/OMP_NUM_THREADS/a export ESMF_RUNTIME_PROFILE=ON\\nexport ESMF_RUNTIME_PROFILE_OUTPUT=\"SUMMARY BINARY\"' tests/fv3_conf/fv3_slurm.IN_{}".format(self.machine_name))
+    self.genRTconf()
     esmfmkfile = subprocess.check_output("find {} -iname esmf.mk | /usr/bin/grep {}".format(self.modulesdir,self.tag),shell=True).strip().decode('utf-8')
-    print("sed -i \'s/esmfmkfilepath/{}/g\' tests/rt.prof".format(esmfmkfile))
-    os.system("sed -i 's/esmfmkfilepath/{}/g' tests/rt.prof".format(esmfmkfile))
-    print("HEY esmfmkfile is {}".format(esmfmkfile))
+    os.system("echo \"setenv ESMFMKFILE {}\" >> modulefiles/ufs_common".format(esmfmkfile))
     self.root_path = pathlib.Path(__file__).parent.absolute()
     if(args['dryrun'] == "True"):
       self.dryrun = True
@@ -49,6 +46,21 @@ class RunTests:
       self.dryrun = False
     
     print("dryrun is -- {}".format(self.dryrun))
+
+  def genRTconf(self):
+    rtconf = open('tests/rt.conf', 'r')
+    rtprof = open('tests/rt.prof', 'w')
+    Lines = rtconf.readlines()
+    startwrite = False
+    for line in Lines:
+      s2sw = re.search("APP=S2SW", line)
+      compileline = re.match("COMPILE", line)
+      if s2sw:
+        startwrite = True
+      elif compileline:
+        startwrite = False
+      if startwrite == True:
+        rtprof.writelines(line)
 
   def runcmd(self,cmd):
     if(self.dryrun == True):
