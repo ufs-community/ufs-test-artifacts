@@ -3,7 +3,7 @@
 #############################################
 
 # EARTH #
-EARTH_component_list: MED ATM OCN ICE
+EARTH_component_list: MED ATM OCN ICE WAV
 EARTH_attributes::
   Verbosity = 0
 ::
@@ -43,9 +43,17 @@ ICE_attributes::
   ProfileMemory = false
   OverwriteSlice = true
   mesh_ice = mesh.mx100.nc
-  stop_n = 24
+  stop_n = 12
   stop_option = nhours
   stop_ymd = -999
+::
+
+# WAV #
+WAV_model:                      ww3
+WAV_petlist_bounds:             192 211
+WAV_attributes::
+  Verbosity = 0
+  OverwriteSlice = false
 ::
 
 # CMEPS warm run sequence
@@ -53,14 +61,20 @@ runSeq::
 @3600
    MED med_phases_prep_ocn_avg
    MED -> OCN :remapMethod=redist
+   OCN -> WAV
+   WAV -> OCN :srcMaskValues=1
    OCN
    @720
      MED med_phases_prep_atm
      MED med_phases_prep_ice
      MED -> ATM :remapMethod=redist
      MED -> ICE :remapMethod=redist
+     WAV -> ATM :srcMaskValues=1
+     ATM -> WAV
+     ICE -> WAV
      ATM
      ICE
+     WAV
      ATM -> MED :remapMethod=redist
      MED med_phases_post_atm
      ICE -> MED :remapMethod=redist
@@ -95,7 +109,7 @@ ALLCOMP_attributes::
       start_type = startup
       restart_dir = RESTART/
       case_name = ufs.cpld
-      restart_n = 24
+      restart_n = 12
       restart_option = nhours
       restart_ymd = -999
       dbug_flag = 0
