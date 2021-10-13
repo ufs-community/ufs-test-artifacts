@@ -19,7 +19,9 @@ from slurm import slurm
 
 class RunTests:
   def __init__(self,args):
+    self.root_path = pathlib.Path(__file__).parent.absolute()
     self.tag=args['tag']
+    self.yaml=args['yaml']
     with open(args['yaml']) as file:
       yaml_list = yaml.load(file, Loader=yaml.FullLoader)
       self.machine_name = yaml_list['hostname']
@@ -34,14 +36,19 @@ class RunTests:
     os.chdir(self.ufsdir)
 #   os.system("rm -rf ufs-weather-model")
 #   os.system("git clone --recurse-submodules https://github.com/ufs-community/ufs-weather-model.git")
-    os.system("sed -i 's/module load esmf/#module load esmf/g' modulefiles/ufs_common")
-    os.system("sed -i '/OMP_NUM_THREADS/a export ESMF_RUNTIME_PROFILE=ON\\nexport ESMF_RUNTIME_PROFILE_OUTPUT=\"SUMMARY BINARY\"' tests/fv3_conf/fv3_slurm.IN_{}".format(self.machine_name))
-    self.genRTconf()
+#   os.system("sed -i 's/module load esmf/#module load esmf/g' modulefiles/ufs_common")
+#   os.system("sed -i '/OMP_NUM_THREADS/a export ESMF_RUNTIME_PROFILE=ON\\nexport ESMF_RUNTIME_PROFILE_OUTPUT=\"SUMMARY BINARY\"' tests/fv3_conf/fv3_slurm.IN_{}".format(self.machine_name))
+#   self.genRTconf()
     esmfmkfile = subprocess.check_output("find {} -iname esmf.mk | /usr/bin/grep {}".format(self.modulesdir,self.tag),shell=True).strip().decode('utf-8')
-    os.system("echo \"setenv ESMFMKFILE {}\" >> modulefiles/ufs_common".format(esmfmkfile))
-    self.root_path = pathlib.Path(__file__).parent.absolute()
+#   os.system("echo \"setenv ESMFMKFILE {}\" >> modulefiles/ufs_common".format(esmfmkfile))
+    print("root path is {}".format(self.root_path))
     os.chdir("tests")
-    os.system("./rt.sh -k -l rt.prof")  
+#   os.system("./rt.sh -k -l rt.prof")  
+    rundir_root = subprocess.check_output("grep '+ RUNDIR_ROOT' log_{}.intel/* | head -n 1 | awk -F '=' '{{print $2}}'".format(self.machine_name),shell=True).strip().decode('utf-8')
+    for testname in yaml_list['testnames']:
+      jobid = subprocess.check_output("grep -Ri jobid log_{}.intel/run_{}.log | head -n 1 | awk -F ' ' '{{print $11}}'".format(self.machine_name,yaml_list['testnames'][testname]),shell=True).strip().decode('utf-8')
+      print("jobid is {}".format(jobid))
+      os.system("python3 {}/archive_results.py -y {} -j {} -t {} -D {}/{}".format(self.root_path,self.yaml,jobid,self.tag,rundir_root,yaml_list['testnames'][testname])) 
 
   def genRTconf(self):
     rtconf = open('tests/rt.conf', 'r')
