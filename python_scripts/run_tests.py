@@ -40,12 +40,8 @@ class RunTests:
     esmfmkfile = subprocess.check_output("find {} -iname esmf.mk | /usr/bin/grep {}".format(self.modulesdir,self.tag),shell=True).strip().decode('utf-8')
     os.system("echo \"setenv ESMFMKFILE {}\" >> modulefiles/ufs_common".format(esmfmkfile))
     self.root_path = pathlib.Path(__file__).parent.absolute()
-    if(args['dryrun'] == "True"):
-      self.dryrun = True
-    else:
-      self.dryrun = False
-    
-    print("dryrun is -- {}".format(self.dryrun))
+    os.chdir("tests")
+    os.system("./rt.sh -k -l rt.prof")  
 
   def genRTconf(self):
     rtconf = open('tests/rt.conf', 'r')
@@ -62,19 +58,11 @@ class RunTests:
       if startwrite == True:
         rtprof.writelines(line)
 
-  def runcmd(self,cmd):
-    if(self.dryrun == True):
-       print("would have executed {}".format(cmd))
-    else:
-       os.system(cmd)
-    return
-
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='ESMF nightly build/test system')
   parser.add_argument('-y','--yaml', help='Yaml file defining builds and testing parameters', required=True)
   parser.add_argument('-t','--tag', help='tag for new test', required=True)
-  parser.add_argument('-d','--dryrun', help='directory where artifacts will be placed', required=False,default=False)
   args = vars(parser.parse_args())
    
   tester = RunTests(args)
