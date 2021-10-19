@@ -8,6 +8,7 @@ chdir $esmf_dir;
 @gitlines = split(/\n/,`git remote update 2>&1`);
 #@gitlines[0] = " * [new tag]         ESMF_8_2_0_beta_snapshot_19 -> ESMF_8_1_1_beta_snapshot_19";
 chdir $hpc_stack_dir;
+$build = 0;
 foreach(@gitlines) {
   print("line is $_\n");
   if($_ =~ /new tag/) {
@@ -18,6 +19,8 @@ foreach(@gitlines) {
     system("cp stack/stack_esmf_template.yaml stack/stack_noaa.yaml");
     system("sed -i 's/ESMFTAG/$tag/g' stack/stack_noaa.yaml");
     system("./build_standalone_esmf.sh");
+    $build = $build + 1;
   }
 }
+return $build;
 
