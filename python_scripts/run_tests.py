@@ -30,6 +30,7 @@ class RunTests:
       self.scriptdir= yaml_list['scriptdir']
       self.esmfdir= yaml_list['esmfdir']
       self.hpcstackdir= yaml_list['hpcstackdir']
+      self.systemhpcstack= yaml_list['systemhpcstackdir']
       if(yaml_list['artifactname']):
         self.artifactname=yaml_list['artifactname'];
       else:
@@ -39,7 +40,8 @@ class RunTests:
       self.getNewTags()
     else:
       self.tags.append(args['tag'])
-    
+   
+    self.buildESMF()
     os.chdir(self.ufsdir)
     os.system("rm -rf ufs-weather-model")
     os.system("git clone --recurse-submodules https://github.com/ufs-community/ufs-weather-model.git")
@@ -58,6 +60,19 @@ class RunTests:
         print("jobid is {}".format(jobid))
         os.system("python3 {}/archive_results.py -y {} -j {} -t {} -D {}/{} -T {}".format(self.root_path,self.yaml,jobid,tag,rundir_root,yaml_list['testnames'][testname],yaml_list['testnames'][testname])) 
       os.system("sed -i '$ d' ../modulefiles/ufs_common")
+
+  def buildESMF(self):
+    for tag in self.tags:
+      os.chdir(self.hpcstackdir)
+      os.system("echo $PWD")
+      os.system("module use {}".format(self.systemhpcstack));
+      print("cp stack/stack_esmf_template.yaml stack/stack_noaa.yaml");
+      os.system("cp stack/stack_esmf_template.yaml stack/stack_noaa.yaml");
+      print("sed -i 's/ESMFTAG/{}/g' stack/stack_noaa.yaml".format(tag.replace("ESMF_","")));
+      os.system("sed -i 's/ESMFTAG/{}/g' stack/stack_noaa.yaml".format(tag.replace("ESMF_","")));
+      print("{}/build_standalone_esmf.sh {} {} {} {}".format(self.hpcstackdir,self.systemhpcstack,self.modulesdir,self.hpcstackdir,self.machine_name))
+      os.system("{}/build_standalone_esmf.sh {} {} {} {}".format(self.hpcstackdir,self.systemhpcstack,self.modulesdir,self.hpcstackdir,self.machine_name))
+
   def getNewTags(self):
      repo = git.Repo(self.esmfdir)
      o = repo.remotes.origin
