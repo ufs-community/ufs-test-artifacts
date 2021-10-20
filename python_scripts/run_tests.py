@@ -31,10 +31,6 @@ class RunTests:
       self.esmfdir= yaml_list['esmfdir']
       self.hpcstackdir= yaml_list['hpcstackdir']
       self.systemhpcstack= yaml_list['systemhpcstackdir']
-      if(yaml_list['artifactname']):
-        self.artifactname=yaml_list['artifactname'];
-      else:
-        self.artifactname="default"
     self.tags = []
     if(args['tag'] == None):
       self.getNewTags()
@@ -54,7 +50,7 @@ class RunTests:
       os.system("echo \"setenv ESMFMKFILE {}\" >> modulefiles/ufs_common".format(esmfmkfile))
       print("root path is {}".format(self.root_path))
       os.chdir("tests")
-      os.system("./rt.sh -k -l rt.prof")  
+#     os.system("./rt.sh -k -l rt.prof")  
       rundir_root = subprocess.check_output("grep '+ RUNDIR_ROOT' log_{}.intel/* | head -n 1 | awk -F '=' '{{print $2}}'".format(self.machine_name),shell=True).strip().decode('utf-8')
       for testname in yaml_list['testnames']:
         jobid = subprocess.check_output("grep -Ri jobid log_{}.intel/run_{}.log | head -n 1 | awk -F ' ' '{{print $11}}'".format(self.machine_name,yaml_list['testnames'][testname]),shell=True).strip().decode('utf-8')
