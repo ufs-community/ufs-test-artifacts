@@ -43,13 +43,14 @@ class RunTests:
    
     self.buildESMF()
     os.chdir(self.ufsdir)
-    os.system("rm -rf ufs-weather-model")
-    os.system("git clone --recurse-submodules https://github.com/ufs-community/ufs-weather-model.git")
+#   os.system("rm -rf ufs-weather-model")
+#   os.system("git clone --recurse-submodules https://github.com/ufs-community/ufs-weather-model.git")
+    os.chdir("ufs-weather-model")
     os.system("sed -i 's/module load esmf/#module load esmf/g' modulefiles/ufs_common")
     os.system("sed -i '/OMP_NUM_THREADS/a export ESMF_RUNTIME_PROFILE=ON\\nexport ESMF_RUNTIME_PROFILE_OUTPUT=\"SUMMARY BINARY\"' tests/fv3_conf/fv3_slurm.IN_{}".format(self.machine_name))
     self.genRTconf()
     for tag in self.tags:
-      esmfmkfile = subprocess.check_output("find {} -iname esmf.mk | /usr/bin/grep {}".format(self.modulesdir,tag),shell=True).strip().decode('utf-8')
+      esmfmkfile = subprocess.check_output("find {} -iname esmf.mk | /usr/bin/grep {}".format(self.modulesdir,tag.replace("ESMF_","")),shell=True).strip().decode('utf-8')
       os.system("echo \"setenv ESMFMKFILE {}\" >> modulefiles/ufs_common".format(esmfmkfile))
       print("root path is {}".format(self.root_path))
       os.chdir("tests")
