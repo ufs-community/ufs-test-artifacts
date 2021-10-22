@@ -1,0 +1,336 @@
+++ date +%s
++ echo -n ' 1634911384,'
++ set +x
+
+Currently Loaded Modules:
+  1) contrib/0.1     8) hpc-intel/2018.4  15) netcdf/4.7.4   22) sp/2.3.3
+  2) noaatools/2.0   9) impi/2018.4       16) pio/2.5.2      23) w3nco/2.4.1
+  3) cmake/3.18.1   10) hpc-impi/2018.4   17) fms/2021.03    24) w3emc/2.9.1
+  4) python/3.7.5   11) jasper/2.0.22     18) bacio/2.4.1    25) crtm/2.3.0
+  5) hpc/1.1.0      12) zlib/1.2.11       19) g2/3.4.3       26) upp/10.0.9
+  6) intel/2018.4   13) png/1.6.35        20) g2tmpl/1.10.0  27) ufs_common
+  7) mkl/2020.2     14) hdf5/1.10.6       21) ip/3.3.3       28) modules.fv3
+
+ 
+
++ ulimit -s unlimited
+++ date
++ echo 'Model started:  ' Fri Oct 22 09:03:17 CDT 2021
++ export OMP_STACKSIZE=512M
++ OMP_STACKSIZE=512M
++ export KMP_AFFINITY=scatter
++ KMP_AFFINITY=scatter
++ export OMP_NUM_THREADS=1
++ OMP_NUM_THREADS=1
++ export ESMF_RUNTIME_PROFILE=ON
++ ESMF_RUNTIME_PROFILE=ON
++ export 'ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY BINARY'
++ ESMF_RUNTIME_PROFILE_OUTPUT='SUMMARY BINARY'
++ sync
++ sleep 1
++ srun --label -n 288 ./fv3.exe
+srun: Warning: can't honor --ntasks-per-node set to 40 which doesn't match the requested tasks 288 with the number of requested nodes 8. Ignoring --ntasks-per-node.
+204:  (MOM_cap:InitializeAdvertise)current time: y,m,d-        2021           3
+204:           22 h,m,s=          18           0           0
+204:  (MOM_cap:InitializeAdvertise)start time: y,m,d-        2021           3
+204:           22 h,m,s=           6           0           0
+204: 
+204: WARNING from PE     0: reset_face_lengths_list unused v-face line: V_width,  28.8,  29.4, 41.1, 41.2,   2500.0
+204: 
+204: 
+204: WARNING from PE     0: reset_face_lengths_list unused v-face line: V_width, 141.5, 141.7, 52.0,  52.15, 2500.0
+204: 
+204: 
+204: WARNING from PE     0: MOM_file_parser : VAR_PEN_SW occurs more times than is permitted. Line: 'VAR_PEN_SW = True' in file INPUT/MOM_input is being ignored.
+204: 
+204: 
+204: WARNING from PE     0: MOM_file_parser : CHL_FILE occurs more times than is permitted. Line: 'CHL_FILE = seawifs-clim-1997-2010.720x576.v20180328.nc' in file INPUT/MOM_input is being ignored.
+204: 
+204: 
+204: WARNING from PE     0: MOM_file_parser : CHL_VARNAME occurs more times than is permitted. Line: 'CHL_VARNAME = "chlor_a"' in file INPUT/MOM_input is being ignored.
+204: 
+204: 
+204: WARNING from PE     0: MOM_file_parser : VAR_PEN_SW occurs more times than is permitted. Line: 'VAR_PEN_SW = True' in file INPUT/MOM_input is being ignored.
+204: 
+204: 
+204: WARNING from PE     0: Unused line in INPUT/MOM_input : WAVE_METHOD = "SURFACE_BANDS"
+204: 
+204: 
+204: WARNING from PE     0: Unused line in INPUT/MOM_input : SURFBAND_SOURCE = "COUPLER"
+204: 
+204: 
+204: WARNING from PE     0: Unused line in INPUT/MOM_input : STK_BAND_COUPLER = 3
+204: 
+204: 
+204: WARNING from PE     0: Unused line in INPUT/MOM_input : SURFBAND_WAVENUMBERS = 0.04, 0.11, 0.3305
+204: 
+  0:  in fcst comp init, fcst_ntasks=         192
+  0:  num_atmos_calls=         216 time_init=        2021           3          22
+  0:            6           0           0 time_atmos=        2021           3
+  0:           22          18           0           0 time_end=        2021
+  0:            3          24           6           0           0 dt_atmos=
+  0:          600 Run_length=      129600
+  0:  NO FLAG: gwd is generic
+  0:  FLAG: satmedmf and isatedmf=1 so pbl not generic
+  0:  NO FLAG: scnv is generic
+  0:  NO FLAG: dcnv is generic
+  0:   num_p3d=           5  num_p2d=           1  crtrh=  0.900000000000000     
+  0:   0.900000000000000       0.900000000000000       npdf3d=           0  pdfcld= F
+  0:   shcnvcw= F  cnvcld= T  ncnvcld3d=           1  do_shoc= F  nshoc3d=
+  0:            0  nshoc_2d=           0  shoc_cld= F  nkbfshoc=        -999 
+  0:   nahdshoc=        -999  nscfshoc=        -999  uni_cld= F  ntot3d=           6 
+  0:   ntot2d=           1  shocaftcnv= F  indcld=          -1  shoc_parm=
+  0:    7000.00000000000        1.00000000000000        4.28571430000000     
+  0:   0.700000000000000       -999.000000000000       ncnvw=           6  ncnvc=
+  0:         -999
+  0:  be create fcst grid
+  0:  dateS=hours since 2021-03-22 06:00:00date_init=        2021           3
+  0:           22           6           0           0
+  0:  af create fcst fieldbundle, name=atmrc=           0
+  0:  af create fcst fieldbundle, name=sfc_nearest_stodrc=           0
+  0:  af create fcst fieldbundle, name=sfc_bilinearrc=           0
+  0:  in fcst,init total time:    140.056779146194     
+  0:  in fcst run phase 2, na=           0
+  0:  in fcst run phase 2, na=           1
+  0:  in fcst run phase 2, na=           2
+  0:  in fcst run phase 2, na=           3
+  0:  in fcst run phase 2, na=           4
+  0:  in fcst run phase 2, na=           5
+  0:  in fcst run phase 2, na=           6
+  0:  in fcst run phase 2, na=           7
+  0:  in fcst run phase 2, na=           8
+  0:  in fcst run phase 2, na=           9
+  0:  in fcst run phase 2, na=          10
+  0:  in fcst run phase 2, na=          11
+  0:  in fcst run phase 2, na=          12
+  0:  in fcst run phase 2, na=          13
+  0:  in fcst run phase 2, na=          14
+  0:  in fcst run phase 2, na=          15
+  0:  in fcst run phase 2, na=          16
+  0:  in fcst run phase 2, na=          17
+  0:  in fcst run phase 2, na=          18
+  0:  in fcst run phase 2, na=          19
+  0:  in fcst run phase 2, na=          20
+  0:  in fcst run phase 2, na=          21
+  0:  in fcst run phase 2, na=          22
+  0:  in fcst run phase 2, na=          23
+  0:  in fcst run phase 2, na=          24
+  0:  in fcst run phase 2, na=          25
+  0:  in fcst run phase 2, na=          26
+  0:  in fcst run phase 2, na=          27
+  0:  in fcst run phase 2, na=          28
+  0:  in fcst run phase 2, na=          29
+  0:  in fcst run phase 2, na=          30
+  0:  in fcst run phase 2, na=          31
+  0:  in fcst run phase 2, na=          32
+  0:  in fcst run phase 2, na=          33
+  0:  in fcst run phase 2, na=          34
+  0:  in fcst run phase 2, na=          35
+  0:  in fcst run phase 2, na=          36
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h1000) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h850) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h700) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h500) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h200) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h100) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h50) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h10) NOT registered
+  0: 
+  0:  in fcst run phase 2, na=          37
+  0:  in fcst run phase 2, na=          38
+  0:  in fcst run phase 2, na=          39
+  0:  in fcst run phase 2, na=          40
+  0:  in fcst run phase 2, na=          41
+  0:  in fcst run phase 2, na=          42
+  0:  in fcst run phase 2, na=          43
+  0:  in fcst run phase 2, na=          44
+  0:  in fcst run phase 2, na=          45
+  0:  in fcst run phase 2, na=          46
+  0:  in fcst run phase 2, na=          47
+  0:  in fcst run phase 2, na=          48
+  0:  in fcst run phase 2, na=          49
+  0:  in fcst run phase 2, na=          50
+  0:  in fcst run phase 2, na=          51
+  0:  in fcst run phase 2, na=          52
+  0:  in fcst run phase 2, na=          53
+  0:  in fcst run phase 2, na=          54
+  0:  in fcst run phase 2, na=          55
+  0:  in fcst run phase 2, na=          56
+  0:  in fcst run phase 2, na=          57
+  0:  in fcst run phase 2, na=          58
+  0:  in fcst run phase 2, na=          59
+  0:  in fcst run phase 2, na=          60
+  0:  in fcst run phase 2, na=          61
+  0:  in fcst run phase 2, na=          62
+  0:  in fcst run phase 2, na=          63
+  0:  in fcst run phase 2, na=          64
+  0:  in fcst run phase 2, na=          65
+  0:  in fcst run phase 2, na=          66
+  0:  in fcst run phase 2, na=          67
+  0:  in fcst run phase 2, na=          68
+  0:  in fcst run phase 2, na=          69
+  0:  in fcst run phase 2, na=          70
+  0:  in fcst run phase 2, na=          71
+  0:  in fcst run phase 2, na=          72
+  0:  in fcst run phase 2, na=          73
+  0:  in fcst run phase 2, na=          74
+  0:  in fcst run phase 2, na=          75
+  0:  in fcst run phase 2, na=          76
+  0:  in fcst run phase 2, na=          77
+  0:  in fcst run phase 2, na=          78
+  0:  in fcst run phase 2, na=          79
+  0:  in fcst run phase 2, na=          80
+  0:  in fcst run phase 2, na=          81
+  0:  in fcst run phase 2, na=          82
+  0:  in fcst run phase 2, na=          83
+  0:  in fcst run phase 2, na=          84
+  0:  in fcst run phase 2, na=          85
+  0:  in fcst run phase 2, na=          86
+  0:  in fcst run phase 2, na=          87
+  0:  in fcst run phase 2, na=          88
+  0:  in fcst run phase 2, na=          89
+  0:  in fcst run phase 2, na=          90
+  0:  in fcst run phase 2, na=          91
+  0:  in fcst run phase 2, na=          92
+  0:  in fcst run phase 2, na=          93
+  0:  in fcst run phase 2, na=          94
+  0:  in fcst run phase 2, na=          95
+  0:  in fcst run phase 2, na=          96
+  0:  in fcst run phase 2, na=          97
+  0:  in fcst run phase 2, na=          98
+  0:  in fcst run phase 2, na=          99
+  0:  in fcst run phase 2, na=         100
+  0:  in fcst run phase 2, na=         101
+  0:  in fcst run phase 2, na=         102
+  0:  in fcst run phase 2, na=         103
+  0:  in fcst run phase 2, na=         104
+  0:  in fcst run phase 2, na=         105
+  0:  in fcst run phase 2, na=         106
+  0:  in fcst run phase 2, na=         107
+  0:  in fcst run phase 2, na=         108
+  0:  in fcst run phase 2, na=         109
+  0:  in fcst run phase 2, na=         110
+  0:  in fcst run phase 2, na=         111
+  0:  in fcst run phase 2, na=         112
+  0:  in fcst run phase 2, na=         113
+  0:  in fcst run phase 2, na=         114
+  0:  in fcst run phase 2, na=         115
+  0:  in fcst run phase 2, na=         116
+  0:  in fcst run phase 2, na=         117
+  0:  in fcst run phase 2, na=         118
+  0:  in fcst run phase 2, na=         119
+  0:  in fcst run phase 2, na=         120
+  0:  in fcst run phase 2, na=         121
+  0:  in fcst run phase 2, na=         122
+  0:  in fcst run phase 2, na=         123
+  0:  in fcst run phase 2, na=         124
+  0:  in fcst run phase 2, na=         125
+  0:  in fcst run phase 2, na=         126
+  0:  in fcst run phase 2, na=         127
+  0:  in fcst run phase 2, na=         128
+  0:  in fcst run phase 2, na=         129
+  0:  in fcst run phase 2, na=         130
+  0:  in fcst run phase 2, na=         131
+  0:  in fcst run phase 2, na=         132
+  0:  in fcst run phase 2, na=         133
+  0:  in fcst run phase 2, na=         134
+  0:  in fcst run phase 2, na=         135
+  0:  in fcst run phase 2, na=         136
+  0:  in fcst run phase 2, na=         137
+  0:  in fcst run phase 2, na=         138
+  0:  in fcst run phase 2, na=         139
+  0:  in fcst run phase 2, na=         140
+  0:  in fcst run phase 2, na=         141
+  0:  in fcst run phase 2, na=         142
+  0:  in fcst run phase 2, na=         143
+  0:  in fcst run phase 2, na=         144
+  0:  in fcst run phase 2, na=         145
+  0:  in fcst run phase 2, na=         146
+  0:  in fcst run phase 2, na=         147
+  0:  in fcst run phase 2, na=         148
+  0:  in fcst run phase 2, na=         149
+  0:  in fcst run phase 2, na=         150
+  0:  in fcst run phase 2, na=         151
+  0:  in fcst run phase 2, na=         152
+  0:  in fcst run phase 2, na=         153
+  0:  in fcst run phase 2, na=         154
+  0:  in fcst run phase 2, na=         155
+  0:  in fcst run phase 2, na=         156
+  0:  in fcst run phase 2, na=         157
+  0:  in fcst run phase 2, na=         158
+  0:  in fcst run phase 2, na=         159
+  0:  in fcst run phase 2, na=         160
+  0:  in fcst run phase 2, na=         161
+  0:  in fcst run phase 2, na=         162
+  0:  in fcst run phase 2, na=         163
+  0:  in fcst run phase 2, na=         164
+  0:  in fcst run phase 2, na=         165
+  0:  in fcst run phase 2, na=         166
+  0:  in fcst run phase 2, na=         167
+  0:  in fcst run phase 2, na=         168
+  0:  in fcst run phase 2, na=         169
+  0:  in fcst run phase 2, na=         170
+  0:  in fcst run phase 2, na=         171
+  0:  in fcst run phase 2, na=         172
+  0:  in fcst run phase 2, na=         173
+  0:  in fcst run phase 2, na=         174
+  0:  in fcst run phase 2, na=         175
+  0:  in fcst run phase 2, na=         176
+  0:  in fcst run phase 2, na=         177
+  0:  in fcst run phase 2, na=         178
+  0:  in fcst run phase 2, na=         179
+  0:  in fcst run phase 2, na=         180
+  0:  in fcst run phase 2, na=         181
+  0:  in fcst run phase 2, na=         182
+  0:  in fcst run phase 2, na=         183
+  0:  in fcst run phase 2, na=         184
+  0:  in fcst run phase 2, na=         185
+  0:  in fcst run phase 2, na=         186
+  0:  in fcst run phase 2, na=         187
+  0:  in fcst run phase 2, na=         188
+  0:  in fcst run phase 2, na=         189
+  0:  in fcst run phase 2, na=         190
+  0:  in fcst run phase 2, na=         191
+  0:  in fcst run phase 2, na=         192
+  0:  in fcst run phase 2, na=         193
+  0:  in fcst run phase 2, na=         194
+  0:  in fcst run phase 2, na=         195
+  0:  in fcst run phase 2, na=         196
+  0:  in fcst run phase 2, na=         197
+  0:  in fcst run phase 2, na=         198
+  0:  in fcst run phase 2, na=         199
+  0:  in fcst run phase 2, na=         200
+  0:  in fcst run phase 2, na=         201
+  0:  in fcst run phase 2, na=         202
+  0:  in fcst run phase 2, na=         203
+  0:  in fcst run phase 2, na=         204
+  0:  in fcst run phase 2, na=         205
+  0:  in fcst run phase 2, na=         206
+  0:  in fcst run phase 2, na=         207
+  0:  in fcst run phase 2, na=         208
+  0:  in fcst run phase 2, na=         209
+  0:  in fcst run phase 2, na=         210
+  0:  in fcst run phase 2, na=         211
+  0:  in fcst run phase 2, na=         212
+  0:  in fcst run phase 2, na=         213
+  0:  in fcst run phase 2, na=         214
+  0:  in fcst run phase 2, na=         215
+++ date
++ echo 'Model ended:    ' Fri Oct 22 09:18:06 CDT 2021
+++ date +%s
++ echo -n ' 1634912286,'
