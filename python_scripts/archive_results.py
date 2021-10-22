@@ -33,11 +33,6 @@ class ArchiveResults:
       scheduler = yaml_list['scheduler']
       print("HEY, scheduler is {}".format(scheduler))
       self.artifacts_root = yaml_list['artifactsdir']
-      if(yaml_list['artifactname']):
-        self.artifactname=yaml_list['artifactname'];
-      else:
-        self.artifactname="default"
-
 
     self.root_path = pathlib.Path(__file__).parent.absolute()
     if(scheduler == "pbs"):

@@ -3,13 +3,24 @@ scheduler: "slurm"
 artifactsdir: /work/noaa/stmp/mpotts/ufs-test-artifacts
 scriptdir: /work/noaa/stmp/mpotts/ufs-test-artifacts/python_scripts
 ufsdir: /work/noaa/da/mpotts/sandbox/ufs-weather-model
-artifactname: cpld_bmark_wave_v16
+esmfdir: /work/noaa/da/mpotts/sandbox/esmf
+hpcstackdir: /work/noaa/da/mpotts/hpc-stack
+systemhpcstackdir: /apps/contrib/NCEP/libs/hpc-stack/modulefiles/stack
+modulelocation: /work/noaa/da/mpotts/sandbox/esmf-modules
 testnames: 
-  test1: cpld_decomp_p7
-  test2: cpld_control_wave_p7
+  test1: cpld_control_p7                                                                                                         
+  test2: cpld_restart_p7                                                                                                         
+  test3: cpld_2threads_p7                                                                                                        
+  test4: cpld_decomp_p7                                                                                                          
+  test5: cpld_control_wave_p7                                                                                                    
+  test6: cpld_control_c192_p7                                                                                                    
+  test7: cpld_restart_c192_p7                                                                                                    
+  test8: cpld_control_c384_p7                                                                                                    
+  test9: cpld_restart_c384_p7                                                                                                    
+  test10: cpld_bmark_p7                                                                                                           
 modulelocation: /work/noaa/da/mpotts/sandbox/esmf-modules
 collectedfiles:
-  regex1: PET*
+  regex1: PET000*
   regex2: out
   regex3: err
   regex4: ESMF_Profile*

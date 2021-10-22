@@ -33,6 +33,7 @@ class RunTests:
       self.systemhpcstack= yaml_list['systemhpcstackdir']
     self.tags = []
     if(args['tag'] == None):
+      print("no tags, so pulling")
       self.getNewTags()
     else:
       self.tags.append(args['tag'])
