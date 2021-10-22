@@ -1,0 +1,166 @@
+++ date +%s
++ echo -n ' 1634914709,'
++ set +x
+
+Currently Loaded Modules:
+  1) contrib/0.1     8) hpc-intel/2018.4  15) netcdf/4.7.4   22) sp/2.3.3
+  2) noaatools/2.0   9) impi/2018.4       16) pio/2.5.2      23) w3nco/2.4.1
+  3) cmake/3.18.1   10) hpc-impi/2018.4   17) fms/2021.03    24) w3emc/2.9.1
+  4) python/3.7.5   11) jasper/2.0.22     18) bacio/2.4.1    25) crtm/2.3.0
+  5) hpc/1.1.0      12) zlib/1.2.11       19) g2/3.4.3       26) upp/10.0.9
+  6) intel/2018.4   13) png/1.6.35        20) g2tmpl/1.10.0  27) ufs_common
+  7) mkl/2020.2     14) hdf5/1.10.6       21) ip/3.3.3       28) modules.fv3
+
+ 
+
++ ulimit -s unlimited
+++ date
++ echo 'Model started:  ' Fri Oct 22 09:58:36 CDT 2021
++ export OMP_STACKSIZE=512M
++ OMP_STACKSIZE=512M
++ export KMP_AFFINITY=scatter
++ KMP_AFFINITY=scatter
++ export OMP_NUM_THREADS=1
++ OMP_NUM_THREADS=1
++ export ESMF_RUNTIME_PROFILE=ON
++ ESMF_RUNTIME_PROFILE=ON
++ export 'ESMF_RUNTIME_PROFILE_OUTPUT=SUMMARY BINARY'
++ ESMF_RUNTIME_PROFILE_OUTPUT='SUMMARY BINARY'
++ sync
++ sleep 1
++ srun --label -n 560 ./fv3.exe
+312:  (MOM_cap:InitializeAdvertise)current time: y,m,d-        2013           4
+312:            1 h,m,s=           0           0           0
+312:  (MOM_cap:InitializeAdvertise)start time: y,m,d-        2013           4
+312:            1 h,m,s=           0           0           0
+312: 
+312: WARNING from PE     0: reset_face_lengths_list unused v-face line: V_width,  28.8,  29.4, 41.1, 41.2,   2500.0
+312: 
+  0:  in fcst comp init, fcst_ntasks=         288
+  0:  num_atmos_calls=          72 time_init=        2013           4           1
+  0:            0           0           0 time_atmos=        2013           4
+  0:            1           0           0           0 time_end=        2013
+  0:            4           1           6           0           0 dt_atmos=
+  0:          300 Run_length=       21600
+  0:  NO FLAG: gwd is generic
+  0:  FLAG: satmedmf and isatedmf=1 so pbl not generic
+  0:  NO FLAG: scnv is generic
+  0:  NO FLAG: dcnv is generic
+  0:   num_p3d=           5  num_p2d=           1  crtrh=  0.900000000000000     
+  0:   0.900000000000000       0.900000000000000       npdf3d=           0  pdfcld= F
+  0:   shcnvcw= F  cnvcld= T  ncnvcld3d=           1  do_shoc= F  nshoc3d=
+  0:            0  nshoc_2d=           0  shoc_cld= F  nkbfshoc=        -999 
+  0:   nahdshoc=        -999  nscfshoc=        -999  uni_cld= F  ntot3d=           6 
+  0:   ntot2d=           1  shocaftcnv= F  indcld=          -1  shoc_parm=
+  0:    7000.00000000000        1.00000000000000        4.28571430000000     
+  0:   0.700000000000000       -999.000000000000       ncnvw=           6  ncnvc=
+  0:         -999
+  0: GFS_phys_time_vary_init: compute sncovr from weasd and soil vegetation parameters
+  0: GFS_phys_time_vary_init: initialize albedo for land and ice
+  0:  be create fcst grid
+  0:  dateS=hours since 2013-04-01 00:00:00date_init=        2013           4
+  0:            1           0           0           0
+  0:  af create fcst fieldbundle, name=atmrc=           0
+  0:  af create fcst fieldbundle, name=sfc_nearest_stodrc=           0
+  0:  af create fcst fieldbundle, name=sfc_bilinearrc=           0
+  0:  in fcst,init total time:    79.4182600975037     
+  0:  in fcst run phase 2, na=           0
+  0:  in fcst run phase 2, na=           1
+  0:  in fcst run phase 2, na=           2
+  0:  in fcst run phase 2, na=           3
+  0:  in fcst run phase 2, na=           4
+  0:  in fcst run phase 2, na=           5
+  0:  in fcst run phase 2, na=           6
+  0:  in fcst run phase 2, na=           7
+  0:  in fcst run phase 2, na=           8
+  0:  in fcst run phase 2, na=           9
+  0:  in fcst run phase 2, na=          10
+  0:  in fcst run phase 2, na=          11
+  0:  in fcst run phase 2, na=          12
+  0:  in fcst run phase 2, na=          13
+  0:  in fcst run phase 2, na=          14
+  0:  in fcst run phase 2, na=          15
+  0:  in fcst run phase 2, na=          16
+  0:  in fcst run phase 2, na=          17
+  0:  in fcst run phase 2, na=          18
+  0:  in fcst run phase 2, na=          19
+  0:  in fcst run phase 2, na=          20
+  0:  in fcst run phase 2, na=          21
+  0:  in fcst run phase 2, na=          22
+  0:  in fcst run phase 2, na=          23
+  0:  in fcst run phase 2, na=          24
+  0:  in fcst run phase 2, na=          25
+  0:  in fcst run phase 2, na=          26
+  0:  in fcst run phase 2, na=          27
+  0:  in fcst run phase 2, na=          28
+  0:  in fcst run phase 2, na=          29
+  0:  in fcst run phase 2, na=          30
+  0:  in fcst run phase 2, na=          31
+  0:  in fcst run phase 2, na=          32
+  0:  in fcst run phase 2, na=          33
+  0:  in fcst run phase 2, na=          34
+  0:  in fcst run phase 2, na=          35
+  0:  in fcst run phase 2, na=          36
+  0:  in fcst run phase 2, na=          37
+  0:  in fcst run phase 2, na=          38
+  0:  in fcst run phase 2, na=          39
+  0:  in fcst run phase 2, na=          40
+  0:  in fcst run phase 2, na=          41
+  0:  in fcst run phase 2, na=          42
+  0:  in fcst run phase 2, na=          43
+  0:  in fcst run phase 2, na=          44
+  0:  in fcst run phase 2, na=          45
+  0:  in fcst run phase 2, na=          46
+  0:  in fcst run phase 2, na=          47
+  0:  in fcst run phase 2, na=          48
+  0:  in fcst run phase 2, na=          49
+  0:  in fcst run phase 2, na=          50
+  0:  in fcst run phase 2, na=          51
+  0:  in fcst run phase 2, na=          52
+  0:  in fcst run phase 2, na=          53
+  0:  in fcst run phase 2, na=          54
+  0:  in fcst run phase 2, na=          55
+  0:  in fcst run phase 2, na=          56
+  0:  in fcst run phase 2, na=          57
+  0:  in fcst run phase 2, na=          58
+  0:  in fcst run phase 2, na=          59
+  0:  in fcst run phase 2, na=          60
+  0:  in fcst run phase 2, na=          61
+  0:  in fcst run phase 2, na=          62
+  0:  in fcst run phase 2, na=          63
+  0:  in fcst run phase 2, na=          64
+  0:  in fcst run phase 2, na=          65
+  0:  in fcst run phase 2, na=          66
+  0:  in fcst run phase 2, na=          67
+  0:  in fcst run phase 2, na=          68
+  0:  in fcst run phase 2, na=          69
+  0:  in fcst run phase 2, na=          70
+  0:  in fcst run phase 2, na=          71
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h1000) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h850) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h700) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h500) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h200) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h100) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h50) NOT registered
+  0: 
+  0: 
+  0: WARNING from PE     0: diag_util_mod::opening_file: module/field_name (dynamics/h10) NOT registered
+  0: 
+++ date
++ echo 'Model ended:    ' Fri Oct 22 10:13:53 CDT 2021
+++ date +%s
++ echo -n ' 1634915633,'
