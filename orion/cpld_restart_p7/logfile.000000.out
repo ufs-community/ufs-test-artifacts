@@ -184,6 +184,7 @@ READ_INPUT_NML: input.nml
    cplwav       = .false.
    cplwav2atm   = .false.
    cplflx       = .true.
+   cplice       = .true.
    min_seaice   = 1.0e-11
    use_cice_alb = .false.
    frac_grid    = .true.
@@ -675,6 +676,7 @@ READ_INPUT_NML: input.nml
    cplwav       = .false.
    cplwav2atm   = .false.
    cplflx       = .true.
+   cplice       = .true.
    min_seaice   = 1.0e-11
    use_cice_alb = .false.
    frac_grid    = .true.
@@ -1513,8 +1515,9 @@ v2018 FV3GFS BETA VERSION PHYSICS
  MIN_LON =         192,
  MIN_LAT =          94,
  RHCMAX  =  0.999999900000000     ,
+ HUGE    =  9.969209968386869E+036,
  PHYS_VERSION    = v2018 FV3GFS BETA VERSION PHYSICS                               ,
- FSCAV_AERO      = *:0.0                                           @ˇ¶ﬁ⁄*          dynamicsÕd†g`JËø                `                               dynamics                                                        dynamics                                                        dynamics                                                        dynamics                                                        dynamics64bit                                                   dynamics                                                        dynamics                                                        dynamics                                              
+ FSCAV_AERO      = *:0.0                                   ¨˝_õ˝  ê˝_õ˝  î˝_õ˝  dynamics∂HåËø∞˝_õ˝  tˆ_õ˝         ¥˝_õ˝                  dynamics#â~íl5Ëø                                @ˇñƒ*          dynamicsÕd†g`JËø                `                               dynamics                                                        dynamics                                                        dynamics                                                        dynamics                                                        dynamics64bit                                            
 ================================================================================
 DIAG_OUTPUT_MOD
 2020.03
@@ -1527,67 +1530,69 @@ unknown
 Exiting field_manager, have a nice day ...
 
                                      time
-Total runtime                       131.931288
-Ocean Initialization                  3.672176
-Ocean                                29.317623
-Ocean dynamics                       17.264449
-Ocean thermodynamics and tracers      9.994630
-Ocean Other                           1.970491
-(Ocean tracer advection)              2.141403
-(Ocean diabatic driver)               7.853209
+Total runtime                       128.015248
+Ocean Initialization                  2.811276
+Ocean                                29.194577
+Ocean dynamics                       17.084974
+Ocean thermodynamics and tracers     10.051508
+Ocean Other                           1.972208
+(Ocean tracer advection)              2.170035
+(Ocean diabatic driver)               7.881454
 (Ocean continuity equation *)         0.000000
-(Ocean set BBL viscosity)             0.156607
-(Ocean message passing *)             2.806232
-(Ocean MOM_initialize_state)          2.566167
-(Ocean init message passing *)        0.017818
-(Ocean thickness diffusion *)         1.076829
-(Ocean mixed layer restrat)           1.080448
-(Ocean collective diagnostics)        0.860650
+(Ocean set BBL viscosity)             0.155075
+(Ocean message passing *)             2.833953
+(Ocean MOM_initialize_state)          2.057464
+(Ocean init message passing *)        0.003121
+(Ocean thickness diffusion *)         1.069173
+(Ocean mixed layer restrat)           1.102312
+(Ocean collective diagnostics)        0.867426
 (Ocean Z-space diagnostics)           0.000000
-(Ocean ALE)                           0.749987
-(Initialize from Z)                   0.001404
-(Ocean diagnostics framework)         1.248602
-(Ocean diagnostics remapping)         0.527684
-(Ocean diagnostics grid updates)      0.424393
-(Ocean continuity halo updates)       0.112986
-(Ocean init message passing)          0.002911
-(Ocean continuity update)             0.599780
-(Ocean continuity correction)         1.737428
-(Ocean BT pre-calcs only)             1.383335
-(Ocean BT pre-step halo updates)      0.636200
-(Ocean BT stepping calcs only)        0.357837
-(Ocean BT stepping halo updates)      0.081321
-(Ocean BT post-calcs only)            0.203035
-(Ocean BT post-step halo updates      0.015434
+(Ocean ALE)                           0.753233
+(Initialize from Z)                   0.001399
+(Ocean diagnostics framework)         1.122777
+(Ocean diagnostics remapping)         0.529599
+(Ocean diagnostics grid updates)      0.417945
+(Ocean continuity halo updates)       0.148725
+(Ocean init message passing)          0.003314
+(Ocean continuity update)             0.603942
+(Ocean continuity correction)         1.738381
+(Ocean BT pre-calcs only)             1.388731
+(Ocean BT pre-step halo updates)      0.543673
+(Ocean BT stepping calcs only)        0.357006
+(Ocean BT stepping halo updates)      0.064540
+(Ocean BT post-calcs only)            0.203116
+(Ocean BT post-step halo updates      0.010064
 (Ocean BT global synch)               0.000000
-(Ocean Coriolis & mom advection)      0.354504
-(Ocean continuity equation)           2.506590
-(Ocean pressure force)                2.408840
-(Ocean vertical viscosity)            1.525728
-(Ocean horizontal viscosity)          0.988150
-(Ocean momentum increments)           0.079711
-(Ocean message passing)               2.481767
-(Ocean barotropic mode calc)          0.037821
-(Ocean barotropic mode stepping)      2.677863
-(Ocean barotropic forcing calc)       0.094119
-(Ocean kappa_shear)                   1.276738
+(Ocean Coriolis & mom advection)      0.356306
+(Ocean continuity equation)           2.515864
+(Ocean pressure force)                2.418906
+(Ocean vertical viscosity)            1.521545
+(Ocean horizontal viscosity)          0.996043
+(Ocean momentum increments)           0.079871
+(Ocean message passing)               2.352175
+(Ocean barotropic mode calc)          0.037354
+(Ocean barotropic mode stepping)      2.567871
+(Ocean barotropic forcing calc)       0.093071
+(Ocean kappa_shear)                   1.344569
 (Ocean diabatic entrain)              0.000000
-(Ocean vert remap)                    3.356621
-(Ocean set_diffusivity)               1.636958
+(Ocean vert remap)                    3.297025
+(Ocean set_diffusivity)               1.696747
 (Ocean KPP)                           0.000000
-(Ocean tracer_columns)                0.000017
-(Ocean diabatic tridiag)              0.042761
-(Ocean diabatic message passing)      0.240993
-(Ocean find_uv_at_h)                  0.051640
-(Ocean frazil)                        0.040756
-(Ocean advect tracer)                 0.484436
-(Ocean tracer halo updates)           0.086499
-(Ocean tracer global synch)           0.193613
-(Ocean diffuse tracer)                1.648160
+(Ocean tracer_columns)                0.000019
+(Ocean diabatic tridiag)              0.043655
+(Ocean diabatic message passing)      0.222751
+(Ocean find_uv_at_h)                  0.052468
+(Ocean frazil)                        0.041203
+(Ocean advect tracer)                 0.478992
+(Ocean tracer halo updates)           0.090526
+(Ocean tracer global synch)           0.183591
+(Ocean diffuse tracer)                1.681066
 (Ocean epipycnal diffuse tracer)      0.000000
-Ocean surface forcing                 0.032084
-(Ocean forcing diagnostics)           0.015040
-0.000000000000     ,
+Ocean surface forcing                 0.030253
+(Ocean forcing diagnostics)           0.014259
+,
+ TAU_IMLT        =   600.000000000000     ,
+ TAU_V2L =   150.000000000000     ,
  TAU_L2V =   225.000000000000     ,
  TAU_I2S =   1000.00000000000     ,
  TAU_L2R =   900.000000000000     ,
@@ -1698,14 +1703,14 @@ DIAG_OUTPUT_MOD
 2020.03
 
                                      time
-Total runtime                       129.917039
+Total runtime                       127.296315
 Initialization                        0.000000
-FV dy-core                           44.544935
-FV subgrid_z                          0.186364
-FV Diag                               0.946954
-GFS Step Setup                        2.776407
-GFS Radiation                        10.563092
-GFS Physics                           9.755079
-Dynamics get state                    0.543859
-Dynamics update state                 5.092828
-FV3 Dycore                           46.009900
+FV dy-core                           44.662798
+FV subgrid_z                          0.180421
+FV Diag                               0.931287
+GFS Step Setup                        2.742483
+GFS Radiation                        10.466684
+GFS Physics                           9.816857
+Dynamics get state                    0.548101
+Dynamics update state                 5.176477
+FV3 Dycore                           46.102290
