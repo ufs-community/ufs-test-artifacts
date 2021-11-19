@@ -61,13 +61,13 @@ class RunTests:
 
   def buildESMF(self):
     for tag in self.tags:
+      print("working on tag--{}".format(tag))
       os.chdir(self.hpcstackdir)
-      os.system("echo $PWD")
       os.system("module use {}".format(self.systemhpcstack));
       print("cp stack/stack_esmf_template.yaml stack/stack_noaa.yaml");
       os.system("cp stack/stack_esmf_template.yaml stack/stack_noaa.yaml");
-      print("sed -i 's/ESMFTAG/{}/g' stack/stack_noaa.yaml".format(tag.replace("ESMF_","")));
-      os.system("sed -i 's/ESMFTAG/{}/g' stack/stack_noaa.yaml".format(tag.replace("ESMF_","")));
+      print("sed -i 's/ESMFTAG/{}/g' stack/stack_noaa.yaml".format(tag.name.replace("ESMF_","")));
+      os.system("sed -i 's/ESMFTAG/{}/g' stack/stack_noaa.yaml".format(tag.name.replace("ESMF_","")));
       print("{}/build_standalone_esmf.sh {} {} {} {}".format(self.hpcstackdir,self.systemhpcstack,self.modulesdir,self.hpcstackdir,self.machine_name))
       os.system("{}/build_standalone_esmf.sh {} {} {} {}".format(self.hpcstackdir,self.systemhpcstack,self.modulesdir,self.hpcstackdir,self.machine_name))
 
